@@ -1,0 +1,111 @@
+.landing-page{
+    width: 100vw;
+    height: auto;
+    padding: 3vw 5vh;
+    box-sizing: border-box;
+}
+
+.headline{
+    color: rgb(31, 58, 139);
+    margin-top: 12vh;
+}
+
+.light-pointers{
+    color:grey;
+    font-size: 0.8rem;
+    margin: 25px;
+}
+
+.package-btn{
+    background-color: rgb(31, 58, 139);
+    color: white;
+    padding: 10px 20px;
+}
+
+.interviewer-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+}
+
+.person{
+    width: 20vw;
+    height: auto;
+    margin: 20px 10px;
+}
+
+.profile{
+    width: 55%;
+    border-radius: 100%;
+    border: 1px solid rgb(31, 58, 139);
+    justify-content: center;
+}
+
+.int-details{
+    margin: 5px 0;
+    color:  rgb(31, 58, 139);
+}
+
+.sell-pointer{
+    width: 70vw;
+    height: auto;
+    margin: 10vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pointer{
+    position: relative;
+    width: 30vw;
+    height: 10vh;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgb(22, 13, 102);
+    margin: 20px 20px;
+    color: rgb(31, 58, 139)
+}
+
+.point{margin: 0 10px;
+    position: absolute;
+    top: 25%;
+}
+
+.far,.fas{margin: 0px 10px; font-size: 1.5rem;}
+
+.package-details{width: 80vw;margin: 10vh auto;height: auto;display: flex;justify-content: center;}
+
+.package{
+    width: 20vw;
+    border: 1px solid rgb(206, 206, 206);
+    height: 63vh;
+    text-align: left;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+    color: rgb(31, 58, 139);
+}
+
+.learn{margin:20px auto ;width: 20vw;height: 7vh;background-color: white;border: 2px solid rgb(22, 45, 114);  color: rgb(31, 58, 139);}
+.learn:hover{background-color:  rgb(31, 58, 139);color:white}
+.heading{  color: rgb(31, 58, 139);}
+
+.testimonial{
+    width: 80vw;
+    height: 20vh;
+    border: 1px solid rgb(31, 58, 139);
+    border-radius: 10px;
+    margin:30px auto;
+    padding: 10px;
+    display: flex;
+    text-align: left;
+}
+
+.review{margin: 0px 30px;}
+
+.test-person{color: rgb(218, 137, 32);margin: 5px 0;}
+
+.test-profile{border-radius: 100%;}
