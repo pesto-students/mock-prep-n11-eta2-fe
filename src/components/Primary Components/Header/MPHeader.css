@@ -1,0 +1,24 @@
+.header{
+    width: 100vw;
+    min-height: 60px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background : #FBFBFB;
+    border-bottom: 2px solid #d3c9c9;
+}
+
+.headerLogo{
+    width : 10%
+}
+
+.headerItems{
+    width : 40%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    color : #1F4682;
+    font-weight:bold;
+    font-size: 1rem;
+}

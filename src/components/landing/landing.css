@@ -7,19 +7,12 @@
 
 .headline{
     color: rgb(31, 58, 139);
-    margin-top: 12vh;
 }
 
 .light-pointers{
     color:grey;
     font-size: 0.8rem;
     margin: 25px;
-}
-
-.package-btn{
-    background-color: rgb(31, 58, 139);
-    color: white;
-    padding: 10px 20px;
 }
 
 .interviewer-list{
@@ -76,18 +69,17 @@
 
 .far,.fas{margin: 0px 10px; font-size: 1.5rem;}
 
-.package-details{width: 80vw;margin: 10vh auto;height: auto;display: flex;justify-content: center;}
-
-.package{
-    width: 20vw;
-    border: 1px solid rgb(206, 206, 206);
-    height: 63vh;
-    text-align: left;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 10px;
-    color: rgb(31, 58, 139);
+.package-details
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15% 3%;
+    padding : 2% 2%
+    
 }
+
+
 
 .learn{margin:20px auto ;width: 20vw;height: 7vh;background-color: white;border: 2px solid rgb(22, 45, 114);  color: rgb(31, 58, 139);}
 .learn:hover{background-color:  rgb(31, 58, 139);color:white}

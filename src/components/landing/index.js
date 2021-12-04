@@ -3,27 +3,26 @@ import "../landing/landing.css"
 import {
     interviewers,
     sellingPointers,
-    packages,
     testimonials
 } from "../../constant/interviewer"
+import MPButton from '../Primary Components/Button/MP_Button'
+import InterviewerCard from '../Interviewer Card/Interviewer Card'
+import Packages from '../Packages/Packages'
 
 export const Landing = () => {
     return (
         <div className="landing-page">
-            <h2 className="headline">Prepare for your upcoming interview <br /> with a "Google" Interviewer</h2>
+            
+
+            <h1 className="headline">Prepare for your upcoming interview <br /> with a "Google" Interviewer</h1>
             <p className="light-pointers">Take mock interviews & 1-on-1 mentoring sessions with real-life interviewers from the world’s best companies</p>
-            <button className="package-btn">Explore Packages</button>
+                 <MPButton buttonType='primary' buttonName="Explore Packages" onClick={() => alert("Test")} isDisabled = "false" size = "large" width = {"10%"} />
             <p className="light-pointers">A package for every interview preparation problem that you’ll ever face</p>
             <h3 className="headline">Meet our Interviewers</h3>
 
             <section className="interviewer-list">
                 {interviewers.map(person => (
-                    <section className="person" key={person.id}>
-                        <img alt="int-profile" src={person.pic} className="profile"  />
-                        <p className="int-details">{person.name}</p>
-                        <p className="int-details">{person.designation},</p>
-                        <p className="int-details">{person.company}</p>
-                    </section>
+                    <InterviewerCard id={person.id} name={person.name} pic={person.pic} designation={person.designation} company={person.company} />
                 ))}
             </section>
 
@@ -36,22 +35,7 @@ export const Landing = () => {
                 ))}
             </section>
 
-            <h2 className="headline">Our Packages ?</h2>
-            <section className="package-details">
-                {packages.map(pack => (
-                    <section className="package" key={pack.id}>
-                        <h3 className="heading">{pack.title}</h3>
-                        <p>{pack.description}</p>
-                        <section className="pack-adv">
-                        {pack.details.map(det => (
-                            <p><i className={ pack.icon}></i>  {det}</p>
-                        ))}
-                        </section>
-                        <button className="learn">Learn more</button>
-                    </section>
-                ))}
-            </section>
-
+            <Packages />
             <h2 className="headline">Testimonials </h2>
             <section className="testimonials">
                 {testimonials.map(test => (
@@ -65,7 +49,7 @@ export const Landing = () => {
                     </section>
                 ))}
             </section>
-
+            
         </div>
     )
 }

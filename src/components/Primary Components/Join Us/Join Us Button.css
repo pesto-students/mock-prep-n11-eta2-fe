@@ -1,0 +1,10 @@
+.JoinUsButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1F4682;
+    border-radius: 5px;
+    min-width: 20vh;
+    padding: 10px 0;
+    font-size: 20px;
+}
