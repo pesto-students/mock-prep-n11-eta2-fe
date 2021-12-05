@@ -15,8 +15,8 @@ export default function Dashboard() {
             <DashHeader title="Dashboard" icon={<DashboardOutlined />} rightComponent={<><Input placeholder='Search..' /><Search /></>} />
             
             <section className="admin-dashboard-cards">
-                {adminDashboardMetrics.map(metric => (
-                    <DashBoardCard id={metric.id} description={metric.description} value={metric.value} icon={ metric.icon} />
+                {adminDashboardMetrics.map((metric,index) => (
+                    <DashBoardCard key={index} id={metric.id} description={metric.description} value={metric.value} icon={ metric.icon} />
                 )) }
             </section>
 

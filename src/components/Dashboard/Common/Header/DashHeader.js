@@ -6,11 +6,11 @@ export default function DashHeader({icon,title,rightComponent})  {
            <div className="header">
                 <section className="tab-title">
                     {icon }
-                <   p className="icon">{title}</p>
+                <p className="icon">{title}</p>
                 </section>
-                <span>
+                <section className="tab-options">
                     {rightComponent }
-                </span>
+                </section>
             </div>
     )
 }

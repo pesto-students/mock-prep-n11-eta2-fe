@@ -3,13 +3,11 @@ import { logoUrl } from "../../../../constant/data"
 import "./SideNav.css"
 import Button from "@material-ui/core/Button"
 import AccountCircle from "@material-ui/icons/AccountCircle"
+import { Link } from 'react-router-dom'
 
 
 export default function SideNav({sideNavList, userName }) {
     
-
-
-
     return (
         <div>
         <div className="sidenav">
@@ -17,7 +15,7 @@ export default function SideNav({sideNavList, userName }) {
 
             <ul className="sidebar-list">
                     {sideNavList.map(list => (
-                        <a key={list.id} href={list.url} className="sidebar-list-item">{list.icon}<p className="icon">{list.linkName}</p></a>
+                        <Link key={list.id} to={list.url} className="sidebar-list-item">{list.icon}<p className="icon">{list.linkName}</p></Link>
                     ))}
             </ul>
 

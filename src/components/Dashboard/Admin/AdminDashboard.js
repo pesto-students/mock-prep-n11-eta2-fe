@@ -3,6 +3,8 @@ import SideNav from '../Common/SideNav/SideNav'
 import { DashboardOutlined, PersonAdd, LocalLibrary, Feedback, QuestionAnswer, SubjectOutlined, BarChartOutlined } from '@material-ui/icons';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Dashboard from './Dashboard';
+import InterviewerList from '../Interviewer/List/InterviewerList';
+import { InterviewerProfile } from '../Interviewer/Profile/InterviewerProfile';
 
 export default function AdminDashboard() {
     
@@ -54,15 +56,21 @@ export default function AdminDashboard() {
 
     return(
         <div className="adminDashboard">
-            <SideNav sideNavList={adminNavList} userName="Admin" />
-            <div className="main-component">
+                 <div className="main-component">
                 <Router>
-                    <Switch>
-                        <Route exact path="/admin/dashboard">
-                            <Dashboard/>
-                        </Route>
-                    </Switch>
-                </Router>
+                    <SideNav sideNavList={adminNavList} userName="admin"></SideNav>
+                <Switch>
+                    <Route exact path="/admin/dashboard">
+                        <Dashboard />
+                    </Route>
+                    <Route exact path="/admin/interviewerList">
+                        <InterviewerList />
+                    </Route>
+                    <Route exact path="/admin/interviewerProfile">
+                        <InterviewerProfile />
+                    </Route>
+                </Switch>
+            </Router>
             </div>
         </div>
     )
