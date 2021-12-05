@@ -2,22 +2,24 @@ import React, { useState} from 'react'
 import DashHeader from '../../Common/Header/DashHeader'
 import { Person } from "@material-ui/icons"  
 import { Button } from 'antd';
-import "./InterviewerProfile.css"
-import { interviewers } from '../../../../constant/data';
+import "../../Interviewer/Profile/InterviewerProfile.css"
+import {  students } from '../../../../constant/data';
 import { Tag } from "antd"
 import FormModal from '../../../Primary Components/Modal/Form/FormModal';
 import { InterviewerForm } from "../../../Primary Components/Forrm/Interviewer/InterviewerForm"
+import { Progress } from 'antd';
+import "./StudentProfile.css"
 
-export const InterviewerProfile = () => {
+export const StudentProfile = () => {
 
-    const interviewer = interviewers[0];
+    const student = students[0];
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const showModal = () => {
         setIsModalVisible(true);
     };
     
-    const handleOk = (value) => {
+    const handleOk = () => {
         setIsModalVisible(false);
     };
     
@@ -27,14 +29,14 @@ export const InterviewerProfile = () => {
 
     let rating = [];
     
-    for (var i = 0; i < interviewer.rating; i++){
+    for (var i = 0; i < student.rating; i++){
         rating.push(<i className="fa fa-star"/>);
     }
 
     return (
-        <div className="interviewer-profile">
+        <div className="student-profile">
              
-             <DashHeader title="Interviewer Profile" icon={<Person />}
+             <DashHeader title="Student Profile" icon={<Person />}
                 rightComponent={
                     <>
                         <section className="search">
@@ -43,13 +45,13 @@ export const InterviewerProfile = () => {
             
             <div className="int-profile-container">
                 <section className="left-profile">
-                    <img src={interviewer.pic} alt="profile"/>
-                    <p>{interviewer.name}</p>
-                    <p>{interviewer.designation}</p>
-                    <p>{interviewer.company}</p>
-                    <p>{interviewer.experience} years of experience in industry</p>
+                    <img src={student.pic} alt="profile"/>
+                    <p>{student.name}</p>
+                    <p>{student.degree}</p>
+
+                    <p>{student.experience} years of experience as {student.designation}</p>
                     <p className="skill-chips">
-                            {interviewer.skills.map(skill => (<>
+                            {student.skills.map(skill => (<>
                                 <Tag className="chip" closable color="success" label={skill} >{skill}</Tag>
                             </>
                             ))}                 
@@ -58,38 +60,30 @@ export const InterviewerProfile = () => {
                 </section>
                 <section className="right-profile">
                     <h3 className="heading">About</h3>
-                    <p className="about">{interviewer.about}</p>
+                    <p className="about">{student.about}</p>
                     <h3 className="heading">Interview Topics</h3>
                     <p class="skill-chips">
-                      {interviewer.topics.map(topic => (<>
+                      {student.topics.map(topic => (<>
                           <Tag className="chip2" closable color="warning" label={topic} >{topic}</Tag>
                       </>
                       ))}
                     </p>
-                    <h3 className="heading" style={{margin:"3vh 0"}}>Total Interviews taken : <span style={{color:"orange"}}>{interviewer.interviewCount}</span></h3>
-                    
-                    <span style={{display:"flex"}}>
-                    <h3 className="heading" style={{ marginRight:"1vw" }}>Contact : </h3>
+                    <h3 className="heading" style={{marginBottom:0}}>Contact Details:
+                        
+                    </h3>
                     <span style={{display:"flex",margin:"1vh 0"}}>
-                        {interviewer.contacts.map(contact => (<>
-                            <p style={{margin:"5px  2vw 5px 0"}}><i className={contact.icon}></i> { contact.value}</p>
+                        {student.contacts.map(contact => (<>
+                            <p style={{margin:"5px 2vw 5px 0"}}><i className={contact.icon}></i> { contact.value}</p>
                         </>
                         ))}
                     </span>
-                    </span>
-                    
-                    <h3 className="heading">Student Rating (5) :
-                        
-                        {rating.map(rate => (
-                            <>
-                                {rate}
-                            </>
-                        ))}
+                    <h3 className="heading">Student Rating:
+                        <Progress color="success" style={{width:"70%",margin:"0vw 2vw"}} percent={student.rating*10} status="active" />
                     </h3>
 
-                </section>
+                </section>  
             </div>
-            <FormModal data={<InterviewerForm interviewer={interviewer} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+            <FormModal data={<InterviewerForm interviewer={student} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>
     )
 }

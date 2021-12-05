@@ -1,0 +1,16 @@
+.form-input{
+    width: 23vw !important;
+    margin: 1vh 2vw !important;   
+}
+
+.textarea{
+    width: 89% !important;
+    height: 10vh !important;
+}
+
+.submit{
+    background-color: royalblue !important;
+    color: white !important;
+    text-align: center;
+    margin-left: 35% !important;
+}

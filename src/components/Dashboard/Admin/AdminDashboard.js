@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Dashboard from './Dashboard';
 import InterviewerList from '../Interviewer/List/InterviewerList';
 import { InterviewerProfile } from '../Interviewer/Profile/InterviewerProfile';
+import StudentList from '../Student/List/StudentList';
+import { StudentProfile } from '../Student/Profile/StudentProfile';
 
 export default function AdminDashboard() {
     
@@ -68,6 +70,12 @@ export default function AdminDashboard() {
                     </Route>
                     <Route exact path="/admin/interviewerProfile">
                         <InterviewerProfile />
+                    </Route>
+                    <Route exact path="/admin/StudentList">
+                        <StudentList />
+                    </Route>
+                    <Route exact path="/admin/StudentProfile">
+                        <StudentProfile />
                     </Route>
                 </Switch>
             </Router>

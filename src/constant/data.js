@@ -96,6 +96,66 @@ export const interviewers = [
 
 ]
 
+export const students = [
+    {
+        id: 1,
+        name: "Ross Taylor",
+        designation: "ASE",
+        company: "Google",
+        degree:"Btech",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        onboarded: false,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    },
+    {
+        id: 2,
+        name: "Ross Taylor",
+        degree: "Software Architect",
+        company: "Google",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        onboarded: false,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    },
+    {
+        id: 3,
+        name: "Ross Taylor",
+        degree: "Software Architect",
+        company: "Google",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        onboarded: false,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    },
+    {
+        id: 4,
+        name: "Mohammed Taylor",
+        degree: "Software Architect",
+        company: "Google",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript","HTML","Bootstrap"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        onboarded: false,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    }
+]
+
 export const sellingPointers = [
     {
         id: 1,
@@ -585,6 +645,15 @@ export const tableColumns = [
 
 export const interviewerFilter = [
     { id: 1, value: "Javascript" },
+    {id:2,value:"HTML"},
+    {id:3,value:"Bootstrap"},
+    {id:4,value:"React"},
+    {id:5,value:"Mongo"},
+]
+
+
+export const studentFilter = [
+    {id: 1, value: "Javascript" },
     {id:2,value:"HTML"},
     {id:3,value:"Bootstrap"},
     {id:4,value:"React"},

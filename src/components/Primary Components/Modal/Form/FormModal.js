@@ -3,10 +3,12 @@ import { Modal } from "antd"
 import "./FormModel.css"
 
 export default function FormModal({ isModalVisible, handleOk, handleCancel, data }) {
+    
+    console.log(data)
     return (
         <div>
            <Modal title="Update Interviewer" className="InterviewerModal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-              saif
+                { data}
             </Modal>
         </div>
     )

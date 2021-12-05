@@ -1,14 +1,14 @@
 import React, { useState    } from 'react'
-import { PersonAdd } from '@material-ui/icons'
+import { Person } from '@material-ui/icons'
 import DashHeader from '../../Common/Header/DashHeader'
 import { interviewers } from '../../../../constant/data'
 import "./interviewerList.css"
+import { Tag} from "antd"
+import { Button } from 'antd';
 import Filter from '../../../Primary Components/Filter/Filter'
 import { interviewerFilter } from '../../../../constant/data'
 import { Link} from "react-router-dom"
 import { Input } from 'antd';
-import { Tag} from "antd"
-import { Button } from 'antd';
 
 export default function InterviewerList() {
 
@@ -32,7 +32,7 @@ export default function InterviewerList() {
 
     return (
         <div className="interviewerList">
-            <DashHeader title="Onboard Interviewers" icon={<PersonAdd />}
+            <DashHeader title="Onboard Interviewers" icon={<Person />}
                 rightComponent={
                     <>
                         <Filter filterOptions={interviewerFilter} filterFunction={handleFilter} />
