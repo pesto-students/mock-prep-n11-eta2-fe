@@ -1,0 +1,120 @@
+.dashboard{
+    width: 82.5;
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.admin-dashboard-cards{
+    width: 90.5%;
+    margin: 5vh auto !important;
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw;
+    box-sizing: border-box;
+}
+.admin-dashboard-cards > .card{
+    width: 18vw !important;
+}
+.admin-dashboard-cards > .card:nth-child(1){
+  border-left-color: green !important;
+  color: green !important;
+
+}
+.admin-dashboard-cards>.card>.bottom{
+    border-top: 1px solid grey;
+    padding-top: 1vh;
+
+}
+.admin-dashboard-cards > .card:nth-child(2){
+    border-left-color: skyblue !important;
+    color: skyblue !important;
+}
+.admin-dashboard-cards > .card:nth-child(3){
+    border-left-color: rgb(255, 207, 50) !important;
+    color: rgb(255, 207, 50) !important;
+}
+.admin-dashboard-cards > .card:nth-child(4){
+    border-left-color: red !important;
+    color: red !important;
+}
+.admin-dashboard-charts{
+    width: 90.5%;
+    margin: auto;
+    padding: 5vh 0;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+}
+.earning-chart{
+    width: 65%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.resourceChart{
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.customer-feedback{
+    width: 90.5%;
+    margin: auto;
+    height: 60vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top{
+    border-bottom: 1px solid lightgray;
+    color:rgb(92, 92, 92);
+    text-align: left;
+    padding: 10px;
+}
+
+.total-earning>.bottom{
+    color:rgb(92, 92, 92);
+    display: block;
+    padding:10px;
+    margin: 0;
+    text-align: left;
+}
+
+.total-earning{
+    width: 20vw;
+    height: 60vh;
+    margin: 3vh 0;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.cust-review{
+    width: 50vw;
+    height: 60vh;
+    margin: 3vh 0;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.review-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0vh 0px 2vh 0 ;  
+    padding: 1vh;  
+    border-bottom: 1px solid lightgrey;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.review-container>span>img{
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+}
+
+.interview-details{
+    width: 90%;
+    margin: 10vh auto;
+    height: 60vh !important;
+}
