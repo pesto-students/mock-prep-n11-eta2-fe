@@ -1,4 +1,5 @@
 import { GoogleOutlined,FacebookFilled } from '@ant-design/icons';
+import { links } from '../../../constant/links';
 import './Join Us Button.css'
 
 const details = {
@@ -7,13 +8,18 @@ const details = {
 }
 
 export default function JoinUsButton ({signin,type}) {
+
+    function getUserDetails(){
+      alert("Login Clicked")
+    }
+
     return (
-        <div className="JoinUsButton">
+        <div className="JoinUsButton" onClick ={() => getUserDetails()}>
             <div className="JoinUsLogo">
                 {details[type]}
             </div>
             <div className="JoinUsText">
-                {signin?"Sign In" : "Sign Up"}
+                {signin?`Sign In with ${type}` : `Sign Up with ${type}`}
             </div>
         </div>
     )

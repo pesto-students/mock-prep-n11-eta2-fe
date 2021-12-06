@@ -1,7 +1,17 @@
+.OuterContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 90vh;
+}
+
 .JoinUsContainer{
     display: flex;
-    height: 90vh;
+    flex-direction: column;
+    height: 60vh;
     justify-content: center;
     align-items: center;
-    
+    border: 1px solid black;    
+    padding: 0 5%
 }
