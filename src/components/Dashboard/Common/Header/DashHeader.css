@@ -1,0 +1,16 @@
+.header{
+    width: 81.5vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+}
+
+.tab-title{display: flex;color: grey;vertical-align: middle;}
+
+.tab-options{width:50%;display: flex;justify-content: right; align-items: center;align-content: center;}
+
+.ant-select{display: flex;align-items: center;min-width: 15vw;} 
+.ant-select-selector{width: 15vw;}

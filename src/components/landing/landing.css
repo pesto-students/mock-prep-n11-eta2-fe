@@ -79,14 +79,12 @@
     
 }
 
-
-
 .learn{margin:20px auto ;width: 20vw;height: 7vh;background-color: white;border: 2px solid rgb(22, 45, 114);  color: rgb(31, 58, 139);}
 .learn:hover{background-color:  rgb(31, 58, 139);color:white}
 .heading{  color: rgb(31, 58, 139);}
 
 .testimonial{
-    width: 80vw;
+    width: 65vw;
     height: 20vh;
     border: 1px solid rgb(31, 58, 139);
     border-radius: 10px;
@@ -101,3 +99,32 @@
 .test-person{color: rgb(218, 137, 32);margin: 5px 0;}
 
 .test-profile{border-radius: 100%;}
+
+.landing-dashboard{
+    width: 65vw;
+    min-height: 60vh;
+    height: auto;
+    margin: 5vh auto;
+}
+
+.landing-cards{
+    display: flex;
+    justify-content: space-around;
+}
+
+.landing-charts{
+    margin: 15vh 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing-bar{
+    width: 60%;
+    height: 40vh;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.landing-doughnut{
+    width: 30%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
