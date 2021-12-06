@@ -4,7 +4,13 @@
     justify-content: center;
     border: 1px solid #1F4682;
     border-radius: 5px;
-    min-width: 20vh;
+    min-width: 40vh;
     padding: 10px 0;
     font-size: 20px;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.JoinUsLogo{
+    padding-right: 25px;
 }
