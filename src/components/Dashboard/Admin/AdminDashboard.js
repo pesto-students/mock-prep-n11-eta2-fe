@@ -7,6 +7,7 @@ import InterviewerList from '../Interviewer/List/InterviewerList';
 import { InterviewerProfile } from '../Interviewer/Profile/InterviewerProfile';
 import StudentList from '../Student/List/StudentList';
 import { StudentProfile } from '../Student/Profile/StudentProfile';
+import Resources from '../Common/Resources/Resource';
 
 export default function AdminDashboard() {
     
@@ -76,6 +77,9 @@ export default function AdminDashboard() {
                     </Route>
                     <Route exact path="/admin/StudentProfile">
                         <StudentProfile />
+                    </Route>
+                    <Route exact path="/admin/resource-list">
+                        <Resources />
                     </Route>
                 </Switch>
             </Router>
