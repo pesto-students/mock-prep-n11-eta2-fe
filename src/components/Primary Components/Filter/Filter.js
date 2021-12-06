@@ -2,7 +2,7 @@ import React from 'react'
 import { Select } from 'antd';
 import "./Filter.css"
 
-export default function Filter ({filterOptions,filterFunction}) {
+export default function Filter ({filterOptions,filterFunction,placeholder}) {
 
     const { Option } = Select;
     const children = [];
@@ -18,7 +18,7 @@ export default function Filter ({filterOptions,filterFunction}) {
                 mode="multiple"
                 allowClear
                 style={{ width: '100%' }}
-                placeholder="Filter Interviewers"
+                placeholder={placeholder}
                 defaultValue={['JavaScript']}
                 dropdownMatchSelectWidth={3}
                 onChange={filterFunction}

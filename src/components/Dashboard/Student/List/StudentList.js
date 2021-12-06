@@ -36,7 +36,7 @@ export default function StudentList() {
              <DashHeader title="Student List" icon={<PersonAdd />}
                 rightComponent={
                     <>
-                        <Filter filterOptions={studentFilter} filterFunction={handleFilter} />
+                        <Filter filterOptions={studentFilter} filterFunction={handleFilter} placeholder="Filter Students" />
                         <section className="search">
                             <Search placeholder="Search Students"  onSearch={onSearch} style={{ width: 200 }} />
                         </section>

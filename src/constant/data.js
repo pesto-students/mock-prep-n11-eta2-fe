@@ -659,3 +659,45 @@ export const studentFilter = [
     {id:4,value:"React"},
     {id:5,value:"Mongo"},
 ]
+
+export const resources = [
+    {
+        id: 1,
+        title: "Git Basics",
+        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
+        url: "https://www.tutorialspoint.com/git/index.htm",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 2,
+        title: "Html Basics",
+        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
+        url: "https://www.tutorialspoint.com/html/index.htm",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+    },
+    {
+        id: 3,
+        title: "Git Basics",
+        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
+        url: "https://www.tutorialspoint.com/git/index.htm",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 4,
+        title: "Html Basics",
+        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
+        url: "https://www.tutorialspoint.com/html/index.htm",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+    },
+]
+
+export const resourceFilter = [
+    {
+        id: 1,
+        value: "Git Basics"
+    },
+    {
+        id: 2,
+        value: "Html Basics"
+    }
+]

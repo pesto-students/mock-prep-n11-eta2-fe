@@ -35,7 +35,7 @@ export default function InterviewerList() {
             <DashHeader title="Onboard Interviewers" icon={<Person />}
                 rightComponent={
                     <>
-                        <Filter filterOptions={interviewerFilter} filterFunction={handleFilter} />
+                        <Filter filterOptions={interviewerFilter} filterFunction={handleFilter} placeholder="Filter Interviewer" />
                         <section className="search">
                             {/* <Input placeholder='Search..' /><Search /> */}
                             <Search placeholder="Search Interviewer"  onSearch={onSearch} style={{ width: 200 }} />
