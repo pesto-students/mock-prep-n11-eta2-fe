@@ -13,6 +13,12 @@ export const InterviewerProfile = () => {
     const interviewer = interviewers[0];
     const [isModalVisible, setIsModalVisible] = useState(false);
 
+    const interviewerForm = JSON.parse(JSON.stringify(interviewer));
+    delete interviewerForm.id
+    delete interviewerForm.about;
+    delete interviewerForm.contacts;
+ 
+
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -23,6 +29,10 @@ export const InterviewerProfile = () => {
     
     const handleCancel = () => {
         setIsModalVisible(false);
+    };
+
+    const onFinish = (values) => {
+        interviewer.name = values.name;
     };
 
     let rating = [];
@@ -38,7 +48,7 @@ export const InterviewerProfile = () => {
                 rightComponent={
                     <>
                         <section className="search">
-                            <Button onClick={showModal} primary type="primary" className="update">Update Profile</Button>
+                            <Button onClick={showModal} type="primary" className="update">Update Profile</Button>
                         </section></>} />
             
             <div className="int-profile-container">
@@ -89,7 +99,8 @@ export const InterviewerProfile = () => {
 
                 </section>
             </div>
-            <FormModal data={<InterviewerForm interviewer={interviewer} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+            <FormModal data={<InterviewerForm onFinish={onFinish} about={interviewer.about} interviewer={interviewerForm} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>
     )
 }
+ 

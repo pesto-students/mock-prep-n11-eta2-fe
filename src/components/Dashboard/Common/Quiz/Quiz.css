@@ -5,12 +5,21 @@
 }
 
 .quiz-list{
-    width: 85%;
+    width: 95%;
     margin:  5vh auto ;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .quiz-card{
+    width: 21% !important;
     margin: 10px !important;
+    border: 1px solid lightgrey;
+}
+
+.quizBanner{
+    width: 100px !important;
+    height: 100px !important;
+    margin: 3vh auto !important;
 }

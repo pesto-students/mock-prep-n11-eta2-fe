@@ -6,20 +6,23 @@
 
 
 .resource-container{
-    width: 82.5vw;
+    width: 80.5vw;
     position: absolute;
     right: 0;
 }
 
+
+
 .resource{
     width: 90%;
     height: auto;
-    display: flex;
+    display: flex; 
+    padding: 10px;
     border: 1px solid lightgray ;
     margin: 5vh auto;
 } 
 
-.res-img{width: 80px;height: 80px;vertical-align: middle;margin: 20px 0 0 10px;}
+.res-img{width: 80px;height: 80px;vertical-align: middle;margin: 5px;}
 
 .res-desc{text-align: left; margin: 0 2vw;}
 

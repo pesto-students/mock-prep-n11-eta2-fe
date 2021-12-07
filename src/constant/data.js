@@ -701,3 +701,36 @@ export const resourceFilter = [
         value: "Html Basics"
     }
 ]
+
+export const quizList = [
+    {
+        id: 1,
+        title: "Git Basics",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 2,
+        title: "Javascript",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+    },
+    {
+        id: 3,
+        title: "Html",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
+    },
+    {
+        id: 5,
+        title: "Javascript",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+    },
+    {
+        id: 6,
+        title: "Html",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
+    },
+]

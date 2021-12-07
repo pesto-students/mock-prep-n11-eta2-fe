@@ -1,11 +1,17 @@
 .form-input{
-    width: 23vw !important;
-    margin: 1vh 2vw !important;   
+   display: block;
+   width: 100%;
 }
 
-.textarea{
-    width: 89% !important;
+.form{
+    width: 100%;
+
+}
+
+.about{
+    width: 100% !important;
     height: 10vh !important;
+    margin: 2vh 0;
 }
 
 .submit{

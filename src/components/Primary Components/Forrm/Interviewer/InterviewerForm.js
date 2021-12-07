@@ -1,30 +1,44 @@
 import React from 'react'
-import { Box,Button, TextField,TextareaAutosize } from '@material-ui/core';
+import { Form, Input, Button } from 'antd';
+import { Row, Col} from 'antd';
 import "./interviewerForm.css"
 
-export const InterviewerForm = ({interviewer}) => {
+export const InterviewerForm = ({onFinish,interviewer,about}) => {
 
-      const onFinish = (values) => {
-        console.log('Success:', values);
-      };
+    const { TextArea } = Input;
 
+    const keys = Object.keys(interviewer)
+    const middleIndex = Math.ceil(keys.length / 2);
+    const firstCol = keys.splice(0, middleIndex);   
+    const secondCol = keys.splice(-middleIndex);
+  
     return (
         <div>
-            <Box component="form" sx={{'& > :not(style)': { m: 1, width: '25ch' },}} noValidate autoComplete="off">
-                <TextField className="form-input" defaultValue={interviewer.pic} id="outlined-basic" label="Update Image URL" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.name} id="outlined-basic" label="Update Name" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.company} id="outlined-basic" label="Update Company" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.designation} id="outlined-basic" label="Update Designation" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.experience} id="outlined-basic" label="Update Experience" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.skills} id="outlined-basic" label="Update Skills" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.topics} id="outlined-basic" label="Update Topics" variant="outlined" />
-                <TextField className="form-input" defaultValue={interviewer.interviewCount} id="outlined-basic" label="Update Interviews Count" variant="outlined" />
-               
-                <TextareaAutosize className="form-input textarea" defaultValue={interviewer.about} placeholder="Update about" />
-                <Button type="primary" className="submit"  htmlType="submit">
-                    Submit
-                </Button>
-            </Box>
+            <Form  name="control-hooks form" onFinish={onFinish} autoComplete="on">
+                <Row gutter={24}>
+                    <Col span={12} style={{textAlign: 'left'}}>
+                        {firstCol.map(key => (
+                            <Form.Item className="form-input"  name={key}  label={key.toUpperCase()}  rules={[{ required: false, message: 'Please input your username!' }]}>
+                                <Input defaultValue={interviewer[key]}  ></Input>
+                            </Form.Item>
+                        ))}
+                    </Col>
+                    <Col span={12} style={{textAlign: 'left'}}>
+                        {secondCol.map(key => (
+                            <Form.Item className="form-input"   label={key.toUpperCase()} name={key}  rules={[{ required: false, message: 'Please input your username!' }]}>
+                                <Input defaultValue={interviewer[key]} ></Input>
+                            </Form.Item>
+                        ))}
+                    </Col>
+                </Row>
+                <Form.Item textAlign="center" >
+                    <TextArea className="about" defaultValue={about} allowClear  label={"about"} name="about" rules={[{ required: false, message: 'Please input your username!' }]}  />
+
+                    <Button type="primary"  style={{marginLeft:"40%",width:"10vw !important"}} htmlType="submit">
+                        Update
+                    </Button>
+                 </Form.Item>
+            </Form>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { Feedback, } from "@material-ui/icons"
 import { Input } from "antd"
 import "./Resource.css"
 import { resources,resourceFilter } from '../../../../constant/data'
+import { DeleteOutlined,EditOutlined } from "@ant-design/icons"
 
 import Filter from '../../../Primary Components/Filter/Filter'
 
@@ -34,7 +35,7 @@ export default function Resource() {
                     <Search placeholder="Search Resource"  onSearch={onSearch} style={{ width: 200 }} />
                 </section></>
             } />
-            <section className="resourse">
+            <section className="resources">
             {resourceList.map(resource => (
                        <div className='resource'>
                        <img className="res-img" src={resource.img} alt="resource-pic"/>
@@ -42,8 +43,8 @@ export default function Resource() {
                              <h3 className="res-head">{resource.title}</h3>
                              <p>{resource.description} <a target="_blank" rel="noreferrer" href={resource.url}>Click to read</a></p>
                          </section>
-                     {/* <AutoDeleteIcon className="res-icon"/>    
-                     <EditIcon className="res-icon"/> */}
+                         <DeleteOutlined className="res-icon" />  
+                     <EditOutlined className="res-icon"/>
                    </div>
   
                  ))}
