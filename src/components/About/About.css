@@ -1,0 +1,19 @@
+.aboutContainer{
+    width:100vw;
+    padding: 10vh 5vw;
+    height: 90vh !important;
+    text-align: left;
+}
+
+.aboutContainer>h2{
+    color:rgb(19, 56, 168);
+}
+
+.aboutContainer>p,.about>ul>li{
+    font-size: 1.1rem;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+}

@@ -42,12 +42,12 @@ export default function InterviewerList() {
                         </section>
                    
                 </>} />
-            <div className="interviewers">
+            <div className="listedInterviewers">
 
                 {interviewerList.length>0 ?
                     <> {
                         interviewerList.map(interviewer => (
-                            <section key={interviewer.id} className="interviewer">
+                            <section key={interviewer.id} className="listedInterviewer">
                                 <img src={interviewer.pic} className="int-profile" alt="int-profile" />
                     
                                 <span className="int-detail">
@@ -67,7 +67,7 @@ export default function InterviewerList() {
                                 </span>
                                 <span className="int-detail">
                                     <p>Contacts</p>
-                                    <section className="contact">
+                                    <section className="listedContact">
                                         {interviewer.contacts.map(contact => (
                                             <p style={{ margin: "0 10px 0 0" }}> <i className={contact.icon} />{contact.value}</p>
                                         ))}

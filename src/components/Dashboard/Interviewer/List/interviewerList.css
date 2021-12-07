@@ -6,7 +6,7 @@
 }
 
 
-.interviewers{
+.listedInterviewers{
     width: 90%;
     height: auto;
     margin: 10vh auto;
@@ -17,7 +17,7 @@
     overflow-x: hidden;
 }
 
-.interviewer{
+.listedInterviewer{
     border: 1px solid lightgray;
     margin: 10px;
     display: flex;
@@ -51,11 +51,11 @@
 }
 
 .btn{background-color: royalblue;}
-.contact>p>i{font-size: 0.8rem;margin-left: 0;margin-right: 10px;}
+.listedContact>p>i{font-size: 0.8rem;margin-left: 0;margin-right: 10px;}
 
-.contact,.info{color: rgb(0, 55, 128);}
-.contact{width: auto;}
-.select{
+.listedContact,.info{color: rgb(0, 55, 128);}
+.listedContact{width: auto;}
+.listedContact{
     max-width: 30vw;
     overflow-x: hidden !important;
 }

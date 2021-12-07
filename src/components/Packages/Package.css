@@ -1,0 +1,15 @@
+.package-detail{
+    width: 95vw;
+    height: auto;
+    margin: 10vh auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pack{
+    text-align: left;
+    min-height: 30vh;
+    height: auto;
+}
+
+.pack>h2{color: rgb(32, 69, 179);}

@@ -1,0 +1,21 @@
+.dummy{
+    margin: 3vh 0 !important;
+}
+
+.dummy>.btn{
+    width: 10vw !important;
+}
+
+.dummyButtons{
+    display: block;
+}
+
+.dummybtn{
+    width: 80% !important;
+    margin: 2vh 0;
+    
+}
+
+.dummyToggle{
+    width: 10vw;
+}

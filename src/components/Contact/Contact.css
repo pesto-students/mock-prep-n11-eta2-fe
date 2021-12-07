@@ -1,0 +1,18 @@
+.queryForm{
+    width: 60%;
+    height: auto;
+    margin: 5vh auto;
+    border:1px solid lightgrey;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+
+.contact{
+    margin: 10vh 0;
+}
+
+.contact>h2{color:rgb(20, 58, 172)}
+.contact>p{color: grey;}

@@ -3,7 +3,7 @@ import { Form, Input, Button } from 'antd';
 import { Row, Col} from 'antd';
 import "./interviewerForm.css"
 
-export const InterviewerForm = ({onFinish,interviewer,about}) => {
+export const InterviewerForm = ({onFinish,interviewer,about,ButtonValue}) => {
 
     const { TextArea } = Input;
 
@@ -34,8 +34,8 @@ export const InterviewerForm = ({onFinish,interviewer,about}) => {
                 <Form.Item textAlign="center" >
                     <TextArea className="about" defaultValue={about} allowClear  label={"about"} name="about" rules={[{ required: false, message: 'Please input your username!' }]}  />
 
-                    <Button type="primary"  style={{marginLeft:"40%",width:"10vw !important"}} htmlType="submit">
-                        Update
+                    <Button type="primary"  style={{width:"10vw !important"}} htmlType="submit">
+                        {ButtonValue}
                     </Button>
                  </Form.Item>
             </Form>

@@ -87,7 +87,7 @@ export default function AdminDashboard() {
                         <Quiz />
                     </Route>
                 </Switch>
-            </Router>
+                </Router>
             </div>
         </div>
     )

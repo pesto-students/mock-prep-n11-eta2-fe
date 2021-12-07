@@ -1,12 +1,45 @@
 import 'antd/dist/antd.css';
 import './App.css';
-import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard";
+import Landing from "./components/landing/index"
+import Packages from './components/Packages/Packages';
+import JoinUs from './components/Join Us/JoinUs';
+import Contact from './components/Contact/Contact';
+import About from "./components/About/About"
+import SignIn from "./components/Join Us/SignIn/SignIn"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard"
 
 function App() {
+
   return (
     <div className="App">
-        <AdminDashboard />         
-    </div>
+        <Router>
+          <Switch>
+              <Route exact path="/">
+                  <Landing />
+              </Route>
+              <Route exact path="/about">
+                  <About />
+              </Route>
+              <Route exact path="/package">
+                <Packages />
+              </Route>
+              <Route exact path="/join">
+                <JoinUs />
+              </Route>
+              <Route exact path="/contact">
+                <Contact />
+            </Route>
+            <Route exact path="/signIn">
+                <SignIn />
+            </Route>
+             <Route exact path="/admin/dashboard">
+                <AdminDashboard />
+            </Route>
+          
+          </Switch>  
+       </Router>
+    </div>  
   );
 }
 

@@ -47,7 +47,7 @@ export default function StudentList() {
                     {studentList.length > 0 ?
                         <> {
                             studentList.map(student => (
-                                <section key={student.id} className="interviewer">
+                                <section key={student.id} className="listedInterviewer">
                                     <img src={student.pic} className="int-profile" alt="int-profile" />
                         
                                     <span className="int-detail">
@@ -69,7 +69,7 @@ export default function StudentList() {
                                     </span>
                                     <span className="int-detail">
                                         <p>Contacts</p>
-                                        <section className="contact">
+                                        <section className="listedContact">
                                             {student.contacts.map(contact => (
                                                 <p style={{ margin: "0 10px 0 0" }}> <i className={contact.icon} />{contact.value}</p>
                                             ))}

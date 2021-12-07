@@ -99,7 +99,7 @@ export const InterviewerProfile = () => {
 
                 </section>
             </div>
-            <FormModal data={<InterviewerForm onFinish={onFinish} about={interviewer.about} interviewer={interviewerForm} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+            <FormModal  data={<InterviewerForm ButtonValue="Update" onFinish={onFinish} about={interviewer.about} interviewer={interviewerForm} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>
     )
 }

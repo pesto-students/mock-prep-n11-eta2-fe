@@ -11,7 +11,7 @@ export default function SideNav({sideNavList, userName }) {
     return (
         <div>
         <div className="sidenav">
-            <img src={logoUrl} alt="logo" className="logo-img"></img>
+               <a onClick={() => {window.location.href="/"}}> <img src={logoUrl} alt="logo" className="logo-img"></img></a>
 
             <ul className="sidebar-list">
                     {sideNavList.map(list => (

@@ -1,5 +1,5 @@
 .JoinUsButton{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #1F4682;
@@ -8,9 +8,26 @@
     padding: 10px 0;
     font-size: 20px;
     margin-top: 5%;
-    cursor: pointer;
+    cursor: pointer; */
+
+    display: flex;
+    justify-content: center;
+    width: 22vw;
+    margin: 5vh auto;
+    padding: 1px;
+    border: 1px solid lightgrey;
+    align-items: center;    
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .JoinUsLogo{
     padding-right: 25px;
+   
+}
+
+.JoinUsLogo>.icon{ border-radius: 100% !important;}
+
+.JoinUsText{
+    align-items: center;
 }

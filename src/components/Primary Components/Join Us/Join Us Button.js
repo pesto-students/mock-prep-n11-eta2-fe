@@ -3,8 +3,8 @@ import { links } from '../../../constant/links';
 import './Join Us Button.css'
 
 const details = {
-    google : <GoogleOutlined style={{ fontSize: '40px', color: '#EA4335' }} />,
-    facebook : <FacebookFilled style={{ fontSize: '40px', color: '#3B5998' }} />
+    google : <GoogleOutlined className='icon' style={{ fontSize: '40px', color: '#EA4335' }} />,
+    facebook : <FacebookFilled className='icon' style={{ fontSize: '40px', color: '#3B5998' }} />
 }
 
 export default function JoinUsButton ({signin,type}) {
