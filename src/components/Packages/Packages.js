@@ -8,7 +8,7 @@ export default function Packages () {
             <MPHeader/>
             <section className="package-detail">
                 {packages.map(pack => (
-                  <section className="pack">
+                    <section key={ pack.id} className="pack">
                         <h2>{pack.title}</h2>
                         <p>{pack.description}</p>
                         <ul>

@@ -9,3 +9,15 @@
 .right-profile>.about{
     height: auto !important;
 }
+
+.int-profile-container{
+    height: 70vh !important;
+}
+
+.skill-chips{
+    margin: 4vh 0 !important;
+}
+
+.rating{
+    margin-top: 3vh !important;
+}

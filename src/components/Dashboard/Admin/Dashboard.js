@@ -44,8 +44,8 @@ export default function Dashboard() {
                     <DashboardChart className="totalEarningChart" options={totalSaleOption} data={totalSaleData} />
                 </section>
                 <section className="cust-review">
-                    {CustomerReviews.map(review => (
-                        <section key={review.id} className="review-container">
+                    {CustomerReviews.map((review,index) => (
+                        <section key={index} className="review-container">
                             <span style={{display:"flex"}}>
                                 <img src={review.profile} alt="profile" />
                                 <p>{review.name}<br/>{ review.comment}</p>

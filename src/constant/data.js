@@ -234,7 +234,7 @@ export const testimonials = [
         pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311008/Mockprep/Students/76_f4ukw5.jpg",
     },
     {
-        id: 1,
+        id: 2,
         name: "Gerald Rodriquez",
         company: "Facebook",
         review: "Overall, it was an amazing experience. I would highly recommend anybody who is sitting for their campus placements to at least get a mock interview session done. Trust me, it will do wonders.",
@@ -575,14 +575,14 @@ export const tableColumns = [
     {
       title: 'Id',
       dataIndex: 'id',
-        key: 'id',
+        key: 1,
         sorter: (a, b) => a.id - b.id,
         sortDirections: ['descend'],
     },
     {
       title: 'Topic',
       dataIndex: 'topic',
-        key: 'topic',
+        key: 2,
         sorter: (a, b) => a.topic.length - b.topic.length,
         sortDirections: ['descend'],
         filters: [
@@ -600,35 +600,35 @@ export const tableColumns = [
     {
       title: 'Interviewer',
       dataIndex: 'interviewer',
-        key: 'interviewer',
+        key: 3,
         sorter: (a, b) => a.interviewer.length - b.interviewer.length,
         sortDirections: ['descend'],
     },
     {
         title: 'Student',
         dataIndex: 'student',
-        key: 'student',
+        key: 4,
         sorter: (a, b) => a.student.length - b.student.length,
         sortDirections: ['descend'],
     },
     {
         title: 'Date (MM/DD.YY)',
         dataIndex: 'date',
-        key: 'date',
+        key: 5,
         sorter: (a, b) => a.date.length - b.date.length,
         sortDirections: ['descend'],
     },
     {
         title: 'Time (HH/MM)',
         dataIndex: 'time',
-        key: 'time',
+        key: 6,
         sorter: (a, b) => a.time.length - b.time.length,
         sortDirections: ['descend'],
     },
     {
         title: 'Status',
         dataIndex: 'status',
-        key: 'status',
+        key: 7,
         sorter: (a, b) => a.status.length - b.status.length,
         sortDirections: ['descend'],
         render: (tags,index) => {
@@ -646,7 +646,7 @@ export const tableColumns = [
 ];
 
 export const interviewerFilter = [
-    { id: 1, value: "Javascript" },
+    {id: 1, value: "Javascript" },
     {id:2,value:"HTML"},
     {id:3,value:"Bootstrap"},
     {id:4,value:"React"},
@@ -735,4 +735,48 @@ export const quizList = [
         count: 15,
         img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
     },
+]
+
+export const topics = [
+    {
+        id: 1,
+        title: "Git Basics",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 2,
+        title: "Javascript",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+    },
+    {
+        id: 3,
+        title: "Html",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
+    },
+    {
+        id: 5,
+        title: "Javascript",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+    },
+    {
+        id: 6,
+        title: "Html",
+        count: 15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
+    },
+]
+
+export const topicsFilter = [
+    {
+        id: 1,
+        value: "Git Basics"
+    },
+    {
+        id: 2,
+        value: "Html Basics"
+    }
 ]

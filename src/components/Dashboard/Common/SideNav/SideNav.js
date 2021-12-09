@@ -11,11 +11,11 @@ export default function SideNav({sideNavList, userName }) {
     return (
         <div>
         <div className="sidenav">
-               <a onClick={() => {window.location.href="/"}}> <img src={logoUrl} alt="logo" className="logo-img"></img></a>
+            <a href="http://localhost:8080/"> <img src={logoUrl} alt="logo" className="logo-img"></img></a>
 
             <ul className="sidebar-list">
-                    {sideNavList.map(list => (
-                        <Link key={list.id} to={list.url} className="sidebar-list-item">{list.icon}<p className="icon">{list.linkName}</p></Link>
+                    {sideNavList.map((list,index) => (
+                        <Link key={index} to={list.url} className="sidebar-list-item">{list.icon}<p className="icon">{list.linkName}</p></Link>
                     ))}
             </ul>
 

@@ -32,7 +32,10 @@ export const InterviewerProfile = () => {
     };
 
     const onFinish = (values) => {
-        interviewer.name = values.name;
+    
+
+        console.log(values)
+       setIsModalVisible(false);
     };
 
     let rating = [];
@@ -72,7 +75,7 @@ export const InterviewerProfile = () => {
                     <h3 className="heading">Interview Topics</h3>
                     <p class="skill-chips">
                       {interviewer.topics.map(topic => (<>
-                          <Tag className="chip2" closable color="warning" label={topic} >{topic}</Tag>
+                          <Tag className="chip2" key={topic.id} closable color="warning" label={topic} >{topic}</Tag>
                       </>
                       ))}
                     </p>
@@ -82,7 +85,7 @@ export const InterviewerProfile = () => {
                     <h3 className="heading" style={{ marginRight:"1vw" }}>Contact : </h3>
                     <span style={{display:"flex",margin:"1vh 0"}}>
                         {interviewer.contacts.map(contact => (<>
-                            <p style={{margin:"5px  2vw 5px 0"}}><i className={contact.icon}></i> { contact.value}</p>
+                            <p key={ contact.id} style={{margin:"5px  2vw 5px 0"}}><i className={contact.icon}></i> { contact.value}</p>
                         </>
                         ))}
                     </span>
@@ -90,16 +93,15 @@ export const InterviewerProfile = () => {
                     
                     <h3 className="heading">Student Rating (5) :
                         
-                        {rating.map(rate => (
-                            <>
-                                {rate}
+                        {rating.map((rate,index) => (
+                            <> <i key={index }>{rate}</i>
                             </>
                         ))}
                     </h3>
 
                 </section>
             </div>
-            <FormModal  data={<InterviewerForm ButtonValue="Update" onFinish={onFinish} about={interviewer.about} interviewer={interviewerForm} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+            <FormModal data={<InterviewerForm ButtonValue="Update" onFinish={onFinish} about={interviewer.about} interviewer={interviewerForm} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>
     )
 }

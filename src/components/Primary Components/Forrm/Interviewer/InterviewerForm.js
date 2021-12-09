@@ -17,15 +17,15 @@ export const InterviewerForm = ({onFinish,interviewer,about,ButtonValue}) => {
             <Form  name="control-hooks form" onFinish={onFinish} autoComplete="on">
                 <Row gutter={24}>
                     <Col span={12} style={{textAlign: 'left'}}>
-                        {firstCol.map(key => (
-                            <Form.Item className="form-input"  name={key}  label={key.toUpperCase()}  rules={[{ required: false, message: 'Please input your username!' }]}>
-                                <Input defaultValue={interviewer[key]}  ></Input>
+                        {firstCol.map((key,index) => (
+                            <Form.Item key={ index} className="form-input"  name={key}  label={key.toUpperCase()}  rules={[{ required: false, message: 'Please input your username!' }]}>
+                                <Input defaultValue={interviewer[key]}   ></Input>   
                             </Form.Item>
                         ))}
                     </Col>
                     <Col span={12} style={{textAlign: 'left'}}>
-                        {secondCol.map(key => (
-                            <Form.Item className="form-input"   label={key.toUpperCase()} name={key}  rules={[{ required: false, message: 'Please input your username!' }]}>
+                        {secondCol.map((key,index) => (
+                            <Form.Item key={ index} className="form-input"   label={key.toUpperCase()} name={key}  rules={[{ required: false, message: 'Please input your username!' }]}>
                                 <Input defaultValue={interviewer[key]} ></Input>
                             </Form.Item>
                         ))}

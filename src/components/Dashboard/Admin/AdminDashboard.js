@@ -9,6 +9,7 @@ import StudentList from '../Student/List/StudentList';
 import { StudentProfile } from '../Student/Profile/StudentProfile';
 import Resource from '../Common/Resource/Resource';
 import Quiz from "../Common/Quiz/Quiz"
+import Topics from '../Common/Topics/Topics';
 
 
 export default function AdminDashboard() {
@@ -85,6 +86,9 @@ export default function AdminDashboard() {
                     </Route>
                     <Route exact path="/admin/quiz-list">
                         <Quiz />
+                    </Route>
+                    <Route exact path="/admin/topics-list">
+                        <Topics />
                     </Route>
                 </Switch>
                 </Router>

@@ -1,5 +1,4 @@
 import { GoogleOutlined,FacebookFilled } from '@ant-design/icons';
-import { links } from '../../../constant/links';
 import './Join Us Button.css'
 
 const details = {

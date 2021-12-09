@@ -7,8 +7,8 @@ export default function Bundle ({id,title,description,details}){
             <h3 className="heading" style={{textAlign:"center"}}>{title}</h3>
             <p>{description}</p>
             <section className="pack-adv">
-            {details.map(det => (
-                <p><CheckOutlined style={{ fontSize: '12px', color: '#1F4682' }} />  {det}</p>
+            {details.map((det,index) => (
+                <p  key={index}><CheckOutlined style={{ fontSize: '12px', color: '#1F4682' }} />  {det}</p>
 
             ))}
             </section>

@@ -37,15 +37,17 @@ export default function QuizList() {
                 </section></>
             } />
             <section className="quiz-list">
-                {quizes.map(quiz => (
+                {quizes.map((quiz,index) => (
                     <Card
+                        
+                        key={index}
                         className="quiz-card"
                         hoverable
                         style={{ width: 240 }}
-                        cover={<img alt="image" className="quizBanner" src={quiz.img} />}
+                        cover={<img className="quizBanner" src={quiz.img} alt="pic" />}
                         >
                         <Meta title={quiz.title} description={"Number of Questions " + quiz.count} />
-                        <Button primary type="primary" style={{margin:"2vh 0"}}>Start Quiz</Button>
+                        <Button type="primary" style={{margin:"2vh 0"}}>Start Quiz</Button>
                      </Card>
                 ))}
             </section>   

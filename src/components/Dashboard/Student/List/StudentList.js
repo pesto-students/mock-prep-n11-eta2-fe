@@ -62,16 +62,16 @@ export default function StudentList() {
                                     <span className="int-detail skills">
                                         <p>Topics</p>
                                         <section className="skill">
-                                            {student.skills.map(skill => (
-                                                <Tag closable="true" color="success" style={{ margin: "0 10px 0 0" }}>{skill}</Tag>
+                                            {student.skills.map((skill,index) => (
+                                                <Tag closable="true" key={index} color="success" style={{ margin: "0 10px 0 0" }}>{skill}</Tag>
                                             ))}
                                         </section>
                                     </span>
                                     <span className="int-detail">
                                         <p>Contacts</p>
                                         <section className="listedContact">
-                                            {student.contacts.map(contact => (
-                                                <p style={{ margin: "0 10px 0 0" }}> <i className={contact.icon} />{contact.value}</p>
+                                            {student.contacts.map((contact,index) => (
+                                                <p key={index} style={{ margin: "0 10px 0 0" }}> <i className={contact.icon} />{contact.value}</p>
                                             ))}
                                         </section>
                                     </span>

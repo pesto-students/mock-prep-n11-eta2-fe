@@ -11,7 +11,7 @@ export default function JoinUs ({isSignUp}){
              <MPHeader/>
             <div className="Join">
             
-                <section class="signBox">
+                <section className="signBox">
                     <img src={logoUrl} alt="profile" />
                     <JoinUsButton className="sign-btn" signin={isSignUp} type={"facebook"}  />
                     <JoinUsButton className="sign-btn" sigin={isSignUp} type={"google"} />
@@ -23,8 +23,3 @@ export default function JoinUs ({isSignUp}){
             </>
     )
 }
-
-//  <h1> Logo </h1>
-{/* <JoinUsButton signin={isSignUp} type={"facebook"}  />
-<JoinUsButton sigin={isSignUp} type={"google"} />
-<p style={{marginTop: "50px", fontSize:"18px", color :"#4B4A4A"  }}>{isSignUp?`Already a member? Sign In`: `New to Mock Prep ? Sign Up`}</p> */}

@@ -7,7 +7,7 @@ export default function InterviewTable() {
     
     return (
         <div>
-            <Table dataSource={tableDataSource} columns={tableColumns} />;
+            <Table key={tableColumns}  dataSource={tableDataSource} columns={tableColumns} />;
         </div>
     )
 }

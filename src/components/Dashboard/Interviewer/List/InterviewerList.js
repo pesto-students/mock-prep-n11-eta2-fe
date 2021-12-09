@@ -60,16 +60,16 @@ export default function InterviewerList() {
                                 <span className="int-detail skills">
                                     <p>Skills</p>
                                     <section className="skill">
-                                        {interviewer.skills.map(skill => (
-                                            <Tag closable="true" color="success" style={{ margin: "0 10px 0 0" }}>{skill}</Tag>
+                                        {interviewer.skills.map((skill,index) => (
+                                            <Tag key={index} closable="true" color="success" style={{ margin: "0 10px 0 0" }}>{skill}</Tag>
                                         ))}
                                     </section>
                                 </span>
                                 <span className="int-detail">
                                     <p>Contacts</p>
                                     <section className="listedContact">
-                                        {interviewer.contacts.map(contact => (
-                                            <p style={{ margin: "0 10px 0 0" }}> <i className={contact.icon} />{contact.value}</p>
+                                        {interviewer.contacts.map((contact,index) => (
+                                            <p key={index} style={{ margin: "0 10px 0 0" }}> <i className={contact.icon} />{contact.value}</p>
                                         ))}
                                     </section>
                                 </span>

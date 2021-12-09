@@ -1,4 +1,3 @@
-import Title from 'antd/lib/skeleton/Title'
 import MPButton from '../Button/MP_Button'
 import { logoUrl } from '../../../constant/data'
 import './Header.css'

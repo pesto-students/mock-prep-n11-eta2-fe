@@ -1,5 +1,4 @@
 import React, { useState} from 'react'
-import JoinUs from '../JoinUs'
 import MPHeader from '../../Primary Components/Header/Header'
 import Footer from '../../Primary Components/Footer/Footer'
 import { logoUrl } from '../../../constant/data'

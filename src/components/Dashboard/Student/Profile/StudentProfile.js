@@ -15,6 +15,11 @@ export const StudentProfile = () => {
     const student = students[0];
     const [isModalVisible, setIsModalVisible] = useState(false);
 
+    const studentForm = JSON.parse(JSON.stringify(student));
+    delete studentForm.id
+    delete studentForm.about;
+    delete studentForm.contacts;
+
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -77,13 +82,13 @@ export const StudentProfile = () => {
                         </>
                         ))}
                     </span>
-                    <h3 className="heading">Student Rating:
+                    <h3 className="heading rating">Student Rating:
                         <Progress color="success" style={{width:"70%",margin:"0vw 2vw"}} percent={student.rating*10} status="active" />
                     </h3>
 
                 </section>  
             </div>
-            <FormModal data={<InterviewerForm interviewer={student} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+            <FormModal data={<InterviewerForm ButtonValue="Update" interviewer={studentForm} about={ student.about} />} isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>
     )
 }

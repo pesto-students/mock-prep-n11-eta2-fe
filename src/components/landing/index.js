@@ -13,7 +13,6 @@ import {
 } from "../../constant/data"
 import MPButton from '../Primary Components/Button/MP_Button'
 import InterviewerCard from '../Interviewer Card/Interviewer Card'
-import Packages from '../Packages/Packages'
 import DashBoardCard from "../Primary Components/Dashboard-Cards/Dash-Cards"
 import DashBoardChart from "../Primary Components/Dashboard-Charts/Bar-Charts"
 import PieChart from "../Primary Components/Dashboard-Charts/Pie-Chart"
@@ -35,14 +34,14 @@ export default function Landing() {
 
                     <section className="interviewer-list">
                         {interviewers.map(person => (
-                            <InterviewerCard id={person.id} name={person.name} pic={person.pic} designation={person.designation} company={person.company} />
+                            <InterviewerCard key={person.id} id={person.id} name={person.name} pic={person.pic} designation={person.designation} company={person.company} />
                         ))}
                     </section>
 
                     <h2 className="headline">Why MockPrep ?</h2>
                     <section className="sell-pointer">
                         {sellingPointers.map(pointer => (
-                            <section className="pointer" key={pointer.id}>
+                            <section  className="pointer" key={pointer.id}>
                                 <p className="point"> <i className={pointer.icon}></i>{pointer.text}</p>
                             </section>
                         ))}
@@ -50,8 +49,9 @@ export default function Landing() {
 
                     <h1 className="headline">Explore Our Packages </h1>
                     <section className="package-details">
-                        {packages.map(pack => (
-                        <Bundle id={pack.id} title={pack.title} description={pack.description} details={pack.details} />
+                    {packages.map((pack,index) => (
+                           
+                            <Bundle key={index} id={pack.id} title={pack.title} description={pack.description} details={pack.details} />
                         ))}
                     </section>
 
@@ -59,7 +59,7 @@ export default function Landing() {
                     <section className="landing-dashboard">
                         <section className="landing-cards">
                             {dashboardMetrics.map(metric => (
-                                <DashBoardCard id={metric.id} description={metric.description} value={metric.value} />
+                                <DashBoardCard key={metric.id} id={metric.id} description={metric.description} value={metric.value} />
                             ))}
                         </section>
                         <section className="landing-charts">

@@ -6,7 +6,7 @@ export default function Footer () {
     return (
         <footer>
             <section>
-                <img src={logoWhiteUrl}></img>
+                <img src={logoWhiteUrl} alt="Logo"></img>
                 <p>MockPrep allows you to engage with industry experts to get assistance with your interview preparation.</p>
             </section>
             <section>

@@ -1,11 +1,12 @@
 .header{
-    width: 81.5vw;
+    width: 80.5vw;
     display: flex;
     justify-content: space-between;
     padding: 20px;
     vertical-align: middle;
     border-bottom: 1px solid lightgray;
     align-items: center;
+    margin: 0;
 }
 
 .tab-title{display: flex;color: grey;vertical-align: middle;}
