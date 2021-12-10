@@ -2,7 +2,6 @@
     width: 98vw;
     height: auto;
     padding: 0;
-    /* padding: 3vw 5vh; */
     box-sizing: border-box;
     overflow-x: hidden;
     margin: 10vh 0;
@@ -17,7 +16,7 @@
     font-size: 0.8rem;
     margin: 25px;
 }
-
+/* 
 .interviewer-list{
     display: flex;
     flex-wrap: wrap;
@@ -60,7 +59,7 @@
     height: 10vh;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgb(22, 13, 102);
+    border: 1px solid lightgrey;
     margin: 20px 20px;
     color: rgb(31, 58, 139)
 }
@@ -72,18 +71,6 @@
 
 .far,.fas{margin: 0px 10px; font-size: 1.5rem;}
 
-.package-details
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 15% 3%;
-    padding : 2% 2%
-    
-}
-
-.learn{margin:20px auto ;width: 20vw;height: 7vh;background-color: white;border: 2px solid rgb(22, 45, 114);  color: rgb(31, 58, 139);}
-.learn:hover{background-color:  rgb(31, 58, 139);color:white}
 .heading{  color: rgb(31, 58, 139);}
 
 .testimonial{
@@ -110,24 +97,4 @@
     margin: 5vh auto;
 }
 
-.landing-cards{
-    display: flex;
-    justify-content: space-around;
-}
-
-.landing-charts{
-    margin: 15vh 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.landing-bar{
-    width: 60%;
-    height: 40vh;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.landing-doughnut{
-    width: 30%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
+ */

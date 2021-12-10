@@ -4,7 +4,6 @@ import { Group, Person, PersonAdd, Search } from "@material-ui/icons"
 export const logoUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1638635421/Mockprep/mp_Logo_n7fhp6.png"
 export const logoWhiteUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1638303030/Mockprep/mock_gozyss.png"
 
-
 export const interviewers = [
     {
         id: 1,
@@ -246,7 +245,8 @@ export const dashboardMetrics = [
     {
         id: 1,
         description: "Total Interviews",
-        value: 1232
+        value: 1232,
+        icon:"fa fa-person"
     },
     {
         id: 2,
@@ -268,7 +268,7 @@ export const onboardingMetrics = {
             label: "Students Onboarded",
             data: [120,103,300,140,400,340,200],
             borderColor: "#1300f4",
-            backgroundColor: "royalblue"
+            backgroundColor: "rgb(31, 58, 139)"
         },
         {
                 label: "Interviewers Onboarded",
@@ -371,7 +371,7 @@ export const trendingData = {
         label: "Trending topics",
         data: [40,32,12,16],
         borderColor: "#1300f4",
-        backgroundColor: ["royalblue","lightgreen","orange","purple"]
+        backgroundColor: ["rgb(31, 58, 139)","lightgrey","orangered","orange"]
     }]
 };
 
@@ -652,7 +652,6 @@ export const interviewerFilter = [
     {id:4,value:"React"},
     {id:5,value:"Mongo"},
 ]
-
 
 export const studentFilter = [
     {id: 1, value: "Javascript" },

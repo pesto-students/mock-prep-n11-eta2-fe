@@ -1,25 +1,29 @@
-.main-header{
-    width: 100vw;
+#main-header{
+    width: 100%;
     height: 10vh;
+    margin: auto;
     display: flex;
     justify-content: space-between;  
     border-bottom: 1px solid lightgrey;
 }
 
-.headerLogo{
+#headerLogo{
     width : 10%
 }
 
-.headerItems{
+#headerItems{
     width : 40%;
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
-    color : #1F4682;
     font-weight:light;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;  
 }
 
-.brand-logo{
+#brand-logo{
     width: 12vw;
+}
+
+.header-icons{
+    color : #1F4682;
 }

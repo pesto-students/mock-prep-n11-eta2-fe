@@ -1,20 +1,22 @@
-import MPButton from '../Button/MP_Button'
-import { logoUrl } from '../../../constant/data'
+import {lazy} from "react"
+import { Link } from "react-router-dom"
+import { logoUrl } from ''
 import './Header.css'
-import { Link} from "react-router-dom"
+
+const MPButton = lazy(() => import("../Button/MP_Button"))
 
 export default function Header ({isLoggedIn}){
     return(
-        <header className="main-header">
-            <div className="headerLogo">
-                <Link to="/"> <img src={logoUrl} alt="logo" className="brand-logo"></img></Link>
+        <header id="main-header">
+            <div id="headerLogo">
+                <a href="/" onClick={() => {window.location.reload();}}> <img src={logoUrl} alt="logo" id="brand-logo"></img></a>
             </div>
-            <div className="headerItems">
-                    <Link to="/about"> About </Link>
-                    <Link to="/package"> Package </Link> 
-                    <Link to="/join"> Join Us </Link> 
-                    <Link to="/contact"> Contact Us </Link> 
-                    <Link to="/join"><MPButton buttonType='primary' buttonName={isLoggedIn ? "Logout" : "Sign In"} isDisabled="false" size="middle" width={"100%"} /></Link>
+            <div id="headerItems">
+                    <Link className="header-icons" to="/about"> About </Link>
+                    <Link className="header-icons" to="/package"> Package </Link> 
+                    <Link className="header-icons" to="/join"> Join Us </Link> 
+                    <Link className="header-icons" to="/contact"> Contact Us </Link> 
+                    <Link className="header-icons" to="/join"><MPButton buttonType='primary' buttonName={isLoggedIn ? "Logout" : "Sign In"} isDisabled="false" size="middle" width={"100%"} /></Link>
             </div>
         </header>
     )

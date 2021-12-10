@@ -1,44 +1,24 @@
+import React,{ Suspense,lazy} from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'antd/dist/antd.css';
 import './App.css';
-import Landing from "./components/landing/index"
-import Packages from './components/Packages/Packages';
-import JoinUs from './components/Join Us/JoinUs';
-import Contact from './components/Contact/Contact';
-import About from "./components/About/About"
-import SignIn from "./components/Join Us/SignIn/SignIn"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard"
+
+const About = lazy(() => import("./components/About/About"));
+const Join = lazy(() => import("./components/Join Us/JoinUs"));
+const Landing = lazy(() => import("./components/landing/index"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
+const Package = lazy(() => import("./components/Packages/Packages"));
 
 function App() {
-
   return (
     <div className="App">
-        <Router>
+      {/* <Router>
+        <Suspense fallback={<p>Loading..</p>}>
           <Switch>
-              <Route exact path="/">
-                  <Landing />
-              </Route>
-              <Route exact path="/about">
-                  <About />
-              </Route>
-              <Route exact path="/package">
-                <Packages />
-              </Route>
-              <Route exact path="/join">
-                <JoinUs />
-              </Route>
-              <Route exact path="/contact">
-                <Contact />
-            </Route>
-            <Route exact path="/signIn">
-                <SignIn />
-            </Route>
-             <Route exact path="/admin/dashboard">
-                <AdminDashboard />
-            </Route>
-          
+            <Route exact path="/" component={Landing} />
           </Switch>  
-       </Router>
+      </Suspense>
+      </Router> */}
     </div>  
   );
 }
