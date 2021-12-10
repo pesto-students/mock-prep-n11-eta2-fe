@@ -1,0 +1,31 @@
+.landing-page{
+    width: 98vw;
+    height: auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 10vh 0;
+    text-align: center;
+}
+
+.headline{
+    color: rgb(31, 58, 139);
+}
+
+.light-pointers{
+    color:grey;
+    font-size: 0.8rem;
+    margin: 25px;
+}
+
+
+
+.heading{  color: rgb(31, 58, 139);}
+
+.landing-dashboard{
+    width: 65vw;
+    min-height: 60vh;
+    height: auto;
+    margin: 5vh auto;
+}
+ 

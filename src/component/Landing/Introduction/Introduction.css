@@ -1,0 +1,23 @@
+.interviewer-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+}
+.person{
+    width: 20vw;
+    height: auto;
+    margin: 20px 10px;
+}
+.profile{
+    width: 55%;
+    border-radius: 100%;
+    border: 1px solid rgb(31, 58, 139);
+    justify-content: center;
+}
+.int-details{
+    margin: 5px 0;
+    color:  rgb(31, 58, 139);
+}

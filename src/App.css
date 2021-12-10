@@ -10,3 +10,9 @@
   background: rgb(6, 30, 102);
   height: 3px;
 }
+
+#loader{
+  width: 100px;
+  height: 100px;
+  font-size: 1.3rem;
+}
