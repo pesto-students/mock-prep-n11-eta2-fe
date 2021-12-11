@@ -30,10 +30,10 @@
 
     .Join{height: auto !important;}
     .signBox{
-        width: 65vw !important;
-        padding-top: 5vh;
-        margin: 20vh auto !important;
+        width: 75vw !important;
+        padding-top: 2vh;
+        margin: 10vh auto !important;
     }
-    .signBox>img{width: 43vw;}
+    .signBox>img{width: 40vw;}
 }
 

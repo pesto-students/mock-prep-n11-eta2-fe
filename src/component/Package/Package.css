@@ -19,5 +19,6 @@
         display: grid;
         justify-content: left;
         padding: 3vw ;
+        height: auto !important;
     }
 }

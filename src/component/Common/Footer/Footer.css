@@ -40,8 +40,8 @@ footer>section>ul>li{
 }
 
 @media only screen  and (max-width:430px){
-    footer{display: block !important;margin: auto !important;text-align: left !important;padding: 15vw !important;}
+    footer{display: block !important;margin: auto !important;text-align: left !important;padding: 3vh 10vw !important;}
     footer>section>img{width:30vw !important;height: 10vh !important;margin-top: 5vh !important;}
-    footer>section>p{margin: 10vh 0 !important;}
-    footer>section>h2{margin-top: 5vh !important;}
+    footer>section>p{margin: 4vh 0 !important;}
+    footer>section>h2{margin-top: 3vh !important;}
 }

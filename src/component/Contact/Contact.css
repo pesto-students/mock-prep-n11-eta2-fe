@@ -24,6 +24,6 @@
 }
 
 @media only screen  and (max-width:768px){
-    .contact>p{width:70vw;margin:5vh auto;font-size: 0.8rem !important;}
-    .queryForm{width: 90vw !important;margin: auto;}
+    .contact>p{width:90vw;margin:5vh auto;font-size: 0.8rem !important;}
+    .queryForm{width: 90vw !important;margin: 2vh auto;}
 }
