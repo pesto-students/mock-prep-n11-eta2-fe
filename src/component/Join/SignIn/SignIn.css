@@ -49,7 +49,6 @@
     width: 10vw;
 }
 
-
 @media only screen and (max-width:768px) {
     .signInBox{
         width: 35vw !important;

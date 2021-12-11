@@ -10,6 +10,7 @@ const Package = lazy(() => import("component/Package/Package"))
 const Join = lazy(() => import("component/Join/Join"))
 const Contact = lazy(() => import("component/Contact/Contact"))
 const SignIn = lazy(() => import("component/Join/SignIn/SignIn"))
+const AdminDashboard = lazy(() => import("component/Dashboard/Admin/AdminDashboard"))
 
 const fallback = <div id="loader" style={{ margin: "40vh auto", width: "40vw", display: "flex" }}><span id="spin"><Spin size="large"></Spin>Loading...</span></div>
 
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/join" component={Join} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/signIn" component={SignIn} />
+            <Route exact path="/admin" component={AdminDashboard} />
           </Switch>  
       </Suspense>
       </Router>

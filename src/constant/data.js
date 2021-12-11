@@ -1,3 +1,6 @@
+import { UserIcon, SearchIcon, userAddIcon, calculatorIcon, LaptopIcon } from "constant/antIcons"
+import { Tag} from "antd"
+
 export const interviewers = [
     {
         id: 1,
@@ -232,10 +235,10 @@ export const earningChartData = {
     labels: ["Jan","Feb","Mar","April","May","Jun","July","Aug","Sept","Oct","Nov"],
     datasets: [
       {
-        label: "Earnings 2021",
+        label: "Month Wise Earnings 2021",
         data: [5809,12022,11022,10030,18633,10950,12109,12201,10291,12020,12829],
-        borderColor: "#1300f4",
-        backgroundColor: "skyblue"
+        borderColor: "rgb(13, 48, 153)",
+        backgroundColor: "rgb(13, 48, 153)"
       }
     ]
 };
@@ -306,3 +309,275 @@ export const trendingData = {
         backgroundColor: ["rgb(31, 58, 139)","lightgrey","orangered","orange"]
     }]
 };
+
+export const adminDashboardMetrics = [
+    {
+        id: 1,
+        description: "Total Interviews",
+        value: 1232,
+        icon: LaptopIcon 
+    },
+    {
+        id: 2,
+        description: "Total Students",
+        value: 4230,
+        icon:userAddIcon
+    },
+    {
+        id: 3,
+        description: "Total Interviewers",
+        value: 132,
+        icon:calculatorIcon
+    },
+    {
+        id: 4,
+        description: "Total Visitors",
+        value: 1232,
+        icon:SearchIcon
+    }
+
+]
+
+export const resourceChartData = {
+    datasets: [{
+        label: 'Income breakdown package wise',
+        data: [60, 22, 18],
+        borderColor: "#1300f4",
+        backgroundColor: [
+            'rgb(15, 114, 122)',
+            'orange',
+            'lightgrey'
+            
+          ],
+    }],
+
+    labels: [
+        'Mock Interview',
+        'Interview Bundle',
+        'Mentorship'
+    ]
+};
+
+export const resourceChartOptions = {
+    responsive: true,
+    cutout: 99,
+    plugins: {
+      legend: {
+            position: 'bottom',
+            labels: {
+                usePointStyle: true,
+              }
+        },
+        title: {
+            text: 'Package revenue breakup',
+            align: 'center',
+            offsetY: 330
+        },
+        plotOptions: {
+            pie: {
+              customScale: 0.75,
+              offsetY: -40
+            }
+         },
+    }
+}
+
+export const totalSaleData = {
+    labels: ["Jun","July","Aug","Sept","Oct","Nov"],
+    datasets: [
+      {
+        label: "Earnings 2021",
+        data: [5809,12022,11022,10030,12633,10950],
+        borderColor: "#1300f4",
+        backgroundColor: "royalblue"
+      }
+    ]
+};
+
+export const CustomerReviews = [
+    {
+        id: 1,
+        name: "Saif",
+        comment: "This is an dnkdnndkfnkdjnfnnjkndjkfnkjsn amazing website",
+        rating: 5,
+        profile:"https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg"
+    },
+    {
+        id: 2,
+        name: "Saif",
+        comment: "This is an dnkdnndkfnkdjnfnnjkndjkfnkjsn amazing website",
+        rating: 5,
+        profile:"https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg"
+    },
+    {
+        id: 3,
+        name: "Saif",
+        comment: "This is an dnkdnndkfnkdjnfnnjkndjkfnkjsn amazing website",
+        rating: 5,
+        profile:"https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg"
+    },
+    {
+        id: 4,
+        name: "Saif",
+        comment: "This is an dnkdnndkfnkdjnfnnjkndjkfnkjsn amazing website",
+        rating: 5,
+        profile:"https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg"
+    }
+]
+    
+export const tableDataSource = [
+    {
+      id: 1,
+      topic: 'JavaScript',
+      interviewer: "Ross Taylor",
+      student: 'Manish chaudary',
+      date: "10/12/21",
+      time: "15:00",
+      status:"Completed"
+    },
+    {
+        id: 2,
+        topic: 'HTML',
+        interviewer: "Mohammed Saif",
+        student: 'Manish chaudary',
+        date: "10/12/21",
+        time: "15:00",
+        status: "Completed"
+    },
+    {
+        id: 3,
+        topic: 'JavaScript',
+        interviewer: "Ross Taylor",
+        student: 'Manish chaudary',
+        date: "10/12/21",
+        time: "15:00",
+        status:"Completed"
+    },
+    {
+        id: 4,
+        topic: 'JavaScript',
+        interviewer: "Ross Taylor",
+        student: 'Manish chaudary',
+        date: "10/12/21",
+        time: "15:00",
+        status:"Completed"
+    },
+    {
+        id: 5,
+        topic: 'JavaScript',
+        interviewer: "Ross Taylor",
+        student: 'Manish chaudary',
+        date: "10/12/21",
+        time: "15:00",
+        status:"Pending"
+    },
+    {
+        id: 6,
+        topic: 'JavaScript',
+        interviewer: "Ross Taylor",
+        student: 'Manish chaudary',
+        date: "10/12/21",
+        time: "15:00",
+        status:"Completed"
+      }
+  
+];
+  
+export const tableColumns = [
+    {
+      title: 'Id',
+      dataIndex: 'id',
+        key: 1,
+        sorter: (a, b) => a.id - b.id,
+        sortDirections: ['descend'],
+    },
+    {
+      title: 'Topic',
+      dataIndex: 'topic',
+        key: 2,
+        sorter: (a, b) => a.topic.length - b.topic.length,
+        sortDirections: ['descend'],
+        filters: [
+            {
+              text: 'JavaScript',
+              value: 'JavaScript',
+            },
+            {
+              text: 'HTML',
+              value: 'HTML',
+            },],
+            onFilter: (value, record) => record.topic.indexOf(value) === 0,
+
+    },
+    {
+      title: 'Interviewer',
+      dataIndex: 'interviewer',
+        key: 3,
+        sorter: (a, b) => a.interviewer.length - b.interviewer.length,
+        sortDirections: ['descend'],
+    },
+    {
+        title: 'Student',
+        dataIndex: 'student',
+        key: 4,
+        sorter: (a, b) => a.student.length - b.student.length,
+        sortDirections: ['descend'],
+    },
+    {
+        title: 'Date (MM/DD.YY)',
+        dataIndex: 'date',
+        key: 5,
+        sorter: (a, b) => a.date.length - b.date.length,
+        sortDirections: ['descend'],
+    },
+    {
+        title: 'Time (HH/MM)',
+        dataIndex: 'time',
+        key: 6,
+        sorter: (a, b) => a.time.length - b.time.length,
+        sortDirections: ['descend'],
+    },
+    {
+        title: 'Status',
+        dataIndex: 'status',
+        key: 7,
+        sorter: (a, b) => a.status.length - b.status.length,
+        sortDirections: ['descend'],
+        render: (tags,index) => {
+            let color = "green";
+            if (tags !== "Completed") {
+                color="red"
+            }
+            return (
+                <Tag color={color} key={index}>
+                    {tags.toUpperCase()}
+                </Tag>
+            )
+        }
+    },
+];
+
+
+export const totalSaleOption = {
+    scales: {
+        x: {
+            grid: {
+                display: false,
+            },
+            ticks: {
+                display: true
+            }
+        },
+        y: {
+            grid: {
+                display: false
+            },
+            ticks: {
+                display: false
+            },
+            legend: {
+                display: false
+            }
+        }
+    }
+}

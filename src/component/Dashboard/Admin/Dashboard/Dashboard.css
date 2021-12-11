@@ -1,0 +1,12 @@
+.dashboard{
+    width: 82.5vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+}
+
+
+@media only screen and (max-width:430px){
+    .dashboard{width: 100vw;}
+}

@@ -1,0 +1,13 @@
+
+.interview-details{
+    width: 96%;
+    margin: auto;
+    padding: 0;
+    height: auto !important;
+}
+
+@media only screen and (max-width:430px) {
+    .interview-details{
+        display: none;
+    }
+}
