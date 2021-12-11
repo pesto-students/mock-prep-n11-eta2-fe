@@ -9,6 +9,7 @@ const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
 const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/JoinUsButton"))
 
+
 export default function SignIn() {
     
     return (
