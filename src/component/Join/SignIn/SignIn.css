@@ -60,9 +60,9 @@
 
     .Join{height: auto !important;}
     .signInBox{
-        width: 65vw !important;
+        width: 85vw !important;
         padding-top: 5vh;
-        margin: 20vh auto !important;
+        margin: 10vh auto !important;
     }
     .signInBox>img{width: 43vw;}
     .SignIn{height: auto !important;margin: 5vh auto;}

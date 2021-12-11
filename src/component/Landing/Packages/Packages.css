@@ -1,7 +1,6 @@
 .package{
     width: 20vw;
     height: auto;
-    min-height: 55vh;
     border: 1px solid lightgrey;
     background-color: white !important;
     padding: 5vh 2vw;
@@ -17,3 +16,20 @@
     justify-content: space-between;
 }
 
+.package>#mainButton{width: 100% !important;}
+
+@media only screen and (max-width: 430px) {
+
+    .package-details{
+        width:100vw !important;
+        margin: 2vh 0 !important;
+        display: grid !important;
+        justify-content: space-around !important;
+    }
+    .package{
+       width: 70vw !important; 
+       height: auto !important;
+       margin: 4vh auto !important;
+      
+    }
+}

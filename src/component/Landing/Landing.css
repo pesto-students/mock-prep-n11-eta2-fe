@@ -36,8 +36,8 @@
     .sell-pointer{width: 80vw !important;justify-content: space-around !important;}
     .pointer{min-height: 12vh !important;}
     .landing-dashboard{width: 70vw !important;justify-content: space-around !important;}
-    .package-details{width: 80% !important;justify-content: space-between !important;}
-    .package{width: 25vw !important;}
+    /* .package-details{width: 80% !important;justify-content: space-between !important;}
+    .package{width: 25vw !important;} */
     .testimonial{width: 80vw !important;}
 }
 
@@ -52,8 +52,8 @@
     .landing-dashboard{width: 80vw !important;justify-content: space-around !important;}
     .landing-cards>.card {height: auto;width: 25vw;}
     .landing-charts {margin: 8vh 0 !important;}
-    .package-details{width: 90% !important;justify-content: center !important;flex-wrap: wrap !important;}
-    .package{width: 40vw !important;margin: 4vh 2vw;}
+    /* .package-details{width: 90% !important;justify-content: center !important;flex-wrap: wrap !important;}
+    .package{width: 40vw !important;margin: 4vh 2vw;} */
     .testimonial{width: 90vw !important;}
     footer {padding: 2vh 2vw !important};
     .person{width: 25vw !important;}
@@ -70,9 +70,8 @@
    .headline{font-size: 1.3rem !important;}
    .headerItems{display: grid !important;width: 100vw !important;}
    .card,.landing-bar,.landing-doughnut{width: 80vw !important;margin: 3vh 2vw !important;}
-   .package,.landing-charts{width:65vw !important;}
-   .package>#mainButton{width: 60vw !important;}
-   .testimonial{display: grid !important;text-align: center !important;width: 70vw !important;height: auto !important;}
+   .landing-charts{width:65vw !important;}
+    .testimonial{display: grid !important;text-align: center !important;width: 70vw !important;height: auto !important;}
    .test-profile{margin: auto !important;}
    
 

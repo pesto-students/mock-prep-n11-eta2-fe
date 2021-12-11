@@ -33,6 +33,7 @@
         width: 75vw !important;
         padding-top: 2vh;
         margin: 10vh auto !important;
+        height: auto !important;
     }
     .signBox>img{width: 40vw;}
 }
