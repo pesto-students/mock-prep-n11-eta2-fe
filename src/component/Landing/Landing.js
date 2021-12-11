@@ -16,11 +16,11 @@ export default function Landing() {
            <Header/>
                 <div className="landing-page">
                     <Introduction />
-                    <Interviewer />
-                    <WhyMockPrep />
-                    <Analytics />
+                   <Interviewer />
+                     <WhyMockPrep />
+                     <Analytics />
                     <Packages />
-                    <Testimonials />
+                    /<Testimonials /> 
                 </div>
             <Footer/>
         </>

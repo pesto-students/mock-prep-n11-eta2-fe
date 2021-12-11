@@ -27,3 +27,8 @@
 .header-icons{
     color : #1F4682;
 }
+
+#toggle-btn{
+    margin: 3vh 2vw !important;
+    display:none ;
+}
