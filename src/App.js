@@ -5,6 +5,12 @@ import 'antd/dist/antd.css';
 import './App.css';
 
 const Landing = lazy(() => import("component/Landing/Landing"))
+const About = lazy(() => import("component/About/About"))
+const Package = lazy(() => import("component/Package/Package"))
+const Join = lazy(() => import("component/Join/Join"))
+const Contact = lazy(() => import("component/Contact/Contact"))
+const SignIn = lazy(() => import("component/Join/SignIn/SignIn"))
+
 const fallback = <div id="loader" style={{ margin: "40vh auto", width: "40vw", display: "flex" }}><span id="spin"><Spin size="large"></Spin>Loading...</span></div>
 
 function App() {
@@ -14,6 +20,11 @@ function App() {
         <Suspense fallback={fallback}>
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/package" component={Package} />
+            <Route exact path="/join" component={Join} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/signIn" component={SignIn} />
           </Switch>  
       </Suspense>
       </Router>

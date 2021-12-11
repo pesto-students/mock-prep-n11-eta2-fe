@@ -15,12 +15,12 @@ export default function Landing() {
         <>
            <Header/>
                 <div className="landing-page">
-                    <Introduction />
-                   <Interviewer />
-                     <WhyMockPrep />
-                     <Analytics />
-                    <Packages />
-                    /<Testimonials /> 
+                    <Introduction/>
+                    <Interviewer/>
+                    <WhyMockPrep/>
+                    <Analytics/>
+                    <Packages/>
+                    <Testimonials/> 
                 </div>
             <Footer/>
         </>

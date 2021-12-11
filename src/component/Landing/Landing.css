@@ -62,26 +62,18 @@
 
 /* Mobile */
 @media only screen and (max-width: 430px) {
-   #brand-logo{height: 9vh !important;width: 27vw!important;}
-   .header-icons{font-size: 15px !important}
-   #main-header{display: block !important;}
-   #headerItems{width: 100vw !important;display: flex;justify-content: right;flex-direction: row !important;}
-   #toggle-btn{display: block !important;}
-   #headerLogo{width:100vw !important;display: flex;justify-content: space-between;}
-   
+  
    .headline{font-size: 0.9rem !important;}
    .interviewer-list,.sell-pointer, .landing-charts,.landing-cards,.landing-bar,.landing-doughnut, .package-details{display: grid !important;}
    .person{width: 40vw !important;}
    .pointer{width: 80vw !important;}
    .headline{font-size: 1.3rem !important;}
+   .headerItems{display: grid !important;width: 100vw !important;}
    .card,.landing-bar,.landing-doughnut{width: 80vw !important;margin: 3vh 2vw !important;}
    .package,.landing-charts{width:65vw !important;}
    .package>#mainButton{width: 60vw !important;}
    .testimonial{display: grid !important;text-align: center !important;width: 70vw !important;height: auto !important;}
    .test-profile{margin: auto !important;}
-   footer{display: block !important;margin: auto !important;text-align: left !important;}
-   footer>section>img{width:30vw !important;height: 10vh !important;margin-top: 5vh !important;}
-   footer>section>p{margin: 10vh 0 !important;}
-   footer>section>h2{margin-top: 5vh !important;}
+   
 
 }

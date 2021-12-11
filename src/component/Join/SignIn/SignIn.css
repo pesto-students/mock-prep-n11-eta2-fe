@@ -1,0 +1,69 @@
+.signInBox{
+    width: 25vw;
+    height: auto;
+    margin: 10vh auto;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.SignIn{
+    height: 60vh;
+    widows: 100vw;
+}
+
+.JoinUsButton{
+    width:20vw !important;
+    padding: 0.5vw auto !important;
+}
+
+.signInBox>img{
+    width: 17vw;
+    height: 10vh;
+}
+
+.ant-tabs-nav-wrap{
+    width:20vw !important;
+    justify-content: center;
+}
+
+.dummy{
+    margin: 3vh 0 !important;
+}
+
+.dummy>.btn,.sign-btn{
+    width: 10vw !important;
+}
+
+.dummyButtons{
+    display: block;
+}
+
+.dummybtn{
+    width: 80% !important;
+    margin: 2vh 0;
+    
+}
+
+.dummyToggle{
+    width: 10vw;
+}
+
+
+@media only screen and (max-width:768px) {
+    .signInBox{
+        width: 35vw !important;
+    }
+}
+
+@media only screen and (max-width:430px) {
+
+    .Join{height: auto !important;}
+    .signInBox{
+        width: 65vw !important;
+        padding-top: 5vh;
+        margin: 20vh auto !important;
+    }
+    .signInBox>img{width: 43vw;}
+    .SignIn{height: auto !important;margin: 5vh auto;}
+}

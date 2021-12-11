@@ -32,3 +32,12 @@
     margin: 3vh 2vw !important;
     display:none ;
 }
+
+@media only screen  and (max-width:430px){
+    #brand-logo{height: 9vh !important;width: 27vw!important;}
+    .header-icons{font-size: 15px !important}
+    #main-header{display: block !important;}
+    #headerItems{width: 95vw !important;display: flex !important;justify-content: space-between !important;margin: 1vh auto !important;}
+    #toggle-btn{display: block !important;}
+    #headerLogo{width:100vw !important;display: flex !important;justify-content: space-between !important;} 
+}
