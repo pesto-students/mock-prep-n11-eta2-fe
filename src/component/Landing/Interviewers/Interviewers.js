@@ -1,5 +1,6 @@
 import React, { lazy } from 'react'
-import {interviewers} from "constant/data"
+import { interviewers } from "constant/data"
+import "./Interviewers.css"
 
 const InterviewerCard = lazy(() => import("component/Common/Cards/Interviewer/InterviewerCard"))
 

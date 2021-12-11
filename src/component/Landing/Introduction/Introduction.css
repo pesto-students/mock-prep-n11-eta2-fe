@@ -1,11 +1,4 @@
-.interviewer-list{
-    display: flex;
-    flex-wrap: wrap;
-    width: 70vw;
-    height: auto;
-    margin: auto;
-    justify-content: center;
-}
+
 .person{
     width: 20vw;
     height: auto;

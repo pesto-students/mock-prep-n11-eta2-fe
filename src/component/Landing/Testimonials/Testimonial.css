@@ -1,6 +1,6 @@
 .testimonial{
     width: 65vw;
-    height: 20vh;
+    height: auto;
     border: 1px solid rgb(31, 58, 139);
     border-radius: 10px;
     margin:30px auto;

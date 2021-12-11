@@ -1,5 +1,5 @@
 .landing-page{
-    width: 98vw;
+    width: 99vw;
     height: auto;
     padding: 0;
     box-sizing: border-box;
@@ -18,8 +18,6 @@
     margin: 25px;
 }
 
-
-
 .heading{  color: rgb(31, 58, 139);}
 
 .landing-dashboard{
@@ -29,3 +27,41 @@
     margin: 5vh auto;
 }
  
+
+/* Media Queries */
+/* Laptop */
+@media only screen and (max-width: 1080px) {
+    .interviewer-list{width:80vw !important;justify-content: space-around !important;}
+    .sell-pointer{width: 80vw !important;justify-content: space-around !important;}
+    .pointer{min-height: 12vh !important;}
+    .landing-dashboard{width: 70vw !important;justify-content: space-around !important;}
+    .package-details{width: 80% !important;justify-content: space-between !important;}
+    .package{width: 25vw !important;}
+    .testimonial{width: 80vw !important;}
+}
+
+/* Tab */
+@media only screen and (max-width: 768px) {
+    #headerLogo{width: 20vw !important;height: 100% !important;}
+    #brand-logo{width: 20vw !important;align-self: center !important;}
+    #headerItems{width: 80% !important;}
+   
+    .sell-pointer{width: 90vw !important;justify-content: space-around !important;}
+    .pointer{min-height: 12vh !important;width: 40vw !important;margin: 2vh 0 !important;}
+    .landing-dashboard{width: 80vw !important;justify-content: space-around !important;}
+    .landing-cards>.card {height: auto;width: 25vw;}
+    .landing-charts {margin: 8vh 0 !important;}
+    .package-details{width: 90% !important;justify-content: center !important;flex-wrap: wrap !important;}
+    .package{width: 40vw !important;margin: 4vh 2vw;}
+    .testimonial{width: 90vw !important;}
+    footer {padding: 2vh 2vw !important};
+    .person{width: 25vw !important;}
+    .person>.profile{width: 80% !important;}
+}
+
+/* Mobile */
+@media only screen and (max-width: 430px) {
+   #brand-logo{height: 8vh;width: 20vw!important;}
+   .header-icons{font-size: 15px !important}
+   #headerItem>#mainButton{width: 14vw !important;}
+}

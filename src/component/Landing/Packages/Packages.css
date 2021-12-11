@@ -1,6 +1,7 @@
 .package{
     width: 20vw;
-    height: 55vh;
+    height: auto;
+    min-height: 55vh;
     border: 1px solid lightgrey;
     background-color: white !important;
     padding: 5vh 2vw;
@@ -15,3 +16,4 @@
     display: flex;
     justify-content: space-between;
 }
+

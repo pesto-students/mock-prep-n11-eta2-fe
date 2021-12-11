@@ -1,4 +1,3 @@
-import { packages } from 'constant/data'
 import React,{lazy} from 'react'
 import "./Landing.css"
 
