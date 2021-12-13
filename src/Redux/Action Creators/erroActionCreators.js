@@ -1,7 +1,9 @@
 import errorAction from "../Actions/errorAction";
 
-export default errorActionCreator = {
+const errorActionCreator = {
     setError :  function(dispatch,error){
                     dispatch({type : errorAction.setError, error : error})
                 }
 }
+
+export default errorActionCreator
