@@ -1,3 +1,5 @@
-export default errorActions = {
+const errorActions = {
     setError : 'SET_ERROR'
 }
+
+export default errorActions
