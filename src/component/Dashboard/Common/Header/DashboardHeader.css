@@ -22,3 +22,7 @@
         width: 50vw !important;
     }
 }
+
+#toggleBtn{
+    display: none;
+}

@@ -30,9 +30,9 @@ export default function SignIn() {
                             <TabPane tab={<span>Dummy Login</span>} key="2">
                                
                                 <section className="dummyButtons">
-                                        <Link to="/admin/"><Button  className="dummybtn">Sign In as Student</Button></Link>
-                                        <Link to="/admin/"><Button  className="dummybtn">Sign In as Interviewer</Button></Link>
-                                        <Link to="/admin/"><Button  className="dummybtn">Sign In as Admin</Button></Link>
+                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Student</Button></Link>
+                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Interviewer</Button></Link>
+                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Admin</Button></Link>
                                         <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>   
                                 </section>
                             </TabPane>

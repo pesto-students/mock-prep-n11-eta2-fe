@@ -1,11 +1,8 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { logoUrl } from "constant/const_url"
 import { UserOutlined} from "@ant-design/icons"
 import "./SideNav.css"
-
-
-const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
 
 export default function SideNav({sideNavList, userName }) {
     

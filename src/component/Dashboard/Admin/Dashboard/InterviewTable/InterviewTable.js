@@ -8,6 +8,7 @@ export default function InterviewTable() {
     
     return (
         <div className='interview-details'>
+            <h2 className='headline'>Interview List for current month</h2>
             <Table key={tableColumns}  dataSource={tableDataSource} columns={tableColumns} />;
         </div>
     )

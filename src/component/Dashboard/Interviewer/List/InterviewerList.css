@@ -3,3 +3,76 @@
     position: absolute;
     right: 0;
 }
+
+.interviewersList{
+    width:70vw;
+    margin: 2vh 5vw ;  
+}
+
+.interviewerListCard{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.interviewerListCard>.person{
+    width: 15vw !important;
+    height: auto;
+    min-height: 45vh !important;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: 2vh 1vw;
+}
+
+.interviewerListCard>.person>.profile{
+    width: 70%;
+}
+
+
+#hoverCard{
+    display: none;
+}
+
+.interviewerListCard>.person:hover{
+   padding: 0;
+}
+
+
+.closeProfile{
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    
+}
+
+
+.interviewerListCard>.person:hover #hoverCard{
+    padding:0;
+    display: block;
+    background-color: rgb(41, 69, 121);
+    width: 15vw;
+    height: 48vh;
+    z-index: 9;
+    position: absolute;
+    opacity: 0.9;
+}
+
+
+.viewProfileBtn{
+    background-color: orange;
+    color: white;
+    margin: 2vh auto;
+}
+
+.addProfileBtn{
+    background-color: green;
+    color: white;
+    margin: 2vh auto;
+}
+
+.removeProfileBtn{
+    background-color: red;
+    color: white;
+    margin: 2vh auto;
+}

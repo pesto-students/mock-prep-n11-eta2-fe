@@ -31,10 +31,7 @@
 
 }
 
-.sidebar-list-item:focus{   
-    background-color: rgb(11, 33, 100);
-    color:white;
-    padding: 1vw;}
+
 
 .icon{
     margin: 0px 10px;

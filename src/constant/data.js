@@ -1,4 +1,4 @@
-import {  SearchIcon, userAddIcon, calculatorIcon, LaptopIcon, idCardIcon } from "constant/antIcons"
+import {  SearchIcon, userAddIcon, calculatorIcon, LaptopIcon } from "constant/antIcons"
 import { Tag} from "antd"
 
 export const interviewers = [
@@ -14,82 +14,43 @@ export const interviewers = [
         interviewCount: 12,
         experience:10,
         rating: 4,
-        onboarded:true,
+        onboarded: true,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
        
     },
     {
         id: 2,
-        name: "Edgar Richard",
-        designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306050/Mockprep/interviewers/54_bi3tvk.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
-        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
-        interviewCount: 12,
-        rating: 4,
-        onboarded:true,
-        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
-    },
-    {
-        id: 3,
-        name: "Merlyn joseph",
-        designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306044/Mockprep/interviewers/49_ugvvh6.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
-        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
-        interviewCount: 12,
-        rating: 4,
-        onboarded:false,
-        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
-    },
-    {
-        id: 4,
-        name: "Ross Taylor",
+        name: "Edgar Taylor",
         designation: "Software Architect",
         company: "Google",
         pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638305028/Mockprep/interviewers/18_ltcua7.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         interviewCount: 12,
+        experience:10,
         rating: 4,
+        onboarded: false,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
+       
     },
     {
-        id: 6,
-        name: "Merlyn joseph",
+        id: 3,
+        name: "Mr Taylor",
         designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306044/Mockprep/interviewers/49_ugvvh6.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
+        company: "Google",
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638305028/Mockprep/interviewers/18_ltcua7.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         interviewCount: 12,
+        experience:10,
         rating: 4,
+        onboarded: false,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
+       
     },
-    {
-        id: 5,
-        name: "Merlyn joseph",
-        designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306044/Mockprep/interviewers/49_ugvvh6.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
-        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
-        interviewCount: 12,
-        rating: 4,
-        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
-    }
+
 ]
 
 export const mockPrepAdvantages = [
