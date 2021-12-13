@@ -1,4 +1,4 @@
-import { UserIcon, SearchIcon, userAddIcon, calculatorIcon, LaptopIcon } from "constant/antIcons"
+import {  SearchIcon, userAddIcon, calculatorIcon, LaptopIcon, idCardIcon } from "constant/antIcons"
 import { Tag} from "antd"
 
 export const interviewers = [

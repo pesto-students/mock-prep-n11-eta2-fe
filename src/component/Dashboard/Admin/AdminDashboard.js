@@ -4,6 +4,7 @@ import { adminNavList} from "constant/navList"
 import "./AdminDashboard.css"
 
 const Dashboard = lazy(() => import("component/Dashboard/Admin/Dashboard/Dashboard"))
+const InterviewerList = lazy(() => import("component/Dashboard/Interviewer/List/InterviewerList"))
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 
 export default function AdminDashboard() {
@@ -14,9 +15,8 @@ export default function AdminDashboard() {
                 <Router>
                     <SideNav sideNavList={adminNavList} userName="Admin" />
                     <Switch>
-                        <Route exact path="/admin">
-                            <Dashboard />
-                        </Route>
+                        <Route exact path="/admin" component={Dashboard} />
+                        <Route exact path="/admin/interviewerList" component={InterviewerList} />
                     </Switch>
                 </Router>
             </div>

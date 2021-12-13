@@ -29,7 +29,6 @@
     margin: 5vh auto;
 }
  
-
 /* Laptop */
 @media only screen and (max-width: 1080px) {
     .interviewer-list{width:80vw !important;justify-content: space-around !important;}

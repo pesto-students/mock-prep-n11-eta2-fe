@@ -40,8 +40,15 @@
     margin: 0px 10px;
 }
 
+#logoutBtn{
+    width: 80%;
+    background-color: rgb(9, 30, 92);
+    color: white;
+    padding: 10px;
+    margin: 0 1vw;
+}
 .admin{
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
 
 .btnlogo{

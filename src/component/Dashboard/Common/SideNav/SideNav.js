@@ -25,7 +25,7 @@ export default function SideNav({sideNavList, userName }) {
                 <p className="icon">{userName}</p>
             </section>
             
-            <CommonButton type="button" isDisabled="false" id="logout-btn" width="98%" buttonName="Logout"/>
+            <button id="logoutBtn">Logout</button>
         </div>
         </div>
     )

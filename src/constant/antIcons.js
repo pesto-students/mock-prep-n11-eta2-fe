@@ -1,6 +1,6 @@
 import {
     DashboardTwoTone, UserOutlined, SearchOutlined, UsergroupAddOutlined,
-    UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined 
+    UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone 
 } from "@ant-design/icons";
 
 
@@ -11,4 +11,5 @@ export const userGroupIcon = <UsergroupAddOutlined />;
 export const userAddIcon = <UserAddOutlined />;
 export const calculatorIcon = <CalculatorOutlined />;
 export const LaptopIcon = <LaptopOutlined />;
-export const MenuIcon = <MenuUnfoldOutlined/>;
+export const MenuIcon = <MenuUnfoldOutlined />;
+export const idCardIcon = <IdcardTwoTone/>;
