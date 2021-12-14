@@ -17,7 +17,7 @@ export default function SideNav({sideNavList, userName }) {
                     ))} 
             </ul>
 
-            <section className="sidebar-list-item sidebar-list admin" >
+            <section className="sidebar-list-item sidebar-list admin" id="admin" >
                 <UserOutlined />
                 <p className="icon">{userName}</p>
             </section>

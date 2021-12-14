@@ -1,0 +1,24 @@
+.topics-container{
+    width: 82.5vw;
+    position: absolute;
+    right: 0;
+    justify-content: left;
+}
+
+.interviewersList{
+    width:70vw;
+    margin: 2vh 5vw ;  
+}
+
+.topics{
+    width: 96%;
+    margin: auto;
+    display: flex;
+    justify-content: left !important;
+    flex-wrap: wrap;
+}
+
+#addTopicBtn{
+
+    margin: 3vh 3vw ;
+}

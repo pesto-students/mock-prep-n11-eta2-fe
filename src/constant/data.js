@@ -585,10 +585,6 @@ export const totalSaleOption = {
     }
 }
 
-export const interviewerForm = {
-    
-}
-
 export const pricingData = [
     { 
         id: 1,
@@ -619,4 +615,78 @@ export const pricingData = [
         benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
     }
 
+]
+
+export const topics = [
+    {
+        id: 1,
+        title: "Git Basics",
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 2,
+        title: "Git Basics",
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 3,
+        title: "Git Basics",
+       
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 4,
+        title: "Git Basics",
+       
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    
+    
+]
+
+export const resources = [
+    {
+        id: 1,
+        title: "HTML",
+        description: "Basics of HTML",
+        url:"https://www.w3schools.com/html/",
+        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        topicId:1
+    },
+    {
+        id: 2,
+        title: "HTML",
+        description: "Basics of HTML",
+        url:"https://www.w3schools.com/html/",
+        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        topicId:1
+    },
+    {
+        id: 3,
+        title: "HTML",
+        description: "Basics of HTML",
+        url:"https://www.w3schools.com/html/",
+        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        topicId:1
+    }
+]
+
+export const quiz = [
+    {
+        id: 1,
+        title: "Git Basics",
+        count:15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 2,
+        title: "HTML",
+        count:20,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+   
 ]

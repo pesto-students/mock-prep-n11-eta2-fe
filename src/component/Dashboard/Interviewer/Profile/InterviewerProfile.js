@@ -48,7 +48,7 @@ export const InterviewerProfile = () => {
         interviewers.map(int => interviewer.id === int.id || int);
     }
 
-    const data = <Forms submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> 
+    const data = <Forms populate={true} submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> 
 
 
     let rating = [];

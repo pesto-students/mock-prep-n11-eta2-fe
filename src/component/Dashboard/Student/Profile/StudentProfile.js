@@ -109,7 +109,7 @@ export default function StudentProfile  () {
                     </section>
                 </div> 
             </div>
-            <Modals animation={false} data={ <Forms submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> } title="Update Interviewer" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+            <Modals animation={false} data={ <Forms populate={true} submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> } title="Update Interviewer" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
    
         </>
     )

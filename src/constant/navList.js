@@ -1,4 +1,4 @@
-import { DashboardIcon,idCardIcon, smileIcon} from "constant/antIcons"
+import { DashboardIcon,idCardIcon, smileIcon,DBIcon,resourceIcon} from "constant/antIcons"
 
 export const adminNavList = [
     {
@@ -18,6 +18,24 @@ export const adminNavList = [
         url:"/admin/studentList",
         linkName: "Student List",
         icon: smileIcon
+    },
+    {
+        id: 4,
+        url:"/admin/topicsList",
+        linkName: "Topics List",
+        icon: DBIcon
+    },
+    {
+        id: 5,
+        url:"/admin/resourceList",
+        linkName: "Resource List",
+        icon: resourceIcon
+    },
+    {
+        id: 6,
+        url:"/admin/quizList",
+        linkName: "Quiz List",
+        icon: resourceIcon
     }
     
 ]
@@ -36,4 +54,16 @@ export const studentFilter = [
     {id:3,value:"Bootstrap"},
     {id:4,value:"React"},
     {id:5,value:"Mongo"},
+]
+
+
+export const topicsFilter = [
+    {
+        id: 1,
+        value: "Git Basics"
+    },
+    {
+        id: 2,
+        value: "Html Basics"
+    }
 ]

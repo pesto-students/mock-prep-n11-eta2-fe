@@ -1,10 +1,10 @@
 import {
-    DashboardTwoTone, UserOutlined, SearchOutlined, UsergroupAddOutlined,
-    UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined,SmileTwoTone 
+     UserOutlined, SearchOutlined, UsergroupAddOutlined,HddTwoTone ,ReconciliationTwoTone ,TrophyTwoTone  , 
+    UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined,SmileTwoTone,AppstoreTwoTone 
 } from "@ant-design/icons";
 
 
-export const DashboardIcon = <DashboardTwoTone />;
+export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;
 export const SearchIcon = <SearchOutlined />;
 export const userGroupIcon = <UsergroupAddOutlined />;
@@ -15,3 +15,6 @@ export const MenuIcon = <MenuUnfoldOutlined />;
 export const idCardIcon = <IdcardTwoTone />;
 export const deleteIcon = <CloseOutlined style={{ color: "white", width: "100" }} />;
 export const smileIcon = <SmileTwoTone />;
+export const DBIcon = <HddTwoTone />;
+export const resourceIcon = <ReconciliationTwoTone />
+export const trophyIcon = <TrophyTwoTone />

@@ -3,7 +3,7 @@ import { Form, Input, Button, Row, Col } from 'antd';
 
 import "./Forms.css"
 
-export default function Forms  ({submitFunction,formFields,textArea,buttonValue}) {
+export default function Forms  ({submitFunction,formFields,textArea,buttonValue,populate}) {
 
     const { TextArea } = Input;
 
@@ -19,20 +19,20 @@ export default function Forms  ({submitFunction,formFields,textArea,buttonValue}
                     <Col span={12} style={{textAlign: 'left'}}>
                         {firstCol.map((key,index) => (
                             <Form.Item key={ index} className="form-input"  name={key}  label={key.toUpperCase()} >
-                                <Input defaultValue={formFields[key]}></Input>   
+                                {populate ? <Input defaultValue={formFields[key]}></Input> : <Input></Input>}
                             </Form.Item>
                         ))}
                     </Col>
                     <Col span={12} style={{textAlign: 'left'}}>
                         {secondCol.map((key,index) => (
                             <Form.Item key={ index} className="form-input"   label={key.toUpperCase()} name={key}  rules={[{ required: false, message: 'Please input your username!' }]}>
-                                <Input defaultValue={formFields[key]} ></Input>
+                               {populate ? <Input defaultValue={formFields[key]}></Input> : <Input></Input>}
                             </Form.Item>
                         ))}
                     </Col>
                 </Row>
                 <Form.Item  >
-                    <TextArea className="about" defaultValue={textArea} allowClear  label={"about"} name="about"  />
+                   {textArea ? <TextArea className="about" defaultValue={textArea} allowClear  label={"about"} name="about"  />: <></>} 
 
                     <Button type="primary"  style={{width:"10vw !important"}} htmlType="submit">
                         {buttonValue}

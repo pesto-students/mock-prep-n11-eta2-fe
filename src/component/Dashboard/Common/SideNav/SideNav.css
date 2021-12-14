@@ -44,8 +44,8 @@
     padding: 10px;
     margin: 0 1vw;
 }
-.admin{
-    margin-top: 2vh;
+#admin{
+    margin-top: 20vh !important;
 }
 
 .btnlogo{

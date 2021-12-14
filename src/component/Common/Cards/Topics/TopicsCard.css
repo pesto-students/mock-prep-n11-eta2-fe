@@ -1,0 +1,18 @@
+#topicCard{
+    width: 17vw;
+    height: auto;
+    margin: 2vh 1vw;
+    padding: 2vh 0;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+#cardImage{
+    width: 10vw;
+    margin: auto;
+    height: 10vw;
+}
+
+#topics-btn{
+    margin: 2vh;
+}
