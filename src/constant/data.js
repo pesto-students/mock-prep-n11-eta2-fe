@@ -588,3 +588,35 @@ export const totalSaleOption = {
 export const interviewerForm = {
     
 }
+
+export const pricingData = [
+    { 
+        id: 1,
+        title: "Basic",
+        price: "₹300",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
+    },
+    { 
+        id: 2,
+        title: "Standard",
+        price: "₹500",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
+    },
+    { 
+        id: 3,
+        title: "Premium",
+        price: "₹1000",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
+    },
+    { 
+        id: 4,
+        title: "Special",
+        price: "₹1500",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
+    }
+
+]

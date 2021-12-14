@@ -9,5 +9,3 @@ export default function InterviewerCard({ id, pic, name, designation}) {
         </section>
     )
 }
-
-

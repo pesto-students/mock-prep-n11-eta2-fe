@@ -1,5 +1,5 @@
 .package-detail{
-    width: 95vw;
+    width: 75vw;
     height: auto;
     margin: 10vh auto;
     display: flex;
@@ -13,6 +13,7 @@
 }
 
 .pack>h2{color: rgb(32, 69, 179);}
+.pricing-header{margin: 4vh auto;color: rgb(8, 25, 73);width: 30vw;text-align: center;}
 
 @media only screen and (max-width:430px) {
     .package-detail{

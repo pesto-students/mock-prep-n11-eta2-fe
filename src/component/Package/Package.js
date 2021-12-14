@@ -1,27 +1,23 @@
 import { lazy } from "react"
 import "./Package.css"
-import { packages } from "constant/data"
+import { pricingData } from "constant/data"
 
 const Header = lazy(() => import("component/Common/Header/Header"))
+const PackageCard = lazy(() => import("component/Common/Cards/Packages/PackageCard"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function Package () {
     return (<>
-            <Header/>
+        <Header />
+            <h2 className="pricing-header">Pricing and packages</h2>
             <section className="package-detail">
-                {packages.map(pack => (
-                    <section key={ pack.id} className="pack">
-                        <h2>{pack.title}</h2>
-                        <p>{pack.description}</p>
-                        <ul>
-                            {pack.details.map((detail,index) => (
-                                <li key={index}>{detail}</li>
-                            ))}
-                        </ul>
-                  </section>
+                {pricingData.map(pricing => (
+                    <PackageCard key={pricing.id} title={pricing.title} price={pricing.price} benefits={pricing.benefits}
+                        description={pricing.description}
+                    />
                 ))}
             </section>
-            <Footer/>
+        <Footer />
          </>
     )
 }
