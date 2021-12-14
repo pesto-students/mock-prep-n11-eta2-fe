@@ -8,6 +8,7 @@ import About from "./components/About/About"
 import SignIn from "./components/Join Us/SignIn/SignIn"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard"
+import InterviewerDashboard from './components/Dashboard/Interviewer/Dashboard/InterviewerDashboard';
 
 function App() {
 
@@ -36,7 +37,9 @@ function App() {
              <Route exact path="/admin/dashboard">
                 <AdminDashboard />
             </Route>
-          
+            <Route exact path="/interviewer/dashboard">
+                <InterviewerDashboard />
+            </Route>
           </Switch>  
        </Router>
     </div>  

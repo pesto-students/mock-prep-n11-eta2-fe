@@ -1,3 +1,3 @@
-export default errorActions = {
+export const errorActions = {
     setError : 'SET_ERROR'
 }
