@@ -3,6 +3,8 @@ import { dashbordNames, interviewerNavList } from '../../../../constant/sideNavL
 import Dashboard from '../../Admin/Dashboard'
 import SideNav from '../../Common/SideNav/SideNav'
 import { InterviewerProfile } from '../Profile/InterviewerProfile'
+import CalendlyApp from './Dashboard Components/Calendly/Calendly'
+import Earnings from './Dashboard Components/Earnings'
 
 
 export default function InterviewerDashboard () {
@@ -19,10 +21,10 @@ export default function InterviewerDashboard () {
                         <InterviewerProfile />
                     </Route>
                     <Route exact path="/interviewer/earnings">
-                        <div>This is Earnings Page</div>
+                        <Earnings />
                     </Route>
-                    <Route exact path="/interviewer/earnings">
-                        <div>This is Calendars Page</div>
+                    <Route exact path="/interviewer/calendar">
+                        <CalendlyApp />
                     </Route>
                     <Route exact path="/interviewer/interviews">
                         <div>This is Interviews Page</div>
