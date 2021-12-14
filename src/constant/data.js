@@ -53,6 +53,69 @@ export const interviewers = [
 
 ]
 
+export const students = [
+    {
+        id: 1,
+        name: "Ross Taylor",
+        designation: "ASE",
+        company: "Google",
+        degree:"Btech",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        listed: false,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    },
+    {
+        id: 2,
+        name: "Ross Taylor",
+        degree: "Software Architect",
+        designation: "Architect",
+        company: "Google",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        listed: true,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    },
+    {
+        id: 3,
+        name: "Ross Taylor",
+        degree: "Software Architect",
+        company: "Google",
+        designation: "Architect",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        listed: false,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    },
+    {
+        id: 4,
+        name: "Mohammed Taylor",
+        degree: "Software Architect",
+        company: "Google",
+        designation: "Architect",
+        experience:1,
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
+        skills: ["UI Design", "JavaScript","HTML","Bootstrap"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
+        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
+        rating: 8,
+        listed: true,
+        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
+    }
+]
+
 export const mockPrepAdvantages = [
     {
         id: 1,
@@ -391,10 +454,11 @@ export const tableDataSource = [
       id: 1,
       topic: 'JavaScript',
       interviewer: "Ross Taylor",
-      student: 'Manish chaudary',
+      student: 'Saif chaudary',
       date: "10/12/21",
       time: "15:00",
-      status:"Completed"
+        status: "Completed",
+        rowKey:1,
     },
     {
         id: 2,
@@ -403,7 +467,8 @@ export const tableDataSource = [
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status: "Completed"
+        status: "Completed",
+        rowKey:1,
     },
     {
         id: 3,
@@ -412,7 +477,8 @@ export const tableDataSource = [
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status:"Completed"
+        status: "Completed",
+        rowKey:1,
     },
     {
         id: 4,
@@ -421,7 +487,8 @@ export const tableDataSource = [
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status:"Completed"
+        status: "Completed",
+        rowKey:1,
     },
     {
         id: 5,
@@ -430,7 +497,8 @@ export const tableDataSource = [
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status:"Pending"
+        status: "Pending",
+        rowKey:1,
     },
     {
         id: 6,
@@ -439,7 +507,8 @@ export const tableDataSource = [
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status:"Completed"
+        status: "Completed",
+        rowKey:1,   
       }
   
 ];
@@ -448,13 +517,15 @@ export const tableColumns = [
     {
       title: 'Id',
       dataIndex: 'id',
+      rowKey:1,
         key: 1,
         sorter: (a, b) => a.id - b.id,
         sortDirections: ['descend'],
     },
     {
-      title: 'Topic',
-      dataIndex: 'topic',
+        title: 'Topic',
+        rowKey:2,
+        dataIndex: 'topic',
         key: 2,
         sorter: (a, b) => a.topic.length - b.topic.length,
         sortDirections: ['descend'],
@@ -476,6 +547,7 @@ export const tableColumns = [
         key: 3,
         sorter: (a, b) => a.interviewer.length - b.interviewer.length,
         sortDirections: ['descend'],
+        rowKey:3,
     },
     {
         title: 'Student',
@@ -483,6 +555,7 @@ export const tableColumns = [
         key: 4,
         sorter: (a, b) => a.student.length - b.student.length,
         sortDirections: ['descend'],
+        rowKey:4,
     },
     {
         title: 'Date (MM/DD.YY)',
@@ -490,6 +563,7 @@ export const tableColumns = [
         key: 5,
         sorter: (a, b) => a.date.length - b.date.length,
         sortDirections: ['descend'],
+        rowKey:5,
     },
     {
         title: 'Time (HH/MM)',
@@ -497,11 +571,13 @@ export const tableColumns = [
         key: 6,
         sorter: (a, b) => a.time.length - b.time.length,
         sortDirections: ['descend'],
+        rowKey:6,
     },
     {
         title: 'Status',
         dataIndex: 'status',
         key: 7,
+        rowKey:7,
         sorter: (a, b) => a.status.length - b.status.length,
         sortDirections: ['descend'],
         render: (tags,index) => {
@@ -517,7 +593,6 @@ export const tableColumns = [
         }
     },
 ];
-
 
 export const totalSaleOption = {
     scales: {
@@ -541,4 +616,8 @@ export const totalSaleOption = {
             }
         }
     }
+}
+
+export const interviewerForm = {
+    
 }

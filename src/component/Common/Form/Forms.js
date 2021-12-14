@@ -3,7 +3,7 @@ import { Form, Input, Button, Row, Col } from 'antd';
 
 import "./Forms.css"
 
-export const Forms = ({submitFunction,formFields,textArea,buttonValue}) => {
+export default function Forms  ({submitFunction,formFields,textArea,buttonValue}) {
 
     const { TextArea } = Input;
 
@@ -31,7 +31,7 @@ export const Forms = ({submitFunction,formFields,textArea,buttonValue}) => {
                         ))}
                     </Col>
                 </Row>
-                <Form.Item textAlign="center" >
+                <Form.Item  >
                     <TextArea className="about" defaultValue={textArea} allowClear  label={"about"} name="about"  />
 
                     <Button type="primary"  style={{width:"10vw !important"}} htmlType="submit">

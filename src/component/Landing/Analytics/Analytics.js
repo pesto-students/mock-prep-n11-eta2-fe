@@ -14,7 +14,7 @@ export default function Analytics ()  {
                     <section className="landing-dashboard">
                         <section className="landing-cards">
                             {dashboardMetrics.map(metric => (
-                                <DashBoardCard class="dashcard" key={metric.id} id={metric.id} description={metric.description} icon={<UserAddOutlined/>} value={metric.value} />
+                                <DashBoardCard className="dashcard" key={metric.id} id={metric.id} description={metric.description} icon={<UserAddOutlined/>} value={metric.value} />
                             ))}
                         </section>
                         <section className="landing-charts">

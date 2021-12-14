@@ -1,9 +1,10 @@
 import React,{ Suspense,lazy } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { InterviewerProfile } from "component/Dashboard/Interviewer/Profile/InterviewerProfile";
+import StudentProfile from "component/Dashboard/Student/Profile/StudentProfile";
 import { Spin } from "antd"
 import 'antd/dist/antd.css';
 import './App.css';
-import { InterviewerProfile } from "component/Dashboard/Interviewer/Profile/InterviewerProfile";
 
 const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
@@ -13,6 +14,8 @@ const Contact = lazy(() => import("component/Contact/Contact"))
 const SignIn = lazy(() => import("component/Join/SignIn/SignIn"))
 const Dashboard = lazy(() => import("component/Dashboard/Admin/Dashboard/Dashboard"))
 const InterviewerList = lazy(() => import("component/Dashboard/Interviewer/List/InterviewerList"))
+const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentList"))
+
 const fallback = <div id="loader" style={{ margin: "40vh auto", width: "40vw", display: "flex" }}><span id="spin"><Spin size="large"></Spin>Loading...</span></div>
 
 function App() {
@@ -30,6 +33,8 @@ function App() {
             <Route exact path="/admin/dashboard" component={Dashboard} />
             <Route exact path="/admin/interviewerList" component={InterviewerList} />
             <Route exact path="/admin/interviewerProfile/:profileId" component={InterviewerProfile} />
+            <Route exact path="/admin/studentList" component={StudentList} />
+            <Route exact path="/admin/studentProfile/:profileId" component={StudentProfile} />
           </Switch>  
       </Suspense>
       </Router>

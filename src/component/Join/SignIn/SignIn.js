@@ -17,7 +17,7 @@ export default function SignIn() {
             <Header />
             
             <div className="SignIn">
-                <section class="signInBox">
+                <section className="signInBox">
                     <img src={logoUrl} alt="profile" />
                     <Tabs defaultActiveKey="1">
                             <TabPane tab={<span>Login</span>} key="1">

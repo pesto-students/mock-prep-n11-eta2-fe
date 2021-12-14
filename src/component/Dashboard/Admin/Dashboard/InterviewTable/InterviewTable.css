@@ -11,3 +11,7 @@
         display: none;
     }
 }
+
+.interview-details>.header>.tab-options{
+    justify-content: right !important;
+}

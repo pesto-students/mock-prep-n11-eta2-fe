@@ -26,7 +26,7 @@ export default function Header({ isLoggedIn }) {
         <header id="main-header">
             <div id="headerLogo">
                 <Link to="/"> <img src={logoUrl} alt="logo" id="brand-logo"></img></Link>
-                <Link to="#" id="toggle-btn" onClick={() => {if (toggle) { setToggle(false) }else {setToggle(true) }}}><i className="fas fa-bars fa-2x"></i></Link>
+                <Link to="/" id="toggle-btn" onClick={() => {if (toggle) { setToggle(false) }else {setToggle(true) }}}><i className="fas fa-bars fa-2x"></i></Link>
             </div>
                {toggle ?
                  <div id="headerItems">            

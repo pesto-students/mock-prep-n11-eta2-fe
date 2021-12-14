@@ -5,13 +5,13 @@
  
  .form{
      width: 100%;
- 
+     height: 70vh;
  }
  
  .about{
      width: 100% !important;
-     height: 10vh !important;
-     margin: 2vh 0;
+     height: auto !important;
+     margin: 4vh 0;
  }
  
  .submit{

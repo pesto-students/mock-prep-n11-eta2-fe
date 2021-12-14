@@ -1,7 +1,7 @@
 import React, { lazy} from 'react'
 import { queryForm } from 'constant/formData'
 import './Contact.css' 
-import { Forms } from 'component/Common/Form/Forms'
+import Forms  from 'component/Common/Form/Forms'
 
 
 const Header = lazy(() => import("component/Common/Header/Header"))

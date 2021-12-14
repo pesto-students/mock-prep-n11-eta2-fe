@@ -1,6 +1,6 @@
 import {
     DashboardTwoTone, UserOutlined, SearchOutlined, UsergroupAddOutlined,
-    UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined 
+    UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined,SmileTwoTone 
 } from "@ant-design/icons";
 
 
@@ -13,4 +13,5 @@ export const calculatorIcon = <CalculatorOutlined />;
 export const LaptopIcon = <LaptopOutlined />;
 export const MenuIcon = <MenuUnfoldOutlined />;
 export const idCardIcon = <IdcardTwoTone />;
-export const deleteIcon = <CloseOutlined style={{color:"white",width:"100"}} />;
+export const deleteIcon = <CloseOutlined style={{ color: "white", width: "100" }} />;
+export const smileIcon = <SmileTwoTone />;

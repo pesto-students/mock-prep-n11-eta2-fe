@@ -1,4 +1,4 @@
-import { DashboardIcon,idCardIcon} from "constant/antIcons"
+import { DashboardIcon,idCardIcon, smileIcon} from "constant/antIcons"
 
 export const adminNavList = [
     {
@@ -12,6 +12,12 @@ export const adminNavList = [
         url:"/admin/interviewerList",
         linkName: "Interviewer List",
         icon: idCardIcon
+    },
+    {
+        id: 3,
+        url:"/admin/studentList",
+        linkName: "Student List",
+        icon: smileIcon
     }
     
 ]

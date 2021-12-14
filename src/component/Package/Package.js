@@ -14,8 +14,8 @@ export default function Package () {
                         <h2>{pack.title}</h2>
                         <p>{pack.description}</p>
                         <ul>
-                            {pack.details.map(detail => (
-                                <li key={detail}>{detail}</li>
+                            {pack.details.map((detail,index) => (
+                                <li key={index}>{detail}</li>
                             ))}
                         </ul>
                   </section>

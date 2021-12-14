@@ -24,7 +24,7 @@ export default function DashboardHeader({icon,title,rightComponent})  {
                 </section>
                 <section className="tab-options">
                     {rightComponent}
-                    <Link id="toggleBtn" onClick={sideNav}>{MenuIcon}</Link>
+                    <Link to="#" id="toggleBtn" onClick={sideNav}>{MenuIcon}</Link>
                 </section>
         </div>
     )

@@ -1,22 +1,22 @@
 import React, { useState,lazy} from 'react'
 import { Tag } from "antd"
-import { UserIcon } from 'constant/antIcons';
-import { interviewers } from 'constant/data';
+import { smileIcon } from 'constant/antIcons';
+import { students } from 'constant/data';
 import { useParams } from "react-router-dom";
 import { adminNavList } from "constant/navList"
-import "./InterviewerProfile.css"
-import Forms  from 'component/Common/Form/Forms';
+import Forms from 'component/Common/Form/Forms';
+import "./StudentProfile.css"
 
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))
 const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
 const Modals = lazy(() => import("component/Common/Modal/Modals"))
 
-export const InterviewerProfile = () => {
+export default function StudentProfile  () {
 
     const { profileId } = useParams();
     
-    let int  = interviewers.filter(e => e.id === Number(profileId))
+    let int  = students.filter(e => e.id === Number(profileId))
     let interviewer = int[0]
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -45,11 +45,8 @@ export const InterviewerProfile = () => {
             }
         }
 
-        interviewers.map(int => interviewer.id === int.id || int);
+        students.map(int => interviewer.id === int.id || int);
     }
-
-    const data = <Forms submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> 
-
 
     let rating = [];
     
@@ -59,9 +56,10 @@ export const InterviewerProfile = () => {
 
     return (
         <>
-        <SideNav sideNavList={adminNavList} userName="admin"></SideNav>
+        <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
             <div className="interviewer-profile">
-                <DashboardHeader title="Interviewer Profile" icon={UserIcon} rightComponent={<CommonButton buttonName="Update Details" onClick={showModal} isDisabled="false" style={{width:"100%",color:"white !important"}} />}  />
+                <DashboardHeader title="Student Profile" icon={smileIcon} rightComponent={<CommonButton buttonName="Update Details" onClick={showModal} isDisabled="false" style={{width:"100%",color:"white !important"}} />}  />
+
                 <div className="int-profile-container">
                     <section className="left-profile">
                         <img src={interviewer.pic} alt="profile"/>
@@ -83,9 +81,8 @@ export const InterviewerProfile = () => {
                         <p className="about">{interviewer.about}</p>
                         <h3 className="heading">Interview Topics</h3>
                         <section className="skill-chips">
-                            {interviewer.topics.map((topic, index) => (
-                            <section key={index}>
-                            <Tag className="chip2" key={index} closable color="warning" label={topic} >{topic}</Tag>
+                            {interviewer.topics.map((topic,index) => (<section key={index}>
+                            <Tag  className="chip2" closable color="warning" label={topic} >{topic}</Tag>
                         </section>
                         ))}
                         </section>
@@ -94,10 +91,10 @@ export const InterviewerProfile = () => {
                         <span style={{display:"flex"}}>
                         <h3 className="heading" style={{ marginRight:"1vw",marginTop:"4px" }}>Contact : </h3>
                         <span style={{display:"flex",margin:"1vh 0"}}>
-                                {interviewer.contacts.map((contact, index) => (
-                            <span key={index}>
-                                <p key={index} style={{margin:"5px  2vw 5px 0"}}><i className={contact.icon}></i> { contact.value}</p>
-                            </span>
+                                {interviewer.contacts.map(contact => (
+                            <section key={contact.id} >
+                                <p style={{margin:"5px  2vw 5px 0"}}><i className={contact.icon}></i> { contact.value}</p>
+                            </section>
                             ))}
                         </span>
                         </span>
@@ -105,16 +102,15 @@ export const InterviewerProfile = () => {
                         <h3 className="heading">Student Rating (5) :
                             
                             {rating.map((rate,index) => (
-                                <i key={index}>{rate}</i>
+                                <i key={index }>{rate}</i>
                             ))}
                         </h3>
 
                     </section>
-                </div>
+                </div> 
             </div>
-      
-            <Modals animation={false} data={data} title="Update Interviewer" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
-         
+            <Modals animation={false} data={ <Forms submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> } title="Update Interviewer" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+   
         </>
     )
 }

@@ -1,14 +1,16 @@
 .queryForm{
     width: 60vw;
+    min-height: 40vh;
     height: auto;
     margin: 5vh auto;
     border:1px solid lightgrey;
-    padding: 15px;
+    padding: 5vh 15px;
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     text-align: center;
 
 }
+
 
 .contact{
     margin: 10vh 0;
