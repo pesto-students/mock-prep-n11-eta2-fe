@@ -21,8 +21,8 @@ export default function InterviewTable() {
    
     return (
         <div className='interview-details'>
-             <DashboardHeader title="Interview List for Current Month" rightComponent={search}  />
-              <Table key={tableColumns}  dataSource={tableData} columns={tableColumns} />;
+              <DashboardHeader title="Interview List for Current Month" rightComponent={search}  />
+              <Table dataSource={tableData} columns={tableColumns} />;
         </div>
     )
 }

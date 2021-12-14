@@ -458,7 +458,7 @@ export const tableDataSource = [
       date: "10/12/21",
       time: "15:00",
         status: "Completed",
-        rowKey:1,
+        key:1,
     },
     {
         id: 2,
@@ -468,63 +468,30 @@ export const tableDataSource = [
         date: "10/12/21",
         time: "15:00",
         status: "Completed",
-        rowKey:1,
+        key:2,
     },
     {
         id: 3,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
+        topic: 'HTML',
+        interviewer: "Mohammed Saif",
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
         status: "Completed",
-        rowKey:1,
-    },
-    {
-        id: 4,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
-        student: 'Manish chaudary',
-        date: "10/12/21",
-        time: "15:00",
-        status: "Completed",
-        rowKey:1,
-    },
-    {
-        id: 5,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
-        student: 'Manish chaudary',
-        date: "10/12/21",
-        time: "15:00",
-        status: "Pending",
-        rowKey:1,
-    },
-    {
-        id: 6,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
-        student: 'Manish chaudary',
-        date: "10/12/21",
-        time: "15:00",
-        status: "Completed",
-        rowKey:1,   
-      }
-  
+        key:3,
+    }
 ];
   
 export const tableColumns = [
     {
       title: 'Id',
       dataIndex: 'id',
-      rowKey:1,
         key: 1,
         sorter: (a, b) => a.id - b.id,
         sortDirections: ['descend'],
     },
     {
         title: 'Topic',
-        rowKey:2,
         dataIndex: 'topic',
         key: 2,
         sorter: (a, b) => a.topic.length - b.topic.length,
