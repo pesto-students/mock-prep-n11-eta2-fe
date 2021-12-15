@@ -56,7 +56,6 @@ export const studentFilter = [
     {id:5,value:"Mongo"},
 ]
 
-
 export const topicsFilter = [
     {
         id: 1,
