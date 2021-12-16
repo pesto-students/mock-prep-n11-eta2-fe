@@ -1,13 +1,16 @@
-import React, { lazy,useState} from 'react'
+import React, { lazy,useState,useEffect} from 'react'
 import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
 import { resourceIcon } from "constant/antIcons"
 import { Button } from 'antd'
 import { resources } from 'constant/data'
-import { topicsFilter } from 'constant/navList'
+import { fallback, topicsFilter } from 'constant/navList'
 import { adminNavList } from 'constant/navList'
 import { resourceForm } from 'constant/formData'
 import Forms  from 'component/Common/Form/Forms';
+import { getData } from 'api/Fetch'
+import { getResources, insertResource } from 'constant/apiUrl'
+import { insertData } from 'api/Insert'
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const ResourceCard = lazy(() => import('component/Common/Cards/Resource/ResouceCard'))
@@ -15,10 +18,21 @@ const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/Das
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const Modals = lazy(() => import("component/Common/Modal/Modals"))
 
-
 export default function ResourceList() {
     
-    let [topicsList, setInterviewer] = useState(resources);
+    let [topics, setInterviewer] = useState([]);
+
+    let [topicsList, setInterviewerList] = useState([]);
+    
+
+    useEffect(() => { 
+        const getInterviewer = async () => { 
+            const interviewer = await getData(getResources);
+           
+            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
+        }
+        getInterviewer()
+    },[])
 
     const { Search } = Input;
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -41,6 +55,9 @@ export default function ResourceList() {
         let filtered = resources.filter(val => val.title.includes(value) );
        
         setInterviewer(filtered)
+        if (value === "") { 
+            setInterviewer(topics)
+        }
     }; 
 
     const showModal = () => {
@@ -56,16 +73,8 @@ export default function ResourceList() {
     };
 
     const submit = (value) => { 
-  
-        let ran = Math.floor(Math.random() * 100)
-        
-        resources.forEach(topic => { 
-            if (topic.id !== ran) { 
-                value.id = ran;
-            }
-        })
-        resources.push(value)
- 
+        console.log(value)
+        insertData(insertResource,value)
     }
 
     const data = <Forms populate={false} submitFunction={submit} formFields={interviewerForm} buttonValue="Add Topic" /> 
@@ -79,12 +88,16 @@ export default function ResourceList() {
             <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
             <section className='topics-container'>
                 <DashboardHeader title="Resources List" icon={resourceIcon} rightComponent={search} />
-                    <Button onClick={showModal} id="addTopicBtn" type="primary">Add Resource</Button>
+                <Button onClick={showModal} id="addTopicBtn" type="primary">Add Resource</Button>
+                {topicsList.length > 0 ?
                     <section className="topics">
-                        {topicsList.map((res,index) => (
-                            <ResourceCard key={index} description={res.description} pic={res.img} url={res.url} title={res.title}  />
-                        ))}      
+                        {topicsList.map((res, index) => (
+                            <ResourceCard key={index} description={res.description} image={res.image} url={res.url} title={res.title} />
+                        ))}
                     </section>
+                    :
+                    <section>{fallback}</section>
+                }
             </section>
             <Modals animation={false} data={data} title="Add Resource" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>

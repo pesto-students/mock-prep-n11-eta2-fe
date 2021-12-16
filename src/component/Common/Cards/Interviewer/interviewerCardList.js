@@ -1,7 +1,7 @@
 import "./InterviewerCard.css"
 import { Tag} from "antd"
 
-export default function InterviewerCardList({ id, pic, name, designation, company,skills,delIcon,btn1,btn2 }) {
+export default function InterviewerCardList({ id, image, name, designation, company,skills,delIcon,btn1,btn2,degree }) {
     return (
         <section className="person" key={id}>
                 <section id="hoverCard">
@@ -11,9 +11,10 @@ export default function InterviewerCardList({ id, pic, name, designation, compan
                         { btn2}
                     </span>
                 </section>
-                <img alt="int-profile" src={pic} className="profile"  />
+                <img alt="int-profile" src={image} className="profile"  />
                 <p className="int-details">{name}</p>
-                <p className="int-details">{designation},</p>
+           
+                { degree?  <p className="int-details">{degree},</p>: <p className="int-details">{designation},</p>}
                 <p className="int-details">{company}</p>
                 {skills.map((skill,index) => (
                     <Tag key={index} style={{margin:"4px 5px"}} color="success">{skill}</Tag>

@@ -11,6 +11,7 @@ const Testimonials = lazy(() => import("component/Landing/Testimonials/Testimoni
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function Landing() {
+
     return (
         <>
            <Header/>

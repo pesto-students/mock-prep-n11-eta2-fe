@@ -2,7 +2,7 @@ import React,{ Suspense,lazy } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { InterviewerProfile } from "component/Dashboard/Interviewer/Profile/InterviewerProfile";
 import StudentProfile from "component/Dashboard/Student/Profile/StudentProfile";
-import { Spin } from "antd"
+import { fallback } from "constant/navList";
 import 'antd/dist/antd.css';
 import './App.css';
 
@@ -20,7 +20,6 @@ const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/Reso
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
 
 
-const fallback = <div id="loader" style={{ margin: "40vh auto", width: "40vw", display: "flex" }}><span id="spin"><Spin size="large"></Spin>Loading...</span></div>
 
 function App() {
   return (

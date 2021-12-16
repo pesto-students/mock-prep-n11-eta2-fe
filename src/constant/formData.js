@@ -9,13 +9,13 @@ export const topicForm = {
     id: 1,
     title: "Git Basics",
     description:"Basics of git",
-    img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    image:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
 }
 
 export const resourceForm = {
         title: "HTML",
         description: "Basics of HTML",
         url:"https://www.w3schools.com/html/",
-        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        image: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
         topicId:1
 }
