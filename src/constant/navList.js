@@ -1,4 +1,5 @@
-import { DashboardIcon,idCardIcon, smileIcon,DBIcon,resourceIcon} from "constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "constant/antIcons"
+import { Spin } from "antd"
 
 export const adminNavList = [
     {
@@ -66,3 +67,5 @@ export const topicsFilter = [
         value: "Html Basics"
     }
 ]
+
+export const fallback = <div id="loader" style={{ margin: "40vh auto", width: "40vw", display: "flex" }}><span id="spin"><Spin size="large"></Spin>Loading...</span></div>

@@ -1,15 +1,16 @@
 import React, {lazy,useState} from 'react'
 import 'antd/dist/antd.css';
 import { Table,Input } from 'antd';
-import { tableDataSource, tableColumns } from 'constant/data';
+import { tableColumns } from 'constant/data';
 import "./InterviewTable.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-export default function InterviewTable() {
+
+export default function InterviewTable({data}) {
 
     const { Search } = Input;
 
-    let [tableData, setTableData] = useState(tableDataSource);
+    let [tableData, setTableData] = useState(data);
 
     const onSearch = (value) => {
        

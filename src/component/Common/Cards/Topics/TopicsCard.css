@@ -16,3 +16,13 @@
 #topics-btn{
     margin: 2vh;
 }
+
+
+
+#btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin-top: 15vh;
+}

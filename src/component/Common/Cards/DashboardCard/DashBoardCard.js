@@ -5,7 +5,7 @@ export default function DashBoardCard ({id,description,value,icon}){
         <section className="card" key={id}>
             <p>{description}</p>
             <section className="bottom">
-                <p>{value}</p><i>{icon}</i>
+                <p>{value}</p>{icon}
             </section>
         </section>
     )   

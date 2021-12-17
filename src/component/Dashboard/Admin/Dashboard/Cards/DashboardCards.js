@@ -1,15 +1,16 @@
 import React, {lazy} from 'react'
-import { adminDashboardMetrics } from 'constant/data'
 import "./DashboardCards.css"
     
 const DashboardCard = lazy(() => import("component/Common/Cards/DashboardCard/DashBoardCard"))
 
-export default function DashboardCards() {
+export default function DashboardCards({ data }) {
+
+
     return (
         <div>
              <section className="admin-dashboard-cards">
-                {adminDashboardMetrics.map((metric,index) => (
-                    <DashboardCard key={index} id={metric.id} description={metric.description} value={metric.value} icon={ metric.icon} />
+                {data.map((metric,index) => (
+                    <DashboardCard key={index} id={metric.id} description={metric.description} value={metric.value} icon={<i className={metric.icon}></i>} />
                 )) }
             </section>
         </div>
