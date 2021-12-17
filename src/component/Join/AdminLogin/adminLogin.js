@@ -1,7 +1,7 @@
 import './adminLogin.css'
 import { Button, Input, Space } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone,LoginOutlined } from '@ant-design/icons';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {useDispatch, useSelector } from 'react-redux'
 import authActionCreators from '../../../Redux/Action Creators/authActionCreators';
 import { Alert } from 'antd';

@@ -18,8 +18,8 @@ const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentL
 const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
-const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
-const AdminLogin = lazy(() => import("./components/Join Us/Admin Login/adminLogin"))
+const AdminLogin = lazy(() => import("./component/Join/AdminLogin/adminLogin"))
+import InterviewerDashboard from './components/Dashboard/Interviewer/Dashboard/InterviewerDashboard';
 
 function App() {
   return (
@@ -33,10 +33,11 @@ function App() {
             <Route exact path="/join" component={Join} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/signIn" component={SignIn} />
-            <Route exact path="/admin/login" component={AdminLogin}>
+            <Route exact path="/admin/login" component={AdminLogin} />
             <Route exact path="/admin/dashboard" component={Dashboard} />
             <Route exact path="/admin/interviewerList" component={InterviewerList} />
-            <Route exact path="/admin/interviewerProfile/:profileId" component={InterviewerProfile} />
+            <Route exact path="/interviewer/dashboard" component={InterviewerList} />
+            <Route exact path="/admin/interviewerProfile/:profileId" component={InterviewerDashboard} />
             <Route exact path="/admin/studentList" component={StudentList} />
             <Route exact path="/admin/studentProfile/:profileId" component={StudentProfile} />
             <Route exact path="/admin/topicsList" component={TopicsList} />
