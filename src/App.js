@@ -6,6 +6,16 @@ import { fallback } from "constant/navList";
 import 'antd/dist/antd.css';
 import './App.css';
 
+import Landing from "./components/landing/index"
+import Packages from './components/Packages/Packages';
+import JoinUs from './components/Join Us/JoinUs';
+import Contact from './components/Contact/Contact';
+import About from "./components/About/About"
+import SignIn from "./components/Join Us/SignIn/SignIn"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard"
+import InterviewerDashboard from './components/Dashboard/Interviewer/Dashboard/InterviewerDashboard';
+
 const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
 const Package = lazy(() => import("component/Package/Package"))
@@ -46,6 +56,10 @@ function App() {
             <Route exact path="/interviewer/dashboard">
                 <InterviewerDashboard />
             </Route>
+            <Route exact path="/interviewer/dashboard">
+                <InterviewerDashboard />
+            </Route>
+
           </Switch>  
         </Suspense>
       </Router>
