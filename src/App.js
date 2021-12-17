@@ -43,6 +43,9 @@ function App() {
             <Route exact path="/admin/topicsList" component={TopicsList} />
             <Route exact path="/admin/resourceList/:resouceId?" component={ResourceList} />
             <Route exact path="/admin/quizList/:topicId?" component={QuizList} />
+            <Route exact path="/interviewer/dashboard">
+                <InterviewerDashboard />
+            </Route>
           </Switch>  
         </Suspense>
       </Router>
