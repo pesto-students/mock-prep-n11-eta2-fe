@@ -1,20 +1,9 @@
 import React,{ Suspense,lazy } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { InterviewerProfile } from "component/Dashboard/Interviewer/Profile/InterviewerProfile";
 import StudentProfile from "component/Dashboard/Student/Profile/StudentProfile";
 import { fallback } from "constant/navList";
 import 'antd/dist/antd.css';
 import './App.css';
-
-import Landing from "./components/landing/index"
-import Packages from './components/Packages/Packages';
-import JoinUs from './components/Join Us/JoinUs';
-import Contact from './components/Contact/Contact';
-import About from "./components/About/About"
-import SignIn from "./components/Join Us/SignIn/SignIn"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard"
-import InterviewerDashboard from './components/Dashboard/Interviewer/Dashboard/InterviewerDashboard';
 
 const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
@@ -28,8 +17,8 @@ const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentL
 const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
-const AdminLogin = lazy(() => import("./component/Join/AdminLogin/adminLogin"))
-import InterviewerDashboard from './components/Dashboard/Interviewer/Dashboard/InterviewerDashboard';
+const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
+const InterviewerDashboard = lazy(()=> import("component/Dashboard/Interviewer/Dashboard/InterviewerDashboard"))
 
 function App() {
   return (
@@ -53,12 +42,7 @@ function App() {
             <Route exact path="/admin/topicsList" component={TopicsList} />
             <Route exact path="/admin/resourceList/:resouceId?" component={ResourceList} />
             <Route exact path="/admin/quizList/:topicId?" component={QuizList} />
-            <Route exact path="/interviewer/dashboard">
-                <InterviewerDashboard />
-            </Route>
-            <Route exact path="/interviewer/dashboard">
-                <InterviewerDashboard />
-            </Route>
+            <Route exact path="/interviewer/dashboard" component={InterviewerDashboard} />
 
           </Switch>  
         </Suspense>
