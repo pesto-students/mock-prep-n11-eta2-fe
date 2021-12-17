@@ -1,0 +1,17 @@
+
+.interview-details{
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    height: auto !important;
+}
+
+@media only screen and (max-width:430px) {
+    .interview-details{
+        display: none;
+    }
+}
+
+.interview-details>.header>.tab-options{
+    justify-content: right !important;
+}

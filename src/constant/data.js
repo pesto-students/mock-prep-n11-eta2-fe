@@ -1,9 +1,5 @@
-import { Tag } from 'antd';
-import { Group, Person, PersonAdd, Search } from "@material-ui/icons"
-
-export const logoUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1638635421/Mockprep/mp_Logo_n7fhp6.png"
-export const logoWhiteUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1638303030/Mockprep/mock_gozyss.png"
-
+import {  SearchIcon, userAddIcon, calculatorIcon, LaptopIcon } from "constant/antIcons"
+import { Tag} from "antd"
 
 export const interviewers = [
     {
@@ -18,83 +14,42 @@ export const interviewers = [
         interviewCount: 12,
         experience:10,
         rating: 4,
-        onboarded:true,
+        onboarded: true,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
        
     },
     {
         id: 2,
-        name: "Edgar Richard",
-        designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306050/Mockprep/interviewers/54_bi3tvk.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
-        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
-        interviewCount: 12,
-        rating: 4,
-        onboarded:true,
-        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
-    },
-    {
-        id: 3,
-        name: "Merlyn joseph",
-        designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306044/Mockprep/interviewers/49_ugvvh6.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
-        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
-        interviewCount: 12,
-        rating: 4,
-        onboarded:false,
-        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
-    },
-    {
-        id: 4,
-        name: "Ross Taylor",
+        name: "Edgar Taylor",
         designation: "Software Architect",
         company: "Google",
         pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638305028/Mockprep/interviewers/18_ltcua7.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         interviewCount: 12,
+        experience:10,
         rating: 4,
+        onboarded: false,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
+       
     },
     {
-        id: 6,
-        name: "Merlyn joseph",
+        id: 3,
+        name: "Mr Taylor",
         designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306044/Mockprep/interviewers/49_ugvvh6.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
+        company: "Google",
+        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638305028/Mockprep/interviewers/18_ltcua7.jpg",
+        skills: ["UI Design", "JavaScript"],
+        about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         interviewCount: 12,
+        experience:10,
         rating: 4,
+        onboarded: false,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
+       
     },
-    {
-        id: 5,
-        name: "Merlyn joseph",
-        designation: "Software Architect",
-        company: "Facebook",
-        pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638306044/Mockprep/interviewers/49_ugvvh6.jpg",
-        skills: ["UI Design", "JavaScript", "React", "Bootstrap"],
-        about: "lorem jkdnfjknsdjkfnjkdsnfjknsdkjfnsd f sd fkjdsnjkfnjksdnfjknfs",
-        topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
-        interviewCount: 12,
-        rating: 4,
-        contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }],
-      
-    }
-    
 
 ]
 
@@ -111,13 +66,14 @@ export const students = [
         about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         rating: 8,
-        onboarded: false,
+        listed: false,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
     },
     {
         id: 2,
         name: "Ross Taylor",
         degree: "Software Architect",
+        designation: "Architect",
         company: "Google",
         experience:1,
         pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
@@ -125,7 +81,7 @@ export const students = [
         about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         rating: 8,
-        onboarded: false,
+        listed: true,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
     },
     {
@@ -133,13 +89,14 @@ export const students = [
         name: "Ross Taylor",
         degree: "Software Architect",
         company: "Google",
+        designation: "Architect",
         experience:1,
         pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
         skills: ["UI Design", "JavaScript"],
         about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         rating: 8,
-        onboarded: false,
+        listed: false,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
     },
     {
@@ -147,18 +104,19 @@ export const students = [
         name: "Mohammed Taylor",
         degree: "Software Architect",
         company: "Google",
+        designation: "Architect",
         experience:1,
         pic: "https://res.cloudinary.com/mock-prep/image/upload/v1638311080/Mockprep/Students/67_mzwjc0.jpg",
         skills: ["UI Design", "JavaScript","HTML","Bootstrap"],
         about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.but also the leap into electronic typesetting, remaining essentially unchanged.",
         topics: ["UI Design", "JavaScript", "React", "Bootstrap", "Nodejs"],
         rating: 8,
-        onboarded: false,
+        listed: true,
         contacts: [{ id: 1, icon: "far fa-envelope", value: "richard@gmail.com" }, { id: 2, icon: "fas fa-phone", value: "9876548534" }], 
     }
 ]
 
-export const sellingPointers = [
+export const mockPrepAdvantages = [
     {
         id: 1,
         icon: "far fa-file-alt",
@@ -246,7 +204,8 @@ export const dashboardMetrics = [
     {
         id: 1,
         description: "Total Interviews",
-        value: 1232
+        value: 1232,
+        icon:"fa fa-person"
     },
     {
         id: 2,
@@ -268,7 +227,7 @@ export const onboardingMetrics = {
             label: "Students Onboarded",
             data: [120,103,300,140,400,340,200],
             borderColor: "#1300f4",
-            backgroundColor: "royalblue"
+            backgroundColor: "rgb(31, 58, 139)"
         },
         {
                 label: "Interviewers Onboarded",
@@ -300,10 +259,10 @@ export const earningChartData = {
     labels: ["Jan","Feb","Mar","April","May","Jun","July","Aug","Sept","Oct","Nov"],
     datasets: [
       {
-        label: "Earnings 2021",
+        label: "Month Wise Earnings 2021",
         data: [5809,12022,11022,10030,18633,10950,12109,12201,10291,12020,12829],
-        borderColor: "#1300f4",
-        backgroundColor: "skyblue"
+        borderColor: "rgb(13, 48, 153)",
+        backgroundColor: "rgb(13, 48, 153)"
       }
     ]
 };
@@ -371,7 +330,7 @@ export const trendingData = {
         label: "Trending topics",
         data: [40,32,12,16],
         borderColor: "#1300f4",
-        backgroundColor: ["royalblue","lightgreen","orange","purple"]
+        backgroundColor: ["rgb(31, 58, 139)","lightgrey","orangered","orange"]
     }]
 };
 
@@ -380,25 +339,25 @@ export const adminDashboardMetrics = [
         id: 1,
         description: "Total Interviews",
         value: 1232,
-        icon:<Person/>
+        icon: LaptopIcon 
     },
     {
         id: 2,
         description: "Total Students",
         value: 4230,
-        icon:<PersonAdd/>
+        icon:userAddIcon
     },
     {
         id: 3,
         description: "Total Interviewers",
         value: 132,
-        icon:<Group/>
+        icon:calculatorIcon
     },
     {
         id: 4,
         description: "Total Visitors",
         value: 1232,
-        icon:<Search/>
+        icon:SearchIcon
     }
 
 ]
@@ -409,9 +368,9 @@ export const resourceChartData = {
         data: [60, 22, 18],
         borderColor: "#1300f4",
         backgroundColor: [
-            'royalblue',
+            'rgb(15, 114, 122)',
             'orange',
-            'grey'
+            'lightgrey'
             
           ],
     }],
@@ -447,29 +406,6 @@ export const resourceChartOptions = {
     }
 }
 
-export const totalSaleOption = {
-    scales: {
-        x: {
-            grid: {
-                display: false,
-            },
-            ticks: {
-                display: true
-            }
-        },
-        y: {
-            grid: {
-                display: false
-            },
-            ticks: {
-                display: false
-            },
-            legend: {
-                display: false
-            }
-        }
-    }
-}
 export const totalSaleData = {
     labels: ["Jun","July","Aug","Sept","Oct","Nov"],
     datasets: [
@@ -518,10 +454,11 @@ export const tableDataSource = [
       id: 1,
       topic: 'JavaScript',
       interviewer: "Ross Taylor",
-      student: 'Manish chaudary',
+      student: 'Saif chaudary',
       date: "10/12/21",
       time: "15:00",
-      status:"Completed"
+        status: "Completed",
+        key:1,
     },
     {
         id: 2,
@@ -530,45 +467,19 @@ export const tableDataSource = [
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status: "Completed"
+        status: "Completed",
+        key:2,
     },
     {
         id: 3,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
+        topic: 'HTML',
+        interviewer: "Mohammed Saif",
         student: 'Manish chaudary',
         date: "10/12/21",
         time: "15:00",
-        status:"Completed"
-    },
-    {
-        id: 4,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
-        student: 'Manish chaudary',
-        date: "10/12/21",
-        time: "15:00",
-        status:"Completed"
-    },
-    {
-        id: 5,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
-        student: 'Manish chaudary',
-        date: "10/12/21",
-        time: "15:00",
-        status:"Pending"
-    },
-    {
-        id: 6,
-        topic: 'JavaScript',
-        interviewer: "Ross Taylor",
-        student: 'Manish chaudary',
-        date: "10/12/21",
-        time: "15:00",
-        status:"Completed"
-      }
-  
+        status: "Completed",
+        key:3,
+    }
 ];
   
 export const tableColumns = [
@@ -580,8 +491,8 @@ export const tableColumns = [
         sortDirections: ['descend'],
     },
     {
-      title: 'Topic',
-      dataIndex: 'topic',
+        title: 'Topic',
+        dataIndex: 'topic',
         key: 2,
         sorter: (a, b) => a.topic.length - b.topic.length,
         sortDirections: ['descend'],
@@ -603,6 +514,7 @@ export const tableColumns = [
         key: 3,
         sorter: (a, b) => a.interviewer.length - b.interviewer.length,
         sortDirections: ['descend'],
+        rowKey:3,
     },
     {
         title: 'Student',
@@ -610,6 +522,7 @@ export const tableColumns = [
         key: 4,
         sorter: (a, b) => a.student.length - b.student.length,
         sortDirections: ['descend'],
+        rowKey:4,
     },
     {
         title: 'Date (MM/DD.YY)',
@@ -617,6 +530,7 @@ export const tableColumns = [
         key: 5,
         sorter: (a, b) => a.date.length - b.date.length,
         sortDirections: ['descend'],
+        rowKey:5,
     },
     {
         title: 'Time (HH/MM)',
@@ -624,11 +538,13 @@ export const tableColumns = [
         key: 6,
         sorter: (a, b) => a.time.length - b.time.length,
         sortDirections: ['descend'],
+        rowKey:6,
     },
     {
         title: 'Status',
         dataIndex: 'status',
         key: 7,
+        rowKey:7,
         sorter: (a, b) => a.status.length - b.status.length,
         sortDirections: ['descend'],
         render: (tags,index) => {
@@ -645,138 +561,132 @@ export const tableColumns = [
     },
 ];
 
-export const interviewerFilter = [
-    {id: 1, value: "Javascript" },
-    {id:2,value:"HTML"},
-    {id:3,value:"Bootstrap"},
-    {id:4,value:"React"},
-    {id:5,value:"Mongo"},
-]
-
-
-export const studentFilter = [
-    {id: 1, value: "Javascript" },
-    {id:2,value:"HTML"},
-    {id:3,value:"Bootstrap"},
-    {id:4,value:"React"},
-    {id:5,value:"Mongo"},
-]
-
-export const resources = [
-    {
-        id: 1,
-        title: "Git Basics",
-        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
-        url: "https://www.tutorialspoint.com/git/index.htm",
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
-    },
-    {
-        id: 2,
-        title: "Html Basics",
-        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
-        url: "https://www.tutorialspoint.com/html/index.htm",
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
-    },
-    {
-        id: 3,
-        title: "Git Basics",
-        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
-        url: "https://www.tutorialspoint.com/git/index.htm",
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
-    },
-    {
-        id: 4,
-        title: "Html Basics",
-        description: "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during ...",
-        url: "https://www.tutorialspoint.com/html/index.htm",
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
-    },
-]
-
-export const resourceFilter = [
-    {
-        id: 1,
-        value: "Git Basics"
-    },
-    {
-        id: 2,
-        value: "Html Basics"
+export const totalSaleOption = {
+    scales: {
+        x: {
+            grid: {
+                display: false,
+            },
+            ticks: {
+                display: true
+            }
+        },
+        y: {
+            grid: {
+                display: false
+            },
+            ticks: {
+                display: false
+            },
+            legend: {
+                display: false
+            }
+        }
     }
-]
+}
 
-export const quizList = [
-    {
+export const pricingData = [
+    { 
         id: 1,
-        title: "Git Basics",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+        title: "Basic",
+        price: "₹300",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
     },
-    {
+    { 
         id: 2,
-        title: "Javascript",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+        title: "Standard",
+        price: "₹500",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
     },
-    {
+    { 
         id: 3,
-        title: "Html",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
+        title: "Premium",
+        price: "₹1000",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
     },
-    {
-        id: 5,
-        title: "Javascript",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
-    },
-    {
-        id: 6,
-        title: "Html",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
-    },
+    { 
+        id: 4,
+        title: "Special",
+        price: "₹1500",
+        description: "Take 1 mock interview with expert interviewer",
+        benefits: ["Take mock interview 1:1", "Get feedback on your profile", "Get queries resolved"]
+    }
+
 ]
 
 export const topics = [
     {
         id: 1,
         title: "Git Basics",
-        count: 15,
+        description:"Basics of git",
         img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
     },
     {
         id: 2,
-        title: "Javascript",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+        title: "Git Basics",
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
     },
     {
         id: 3,
-        title: "Html",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
+        title: "Git Basics",
+       
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
     },
     {
-        id: 5,
-        title: "Javascript",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638359414/Mockprep/topics/html-css-js-icon-set-web-development-logo-javascript-programming-symbol-154897294_chh7dq.jpg"
+        id: 4,
+        title: "Git Basics",
+       
+        description:"Basics of git",
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
     },
-    {
-        id: 6,
-        title: "Html",
-        count: 15,
-        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356980/Mockprep/topics/icon5_dlqaon.png"
-    },
+    
+    
 ]
 
-export const topicsFilter = [
+export const resources = [
     {
         id: 1,
-        value: "Git Basics"
+        title: "HTML",
+        description: "Basics of HTML",
+        url:"https://www.w3schools.com/html/",
+        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        topicId:1
     },
     {
         id: 2,
-        value: "Html Basics"
+        title: "HTML",
+        description: "Basics of HTML",
+        url:"https://www.w3schools.com/html/",
+        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        topicId:1
+    },
+    {
+        id: 3,
+        title: "HTML",
+        description: "Basics of HTML",
+        url:"https://www.w3schools.com/html/",
+        img: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
+        topicId:1
     }
+]
+
+export const quiz = [
+    {
+        id: 1,
+        title: "Git Basics",
+        count:15,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+    {
+        id: 2,
+        title: "HTML",
+        count:20,
+        img:"https://res.cloudinary.com/mock-prep/image/upload/v1638356981/Mockprep/topics/icon12_d9c4lz.png"
+    },
+   
 ]

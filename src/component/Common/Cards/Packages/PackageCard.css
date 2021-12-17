@@ -1,0 +1,57 @@
+.person{
+    width: 17vw;
+    min-height: 50vh;
+    padding: 1vh 0;
+    height: auto;
+    margin: 20px 10px;
+    border:1px solid lightgrey;   
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.profile{
+    width: 55%;
+    border-radius: 100%;
+    border: 1px solid rgb(31, 58, 139);
+    justify-content: center;
+}
+
+#btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin-top: 15vh;
+}
+
+#pricing-title{
+    width: 100%;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1vh;
+
+    margin: 1vh auto;
+    color: white;
+    background-color: #6237fc;
+
+}
+
+#pricing-ben{color: grey;}
+
+#pricing-price{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2vh 0;
+}
+
+#pricing-description{
+    font: 0.9rem;
+    color: grey;
+    padding: 1vh 1vw;
+}
+
+
+#price-btn{
+    width: auto;
+    margin-left: 30%;
+    color:white;
+    background-color: rgb(98, 55, 252);;
+}

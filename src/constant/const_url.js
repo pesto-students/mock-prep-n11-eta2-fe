@@ -1,0 +1,2 @@
+export const logoUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1638635421/Mockprep/mp_Logo_n7fhp6.png"
+export const logoWhiteUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1638303030/Mockprep/mock_gozyss.png"
