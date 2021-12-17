@@ -1,5 +1,7 @@
-import authActions from "../Actions/authActions";
-import erroActionCreators from "./erroActionCreators";
+import { authActions } from "Redux/Actions/authActions";
+import { errorActions } from "Redux/Actions/errorAction";
+
+
 
 const authActionCreator = {
     getRole : async function(dispatch,getRole){
@@ -17,13 +19,13 @@ const authActionCreator = {
                     }).then(response => response.json())
                       .then(data => {
                         if(data.error) {
-                            erroActionCreators.setError(dispatch,data.error)
+                            errorActions.setError(dispatch,data.error)
                             dispatch({type : authActions.adminLoginRequest, status : ""})
                             
                         }
                         else {
                             dispatch({type : authActions.adminLoginRequest, status : data.status})
-                            erroActionCreators.setError(dispatch,"")
+                            errorActions.setError(dispatch,"")
                         }
                       })
                       .catch(error => console.log(error))
