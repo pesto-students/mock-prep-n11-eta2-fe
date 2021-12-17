@@ -18,8 +18,8 @@ const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentL
 const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
-
-
+const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
+const AdminLogin = lazy(() => import("./components/Join Us/Admin Login/adminLogin"))
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
             <Route exact path="/join" component={Join} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/signIn" component={SignIn} />
+            <Route exact path="/admin/login" component={AdminLogin}>
             <Route exact path="/admin/dashboard" component={Dashboard} />
             <Route exact path="/admin/interviewerList" component={InterviewerList} />
             <Route exact path="/admin/interviewerProfile/:profileId" component={InterviewerProfile} />
@@ -42,7 +43,7 @@ function App() {
             <Route exact path="/admin/resourceList/:resouceId?" component={ResourceList} />
             <Route exact path="/admin/quizList/:topicId?" component={QuizList} />
           </Switch>  
-      </Suspense>
+        </Suspense>
       </Router>
     </div>  
   );
