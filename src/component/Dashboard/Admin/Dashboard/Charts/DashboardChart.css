@@ -1,0 +1,49 @@
+.admin-dashboard-charts{
+    display: grid;
+    margin: 10vh 2vw;
+    grid-template-columns: 2fr 1fr;   
+}
+
+.earning-chart{
+    width: 90%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+.resourceChart{
+    width: 22vw;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+@media only screen and (max-width:768px) {
+    .resourceChart{
+        width:30vw !important;
+        height: 10vh !important;
+    }
+}
+
+
+@media only screen and (max-width:425px) {
+ 
+    .admin-dashboard-charts{
+        width: 100vw !important;
+        display: inline-block !important; 
+        justify-content: center !important;
+    }
+    
+    .earning-chart{
+        width: 90vw;
+        margin: 2vh auto !important;
+
+    }
+    .resourceChart{
+        width: 70% !important;
+        height: auto !important;
+        margin: 5vh auto !important;
+        
+    }
+}
+
+.headline{color:rgb(16, 38, 105)}

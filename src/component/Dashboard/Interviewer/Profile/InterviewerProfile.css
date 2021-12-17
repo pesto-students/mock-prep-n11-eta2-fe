@@ -1,0 +1,70 @@
+.interviewer-profile{
+    width: 82.5vw;
+    position: absolute;
+    right: 0;   
+}
+
+.int-profile-container{
+    width: 96%;
+    height: auto;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.left-profile{
+padding: 7vh 2vw;
+}
+
+.left-profile>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-bottom: 2vh;
+}
+
+.left-profile>p{
+    margin: 10px 0;
+    color: rgb(13, 39, 117);
+    font-size: 1.1rem;
+}
+
+.right-profile{
+text-align: left;
+padding: 7vh 0;
+width: 50vw;
+}
+
+.update{
+    background-color: royalblue;
+}
+
+h3>.fa-star{
+    color: goldenrod;
+    margin:1vw 5px;
+}
+
+.about{
+    color: grey;
+    height: auto !important;
+    margin: 4vh 0;
+}
+
+.skill-chips{
+    display: flex !important;
+    flex-wrap: wrap; }
+
+.left-profile>.skill-chips{
+ justify-content: left;
+}    
+
+.heading{margin: 1vh 0;}
+
+
+.interviewer-profile>.header>.tab-options{
+    justify-content: right;
+}
+
+.fa-star{
+    color: rgb(245, 187, 40) !important;
+}

@@ -1,0 +1,43 @@
+#main-header{
+    width: 100%;
+    height: 10vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  
+    border-bottom: 1px solid lightgrey;
+}
+
+#headerLogo{
+    width : 10%
+}
+
+#headerItems{
+    width : 40%;
+    font-weight:light;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;  
+}
+
+#brand-logo{
+    width: 12vw;
+}
+
+.header-icons{
+    color : #1F4682;
+}
+
+#toggle-btn{
+    margin: 3vh 2vw !important;
+    display:none ;
+}
+
+@media only screen  and (max-width:430px){
+    #brand-logo{height: 8vh !important;width: 45vw!important;}
+    .header-icons{font-size: 15px !important}
+    #main-header{display: block !important;}
+    #headerItems{width: 95vw !important;display: flex !important;justify-content: space-between !important;margin: 1vh auto !important;}
+    #toggle-btn{display: block !important;}
+    #headerLogo{width:100vw !important;display: flex !important;justify-content: space-between !important;} 
+}
