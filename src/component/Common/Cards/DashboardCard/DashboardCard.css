@@ -1,0 +1,22 @@
+.card{
+    width: 20vw;
+    height: 18vh;
+    border-left: 3px solid rgb(21, 52, 146) !important;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+    padding: 1vh 1vw;
+    text-align: left;
+    color: rgb(21, 52, 146) ;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    color:rgb(118, 117, 117);
+    margin-top: 5vh;
+}
+
+.card>p{
+    font-size: medium;
+    font-weight: bold;
+}

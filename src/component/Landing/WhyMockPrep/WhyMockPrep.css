@@ -1,0 +1,33 @@
+.pointer:hover{
+    transform:scale(1.1);
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    color: rgb(16, 43, 124) !important;
+    border-color: rgb(16, 43, 124) !important;
+}
+
+.sell-pointer{
+    width: 70vw;
+    height: auto;
+    margin: 10vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pointer{
+    position: relative;
+    width: 30vw;
+    height: auto !important;
+    min-height: 10vh;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    margin: 20px 20px;
+    color: rgb(31, 58, 139)
+}
+.point{margin: 0 10px;
+    position: absolute;
+    top: 25%;
+}
+
+.far,.fas{margin: 0px 10px; font-size: 1.5rem;}

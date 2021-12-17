@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(6, 30, 102);
+  height: 3px;
+}
+
+#loader{
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 1.3rem !important;
+  text-align: center !important;
+}
+
+.spin{
+  margin: 0 5vw !important;
+  width: 100px;
+  height: 100px;
+}
