@@ -3,7 +3,8 @@ import { Link, useHistory } from "react-router-dom"
 import { logoUrl } from 'constant/const_url'
 import "./Join.css"
 import GoogleLogin from "react-google-login"
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
+import authActionCreator from "Redux/Action Creators/authActionCreators"
+import { useDispatch, useSelector } from "react-redux"
 
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
@@ -11,7 +12,9 @@ const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/Joi
 
 export default function JoinUs ({isSignUp}){
     const [user,setUser] = useState({});
-    let history = useHistory();
+    const loginState = useSelector(state => state.authReducer);
+    console.log(loginState)
+    const dispatch = useDispatch();
     const handleLogin = async googleData => {
         const res = await fetch("/auth", {
             method: "POST",
@@ -26,15 +29,13 @@ export default function JoinUs ({isSignUp}){
         setUser(data);
         // store returned user somehow
     }
-
     useEffect(() => {
-        console.log(user)
+
         if(user.status === 'success'){
-            history.push('/interviewer/dashboard')
+            authActionCreator.setRole(dispatch,"true")
         }
     }, [user])
 
-    
 
     return (
         <>
