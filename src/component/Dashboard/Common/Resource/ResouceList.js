@@ -24,7 +24,6 @@ export default function ResourceList() {
 
     let [topicsList, setInterviewerList] = useState([]);
     
-
     useEffect(() => { 
         const getInterviewer = async () => { 
             const interviewer = await getData(getResources);

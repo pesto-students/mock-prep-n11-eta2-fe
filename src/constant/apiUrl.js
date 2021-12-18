@@ -8,7 +8,8 @@ export const getReviews = baseUrl + "/appReview/getReviews"
 export const getTopics = baseUrl + "/topic/getTopics"
 export const getDashboards = baseUrl + "/dashboard/getData"
 export const getAdminDashboard = baseUrl + "/adminDashboard/getData"
-export const getResources= baseUrl + "/resource/getResources"
+export const getResources = baseUrl + "/resource/getResources"
+export const getQuizList= baseUrl + "/quiz/getQuizLists"
 
 // Delete
 export const deleteInterviewer = baseUrl + "/interviewer/deleteInterviewer/"
