@@ -8,6 +8,10 @@ const authActionCreator = {
                     const role = await getRole();
                     dispatch({type : authActions.setRole, role : role})
                 },
+    setRole :  function(dispatch,isLoggedIn){
+                    
+                    dispatch({type : authActions.setLogin, isLoggedIn : isLoggedIn})
+                },
     loginAdmin : function(dispatch,{userName, password}){
                     fetch('/admin/adminLogin',{
                         method : 'POST',

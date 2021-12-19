@@ -4,6 +4,9 @@ import StudentProfile from "component/Dashboard/Student/Profile/StudentProfile";
 import { fallback } from "constant/navList";
 import 'antd/dist/antd.css';
 import './App.css';
+import { useSelector } from "react-redux";
+import PublicRoute from "Route/PublicRoute";
+import PrivateRoute from "Route/PrivateRoute";
 
 const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
@@ -22,29 +25,32 @@ const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
 const InterviewerDashboard = lazy(()=> import("component/Dashboard/Interviewer/Dashboard/InterviewerDashboard"))
 
 function App() {
+  const loginState = useSelector(state => state.authReducer);
+
   return (
     <div className="App">
       <Router>
         <Suspense fallback={fallback}>
           <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/package" component={Package} />
-            <Route exact path="/join" component={Join} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/signIn" component={SignIn} />
-            <Route exact path="/admin/login" component={AdminLogin} />
-            <Route exact path="/admin/dashboard" component={Dashboard} />
-            <Route exact path="/admin/interviewerList" component={InterviewerList} />
-            <Route exact path="/interviewer/dashboard" component={InterviewerList} />
-            <Route exact path="/admin/interviewerProfile/:profileId" component={InterviewerDashboard} />
-            <Route exact path="/admin/studentList" component={StudentList} />
-            <Route exact path="/admin/studentProfile/:profileId" component={StudentProfile} />
-            <Route exact path="/admin/topicsList" component={TopicsList} />
-            <Route exact path="/admin/resourceList/:resouceId?" component={ResourceList} />
-            <Route exact path="/admin/quizList/:topicId?" component={QuizList} />
-            <Route exact path="/interviewer/dashboard" component={InterviewerDashboard} />
-            <Route exact path="/quiz/quizContent/:quizId?" component={QuizContent} />
+
+            <PublicRoute exact path="/" component={Landing} loggedIn={loginState.isLoggedIn} restricted="false" />
+            <PublicRoute exact path="/about" component={About}  loggedIn={loginState.isLoggedIn} restricted="false" />
+            <PublicRoute exact path="/package" component={Package}  loggedIn={loginState.isLoggedIn} restricted="false"/>
+            <PublicRoute exact path="/join" component={Join}  loggedIn={loginState.isLoggedIn} restricted="false"/>
+            <PublicRoute exact path="/contact" component={Contact}  loggedIn={loginState.isLoggedIn} restricted="false"/>
+            <PublicRoute exact path="/signIn" component={SignIn}  loggedIn={loginState.isLoggedIn} restricted="false" />
+            <PrivateRoute exact path="/admin/login" component={AdminLogin} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/dashboard" component={Dashboard} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/interviewerList" component={InterviewerList} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/interviewer/dashboard" component={InterviewerList} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/interviewerProfile/:profileId" component={InterviewerDashboard} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/studentList" component={StudentList} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/studentProfile/:profileId" component={StudentProfile} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/topicsList" component={TopicsList} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/resourceList/:resouceId?" component={ResourceList} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/quizList/:topicId?" component={QuizList} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/interviewer/dashboard" component={InterviewerDashboard} loggedIn={loginState.isLoggedIn}/>
+
           </Switch>  
         </Suspense>
       </Router>
