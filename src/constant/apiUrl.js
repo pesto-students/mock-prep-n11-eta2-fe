@@ -9,7 +9,7 @@ export const getTopics = baseUrl + "/topic/getTopics"
 export const getDashboards = baseUrl + "/dashboard/getData"
 export const getAdminDashboard = baseUrl + "/adminDashboard/getData"
 export const getResources = baseUrl + "/resource/getResources"
-export const getQuizList= baseUrl + "/quiz/getQuizLists"
+export const getQuizList = baseUrl + "/quiz/getQuizLists"
 
 // Delete
 export const deleteInterviewer = baseUrl + "/interviewer/deleteInterviewer/"
@@ -24,7 +24,8 @@ export const updateResource = baseUrl + "/resource/getResources"
 // FindbyId
 export const getInterviewerById = baseUrl + "/interviewer/getInterviewer/"
 export const getStudentById = baseUrl + "/student/getStudent/"
-export const getResourById = baseUrl + "/resource/getResource"
+export const getResourById = baseUrl + "/resource/getResource/"
+export const getQuizContent= baseUrl + "/quiz/getQuizList/"
 
 //Insert
 export const insertTopic = baseUrl + "/topic/addTopic"

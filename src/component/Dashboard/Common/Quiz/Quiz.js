@@ -62,7 +62,7 @@ export default function QuizList() {
                 <DashboardHeader title="Quiz List" icon={trophyIcon} rightComponent={search} />
                 {topicsList.length > 0 ?
                     <section className="topics">
-                        {topicsList.map((topic, index) => (<QuizCard key={index} route={"/admin/quiz/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
+                        {topicsList.map((topic, index) => (<QuizCard key={index} route={"/quiz/quizContent/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
                     </section>
                     :
                 < section > { fallback }</section>

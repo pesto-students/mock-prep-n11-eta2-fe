@@ -33,7 +33,6 @@ export const interviewerNavList =[
     },
 ]
 
-
 export const dashbordNames = {
     admin : "Admin",
     interviewer : "Interviewer"
