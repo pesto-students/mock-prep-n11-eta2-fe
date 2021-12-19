@@ -20,6 +20,7 @@ const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentL
 const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
+const QuizContent = lazy(() => import("component/Dashboard/Common/Quiz/QuizContent/QuizContent"))
 const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
 const InterviewerDashboard = lazy(()=> import("component/Dashboard/Interviewer/Dashboard/InterviewerDashboard"))
 
@@ -31,8 +32,8 @@ function App() {
       <Router>
         <Suspense fallback={fallback}>
           <Switch>
+
             <PublicRoute exact path="/" component={Landing} loggedIn={loginState.isLoggedIn} restricted="false" />
-            {/* <Route exact path="/" component={Landing} /> */}
             <PublicRoute exact path="/about" component={About}  loggedIn={loginState.isLoggedIn} restricted="false" />
             <PublicRoute exact path="/package" component={Package}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/join" component={Join}  loggedIn={loginState.isLoggedIn} restricted="false"/>
