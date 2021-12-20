@@ -19,7 +19,14 @@ export default function Slides({testimonials}) {
         <div>
             <Carousel style={contentStyle} autoplay afterChange={onChange}>
                 {testimonials.map((review,index) => (
-                    
+                <section key={index} className="testimonial">
+                     <img src={review.image} alt="profile" id="test-profile"></img>
+                     <section className="review">
+                         <p>"{review.review}"</p>
+                         <p className="test-person">{review.name}</p>
+                         <p className="test-person">{review.company}</p>
+                     </section>
+                </section>
                 ))}
             </Carousel>,
         </div>
