@@ -1,7 +1,7 @@
 import React, {lazy,useState} from 'react'
 import 'antd/dist/antd.css';
 import { Table,Input } from 'antd';
-import { tableColumns } from 'constant/data';
+import { tableColumns } from 'Constant/data';
 import "./InterviewTable.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))

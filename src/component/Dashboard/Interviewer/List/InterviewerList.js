@@ -1,14 +1,14 @@
 import React, {useState,useEffect, lazy} from 'react'
-import { idCardIcon,deleteIcon } from "constant/antIcons"
+import { idCardIcon,deleteIcon } from "Constant/antIcons"
 import { Input,Tabs,Button} from 'antd';
 import { Link} from "react-router-dom"
-import { fallback, interviewerFilter} from "constant/navList"
+import { fallback, interviewerFilter} from "Constant/navList"
 import "./InterviewerList.css"
-import { adminNavList} from "constant/navList"
-import { getData } from 'api/Fetch';
-import { deleteInterviewer, getInterviewers, updateInterviewer } from 'constant/apiUrl';
-import { removeData } from 'api/Delete';
-import { updateData } from 'api/Update';
+import { adminNavList} from "Constant/navList"
+import { getData } from 'api/Api';
+import { deleteInterviewer, getInterviewers, updateInterviewer } from 'Constant/apiUrl';
+import { removeData ,updateData} from 'api/Api';
+
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))

@@ -7,5 +7,4 @@ export default function errorReducer (state = {error : "Error Found"},action){
         default:
             return state;
     }
-
 }

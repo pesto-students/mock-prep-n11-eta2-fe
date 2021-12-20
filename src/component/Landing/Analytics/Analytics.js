@@ -1,11 +1,12 @@
 import React, { lazy,useState,useEffect } from 'react'
 import "./Analytics.css"
-import { BarChartOptions,PieChartOptions } from 'constant/data'
+import { BarChartOptions,PieChartOptions } from 'Constant/data'
 import { UserAddOutlined } from "@ant-design/icons"
 import { getDashboards} from 'constant/apiUrl'
 import dataActions from 'Redux/Actions/dataAction'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import { useDispatch, useSelector } from 'react-redux'
+
 
 const PieChart = lazy(() => import("component/Common/Charts/Pie/PieChart"))
 const DashBoardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))

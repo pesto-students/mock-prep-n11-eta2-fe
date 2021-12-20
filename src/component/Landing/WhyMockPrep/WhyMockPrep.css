@@ -1,20 +1,21 @@
-.pointer:hover{
-    transform:scale(1.1);
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
-    color: rgb(16, 43, 124) !important;
-    border-color: rgb(16, 43, 124) !important;
-}
-
-.sell-pointer{
-    width: 70vw;
+#sell-pointer{
+    width: 100%;
     height: auto;
     margin: 10vh auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.pointer{
+
+#pointer:hover{
+    transform:scale(1.1);
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    color: #161280 !important;
+    border-color: #161280 !important;
+}
+
+#pointer{
     position: relative;
     width: 30vw;
     height: auto !important;
@@ -23,11 +24,13 @@
     text-align: center;
     border: 1px solid lightgrey;
     margin: 20px 20px;
-    color: rgb(31, 58, 139)
+    color: #161280;
 }
-.point{margin: 0 10px;
+
+#point{margin: 0 10px;
     position: absolute;
     top: 25%;
 }
 
-.far,.fas{margin: 0px 10px; font-size: 1.5rem;}
+.far,
+.fas{margin: 0px 10px; font-size: 1.5rem;}

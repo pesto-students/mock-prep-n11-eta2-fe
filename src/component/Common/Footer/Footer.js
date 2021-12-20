@@ -1,6 +1,6 @@
 import React from 'react'
+import { logoWhiteUrl } from 'Constant/const_url'
 import "./Footer.css"
-import { logoWhiteUrl } from 'constant/const_url'
 
 export default function Footer () {
     return (

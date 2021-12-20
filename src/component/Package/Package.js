@@ -5,14 +5,9 @@ import { fallback } from "constant/navList"
 import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreator from "Redux/Action Creators/dataActionCreators"
 import dataActions from "Redux/Actions/dataAction"
-
-
-
 const Header = lazy(() => import("component/Common/Header/Header"))
 const PackageCard = lazy(() => import("component/Common/Cards/Packages/PackageCard"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
-
-
 
 export default function Package() {
     const dispatch = useDispatch()

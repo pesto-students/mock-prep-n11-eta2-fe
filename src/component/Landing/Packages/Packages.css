@@ -1,35 +1,6 @@
-.package{
-    width: 20vw;
-    height: auto;
-    border: 1px solid lightgrey;
-    background-color: white !important;
-    padding: 5vh 2vw;
-    box-sizing: border-box;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    text-align: left;
-}
-
 .package-details{
-    width: 70%;
-    margin: 10vh auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.package>#mainButton{width: 100% !important;}
-
-@media only screen and (max-width: 430px) {
-
-    .package-details{
-        width:100vw !important;
-        margin: 2vh 0 !important;
-        display: grid !important;
-        justify-content: space-around !important;
-    }
-    .package{
-       width: 70vw !important; 
-       height: auto !important;
-       margin: 4vh auto !important;
-      
-    }
+   width: 80%;
+   margin: 10vh auto;
+   display: flex;
+   justify-content: space-around;
 }

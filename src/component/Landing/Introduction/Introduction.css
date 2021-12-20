@@ -1,16 +1,15 @@
+#introduction{
+    width: 100%;
+    text-align: center;
+    margin: 10vh 0;
+}
 
-.person{
-    width: 20vw;
-    height: auto;
-    margin: 20px 10px;
+#headline{
+    color: #161280;
 }
-.profile{
-    width: 55%;
-    border-radius: 100%;
-    border: 1px solid rgb(31, 58, 139);
-    justify-content: center;
+
+.light-text{
+    color: grey;
+    margin: 3vh 0;
 }
-.int-details{
-    margin: 5px 0;
-    color:  rgb(31, 58, 139);
-}
+

@@ -1,6 +1,6 @@
 import React, {lazy,useState,useEffect} from 'react'
-import { DashboardIcon } from 'constant/antIcons'
-import { adminNavList, fallback } from "constant/navList"
+import { DashboardIcon } from 'Constant/antIcons'
+import { adminNavList, fallback } from "Constant/navList"
 
 import "./Dashboard.css"
 import { getAdminDashboard } from 'constant/apiUrl'

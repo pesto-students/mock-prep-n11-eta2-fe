@@ -1,3 +1,4 @@
+
  const dataActions = {
     setData : 'SET_DATA',
     setAdminData : 'SET_ADMIN_DATA',

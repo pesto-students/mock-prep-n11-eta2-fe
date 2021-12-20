@@ -1,13 +1,13 @@
 import React, { useState,useEffect,lazy} from 'react'
 import { Tag } from "antd"
-import { smileIcon } from 'constant/antIcons';
+import { smileIcon } from 'Constant/antIcons';
 import { useParams } from "react-router-dom";
-import { adminNavList, fallback } from "constant/navList"
+import { adminNavList, fallback } from "Constant/navList"
 import Forms from 'component/Common/Form/Forms';
 import "./StudentProfile.css"
-import { getData } from 'api/Fetch';
-import { getStudentById, updateStudent } from 'constant/apiUrl';
-import { updateData } from 'api/Update';
+import { getData } from 'api/Api';
+import { getStudentById, updateStudent } from 'Constant/apiUrl';
+import { updateData } from 'api/Api';
 
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))

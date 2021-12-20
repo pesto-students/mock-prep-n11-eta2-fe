@@ -1,16 +1,9 @@
-
-
 .interviewer-list{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    width: 70vw;
-    height: auto;
-    margin: auto;
     justify-content: center;
 }
 
-.int-details{
-    margin: 5px 0;
-    color:  rgb(31, 58, 139);
+.person{
+    text-align: center;
 }
-

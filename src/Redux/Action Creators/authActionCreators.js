@@ -24,7 +24,6 @@ const authActionCreator = {
                         if(data.error) {
                             errorActions.setError(dispatch,data.error)
                             dispatch({type : authActions.adminLoginRequest, status : ""})
-                            
                         }
                         else {
                             dispatch({type : authActions.setRole, status : data.status})

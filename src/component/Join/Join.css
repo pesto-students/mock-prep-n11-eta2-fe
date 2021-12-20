@@ -1,8 +1,14 @@
 .Join {
     width: 98.5vw;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 
+.ant-tabs-nav-wrap{
+    display: flex;
+    justify-content: center;
+}
 .signBox{
     width: 25vw;
     height: 60vh;
@@ -43,6 +49,6 @@
     padding: 0;
     border: none;
     background: none;
-    margin: 25% 0 ;
+    margin: 5% 0 25% 0 ;
     cursor: pointer;
 }

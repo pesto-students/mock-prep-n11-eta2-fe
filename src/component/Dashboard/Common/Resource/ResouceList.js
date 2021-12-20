@@ -1,16 +1,16 @@
 import React, { lazy,useState,useEffect} from 'react'
 import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
-import { resourceIcon } from "constant/antIcons"
+import { resourceIcon } from "Constant/antIcons"
 import { Button } from 'antd'
-import { resources } from 'constant/data'
-import { fallback, topicsFilter } from 'constant/navList'
-import { adminNavList } from 'constant/navList'
-import { resourceForm } from 'constant/formData'
+import { resources } from 'Constant/data'
+import { fallback, topicsFilter } from 'Constant/navList'
+import { adminNavList } from 'Constant/navList'
+import { resourceForm } from 'Constant/formData'
 import Forms  from 'component/Common/Form/Forms';
-import { getData } from 'api/Fetch'
-import { getResources, insertResource } from 'constant/apiUrl'
-import { insertData } from 'api/Insert'
+import { getData } from 'api/Api'
+import { getResources, insertResource } from 'Constant/apiUrl'
+import { insertData } from 'api/Api'
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const ResourceCard = lazy(() => import('component/Common/Cards/Resource/ResouceCard'))

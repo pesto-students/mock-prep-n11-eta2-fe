@@ -2,14 +2,14 @@ import React, {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Button,Progress ,Alert} from 'antd';
 import "./QuizContent.css"
-import { logoUrl } from 'constant/const_url';
+import { logoUrl } from 'Constant/const_url';
 import DashboardHeader from '../../Header/DashboardHeader'
-import { getData } from 'api/Fetch';
-import { getQuizContent } from 'constant/apiUrl';
+import { getData } from 'api/Api';
+import { getQuizContent } from 'Constant/apiUrl';
 import "./QuizContent.css"
 import QuizOptionForm from "./QuizOptionForm"
 import QuizNavigator from './QuizNavigator';
-import { fallback } from 'constant/navList';
+import { fallback } from 'Constant/navList';
 
 export default function QuizContent() {
 
@@ -31,8 +31,11 @@ export default function QuizContent() {
         
         quiz[index].correctAnswers.find((c, ind2) => {
             if (c.answer_a && ind2 === ind) {
+
                 quiz.find(e => e.answer.question === index).answer.answer = true;
+                return true;
             }
+            return true;
         })
 
     }

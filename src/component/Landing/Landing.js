@@ -5,25 +5,25 @@ const Header = lazy(() => import("component/Common/Header/Header"))
 const Introduction = lazy(() => import("component/Landing/Introduction/Introduction"))
 const Interviewer = lazy(() => import("component/Landing/Interviewers/Interviewers"))
 const WhyMockPrep = lazy(() => import("component/Landing/WhyMockPrep/WhyMockPrep"))
-const Analytics = lazy(() => import("component/Landing/Analytics/Analytics"))
+// const Analytics = lazy(() => import("component/Landing/Analytics/Analytics"))
 const Packages = lazy(() => import("component/Landing/Packages/Packages"))
 const Testimonials = lazy(() => import("component/Landing/Testimonials/Testimonial"))
-const Footer = lazy(() => import("component/Common/Footer/Footer"))
+// const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function Landing() {
 
     return (
-        <>
+        <div id="landing-page">
            <Header/>
-                <div className="landing-page">
+                <section id="landing-container">
                     <Introduction/>
                     <Interviewer/>
                     <WhyMockPrep/>
-                    <Analytics/>
-                    <Packages/>
+                    {/* <Analytics/> */}
+                     <Packages/>
                     <Testimonials/> 
-                </div>
-            <Footer/>
-        </>
+                </section>
+            {/* <Footer/> */}
+        </div>  
     )
 }
