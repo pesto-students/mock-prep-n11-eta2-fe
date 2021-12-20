@@ -1,4 +1,4 @@
-import { getData } from "api/Fetch";
+import { getData } from "api/Api";
 import dataActions from "../Actions/dataAction";
 
 const dataActionCreator = {

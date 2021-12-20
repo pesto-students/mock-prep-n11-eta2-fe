@@ -1,12 +1,9 @@
-import React, { lazy, useEffect } from 'react'
+import React, { lazy, useState,useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { getInterviewers } from 'Constant/apiUrl'
 import { getData } from 'api/Api'
-import { dataActionCreator } from 'Redux/Action Creators/dataActionCreators'
 import "./Interviewers.css"
-import { getInterviewers } from 'constant/apiUrl'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
-import { useDispatch, useSelector } from 'react-redux'
 import dataActions from 'Redux/Actions/dataAction'
 
 
