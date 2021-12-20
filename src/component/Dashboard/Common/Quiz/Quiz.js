@@ -2,11 +2,11 @@ import React, {useEffect, lazy,useState} from 'react'
 import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
 
-import { trophyIcon } from "constant/antIcons"
-import { fallback, topicsFilter } from 'constant/navList'
-import { adminNavList } from 'constant/navList'
-import { topicForm } from 'constant/formData'
-import { getQuizList } from 'constant/apiUrl'
+import { trophyIcon } from "Constant/antIcons"
+import { fallback, topicsFilter } from 'Constant/navList'
+import { adminNavList } from 'Constant/navList'
+import { topicForm } from 'Constant/formData'
+import { getQuizList } from 'Constant/apiUrl'
 import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'

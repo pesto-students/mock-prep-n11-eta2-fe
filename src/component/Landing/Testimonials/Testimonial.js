@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux';
-import { getReviews } from 'Constant/apiUrl';
 import { getData } from 'api/Api';
 import "./Testimonial.css"
-import { getReviews } from 'constant/apiUrl';
-import { useSelector } from 'react-redux';
+import { getReviews } from 'Constant/apiUrl';
 import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
-import { useDispatch } from 'react-redux';
+
 
 export default function Testimonials() {
     
