@@ -13,7 +13,7 @@ export default function JoinUsButton ({signin,type}) {
     }
 
     return (
-        <div className="JoinUsButton" onClick ={() => getUserDetails()}>
+        <div className="JoinUsButton">
             <div className="JoinUsLogo">
                 {details[type]}
             </div>

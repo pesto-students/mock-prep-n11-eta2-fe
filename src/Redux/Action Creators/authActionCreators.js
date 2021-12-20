@@ -6,12 +6,11 @@ import { errorActions } from "Redux/Actions/errorAction";
 const authActionCreator = {
     getRole : async function(dispatch,getRole){
                     const role = await getRole();
-                    dispatch({type : authActions.setRole, role : role})
+                    dispatch({type : authActions.setRole, payload : {role, isLoggedIn : true}})
                 },
-    setRole :  function(dispatch,isLoggedIn){
-                    
-                    dispatch({type : authActions.setLogin, isLoggedIn : isLoggedIn})
-                },
+    setRole :  (dispatch,isLoggedIn) =>{
+                    dispatch({type : authActions.setRole, isLoggedIn : isLoggedIn})
+                },     
     loginAdmin : function(dispatch,{userName, password}){
                     fetch('/admin/adminLogin',{
                         method : 'POST',
@@ -27,8 +26,7 @@ const authActionCreator = {
                             dispatch({type : authActions.adminLoginRequest, status : ""})
                         }
                         else {
-                            dispatch({type : authActions.adminLoginRequest, status : data.status})
-                            errorActions.setError(dispatch,"")
+                            dispatch({type : authActions.setRole, status : data.status})
                         }
                       })
                       .catch(error => console.log(error))
