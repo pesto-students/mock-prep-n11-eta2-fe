@@ -13,14 +13,17 @@ export default function Interviewers() {
 
     let [interviewers,setInterviewers] = useState([])
     let interviewerData = useSelector(state => state.dataReducer.interviewerData);
+    
     const dispatch = useDispatch()
+    
     useEffect(() => { 
-        dataActionCreator.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)
+
+        let data = getData(getInterviewers);
+        
+
+        // dataActionCreator.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)
     },[])
 
-    useEffect(() => {
-        if(interviewerData) setInterviewers(interviewerData)
-    },[interviewerData])
 
     return (
         <section className="interviewer-list">

@@ -4,10 +4,10 @@ import "./Landing.css"
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Introduction = lazy(() => import("component/Landing/Introduction/Introduction"))
 const Interviewer = lazy(() => import("component/Landing/Interviewers/Interviewers"))
-const WhyMockPrep = lazy(() => import("component/Landing/WhyMockPrep/WhyMockPrep"))
+// const WhyMockPrep = lazy(() => import("component/Landing/WhyMockPrep/WhyMockPrep"))
 // const Analytics = lazy(() => import("component/Landing/Analytics/Analytics"))
-const Packages = lazy(() => import("component/Landing/Packages/Packages"))
-const Testimonials = lazy(() => import("component/Landing/Testimonials/Testimonial"))
+// const Packages = lazy(() => import("component/Landing/Packages/Packages"))
+// const Testimonials = lazy(() => import("component/Landing/Testimonials/Testimonial"))
 // const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function Landing() {
@@ -18,10 +18,10 @@ export default function Landing() {
                 <section id="landing-container">
                     <Introduction/>
                     <Interviewer/>
-                    <WhyMockPrep/>
+                    {/* <WhyMockPrep/> */}
                     {/* <Analytics/> */}
-                     <Packages/>
-                    <Testimonials/> 
+                     {/* <Packages/>
+                    <Testimonials/>  */}
                 </section>
             {/* <Footer/> */}
         </div>  
