@@ -41,7 +41,7 @@ export const adminNavList = [
     
 ]
 
-export const interviewerFilter = [
+export const studentFilter = [
     {id: 1, value: "Javascript" },
     {id:2,value:"HTML"},
     {id:3,value:"Bootstrap"},
@@ -49,7 +49,7 @@ export const interviewerFilter = [
     {id:5,value:"Mongo"},
 ]
 
-export const studentFilter = [
+export const interviewerFilter = [
     {id: 1, value: "Javascript" },
     {id:2,value:"HTML"},
     {id:3,value:"Bootstrap"},

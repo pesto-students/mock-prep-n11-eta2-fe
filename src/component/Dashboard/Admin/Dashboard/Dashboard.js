@@ -5,6 +5,7 @@ import { adminNavList, fallback } from "constant/navList"
 import "./Dashboard.css"
 import { getData } from 'api/Fetch'
 import { getAdminDashboard } from 'constant/apiUrl'
+
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const DashBoardCard = lazy(() => import('component/Dashboard/Admin/Dashboard/Cards/DashboardCards'))
 const DashboardCharts = lazy(() => import("component/Dashboard/Admin/Dashboard/Charts/DashboardCharts"))
@@ -36,7 +37,8 @@ export default function Dashboard() {
                 <Feedback data={adminDashboard} /> 
                 <InterviewTable data={adminDashboard.tableDataSource} />
                 </>
-            : <section>{fallback}</section>}
+                : <section>{fallback}</section>
+            }
         </div>
     )
 }

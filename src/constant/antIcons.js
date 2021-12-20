@@ -1,4 +1,4 @@
-import {UserOutlined, SearchOutlined, UsergroupAddOutlined,HddTwoTone ,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined,SmileTwoTone,AppstoreTwoTone } from "@ant-design/icons";
+import {UserOutlined, SearchOutlined,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined,SmileTwoTone,AppstoreTwoTone } from "@ant-design/icons";
 
 export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;
@@ -13,4 +13,6 @@ export const deleteIcon = <CloseOutlined/>;
 export const smileIcon = <SmileTwoTone />;
 export const DBIcon = <HddTwoTone />;
 export const resourceIcon = <ReconciliationTwoTone />
-export const trophyIcon = <TrophyTwoTone />
+export const trophyIcon = < TrophyTwoTone classID="trophy" />
+export const leftSlide = <LeftOutlined />
+export const rightSlide = <RightOutlined />

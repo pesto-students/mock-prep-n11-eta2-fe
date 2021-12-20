@@ -3,10 +3,8 @@ import { queryForm } from 'constant/formData'
 import './Contact.css' 
 import Forms  from 'component/Common/Form/Forms'
 
-
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
-
 
 export default function Contact() {
 
