@@ -1,5 +1,5 @@
 import React,{ Suspense,lazy } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import StudentProfile from "component/Dashboard/Student/Profile/StudentProfile";
 import { fallback } from "constant/navList";
 import 'antd/dist/antd.css';
@@ -38,7 +38,7 @@ function App() {
             <PublicRoute exact path="/join" component={Join}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/contact" component={Contact}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/signIn" component={SignIn}  loggedIn={loginState.isLoggedIn} restricted="false" />
-            <PrivateRoute exact path="/admin/login" component={AdminLogin} loggedIn={loginState.isLoggedIn}/>
+            <PublicRoute exact path="/admin/login" component={AdminLogin} loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PrivateRoute exact path="/admin/dashboard" component={Dashboard} loggedIn={loginState.isLoggedIn}/>
             <PrivateRoute exact path="/admin/interviewerList" component={InterviewerList} loggedIn={loginState.isLoggedIn}/>
             <PrivateRoute exact path="/interviewer/dashboard" component={InterviewerList} loggedIn={loginState.isLoggedIn}/>
