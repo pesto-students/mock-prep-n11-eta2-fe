@@ -1,11 +1,14 @@
 import { lazy } from "react"
 import { Link } from "react-router-dom"
-import { logoUrl } from 'constant/const_url'
-import "./Join.css"
+import { logoUrl } from 'Constant/const_url'
 import GoogleLogin from "react-google-login"
 import { useDispatch } from "react-redux"
+import { getData, insertData } from "api/Api"
+import { insertUser,insertTopic, getInterviewers} from "Constant/apiUrl"
+
+
 import authActionCreator from "Redux/Action Creators/authActionCreators"
-import { GoogleOutlined } from "@ant-design/icons"
+import "./Join.css"
 
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
@@ -13,21 +16,15 @@ const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/Joi
 
 export default function JoinUs ({isSignUp}){
     const dispatch = useDispatch()
-    const handleLogin = async googleData => {
-        const res = await fetch("http://localhost:8080/user", {
-            method: "POST",
-            body: JSON.stringify({
-            token: googleData.tokenId
-        }),
-        headers: {
-            "Content-Type": "application/json"
-        }
-        })
-        const data = await res.json();
-        authActionCreator.setRole(dispatch,true);
-        console.log("Function Completed")
-    }
+    
+    const handleLogin = googleData => {
 
+        const interviewer = getData(getInterviewers);
+        console.log(interviewer)
+
+        insertData(insertTopic, googleData)
+        insertData(insertUser, {name:"saif",email:"saj"})
+    }
 
     return (
         <>

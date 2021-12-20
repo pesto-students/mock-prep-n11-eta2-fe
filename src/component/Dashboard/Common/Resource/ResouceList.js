@@ -10,7 +10,7 @@ import { resourceForm } from 'Constant/formData'
 import Forms  from 'component/Common/Form/Forms';
 import { getData } from 'api/Api'
 import { getResources, insertResource } from 'Constant/apiUrl'
-import { insertData } from 'api/Insert'
+import { insertData } from 'api/Api'
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const ResourceCard = lazy(() => import('component/Common/Cards/Resource/ResouceCard'))

@@ -1,6 +1,6 @@
 import React,{ Suspense } from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { fallback } from "constant/navList";
+import { fallback } from "Constant/navList";
 import Route  from "Route/Routes"
 import 'antd/dist/antd.css';
 import './App.css';
@@ -9,13 +9,13 @@ function App() {
   
   return (
     <div className="App">
-      {/* <Router>
+      <Router>
         <Suspense fallback={fallback}>
           <Switch>
               <Route/>
           </Switch>  
         </Suspense>
-      </Router> */}
+      </Router>
     </div>  
   );
 }

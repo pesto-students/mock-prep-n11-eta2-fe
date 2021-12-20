@@ -16,7 +16,10 @@ export default function Header({ isLoggedIn }) {
                 <Link className="header-icons" to="/about"> About </Link>
                 <Link className="header-icons" to="/package"> Package </Link> 
                 <Link className="header-icons" to="/contact"> Contact Us </Link> 
-                <Link className="header-icons" to="/join"><Button buttonType='primary' buttonName={isLoggedIn ? "Logout" : "Sign In"} isDisabled="false" /></Link>
+                <Link className="header-icons" to="/join">Sign In</Link>
+                <Link className="header-icons" to="/signIn"><Button buttonType='primary' buttonName={isLoggedIn ? "Logout" : "Join Us"} isDisabled="false" /></Link>
+              
+
             </div>   
         </header>
     )

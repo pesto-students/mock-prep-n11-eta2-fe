@@ -7,7 +7,7 @@ import Forms from 'component/Common/Form/Forms';
 import "./StudentProfile.css"
 import { getData } from 'api/Api';
 import { getStudentById, updateStudent } from 'Constant/apiUrl';
-import { updateData } from 'api/Update';
+import { updateData } from 'api/Api';
 
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))

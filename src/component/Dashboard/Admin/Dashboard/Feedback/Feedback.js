@@ -1,7 +1,7 @@
 import React, { lazy,useState,useEffect } from 'react'
 import { totalSaleOption} from "Constant/data"
 import "./Feedback.css"
-import { getData } from 'api/Fetch'
+import { getData } from 'api/Api'
 import { getReviews } from 'Constant/apiUrl'
 
 const DashboardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))

@@ -9,7 +9,7 @@ import { topicForm } from 'Constant/formData'
 import Forms from 'component/Common/Form/Forms';
 import { getData } from 'api/Api'
 import { getTopics, insertTopic } from 'Constant/apiUrl'
-import { insertData } from 'api/Insert'
+import { insertData } from 'api/Api'
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const TopicsCard = lazy(() => import('component/Common/Cards/Topics/TopicsCard'))

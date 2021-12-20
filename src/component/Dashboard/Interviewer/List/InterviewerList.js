@@ -7,8 +7,8 @@ import "./InterviewerList.css"
 import { adminNavList} from "Constant/navList"
 import { getData } from 'api/Api';
 import { deleteInterviewer, getInterviewers, updateInterviewer } from 'Constant/apiUrl';
-import { removeData } from 'api/Api';
-import { updateData } from 'api/Update';
+import { removeData ,updateData} from 'api/Api';
+
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))

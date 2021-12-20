@@ -7,7 +7,7 @@ import "./StudentList.css"
 import { adminNavList} from "Constant/navList"
 import { deleteStudent, getStudents, updateStudent } from 'Constant/apiUrl';
 import { getData } from 'api/Api';
-import { updateData } from 'api/Update';
+import { updateData } from 'api/Api';
 import { removeData } from 'api/Api';
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
@@ -21,7 +21,6 @@ export default function InterviewerList() {
     const { Search } = Input;
     const { TabPane } = Tabs;
 
-
     let [students, setStudents] = useState([])
     let [interviewerList, setInterviewer] = useState([]); 
 
@@ -29,7 +28,6 @@ export default function InterviewerList() {
         const getInterviewer = async () => { 
             const interviewer = await getData(getStudents);
             if (interviewer) { setStudents(interviewer); setInterviewer(interviewer) }
-          
         }
         getInterviewer()
     }, [])

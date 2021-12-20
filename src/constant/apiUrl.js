@@ -1,4 +1,5 @@
-const baseUrl = "https://mockprep.herokuapp.com"
+// const baseUrl = "https://mockprep.herokuapp.com"
+const baseUrl = "http://localhost:8080"
 
 //Get
 export const getInterviewers = baseUrl + "/interviewer/getInterviewers"
@@ -28,6 +29,7 @@ export const getResourById = baseUrl + "/resource/getResource/"
 export const getQuizContent= baseUrl + "/quiz/getQuizList/"
 
 //Insert
+export const insertUser = baseUrl + "/user/addUser"
 export const insertTopic = baseUrl + "/topic/addTopic"
 export const insertResource = baseUrl + "/resource/addResource"
 
