@@ -1,21 +1,23 @@
 import React, { lazy,useState,useEffect } from 'react'
 import { totalSaleOption} from "constant/data"
 import "./Feedback.css"
-import { getData } from 'api/Fetch'
 import { getReviews } from 'constant/apiUrl'
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+import { useDispatch, useSelector } from 'react-redux'
 
 const DashboardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
 export default function Feedback({ data }) {
     
     let [testimonials,setTestimonial] = useState([])
-    
+    const dispatch = useDispatch();
+    let feedbackdata = useSelector(state => state.dataReducer.feedback)
     useEffect(() => { 
-        const getInterviewer = async () => { 
-            const testimonial = await getData(getReviews);
-            if(testimonial) setTestimonial(testimonial)
-        }
-        getInterviewer()
-    }, [])
+        dataActionCreators.getAdminData(dispatch,getReviews,dataActions.setFeedback)
+    },[])
+    useEffect(() => {    
+            if(feedbackdata) setTestimonial(feedbackdata)
+    }, [feedbackdata])
     
     return (
         <div>

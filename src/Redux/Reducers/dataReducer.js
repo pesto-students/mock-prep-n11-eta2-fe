@@ -28,6 +28,26 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 testimonials : action.data
             }
         }
+        case 'SET_FEEDBACK' : {
+            return {
+                ...state,
+                feedback : action.data
+            }
+        }
+
+        case 'SET_QUIZ' :{
+            return {
+                ...state,
+                quiz : action.data
+            }
+        }
+
+        case 'SET_PACKAGE':{
+            return {
+                ...state,
+                package : action.data
+            }
+        }
 
         default:
             return state;

@@ -3,7 +3,6 @@ import { DashboardIcon } from 'constant/antIcons'
 import { adminNavList, fallback } from "constant/navList"
 
 import "./Dashboard.css"
-import { getData } from 'api/Fetch'
 import { getAdminDashboard } from 'constant/apiUrl'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import { useDispatch } from 'react-redux'
