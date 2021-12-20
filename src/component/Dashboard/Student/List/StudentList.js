@@ -1,14 +1,14 @@
 import React, {useState,useEffect, lazy} from 'react'
-import { smileIcon,deleteIcon } from "constant/antIcons"
+import { smileIcon,deleteIcon } from "Constant/antIcons"
 import { Input,Tabs,Button} from 'antd';
 import { Link} from "react-router-dom"
-import { fallback, interviewerFilter} from "constant/navList"
+import { fallback, interviewerFilter} from "Constant/navList"
 import "./StudentList.css"
-import { adminNavList} from "constant/navList"
-import { deleteStudent, getStudents, updateStudent } from 'constant/apiUrl';
-import { getData } from 'api/Fetch';
+import { adminNavList} from "Constant/navList"
+import { deleteStudent, getStudents, updateStudent } from 'Constant/apiUrl';
+import { getData } from 'api/Api';
 import { updateData } from 'api/Update';
-import { removeData } from 'api/Delete';
+import { removeData } from 'api/Api';
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))

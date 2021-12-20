@@ -6,11 +6,9 @@ export default function authReducer(state = { role: "admin", isLoggedIn : false 
         case authActions.SET_ROLE:
             return state.role = action.role
         case authActions.setLogin:{
-            console.log(action)
             state.isLoggedIn = action.isLoggedIn
             return {...state}
         }
-            
         default:
             return state;
     }

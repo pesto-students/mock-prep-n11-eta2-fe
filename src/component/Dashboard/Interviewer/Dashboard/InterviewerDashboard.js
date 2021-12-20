@@ -1,9 +1,6 @@
 import SideNav from 'component/Dashboard/Common/SideNav/SideNav'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
- import { dashbordNames, interviewerNavList } from '../../../../constant/sideNavList'
-import { InterviewerProfile } from '../Profile/InterviewerProfile'
-import CalendlyApp from './Dashboard Components/Calendly/Calendly'
-import Earnings from './Dashboard Components/Earnings'
+import { dashbordNames, interviewerNavList } from '../../../../Constant/sideNavList'
+
 
 
 export default function InterviewerDashboard () {

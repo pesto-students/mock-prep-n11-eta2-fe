@@ -1,0 +1,9 @@
+.package{
+    padding: 2vw;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+#check{
+    padding-right: 1vw;
+}

@@ -1,12 +1,12 @@
 import React, { useState,lazy,useEffect} from 'react'
 import { Tag } from "antd"
-import { UserIcon } from 'constant/antIcons';
+import { UserIcon } from 'Constant/antIcons';
 import { useParams } from "react-router-dom";
-import { adminNavList, fallback } from "constant/navList"
+import { adminNavList, fallback } from "Constant/navList"
 import "./InterviewerProfile.css"
 import Forms  from 'component/Common/Form/Forms';
 import { getData } from 'api/Fetch';
-import {   getInterviewerById, updateInterviewer } from 'constant/apiUrl';
+import {   getInterviewerById, updateInterviewer } from 'Constant/apiUrl';
 import { updateData } from 'api/Update';
 
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))

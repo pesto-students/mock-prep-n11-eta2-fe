@@ -1,6 +1,6 @@
 import React, { lazy } from 'react'
 import { Link } from "react-router-dom"
-import { logoUrl } from 'constant/const_url'
+import { logoUrl } from 'Constant/const_url'
 import { Button, Tabs } from "antd"
 import "./SignIn.css"
 

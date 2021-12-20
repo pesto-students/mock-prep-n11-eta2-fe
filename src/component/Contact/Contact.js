@@ -1,5 +1,5 @@
 import React, { lazy} from 'react'
-import { queryForm } from 'constant/formData'
+import { queryForm } from 'Constant/formData'
 import './Contact.css' 
 import Forms  from 'component/Common/Form/Forms'
 

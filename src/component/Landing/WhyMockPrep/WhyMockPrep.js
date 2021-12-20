@@ -1,18 +1,11 @@
 import React from 'react'
+import { mockPrepAdvantages } from 'Constant/data'
 import "./WhyMockPrep.css"
-import { mockPrepAdvantages } from 'constant/data'
 
 export default function WhyMockPrep () {
     return (
-        <div>
-            <h2 className="headline" style={{marginTop:"10vh"}}>Why MockPrep ?</h2>
-                <section className="sell-pointer">
-                    {mockPrepAdvantages.map(pointer => (
-                        <section  className="pointer" key={pointer.id}>
-                            <p className="point"> <i className={pointer.icon}></i>{pointer.text}</p>
-                        </section>
-                    ))}
-                </section>
-        </div>
+        <section id="sell-pointer">
+            {mockPrepAdvantages.map((pointer,index) => (<section  id="pointer" key={index}><p id="point"> <i className={pointer.icon}></i>{pointer.text}</p></section>))}
+        </section>
     )
 }

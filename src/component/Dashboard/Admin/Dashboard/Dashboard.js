@@ -1,10 +1,10 @@
 import React, {lazy,useState,useEffect} from 'react'
-import { DashboardIcon } from 'constant/antIcons'
-import { adminNavList, fallback } from "constant/navList"
+import { DashboardIcon } from 'Constant/antIcons'
+import { adminNavList, fallback } from "Constant/navList"
 
 import "./Dashboard.css"
-import { getData } from 'api/Fetch'
-import { getAdminDashboard } from 'constant/apiUrl'
+import { getData } from 'api/Api'
+import { getAdminDashboard } from 'Constant/apiUrl'
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const DashBoardCard = lazy(() => import('component/Dashboard/Admin/Dashboard/Cards/DashboardCards'))

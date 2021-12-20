@@ -1,12 +1,12 @@
 import React, {useEffect, lazy,useState} from 'react'
 import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
-import { trophyIcon } from "constant/antIcons"
-import { fallback, topicsFilter } from 'constant/navList'
-import { adminNavList } from 'constant/navList'
-import { topicForm } from 'constant/formData'
-import { getData } from 'api/Fetch'
-import { getQuizList } from 'constant/apiUrl'
+import { trophyIcon } from "Constant/antIcons"
+import { fallback, topicsFilter } from 'Constant/navList'
+import { adminNavList } from 'Constant/navList'
+import { topicForm } from 'Constant/formData'
+import { getData } from 'api/Api'
+import { getQuizList } from 'Constant/apiUrl'
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const QuizCard = lazy(() => import('component/Common/Cards/Quiz/Quiz'))

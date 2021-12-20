@@ -13,17 +13,17 @@ const Footer = lazy(() => import("component/Common/Footer/Footer"))
 export default function Landing() {
 
     return (
-        <>
+        <div id="landing-page">
            <Header/>
-                <div className="landing-page">
+                <section id="landing-container">
                     <Introduction/>
                     <Interviewer/>
                     <WhyMockPrep/>
-                    <Analytics/>
-                    <Packages/>
+                    {/* <Analytics/> */}
+                     <Packages/>
                     <Testimonials/> 
-                </div>
-            <Footer/>
-        </>
+                </section>
+            {/* <Footer/> */}
+        </div>  
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, Button, Radio,Checkbox,Row,Col } from 'antd';
+import { Form, Radio,Checkbox } from 'antd';
 
 export default function QuizOptionForm({options,submit,multiple,attempt,attempted}) {
 

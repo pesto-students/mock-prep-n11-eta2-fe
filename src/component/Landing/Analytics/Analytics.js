@@ -1,9 +1,9 @@
 import React, { lazy,useState,useEffect } from 'react'
 import "./Analytics.css"
-import { BarChartOptions,PieChartOptions } from 'constant/data'
+import { BarChartOptions,PieChartOptions } from 'Constant/data'
 import { UserAddOutlined } from "@ant-design/icons"
-import { getData } from 'api/Fetch'
-import { getDashboards} from 'constant/apiUrl'
+import { getData } from 'api/Api'
+import { getDashboards} from 'Constant/apiUrl'
 
 const PieChart = lazy(() => import("component/Common/Charts/Pie/PieChart"))
 const DashBoardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))

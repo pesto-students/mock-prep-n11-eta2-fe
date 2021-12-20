@@ -1,14 +1,12 @@
 import { lazy ,useState,useEffect} from "react"
 import "./Package.css"
-import { getPricing } from "constant/apiUrl"
-import { getData } from "api/Fetch"
-import { fallback } from "constant/navList"
+import { getPricing } from "Constant/apiUrl"
+import { getData } from "api/Api"
+import { fallback } from "Constant/navList"
 
 const Header = lazy(() => import("component/Common/Header/Header"))
 const PackageCard = lazy(() => import("component/Common/Cards/Packages/PackageCard"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
-
-
 
 export default function Package() {
     
