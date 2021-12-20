@@ -1,8 +1,18 @@
-/* #test-profile{
+.testimonials{
+    width: 60%;
+    margin: auto;
+}
+
+#testProfile{
     width: 10vw;
+    height: 10vw;
+    margin: 1vh 0vw;
     border-radius: 100%;
 }
 
-#testimonials{
-    width: 20vw;
-} */
+#testContainer{display: flex;}
+
+#prof{
+    width: 10vw;
+
+}

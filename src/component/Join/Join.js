@@ -40,9 +40,6 @@ export default function JoinUs({ isSignUp }) {
             alert("Registration failed")
         }
        
-     
-        
-
         authActionCreator.setRole(dispatch,true);
     }
 

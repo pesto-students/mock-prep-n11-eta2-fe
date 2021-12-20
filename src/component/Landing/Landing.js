@@ -6,9 +6,9 @@ const Introduction = lazy(() => import("component/Landing/Introduction/Introduct
 const Interviewer = lazy(() => import("component/Landing/Interviewers/Interviewers"))
 const WhyMockPrep = lazy(() => import("component/Landing/WhyMockPrep/WhyMockPrep"))
 const Analytics = lazy(() => import("component/Landing/Analytics/Analytics"))
-// const Packages = lazy(() => import("component/Landing/Packages/Packages"))
-// const Testimonials = lazy(() => import("component/Landing/Testimonials/Testimonial"))
-// const Footer = lazy(() => import("component/Common/Footer/Footer"))
+const Packages = lazy(() => import("component/Landing/Packages/Packages"))
+const Testimonials = lazy(() => import("component/Landing/Testimonials/Testimonial"))
+const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function Landing() {
 
@@ -20,10 +20,10 @@ export default function Landing() {
                     <Interviewer/>
                     <WhyMockPrep/>
                     <Analytics/>
-                     {/* <Packages/>
-                    <Testimonials/>  */}
+                    <Packages/>
+                    <Testimonials/> 
                 </section>
-            {/* <Footer/> */}
+            <Footer/>
         </div>  
     )
 }
