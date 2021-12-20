@@ -15,7 +15,7 @@ export default function Testimonials() {
             dataActionCreator.setReviews(dispatch, data)
         }
         getDataFunction()
-    }, [])
+    }, [dispatch])
 
     let reviews = useSelector(state => state.dataReducer);
     console.log(reviews)

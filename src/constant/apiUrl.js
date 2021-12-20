@@ -32,5 +32,7 @@ export const getQuizContent= baseUrl + "/quiz/getQuizList/"
 export const insertUser = baseUrl + "/user/addUser"
 export const insertTopic = baseUrl + "/topic/addTopic"
 export const insertResource = baseUrl + "/resource/addResource"
+export const insertInterviewer = baseUrl + "/interviewer/addInterviewer"
+export const insertStudent = baseUrl + "/student/addStudent"
 
 

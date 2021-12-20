@@ -17,7 +17,7 @@ export default function Interviewers() {
             dataActionCreator.setInterviewer(dispatch, interviewer)
         }
         getDataFunction()
-    }, [])
+    }, [dispatch])
 
     let interviewers = useSelector(state => state.dataReducer);
     console.log(interviewers)
