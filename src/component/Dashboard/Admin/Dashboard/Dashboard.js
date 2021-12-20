@@ -3,8 +3,11 @@ import { DashboardIcon } from 'Constant/antIcons'
 import { adminNavList, fallback } from "Constant/navList"
 
 import "./Dashboard.css"
-import { getData } from 'api/Api'
-import { getAdminDashboard } from 'Constant/apiUrl'
+import { getAdminDashboard } from 'constant/apiUrl'
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import dataActions from 'Redux/Actions/dataAction'
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const DashBoardCard = lazy(() => import('component/Dashboard/Admin/Dashboard/Cards/DashboardCards'))
@@ -17,15 +20,18 @@ export default function Dashboard() {
 
     
     let [adminDashboard,setAdminDashboard] = useState([])
+    let adminData = useSelector(state => state.dataReducer)
+
+    const dispatch = useDispatch()
+    useEffect(() => { 
+        dataActionCreators.getAdminData(dispatch,getAdminDashboard,dataActions.setAdminData)
+    },[])
 
     useEffect(() => { 
-        const getAdminDash = async () => { 
-            const adminDash = await getData(getAdminDashboard);
-            if (adminDash) setAdminDashboard(adminDash[0])
-           
+        if(adminData.adminDashboard && adminData.adminDashboard.length){
+            setAdminDashboard(adminData.adminDashboard[0]);
         }
-        getAdminDash()
-    },[])
+    },[adminData])
 
     return (
         <div className="dashboard">

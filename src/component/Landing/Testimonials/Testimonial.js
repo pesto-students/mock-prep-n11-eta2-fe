@@ -3,23 +3,26 @@ import { useDispatch,useSelector } from 'react-redux';
 import { getReviews } from 'Constant/apiUrl';
 import { getData } from 'api/Api';
 import "./Testimonial.css"
-import { dataActionCreator } from 'Redux/Action Creators/dataActionCreators';
+import { getReviews } from 'constant/apiUrl';
+import { useSelector } from 'react-redux';
+import dataActions from 'Redux/Actions/dataAction';
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
+import { useDispatch } from 'react-redux';
 
 export default function Testimonials() {
     
-    const dispatch = useDispatch();
- 
-    useEffect(() => { 
-        const getDataFunction = async () => { 
-            const data = await getData(getReviews);
-            dataActionCreator.setReviews(dispatch, data)
-        }
-        getDataFunction()
-    }, [dispatch])
+    let [testimonials,setTestimonial] = useState([])
 
-    let reviews = useSelector(state => state.dataReducer);
-    console.log(reviews)
- 
+    let data = useSelector(state => state.dataReducer.testimonials)
+
+    const dispatch = useDispatch()
+    useEffect(() => { 
+        dataActionCreator.getAdminData(dispatch,getReviews,dataActions.setTestimonials)
+    },[])
+    useEffect(() => { 
+        setTestimonial(data)
+    },[data])
+
     return (
         <div>
                 {/* {reviews ?

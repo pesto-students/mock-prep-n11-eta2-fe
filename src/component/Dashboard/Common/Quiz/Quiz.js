@@ -1,12 +1,16 @@
 import React, {useEffect, lazy,useState} from 'react'
 import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
-import { trophyIcon } from "Constant/antIcons"
-import { fallback, topicsFilter } from 'Constant/navList'
-import { adminNavList } from 'Constant/navList'
-import { topicForm } from 'Constant/formData'
-import { getData } from 'api/Api'
-import { getQuizList } from 'Constant/apiUrl'
+
+import { trophyIcon } from "constant/antIcons"
+import { fallback, topicsFilter } from 'constant/navList'
+import { adminNavList } from 'constant/navList'
+import { topicForm } from 'constant/formData'
+import { getQuizList } from 'constant/apiUrl'
+import { useDispatch, useSelector } from 'react-redux'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+
 
 const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const QuizCard = lazy(() => import('component/Common/Cards/Quiz/Quiz'))
@@ -15,20 +19,17 @@ const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 
 export default function QuizList() {
     
-    
-    let [quiz, setInterviewer] = useState([]);
-
-    let [topicsList, setInterviewerList] = useState([]);
-    
+    const dispatch = useDispatch()
+    let [quiz, setQuiz] = useState([]);
+    let [topicsList, setTopicsList] = useState([]);
+    let quizData = useSelector(state => state.dataReducer.quiz)
     useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getQuizList);
-           
-            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
-            console.log(interviewer)
-        }
-        getInterviewer()
+        dataActionCreator.getAdminData(dispatch,getQuizList,dataActions.setQuiz)
     },[])
+
+    useEffect(() => {
+        if (quizData) { setQuiz(quizData); setTopicsList(quizData) }
+    },[quizData])
 
     const { Search } = Input;
     const interviewerForm = JSON.parse(JSON.stringify(topicForm));
@@ -38,17 +39,17 @@ export default function QuizList() {
     const handleFilter = (value) => {
 
         let filtered = quiz.filter(fil => value.some(e => fil.title.includes(e)));
-        setInterviewer(filtered)
+        setQuiz(filtered)
 
         if (value.length === 0) {
-            setInterviewer(quiz)
+            setQuiz(quiz)
         }
     }
     
     const onSearch = (value) => {
         let filtered = quiz.filter(val => val.title.includes(value) );
        
-        setInterviewer(filtered)
+        setQuiz(filtered)
     }; 
 
     const search = <><Filter filterOptions={topicsFilter} filterFunction={handleFilter} placeholder="Filter Quiz" /><section className="search"><Search placeholder="Search Quiz" onSearch={onSearch} style={{ width: 200 }} />

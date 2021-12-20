@@ -1,18 +1,14 @@
-import { dataActions } from "Redux/Actions/dataAction";
+import { getData } from "api/Fetch";
+import dataActions from "../Actions/dataAction";
 
-export const dataActionCreator = {
+const dataActionCreator = {
+
+    getAdminData : async function(dispatch,url,type){
+                    console.log(type)
+                    const data = await getData(url);
+                    dispatch({type : type,data : data})
+                }
     
-    getData: async function (dispatch, getData) {
-        const data = await getData();
-        dispatch({ type: dataActions.setData, data: data })
-    },
-
-    setInterviewer: function (dispatch, data) {
-        dispatch({ type: dataActions.setInterviewer, data: data })
-    },
-
-    setReviews: function (dispatch, data) {
-        dispatch({ type: dataActions.setReviews, data: data })
-    }
 }
 
+export default dataActionCreator

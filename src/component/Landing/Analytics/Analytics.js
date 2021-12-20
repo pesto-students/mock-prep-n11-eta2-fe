@@ -2,8 +2,11 @@ import React, { lazy,useState,useEffect } from 'react'
 import "./Analytics.css"
 import { BarChartOptions,PieChartOptions } from 'Constant/data'
 import { UserAddOutlined } from "@ant-design/icons"
-import { getData } from 'api/Api'
-import { getDashboards} from 'Constant/apiUrl'
+import { getDashboards} from 'constant/apiUrl'
+import dataActions from 'Redux/Actions/dataAction'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const PieChart = lazy(() => import("component/Common/Charts/Pie/PieChart"))
 const DashBoardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
@@ -12,15 +15,17 @@ const DashBoardCard = lazy(() => import("component/Common/Cards/DashboardCard/Da
 export default function Analytics() {
     
     let [dashboard, setDashboard] = useState([])
- 
+    const dispatch  = useDispatch();
+    let data = useSelector(state => state.dataReducer);
     useEffect(() => { 
-        const getDashboard = async () => { 
-            const dash = await getData(getDashboards);
-            if (dash) setDashboard(dash[0])
-            
-        }
-        getDashboard()
+        dataActionCreator.getAdminData(dispatch,getDashboards,dataActions.setLandingAnalytics)
     },[])
+
+    useEffect(() => { 
+        if(data.analyticsLandingData && data.analyticsLandingData){
+            setDashboard(data.analyticsLandingData[0]);
+        }
+    },[data])
     
     let dashboardMetrics;
     let onboardingMetrics;

@@ -1,4 +1,5 @@
-export default function authReducer(state = { role: "admin", isLoggedIn : false }, action)
+export default function authReducer(state = { role: "admin", isLoggedIn : true }, action)
+
 {
     switch (action.type) {
         case 'SET_ROLE' :
