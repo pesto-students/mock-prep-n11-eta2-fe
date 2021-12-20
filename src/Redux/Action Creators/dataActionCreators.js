@@ -1,12 +1,13 @@
 import { getData } from "api/Api";
-import dataActions from "../Actions/dataAction";
+
 
 const dataActionCreator = {
-
-    getAdminData : async function(dispatch,url,type){
+    
+    getAdminData: async function (dispatch, url, type) {
                     console.log(type)
                     const data = await getData(url);
-                    dispatch({type : type,data : data})
+                    if (data.data.length > 0) {dispatch({type : type,data : data})}
+                  
                 }
     
 }

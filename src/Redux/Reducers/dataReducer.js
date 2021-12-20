@@ -1,5 +1,6 @@
 export default function dataReducer (state = {adminDashboard : {}},action){
-    switch(action.type){
+    
+    switch (action.type) {
         case 'SET_DATA':
             return state.data = action.data
         
@@ -15,7 +16,8 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 analyticsLandingData : action.data
             }
         }
-        case 'SET_INTERVIEWER' :{
+        case 'SET_INTERVIEWER': {
+
             return {
                 ...state,
                 interviewerData : action.data
