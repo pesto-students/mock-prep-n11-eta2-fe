@@ -38,3 +38,11 @@
     .signBox>img{width: 40vw;}
 }
 
+
+.google-login-button{
+    padding: 0;
+    border: none;
+    background: none;
+    margin: 25% 0 ;
+    cursor: pointer;
+}
