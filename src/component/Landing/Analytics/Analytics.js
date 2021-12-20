@@ -18,7 +18,7 @@ export default function Analytics() {
     
     useEffect(() => { 
             dataActionCreator.getAdminData(dispatch,getDashboards,dataActions.setLandingAnalytics)
-    }, [])
+    }, [dispatch])
     
     let data = useSelector(state => state.dataReducer)
     if (data.analyticsLandingData !== undefined) { dashboard = data.analyticsLandingData.data[0] }

@@ -14,7 +14,7 @@ export default function Interviewers() {
     
     useEffect(() => { 
             dataActionCreator.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)
-    }, [])
+    }, [dispatch])
     
     let data = useSelector(state => state.dataReducer)
     if (data.interviewerData !== undefined) { interviewers = data.interviewerData.data.slice(0,6);}

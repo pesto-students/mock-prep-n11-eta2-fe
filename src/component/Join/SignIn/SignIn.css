@@ -12,6 +12,7 @@
     widows: 100vw;
 }
 
+
 .JoinUsButton{
     width:20vw !important;
     padding: 0.5vw auto !important;
@@ -49,20 +50,8 @@
     width: 10vw;
 }
 
-@media only screen and (max-width:768px) {
-    .signInBox{
-        width: 35vw !important;
-    }
-}
 
-@media only screen and (max-width:430px) {
 
-    .Join{height: auto !important;}
-    .signInBox{
-        width: 85vw !important;
-        padding-top: 5vh;
-        margin: 10vh auto !important;
-    }
-    .signInBox>img{width: 43vw;}
-    .SignIn{height: auto !important;margin: 5vh auto;}
+#signBtn>.JoinUsButton{
+    margin: 6vh auto;
 }

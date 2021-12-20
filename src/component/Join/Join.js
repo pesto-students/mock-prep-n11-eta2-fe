@@ -1,13 +1,14 @@
 import { lazy ,useState} from "react"
 import { Link } from "react-router-dom"
 import { logoUrl } from 'Constant/const_url'
-import { Button, Tabs } from "antd"
+import { Tabs } from "antd"
 import GoogleLogin from "react-google-login"
 import { useDispatch } from "react-redux"
 import authActionCreator from "Redux/Action Creators/authActionCreators"
 import { insertUser,insertInterviewer,insertStudent } from "Constant/apiUrl"
 import { insertData } from "api/Api"
 import "./Join.css"
+
 
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
@@ -33,8 +34,7 @@ export default function JoinUs({ isSignUp }) {
 
         if (res.status === 200) {
             let interviewer = { "name": res.data.name, "email": res.data.email, "userId": res.data._id, }
-            let rs = await insertData(insertInterviewer, interviewer)
-            console.log(rs)
+            insertData(insertInterviewer, interviewer)
         }
         else { 
             alert("Registration failed")
@@ -56,14 +56,9 @@ export default function JoinUs({ isSignUp }) {
 
         if (res.status === 200) { 
             let student = {"name": res.data.name,"email": res.data.email,"userId": res.data._id, }
-            let rs = await insertData(insertStudent, student)
-    
-        }
-        else { 
-            alert("Registration failed")
+            insertData(insertStudent, student)
         }
        
-      
         authActionCreator.setRole(dispatch,true);
         console.log("Function Completed")
     }
@@ -91,7 +86,7 @@ export default function JoinUs({ isSignUp }) {
                                         cookiePolicy={'single_host_origin'}
                                     />
                                     <p>Already have an account ? <Link to="/signIn">Sign in</Link> </p>
-                            </TabPane>
+                    k        </TabPane>
                             <TabPane tab={<span>Join as Student</span>} key="2">
                             <p>Continue to join as Student</p>
                            

@@ -49,6 +49,14 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 package : action.data
             }
         }
+            
+        case 'SET_PRICING':{
+            return {
+                ...state,
+                pricing : action.data
+            }
+        }
+            
 
         default:
             return state;

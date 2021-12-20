@@ -7,7 +7,8 @@
     setTestimonials : 'SET_TESTIMONIALS',
     setFeedback : 'SET_FEEDBACK',
     setQuiz : 'SET_QUIZ',
-    setPackage : 'SET_PACKAGE'
+    setPackage : 'SET_PACKAGE',
+    setPricing : 'SET_PRICING'
 }
 
 export default dataActions

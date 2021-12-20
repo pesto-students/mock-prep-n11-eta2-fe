@@ -3,11 +3,6 @@ import { Carousel } from 'antd'
 import "./Testimonial.css"
 
 export default function Slides({testimonials}) {
-
-    
-    function onChange(a, b, c) {
-        console.log(a, b, c);
-    }
   
     const contentStyle = {
         width: "85%",
@@ -17,17 +12,21 @@ export default function Slides({testimonials}) {
 
     return (
         <div>
-            <Carousel style={contentStyle} autoplay afterChange={onChange}>
-                {testimonials.map((review,index) => (
-                <section key={index} className="testimonial">
-                     <img src={review.image} alt="profile" id="test-profile"></img>
-                     <section className="review">
-                         <p>"{review.review}"</p>
-                         <p className="test-person">{review.name}</p>
-                         <p className="test-person">{review.company}</p>
-                     </section>
-                </section>
-                ))}
+            <Carousel style={contentStyle} autoplay>
+                {testimonials.map((test,index) => (
+                        <section key={index} className="testimonial">
+                            <section className="review">
+                            <img src={test.image} alt="profile" id="test-profile"></img>
+                                       
+                            </section>
+                        <section>
+                            <p id="rev">{test.name}, {test.company}</p>
+                            <p id="rev">"{test.review}"</p>
+                            <p id="rev" style={{color:"orangered"}}>{test.rating}/5</p>
+                            
+                            </section>
+                        </section>
+                    ))}
             </Carousel>,
         </div>
     )

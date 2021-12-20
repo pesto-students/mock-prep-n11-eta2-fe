@@ -21,14 +21,13 @@ export default function SignIn() {
                     <img src={logoUrl} alt="profile" />
                     <Tabs defaultActiveKey="1">
                             <TabPane tab={<span>Login</span>} key="1">
-                                <section>
-                                        <JoinUsButton className="sign-btn" signin={true} type={"facebook"}  />
+                                <section id="signBtn">
+                                        {/* <JoinUsButton className="sign-btn" signin={true} type={"facebook"}  /> */}
                                         <JoinUsButton className="sign-btn" signin={true} type={"google"} />
                                         <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>
                                 </section>
                             </TabPane>
-                            <TabPane tab={<span>Dummy Login</span>} key="2">
-                               
+                            <TabPane tab={<span>Dummy Login</span>} key="2">                            
                                 <section className="dummyButtons">
                                         <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Student</Button></Link>
                                         <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Interviewer</Button></Link>
