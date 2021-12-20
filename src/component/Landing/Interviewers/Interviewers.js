@@ -1,21 +1,24 @@
 import React, { lazy,useEffect,useState } from 'react'
 import "./Interviewers.css"
-import { getData} from 'api/Fetch'
 import { getInterviewers } from 'constant/apiUrl'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import { useDispatch, useSelector } from 'react-redux'
+import dataActions from 'Redux/Actions/dataAction'
 
 const InterviewerCard = lazy(() => import("component/Common/Cards/Interviewer/InterviewerCard"))
 
 export default function Interviewers() {
 
     let [interviewers,setInterviewers] = useState([])
-
+    let interviewerData = useSelector(state => state.dataReducer.interviewerData);
+    const dispatch = useDispatch()
     useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getInterviewers);
-            if(interviewer) setInterviewers(interviewer)
-        }
-        getInterviewer()
+        dataActionCreator.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)
     },[])
+
+    useEffect(() => {
+        if(interviewerData) setInterviewers(interviewerData)
+    },[interviewerData])
  
     return (
         <div>

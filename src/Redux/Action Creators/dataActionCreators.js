@@ -1,8 +1,14 @@
-import dataAction from "../Actions/dataAction";
+import { getData } from "api/Fetch";
+import dataActions from "../Actions/dataAction";
 
-export default dataActionCreator = {
-    getData : async function(dispatch,getData){
-                    const data = await getData();
-                    dispatch({type : dataAction.setData, data : data})
+const dataActionCreator = {
+
+    getAdminData : async function(dispatch,url,type){
+                    console.log(type)
+                    const data = await getData(url);
+                    dispatch({type : type,data : data})
                 }
+    
 }
+
+export default dataActionCreator

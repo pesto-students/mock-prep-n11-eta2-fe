@@ -1,20 +1,24 @@
 import React, {useState,useEffect} from 'react'
 import "./Testimonial.css"
 import { getReviews } from 'constant/apiUrl';
-import {getData} from 'api/Fetch';
+import { useSelector } from 'react-redux';
+import dataActions from 'Redux/Actions/dataAction';
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
+import { useDispatch } from 'react-redux';
 
 export default function Testimonials() {
     
     let [testimonials,setTestimonial] = useState([])
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const testimonial = await getData(getReviews);
-            if(testimonial) setTestimonial(testimonial)
-        }
-        getInterviewer()
-    },[])
+    let data = useSelector(state => state.dataReducer.testimonials)
 
+    const dispatch = useDispatch()
+    useEffect(() => { 
+        dataActionCreator.getAdminData(dispatch,getReviews,dataActions.setTestimonials)
+    },[])
+    useEffect(() => { 
+        setTestimonial(data)
+    },[data])
     return (
         <div>
             <h2 className="headline">Testimonials </h2>
