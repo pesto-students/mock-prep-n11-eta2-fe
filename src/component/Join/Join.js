@@ -14,7 +14,6 @@ import { useSelector } from "react-redux"
 import {  notification } from 'antd';
 import { errorSign } from 'Constant/antIcons'
 
-
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
@@ -71,7 +70,6 @@ export default function JoinUs({ isSignUp }) {
                            <TabPane tab={<span>Join as Interviewer</span>} key="1">
                                 <TabDetailsPane role="Interviewer" isSignUp={isSignUp} handleSuccess={handleLogin} />
                            </TabPane>
-                           
                             <TabPane tab={<span>Join as Student</span>} key="2">
                                 <TabDetailsPane role="Student" isSignUp={isSignUp} handleSuccess={handleLogin} />
                             </TabPane>

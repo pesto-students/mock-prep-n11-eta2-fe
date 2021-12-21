@@ -23,6 +23,13 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 interviewerData : action.data
             }
         }
+        case 'SET_STUDENTS': {
+
+            return {
+                ...state,
+                studentData : action.data
+            }
+        }
         case "SET_TESTIMONIALS" :{
             return {
                 ...state,

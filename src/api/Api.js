@@ -21,7 +21,7 @@ export async function insertData(url, data) {
 }
 
 // Delete Call
-export async function removeData(url,itemName) {
+export async function removeData(url) {
     let res = await axios.delete(url);
     return res;
 }

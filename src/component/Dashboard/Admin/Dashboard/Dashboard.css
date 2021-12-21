@@ -1,12 +1,21 @@
 .dashboard{
-    width: 82.5vw;
+    width: 100vw;
     height: 100vh;
-    position: absolute;
-    right: 0;
-    box-sizing: border-box;
+    display: flex;
+
 }
 
+.sideNav{
+    width: 17.5vw;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+}
 
-@media only screen and (max-width:430px){
-    .dashboard{width: 100vw;}
+.mainContainer{
+    width: 82vw;
+    min-height: 100vh;
+    position: absolute;
+    right: 0;
 }

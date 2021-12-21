@@ -3,6 +3,7 @@
     min-height: 50vh;
     padding: 1vh 0;
     height: auto;
+    text-align: left;
     margin: 20px 10px;
     border:1px solid lightgrey;   
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -34,7 +35,7 @@
 
 }
 
-#pricing-ben{color: grey;}
+#pricing-ben{color: grey;text-align: left;}
 
 #pricing-price{
     font-size: 1.5rem;

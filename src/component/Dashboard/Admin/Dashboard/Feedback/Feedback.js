@@ -1,25 +1,21 @@
 import React, { lazy,useState,useEffect } from 'react'
 import { totalSaleOption} from "Constant/data"
-import "./Feedback.css"
-
 import { getReviews } from 'Constant/apiUrl'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import { useDispatch, useSelector } from 'react-redux'
-
+import "./Feedback.css"
 
 const DashboardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
+
 export default function Feedback({ data }) {
     
     let [testimonials,setTestimonial] = useState([])
-    const dispatch = useDispatch();
     let feedbackdata = useSelector(state => state.dataReducer.feedback)
-    useEffect(() => { 
-        dataActionCreators.getAdminData(dispatch,getReviews,dataActions.setFeedback)
-    },[])
-    useEffect(() => {    
-            if(feedbackdata) setTestimonial(feedbackdata)
-    }, [feedbackdata])
+    const dispatch = useDispatch();
+    
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getReviews,dataActions.setFeedback)}, [])
+    useEffect(() => {   if (feedbackdata !== undefined) { setTestimonial(feedbackdata.data)}}, [feedbackdata])
     
     return (
         <div>
@@ -31,16 +27,20 @@ export default function Feedback({ data }) {
                         <h4>₹287,493</h4>
                         <p>1.4% Since Last Month</p>
                     </section>
-                    <section className="bottom">
-                        <p>Total Sales</p>
-                        <h4>₹87,493</h4>
-                        <p>5.43% Since Last Month</p>
+                    <section className="top">
+                        <p>Total Expenditure</p>
+                        <h4>12,493</h4>
+                        <p>5.43% growth</p>
                     </section>
-                    <DashboardChart className="totalEarningChart" options={totalSaleOption} data={data.totalSales} />
+                    <section className="top">
+                        <p>Total Profits</p>
+                        <h4>40,493</h4>
+                        <p>15.43% growth</p>
+                    </section>
                 </section>
                 <section className="cust-review">   
                     <h2 className="headline">Customer Reviews</h2>
-                    {testimonials ?
+                    {testimonials.length>0 ?
                         <section>
                             {testimonials.map((review, index) => (
                                 <section key={index} className="review-container">
