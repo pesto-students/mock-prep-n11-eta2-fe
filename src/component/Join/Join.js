@@ -28,11 +28,12 @@ export default function JoinUs({ isSignUp }) {
     const error = useSelector(state => state.errorReducer)
 
     useEffect (() => {
-        notification.open({
-            message: error.error,
-            icon: errorSign,
-          });
-       
+        if(error.error){
+            notification.open({
+                message: error.error,
+                icon: errorSign,
+              });
+        }
     },[error])
     
 
@@ -64,8 +65,6 @@ export default function JoinUs({ isSignUp }) {
                 <div className="Join">
                     <section className="signBox">
                     <img src={logoUrl} alt="profile" />
-                    <button onClick = {() => utilityFunction.logIn(dispatch,{},"student",setCookie)} >Login</button>
-                    <button onClick = {() => utilityFunction.logOut(dispatch,removeCookie,cookies)} >Logout</button>
                     <Tabs defaultActiveKey="1">
                            <TabPane tab={<span>Join as Interviewer</span>} key="1">
                                 <TabDetailsPane role="Interviewer" isSignUp={isSignUp} handleSuccess={handleLogin} />

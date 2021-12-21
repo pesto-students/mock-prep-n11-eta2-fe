@@ -16,11 +16,7 @@
     "chart.js": "3.6.2",
     "dotenv": "^10.0.0",
     "fetch": "1.1.0",
-<<<<<<< HEAD
-    "process": "^0.11.10",
-=======
-    "nodejs": "0.0.0",
->>>>>>> fb4d5b61a87c5e2745af9235dc7d70c5797232ec
+
     "react": "17.0.2",
     "react-calendly": "2.2.2",
     "react-chartjs-2": "4.0.0",
