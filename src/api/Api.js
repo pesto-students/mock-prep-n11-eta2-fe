@@ -1,4 +1,5 @@
 import axios from "axios"
+import errorActionCreator from "Redux/Action Creators/erroActionCreators";
 
 //Get Call
 export async function getData(url,) {
@@ -8,8 +9,15 @@ export async function getData(url,) {
 
 //Post Call
 export async function insertData(url, data) {
-    let res = await axios.post(url,data);
-    return res;
+    try{
+        let res = await axios.post(url,data);
+        return {status : "success",res};
+    }
+    catch (err){
+        return  {status : "failure",err : "Sign Up Failed"};
+    }
+    
+    
 }
 
 // Delete Call
