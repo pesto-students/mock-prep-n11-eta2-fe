@@ -9,7 +9,6 @@ import { insertUser,insertInterviewer,insertStudent } from "Constant/apiUrl"
 import { insertData } from "api/Api"
 import "./Join.css"
 
-
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
@@ -86,7 +85,7 @@ export default function JoinUs({ isSignUp }) {
                                         cookiePolicy={'single_host_origin'}
                                     />
                                     <p>Already have an account ? <Link to="/signIn">Sign in</Link> </p>
-                    k        </TabPane>
+                            </TabPane>
                             <TabPane tab={<span>Join as Student</span>} key="2">
                             <p>Continue to join as Student</p>
                            

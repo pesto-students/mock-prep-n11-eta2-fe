@@ -9,19 +9,9 @@ export default function SideNav({sideNavList, userName }) {
     return (
         <div>
         <div className="sidenav" id="sideNav">
-                <a href="/" onClick={() => { window.location.reload("/")}}> <img src={logoUrl} alt="logo" className="logo-img"></img></a>
-
-            <ul className="sidebar-list">
-                    {sideNavList.map((list,index) => (
-                        <Link key={index} to={list.url} className="sidebar-list-item"><i>{list.icon}</i><p className="icon">{list.linkName}</p></Link>
-                    ))} 
-            </ul>
-
-            <section className="sidebar-list-item sidebar-list admin" id="admin" >
-                <UserOutlined />
-                <p className="icon">{userName}</p>
-            </section>
-            
+            <a href="/" onClick={() => { window.location.reload("/") }}> <img src={logoUrl} alt="logo" className="logo-img"></img></a>
+            <ul className="sidebar-list">{sideNavList.map((list,index) => (<Link key={index}  to={list.url} className="sidebar-list-item"><i>{list.icon}</i><p className="icon">{list.linkName}</p></Link>))} </ul>
+            <section  id="admin" ><UserOutlined /><p className="icon">{userName}</p></section>
             <button id="logoutBtn">Logout</button>
         </div>
         </div>

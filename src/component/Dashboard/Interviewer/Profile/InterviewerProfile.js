@@ -2,32 +2,26 @@ import React, { useState,lazy,useEffect} from 'react'
 import { Tag } from "antd"
 import { UserIcon } from 'Constant/antIcons';
 import { useParams } from "react-router-dom";
-import { adminNavList, fallback } from "Constant/navList"
+import { useSelector } from 'react-redux';
 import "./InterviewerProfile.css"
 import Forms  from 'component/Common/Form/Forms';
-import { getData } from 'api/Fetch';
-import {   getInterviewerById, updateInterviewer } from 'Constant/apiUrl';
-import { updateData } from 'api/Update';
+import { updateData } from 'api/Api';
+import { updateInterviewer } from 'Constant/apiUrl';
+import { fallback } from 'Constant/navList';
 
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))
 const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
-const Modals = lazy(() => import("component/Common/Modal/Modals"))
 
 export const InterviewerProfile = () => {
 
     const { profileId } = useParams();
 
     let [interviewer, setInterviewer] = useState({})
+    let [update, setUpdate] = useState(false)
+    let interData = useSelector(state => state.dataReducer)
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const int = await getData(getInterviewerById+profileId);
-            if (int) setInterviewer(int)
-        }
-        getInterviewer()
-    },[profileId])
-    
+    useEffect(() => {  if (interData.interviewerData != undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[profileId])
+
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const interviewerForm = JSON.parse(JSON.stringify(interviewer));
@@ -36,18 +30,13 @@ export const InterviewerProfile = () => {
     delete interviewerForm.about;
     delete interviewerForm.contacts;
     delete interviewerForm.__v;
+    delete interviewerForm.interviewCount;
+    delete interviewerForm.rating
 
     const showModal = () => {
-        setIsModalVisible(true);
+        setUpdate(true);
     };
-    
-    const handleOk = (value) => {
-        setIsModalVisible(false);
-    };
-    
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
+
 
     const submit = (value) => { 
   
@@ -56,13 +45,14 @@ export const InterviewerProfile = () => {
                 interviewer[key] = value[key]
             }
         }
-
-      
-        updateData(updateInterviewer+interviewer._id,interviewer)
+        updateData(updateInterviewer + interviewer._id, interviewer)
+        setUpdate(false)
     }
 
-    const data = <Forms populate={true} submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update" /> 
-
+    const data = <Forms populate={true} submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update Details" /> 
+    const component1 = <CommonButton buttonName="View Profile" onClick={() => {setUpdate(false)}} isDisabled="false" style={{ width: "100%", color: "white !important" }} />
+    const component2 = <CommonButton buttonName="Update Details" onClick={showModal} isDisabled="false" style={{ width: "100%", color: "white !important" }} />
+      
 
     let rating = [];
     
@@ -72,11 +62,12 @@ export const InterviewerProfile = () => {
 
     return (
         <>
-            <SideNav sideNavList={adminNavList} userName="admin"></SideNav>
-                <div className="interviewer-profile">
-                    <DashboardHeader title="Interviewer Profile" icon={UserIcon} rightComponent={<CommonButton buttonName="Update Details" onClick={showModal} isDisabled="false" style={{ width: "100%", color: "white !important" }} />} />
-                    {Object.keys(interviewer).length !==0 ?
-                        <div className="int-profile-container">
+            <div className="interviewer-profile">
+                <DashboardHeader title="Interviewer Profile" icon={UserIcon} rightComponent={update ? component1: component2} />
+                {Object.keys(interviewer).length !== 0 ?
+                    <>
+                        {!update ?
+                            <div className="int-profile-container">
                             <section className="left-profile">
                                 <img src={interviewer.image} alt="profile" />
                                 <p>{interviewer.name}</p>
@@ -86,7 +77,7 @@ export const InterviewerProfile = () => {
                                 <section className="skill-chips">
                                     {interviewer.skills.map((skill, index) => (
                                         <section key={index}>
-                                            <Tag key={index} className="chip" closable color="success" label={skill} >{skill}</Tag>
+                                            <Tag key={index} className="chip"  color="success" label={skill} >{skill}</Tag>
                                         </section>
                                     ))}
                                 </section>
@@ -99,7 +90,7 @@ export const InterviewerProfile = () => {
                                 <section className="skill-chips">
                                     {interviewer.topics.map((topic, index) => (
                                         <section key={index}>
-                                            <Tag className="chip2" key={index} closable color="warning" label={topic} >{topic}</Tag>
+                                            <Tag className="chip2" key={index} color="warning" label={topic} >{topic}</Tag>
                                         </section>
                                     ))}
                                 </section>
@@ -116,11 +107,15 @@ export const InterviewerProfile = () => {
                                 </h3>
 
                             </section>
-                        </div> :
-                    <section>{ fallback}</section>
-                    }
-                </div>
-            <Modals animation={false} data={data} title="Update Interviewer" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
+                            </div> :
+                            <div className="int-profile-form">
+                                {data}
+                            </div>
+                        }
+                    </>
+
+                  :<section>{ fallback}</section>}
+            </div>
         </>
     )
 }
