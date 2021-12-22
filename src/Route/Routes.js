@@ -12,6 +12,8 @@ const SignIn = lazy(() => import("component/Join/SignIn/SignIn"))
 const Admin = lazy(() => import("component/Dashboard/Admin/Dashboard/Admin"))
 const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
 
+const QuizContent = lazy(() => import("component/Dashboard/Common/Quiz/QuizContent/QuizContent"))
+
 
 export default function Routes() {
     
@@ -26,7 +28,8 @@ export default function Routes() {
             <PublicRoute exact path="/contact" component={Contact}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/signIn" component={SignIn}  loggedIn={loginState.isLoggedIn} restricted="false" />
             <PrivateRoute exact path="/admin/login" component={AdminLogin} loggedIn={loginState.isLoggedIn}/>
-            <PrivateRoute path="/admin" component={Admin} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute path="/admin" component={Admin} loggedIn={loginState.isLoggedIn} />
+            <PrivateRoute  path={`/quizContent/:quizId?`} component={QuizContent} loggedIn={loginState.isLoggedIn} />
         </div>
     )
 }

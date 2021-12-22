@@ -1,23 +1,17 @@
 .topics-container{
-    width: 82.5vw;
+    width: 100%;
     position: absolute;
     right: 0;
-    justify-content: left;
+}
+.header>.tab-options{
+    justify-content: right;
 }
 
-.interviewersList{
-    width:70vw;
-    margin: 2vh 5vw ;  
-}
-
-.topics{
-    width: 96%;
-    margin: auto;
+#topics{
     display: flex;
-    justify-content: left !important;
     flex-wrap: wrap;
 }
 
-#addTopicBtn{
-    margin: 3vh 3vw ;
-}
+#quiz{display: flex}
+
+#addItem{margin: 2vh 1vw ;}

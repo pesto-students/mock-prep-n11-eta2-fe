@@ -3,8 +3,8 @@
     height: auto;
     margin: 2vh 1vw;
     padding: 2vh 0;
+    border-radius: 10px;
     text-align: center;
-    border: 1px solid grey;
 }
 
 #cardImage{
@@ -17,7 +17,17 @@
     margin: 2vh;
 }
 
+#topicCard:hover .anticon-delete{
+    display: block !important;
+}
 
+#topicCard>.ant-card-body>#icon>.anticon-delete{
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    color: grey !important;
+    display: none;
+}
 
 #btns{
     display: flex;

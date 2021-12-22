@@ -11,6 +11,12 @@ const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const Dashboard = lazy(() => import("component/Dashboard/Admin/Dashboard/Dashboard"))
 const InterviewerList = lazy(()=> import("component/Dashboard/Interviewer/List/InterviewerList"))
 const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentList"))
+const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
+const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
+const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
+const QuizContent = lazy(() => import("component/Dashboard/Common/Quiz/QuizContent/QuizContent"))
+
+
 
 export default function Admin() {
 
@@ -32,6 +38,9 @@ export default function Admin() {
                 <Route exact path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
                 <Route exact path={`${path}/studentList`} component={StudentList} />
                 <Route exact path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
+                <Route exact path={`${path}/topicsList`} component={TopicsList} />
+                <Route exact path={`${path}/resourceList/:topicId?`} component={ResourceList} />
+                <Route exact path={`${path}/quizList/:topicId?`} component={QuizList} />
             </section>
             </div>
             </Switch> 

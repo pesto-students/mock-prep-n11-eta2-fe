@@ -39,9 +39,10 @@ export default function StudentList() {
     }; 
     
     const removeProfile = async (profileId) => {
-        setstudent(students.filter(e => e._id !== profileId))
+       
         const status = await removeData(deleteStudent+profileId)
-        setKey(!key)
+        setstudent(students.filter(e => e._id !== profileId))
+        setstudentList(students.filter(e => e._id !== profileId))
     }; 
 
     const addProfile = (profileId) => { 

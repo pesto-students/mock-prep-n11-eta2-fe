@@ -63,6 +63,23 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 pricing : action.data
             }
         }
+        
+        case 'SET_TOPIC':{
+            return {
+                ...state,
+                topics : action.data
+            }
+        }
+            
+        case 'SET_RESOURCE':{
+            return {
+                ...state,
+                resources : action.data
+            }
+        }
+            
+            
+            
             
 
         default:

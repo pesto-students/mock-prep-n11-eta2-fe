@@ -5,27 +5,64 @@ import "./QuizContent.css"
 import { logoUrl } from 'Constant/const_url';
 import DashboardHeader from '../../Header/DashboardHeader'
 import { getData } from 'api/Api';
-import { getQuizContent } from 'Constant/apiUrl';
+import { getInterviewers, getQuizContent, getQuizList } from 'Constant/apiUrl';
 import "./QuizContent.css"
 import QuizOptionForm from "./QuizOptionForm"
 import QuizNavigator from './QuizNavigator';
 import { fallback } from 'Constant/navList';
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
+import { useDispatch,useSelector } from 'react-redux';
+import dataActions from 'Redux/Actions/dataAction';
+
 
 export default function QuizContent() {
 
-    const [quiz, setQuiz] = useState([]);
+    
     const [index, setIndex] = useState(0)
-    const {quizId } = useParams();
-    const [quizDetail, setDetails] = useState([]);
-
+ 
     let percent = 0;
     let count = 0;
     let score = 0;
     let pending = false;
-
-    console.log(percent);
-
     let attempt;
+
+    const {quizId } = useParams();
+    const [quiz, setQuiz] = useState([]);
+    const [quizDetail, setDetails] = useState([]);
+    const dispatch = useDispatch()
+    const data = useSelector(state => state.dataReducer)
+
+
+    useEffect(() => { dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz) }, [dispatch])
+    useEffect(() => {
+        if (data.quiz !== undefined) {
+            // setQuiz(data.quiz.data);
+            // setDetails(data.quiz.data);
+            if (data.quiz.data.length > 0) { 
+
+                let question = data.quiz.data.filter(e => e._id === quizId)[0].questions;
+                question.forEach((e,ind) => {
+                    const obj = { question: ind, attempted: false, answer: false, correctAnswer: "" };
+                    e.answer = obj
+                })
+
+                setQuiz(question)
+            }
+        }
+    }, [data])
+
+
+
+   console.log(quiz)
+   
+  
+  
+    const logo =<Link to="/"><img alt="logo" className='headerLogo' src={logoUrl}></img></Link>
+
+    const handleSubmit = (e) => {
+      
+    }
+
     const attempted = (ind) => { 
         quiz.find(e => e.answer.question === index).answer.attempted = true;
         
@@ -39,57 +76,34 @@ export default function QuizContent() {
         })
 
     }
-  
-    const logo =<Link to="/"><img alt="logo" className='headerLogo' src={logoUrl}></img></Link>
-
-    useEffect(() => { 
-       
-        const getQuizData = async () => { 
-            let data = await getData(getQuizContent + quizId)
-           
-            data.questions.forEach((e,ind) => {
-                const obj = { question: ind, attempted: false, answer: false, correctAnswer: "" };
-                e.answer = obj
-            })
-            setQuiz(data.questions)
-            setDetails(data)
-        }
-
-        getQuizData();
-       
-        
-    }, [quizId])
-
-    const handleSubmit = (e) => {
-      
+    
+    if (quiz) { 
+        quiz.forEach(x => {
+            if (x.answer.attempted) {
+                count = count + 1;
+            }
+            else { 
+                pending = true;
+            }
+    
+            if (x.answer.answer) { 
+                score=score + 1;
+            }
+        })
     }
-
-    quiz.forEach(x => {
-        if (x.answer.attempted) {
-            count = count + 1;
-        }
-        else { 
-            pending = true;
-        }
-
-        if (x.answer.answer) { 
-            score=score + 1;
-        }
-    })
-  
     
     if (quiz.length > 0 && index<quiz.length) { 
         attempt = quiz[index].answer.attempted;
         percent = (count / quiz.length) * 100;
-       
     }
 
     score = (score / quiz.length) * 100;
     let desc = "Congrats You scored " + score + " percent!!";
+
     return (
         <div className='quiz'>
-            <DashboardHeader title={logo} rightComponent={<><h3 style={{ margin: " 0 2vw" }}>{ " username"}</h3>  <Button >Exit Quiz</Button></>}></DashboardHeader>
-            {quiz.length > 0
+            <DashboardHeader title={logo} rightComponent={<><h3 style={{ margin: " 0 2vw" }}>{" username"}</h3>  <Link to="/admin/quizList"><Button>Exit Quiz</Button></Link></> }></DashboardHeader>
+            {quiz 
                 ?
                 <>
                     {index!==quiz.length?
