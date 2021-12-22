@@ -4,15 +4,11 @@ import { logoUrl } from 'Constant/const_url'
 import { Tabs } from "antd"
 import GoogleLogin from "react-google-login"
 import { useDispatch } from "react-redux"
-import authActionCreator from "Redux/Action Creators/authActionCreators"
 import { insertUser,insertInterviewer,insertStudent } from "Constant/apiUrl"
 import { insertData } from "api/Api"
 import { useCookies } from 'react-cookie';
-import "./Join.css"
 import { utilityFunction } from "component/Utility/utility"
-import { useSelector } from "react-redux"
-import {  notification } from 'antd';
-import { errorSign } from 'Constant/antIcons'
+import "./Join.css"
 
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
@@ -24,8 +20,6 @@ export default function JoinUs({ isSignUp }) {
     const [cookies, setCookie,removeCookie] = useCookies()
     const dispatch = useDispatch()
 
-
-
     const handleLogin = async (googleData,role) => {
         console.log(googleData,role);
         const data = {
@@ -35,7 +29,7 @@ export default function JoinUs({ isSignUp }) {
             "googleObj":googleData
         }
 
-            let res = await insertData(insertUser, data)
+        let res = await insertData(insertUser, data)
         if (res.status === "success") { 
             let student = {"name": res.data.name,"email": res.data.email,"userId": res.data._id, }
             insertData( role === 'Student'? insertStudent:insertInterviewer, student)
@@ -68,7 +62,6 @@ export default function JoinUs({ isSignUp }) {
         </>
     )
 }
-
 
 function TabDetailsPane({role,isSignUp,handleSuccess}){
     return (

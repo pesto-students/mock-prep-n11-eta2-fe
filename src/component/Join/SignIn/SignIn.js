@@ -15,10 +15,6 @@ const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
 const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/JoinUsButton"))
 
-
-
-
-
 export default function SignIn() {
     const dispatch = useDispatch();
     const [cookies, setCookie,removeCookie] = useCookies()
@@ -43,6 +39,16 @@ export default function SignIn() {
         }     
     
     }
+
+    
+    const dummyLogin = () => { 
+        console.log("admin")
+        const user = {};
+        user.nanme = "saif";
+        user.role = "admin"
+        utilityFunction.logIn(dispatch,user,user.role,setCookie)
+    }
+ 
     
     return (
         <>
@@ -71,9 +77,9 @@ export default function SignIn() {
                             </TabPane>
                             <TabPane tab={<span>Dummy Login</span>} key="2">                            
                                 <section className="dummyButtons">
-                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Student</Button></Link>
-                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Interviewer</Button></Link>
-                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Admin</Button></Link>
+                                        {/* <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Student</Button></Link>
+                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Interviewer</Button></Link> */}
+                                        <Button onClick={()=>dummyLogin()} className="dummybtn">Sign In as Admin</Button>
                                         <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>   
                                 </section>
                             </TabPane>
