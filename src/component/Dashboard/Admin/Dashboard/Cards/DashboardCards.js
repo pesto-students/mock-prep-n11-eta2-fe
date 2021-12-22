@@ -5,7 +5,6 @@ const DashboardCard = lazy(() => import("component/Common/Cards/DashboardCard/Da
 
 export default function DashboardCards({ data }) {
 
-
     return (
         <div>
              <section className="admin-dashboard-cards">

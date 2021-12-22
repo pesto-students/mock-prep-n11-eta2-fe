@@ -7,8 +7,9 @@ import { useSelector } from "react-redux"
 const Button = lazy(() => import("component/Common/Button/CommonButton"))
 
 export default function Header() {
+    
     const isLoggedIn = useSelector(state => state.authReducer.isLoggedIn)
-    console.log(isLoggedIn);
+   
     return(
         <header id="main-header">
             <div id="headerLogo">
@@ -20,8 +21,6 @@ export default function Header() {
                 <Link className="header-icons" to="/contact"> Contact Us </Link> 
                 {!isLoggedIn && <Link className="header-icons" to="/signIn">Sign In</Link>}
                 <Link className="header-icons" to="/join"><Button buttonType='primary' buttonName={isLoggedIn ? "Logout" : "Join Us"} isDisabled="false" /></Link>
-              
-
             </div>   
         </header>
     )

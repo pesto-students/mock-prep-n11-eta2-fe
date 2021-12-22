@@ -3,12 +3,13 @@ import { Link } from "react-router-dom"
 import { logoUrl } from 'Constant/const_url'
 import { Tabs } from "antd"
 import GoogleLogin from "react-google-login"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { insertUser,insertInterviewer,insertStudent } from "Constant/apiUrl"
 import { insertData } from "api/Api"
 import { useCookies } from 'react-cookie';
 import { utilityFunction } from "component/Utility/utility"
 import "./Join.css"
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
@@ -20,8 +21,13 @@ export default function JoinUs({ isSignUp }) {
     const [cookies, setCookie,removeCookie] = useCookies()
     const dispatch = useDispatch()
 
+    const user = useSelector(state => state.authReducer)
+
+  
+    useEffect(() => { console.log(user)},[user])
+
     const handleLogin = async (googleData,role) => {
-        console.log(googleData,role);
+       
         const data = {
             "name": googleData.profileObj.name,
             "email": googleData.profileObj.email,
@@ -29,11 +35,13 @@ export default function JoinUs({ isSignUp }) {
             "googleObj":googleData
         }
 
+
         let res = await insertData(insertUser, data)
+       
         if (res.status === "success") { 
-            let student = {"name": res.data.name,"email": res.data.email,"userId": res.data._id, }
-            insertData( role === 'Student'? insertStudent:insertInterviewer, student)
-            utilityFunction.logIn(dispatch,student,role,setCookie)
+            let data = {"name": res.res.data.name,"email": res.res.data.email,"userId": res.res.data._id,"image": res.res.data.googleObj.profileObj.imageUrl }
+            insertData( role === 'Student'? insertStudent:insertInterviewer, data)
+            utilityFunction.logIn(dispatch,data,role,setCookie)
         }  
         else {
             utilityFunction.setError(dispatch, "Sign Up Failed")
@@ -44,7 +52,8 @@ export default function JoinUs({ isSignUp }) {
 
     return (
         <>
-            <Header/>
+            <Header />
+                {user.isLoggedIn ?  <Redirect to="/admin" /> : <Redirect to="/join" />}
                 <div className="Join">
                     <section className="signBox">
                     <img src={logoUrl} alt="profile" />

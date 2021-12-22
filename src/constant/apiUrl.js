@@ -1,5 +1,5 @@
-const baseUrl = "https://mockprep.herokuapp.com"
-// const baseUrl = "http://localhost:8080"
+// const baseUrl = "https://mockprep.herokuapp.com"
+const baseUrl = "http://localhost:8080"
 
 //Get
 export const getInterviewers = baseUrl + "/interviewer/getInterviewers"
@@ -11,6 +11,7 @@ export const getDashboards = baseUrl + "/dashboard/getData"
 export const getAdminDashboard = baseUrl + "/adminDashboard/getData"
 export const getResources = baseUrl + "/resource/getResources"
 export const getQuizList = baseUrl + "/quiz/getQuizLists"
+export const getQueries = baseUrl + "/query/getData"
 
 // Delete
 export const deleteInterviewer = baseUrl + "/interviewer/deleteInterviewer/"
@@ -36,6 +37,7 @@ export const insertTopic = baseUrl + "/topic/addTopic"
 export const insertResource = baseUrl + "/resource/addResource"
 export const insertInterviewer = baseUrl + "/interviewer/addInterviewer"
 export const insertStudent = baseUrl + "/student/addStudent"
+export const insertQuery = baseUrl + "/query/addData"
 
 //Login 
 export const loginUser = baseUrl + "/user/loginUser"

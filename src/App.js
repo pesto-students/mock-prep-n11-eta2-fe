@@ -9,11 +9,14 @@ import {  notification } from 'antd';
 import { errorSign } from "Constant/antIcons";
 import { utilityFunction } from "component/Utility/utility";
 import { useDispatch } from "react-redux";
+import { useCookies} from "react-cookie"
 
 function App() {
+  
   const dispatch = useDispatch();
+  const [cookies,getCookies,setCookies] = useCookies() 
   const error = useSelector(state => state.errorReducer)
-  console.log(error)
+
   useEffect (() => {
     if(error.error){
         notification.open({

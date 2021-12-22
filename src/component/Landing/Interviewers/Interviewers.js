@@ -14,11 +14,13 @@ export default function Interviewers() {
     const dispatch = useDispatch()
     
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getInterviewers, dataActions.setInterviewer) }, [dispatch])
-    useEffect(() => { if (data.interviewerData !== undefined) {setInterviewers(data.interviewerData.data.slice(0, 6));}}, [data])
+    useEffect(() => { if (data.interviewerData !== undefined) {setInterviewers(data.interviewerData.data.slice(0, 5));}}, [data])
       
     return (
-        <section className="interviewer-list">
-            {interviewers.length>0 ? interviewers.map((person, index) => (<InterviewerCard key={index} id={person.id} name={person.name} pic={person.image} designation={person.designation} company={person.company} />)):<p>Loading..</p>}
-        </section>
+        <>  <h2 className="title">Meet our Interviewers</h2>
+            <section className="interviewer-list">
+                {interviewers.length>0 ? interviewers.map((person, index) => (<InterviewerCard key={index} id={person.id} name={person.name} pic={person.image} designation={person.designation} company={person.company} />)):<p>Loading..</p>}
+            </section>
+        </>
     )
 }

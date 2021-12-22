@@ -14,7 +14,7 @@ export default function authReducer(state = { role: null , isLoggedIn : false, u
             }
         case authActions.setUser:
             {
-                console.log(action)
+               
                 return {
                     ...state,
                     user : action.user.data,
@@ -22,17 +22,16 @@ export default function authReducer(state = { role: null , isLoggedIn : false, u
                 }
             }
         case  'TEST':{
-            console.log(action)
             state.isLoggedIn = true;
             state.user = action.user
             state.role = action.role
-            console.log(state)
+           
             return {
                 ...state
             }
         }
         case 'LOGOUT':{
-            console.log(state)
+            
             state.isLoggedIn = false;
             state.user = null
             state.role = null

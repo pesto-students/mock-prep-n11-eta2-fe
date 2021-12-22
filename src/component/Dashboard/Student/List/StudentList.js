@@ -32,7 +32,6 @@ export default function StudentList() {
     useEffect(() => { if (interData.studentData != undefined) { setstudent(interData.studentData.data); setstudentList(interData.studentData.data) } }, [interData])
     useEffect(() => { if (students.length > 0) { setNewList(studentList.filter(int => int.onboarded !== true)); setExistingList(studentList.filter(int => int.onboarded === true))}}, [key,students,studentList])
       
-    console.log(studentList)
     const onSearch = (value) => {
         let filtered = students.filter(val => val.name.includes(value) ||  val.designation.includes(value) ||  val.company.includes(value) ||  val.skills.includes(value)   );
         setstudentList(filtered)
@@ -86,7 +85,7 @@ export default function StudentList() {
                             <TabPane tab="New students" key="1">
                                 <section className='studentListCard'>
                                     {newstudentList.map(student => (
-                                        <InterviewerCardList key={student._id} btn1={<Link to={`/admin/studentProfile/${student._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(student._id) }} className='addProfileBtn'>List Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(student._id)} className="closeProfile">{deleteIcon}</Link>} className='studentlistProfile' skills={student.skills} name={student.name} image={student.image} designation={student.designation} company={student.company} contact={student.contact} />
+                                        <InterviewerCardList key={student._id} btn1={<Link to={`/admin/studentProfile/${student._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(student._id) }} className='addProfileBtn'>List Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(student._id)} className="closeProfile">{deleteIcon}</Link>} className='studentlistProfile' skills={student.skills} name={student.name} image={student.image} degree={student.degree} company={student.company} contact={student.contact} />
                                     ))}
                                 </section>
                                     
@@ -94,7 +93,7 @@ export default function StudentList() {
                             <TabPane tab="Exisiting students" key="2">
                                 <section className='studentListCard'>
                                     {existingstudentList.map(student => (
-                                        <InterviewerCardList key={student._id} btn1={<Link to={`/admin/studentProfile/${student._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(student._id) }} className='removeProfileBtn'>DeList Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(student._id)} className="closeProfile">{deleteIcon}</Link>} className='studentlistProfile' skills={student.skills} name={student.name} image={student.image} designation={student.designation} company={student.company} contact={student.contact} />
+                                        <InterviewerCardList key={student._id} btn1={<Link to={`/admin/studentProfile/${student._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(student._id) }} className='removeProfileBtn'>DeList Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(student._id)} className="closeProfile">{deleteIcon}</Link>} className='studentlistProfile' skills={student.skills} name={student.name} image={student.image} degree={student.degree} company={student.company} contact={student.contact} />
                                     ))}
                                 </section>
                             </TabPane>

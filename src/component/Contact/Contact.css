@@ -1,10 +1,10 @@
 .queryForm{
-    width: 60vw;
-    min-height: 40vh;
+    width: 40vw;
+    min-height: 30vh;
     height: auto;
-    margin: 5vh auto;
+    margin: 2vh auto;
     border:1px solid lightgrey;
-    padding: 5vh 15px;
+    padding: 3vh 15px;
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     text-align: center;

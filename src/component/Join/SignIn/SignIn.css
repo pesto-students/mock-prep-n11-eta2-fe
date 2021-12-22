@@ -32,6 +32,12 @@
     margin: 3vh 0 !important;
 }
 
+.google-login-button{
+    background-color: white;
+    border: none;
+    margin: 2vh 0;
+}
+
 .dummy>.btn,.sign-btn{
     width: 10vw !important;
 }

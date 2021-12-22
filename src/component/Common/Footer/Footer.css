@@ -29,14 +29,16 @@ footer>section>h2{
 }
 
 footer>section>ul{
+    display: grid;
+    padding: 0;
+}
+
+.link{
+    margin: 2vh 0;
     color: white;
     list-style-type: none;
     text-align: left;
     padding: 0;
-}
-
-footer>section>ul>li{
-    margin: 4vh 0;
 }
 
 footer>section:nth-child(1)>p{

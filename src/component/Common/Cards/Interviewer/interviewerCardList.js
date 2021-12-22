@@ -6,7 +6,7 @@ export default function InterviewerCardList({ id, image, name, designation, comp
         <section className="person" key={id}>
                 <section id="hoverCard">
                         {delIcon}
-                        <span id="btns">
+                        <span id="">
                             {btn1}
                             {btn2}
                         </span>

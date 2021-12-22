@@ -25,8 +25,11 @@ export default function Analytics() {
 
     if (dashboard != null) { dashboardMetrics = dashboard.cards; onboardingMetrics = dashboard.usersOnboarded;trendingData = dashboard.trendingTopics}
   
-    return (
-            <section className="landing-dashboard">
+        return (
+        <>
+                <h2 className="title">Where we Stand</h2>
+          
+                <section className="landing-dashboard">
                     {dashboardMetrics ? 
                     <section className="landing-cards">
                             {dashboardMetrics.map(metric => (<DashBoardCard className="dashcard" key={metric._id} id={metric.id} description={metric.description} icon={<UserAddOutlined/>} value={metric.value} />))}
@@ -35,6 +38,7 @@ export default function Analytics() {
                         {onboardingMetrics ?<section className="landing-bar"><h2>Interviewers vs Students Onboarded Month Wise</h2><DashBoardChart data={onboardingMetrics} options={BarChartOptions} /> </section> : <p>Loading..</p>}
                         {trendingData ?<section className="landing-doughnut"><h2>Trending Topics</h2><PieChart data={trendingData} options={PieChartOptions } /></section>:<p>Loading..</p>}
                     </section>
-            </section>
+                </section>
+        </>
     )
 }

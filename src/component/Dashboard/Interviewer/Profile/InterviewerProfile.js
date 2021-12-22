@@ -2,15 +2,18 @@ import React, { useState,lazy,useEffect} from 'react'
 import { Tag } from "antd"
 import { UserIcon } from 'Constant/antIcons';
 import { useParams } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import "./InterviewerProfile.css"
 import Forms  from 'component/Common/Form/Forms';
 import { updateData } from 'api/Api';
-import { updateInterviewer } from 'Constant/apiUrl';
+import { getInterviewerById, getInterviewers, updateInterviewer } from 'Constant/apiUrl';
 import { fallback } from 'Constant/navList';
+import dataActions from 'Redux/Actions/dataAction';
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
 
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))
 const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
+
 
 export const InterviewerProfile = () => {
 
@@ -18,11 +21,13 @@ export const InterviewerProfile = () => {
 
     let [interviewer, setInterviewer] = useState({})
     let [update, setUpdate] = useState(false)
+   
+
+    const dispatch = useDispatch()
     let interData = useSelector(state => state.dataReducer)
 
-    useEffect(() => {  if (interData.interviewerData != undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[profileId])
-
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)},[dispatch])
+    useEffect(() => {  if (interData.interviewerData != undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[interData])
 
     const interviewerForm = JSON.parse(JSON.stringify(interviewer));
     delete interviewerForm._id
@@ -39,7 +44,16 @@ export const InterviewerProfile = () => {
 
 
     const submit = (value) => { 
-  
+        console.log(value)
+
+        if (value.skills) { 
+            value.skills = value.skills.split(",")
+        }
+
+        if (value.topics) { 
+            value.topics = value.topics.split(",")
+        }
+
         for (var key in value) {
             if (value[key] !== undefined) {
                 interviewer[key] = value[key]

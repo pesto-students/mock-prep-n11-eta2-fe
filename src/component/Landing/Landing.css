@@ -10,3 +10,8 @@
     margin: 5vh auto;
     box-sizing: border-box;
 }
+
+.title{
+    text-align: center;
+    color: #161280;
+}

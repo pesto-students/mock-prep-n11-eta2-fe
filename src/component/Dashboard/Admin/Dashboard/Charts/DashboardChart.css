@@ -1,6 +1,6 @@
 .admin-dashboard-charts{
     display: grid;
-    margin: 10vh 2vw;
+    margin: 5vh 2vw;
     grid-template-columns: 2fr 1fr;  
 }
 

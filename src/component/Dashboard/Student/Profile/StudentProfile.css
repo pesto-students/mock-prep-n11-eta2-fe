@@ -44,6 +44,15 @@ h3>.fa-star{
     margin:1vw 5px;
 }
 
+#bar{
+    width: 50%;
+    margin-left: 3%;
+}
+
+.rating{
+    display: flex;
+}
+
 .about{
     color: grey;
     height: auto !important;

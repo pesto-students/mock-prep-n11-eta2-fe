@@ -24,7 +24,7 @@
 
 .total-earning{
     width: 20vw;
-    height: 63vh;
+    height: auto;
     margin: 3vh 0;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -32,7 +32,7 @@
 
 .cust-review{
     width: 52vw;
-    height: 60vh;
+    height: auto;
     margin: 3vh 3vw;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -56,23 +56,3 @@
     margin-right: 20px;
 }
 
-@media only screen and (max-width:430px){
-    .customer-feedback{
-        width: 100%;
-        display: inline-block;
-    }
-
-    
-.total-earning{
-    width: 70vw;
-    height: auto;
-    margin: auto;
-}
-
-.cust-review{
-    width: 96vw;
-    height: auto;
-    margin:4vh auto ;
-    
-}
-}

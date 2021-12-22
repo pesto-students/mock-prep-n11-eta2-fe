@@ -1,13 +1,24 @@
 .person{
-    width: 17vw;
-    min-height: 50vh;
+    width: 15vw;
+    min-height: 40vh;
     padding: 1vh 0;
     height: auto;
     text-align: left;
     margin: 20px 10px;
     border:1px solid lightgrey;   
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    text-align: center;
 }
+
+.razorpay-embed-btn{
+    width: 95% !important;
+    margin: 0vh 0;
+}
+#pricing-description{
+    text-align: left;
+}
+
+
 .profile{
     width: 55%;
     border-radius: 100%;
@@ -52,7 +63,6 @@
 
 #price-btn{
     width: auto;
-    margin-left: 30%;
     color:white;
     background-color: rgb(98, 55, 252);;
 }

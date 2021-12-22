@@ -24,7 +24,7 @@ export default function Dashboard() {
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch, getAdminDashboard, dataActions.setAdminData) }, [dispatch])
     useEffect(() => { if (Object.keys(data.adminDashboard).length > 0) { setAdminDashboard(data.adminDashboard.data[0])}}, [data])
-    console.log(adminDashboard)
+  
     return (
         <div>
              <DashboardHeader title="Admin Dashboard" icon={DashboardIcon} />

@@ -23,19 +23,19 @@ export default function Feedback({ data }) {
                 <section className="total-earning">
                     <h2 className="headline">Total Earnings </h2>
                     <section className="top">
-                        <p>Total Earning</p>
+                        <p>Total Revenue</p>
                         <h4>₹287,493</h4>
-                        <p>1.4% Since Last Month</p>
+                        <p>1.4% Growth</p>
                     </section>
                     <section className="top">
                         <p>Total Expenditure</p>
-                        <h4>12,493</h4>
-                        <p>5.43% growth</p>
+                        <h4>112,493</h4>
+                        <p>5.43% Savings</p>
                     </section>
                     <section className="top">
                         <p>Total Profits</p>
-                        <h4>40,493</h4>
-                        <p>15.43% growth</p>
+                        <h4>175,000</h4>
+                        <p>15.43% Growth</p>
                     </section>
                 </section>
                 <section className="cust-review">   

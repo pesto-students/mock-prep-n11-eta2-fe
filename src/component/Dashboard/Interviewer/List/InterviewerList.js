@@ -37,7 +37,7 @@ export default function InterviewerList() {
         setInterviewerList(filtered)
         console.log(interviewers)
     }; 
-    
+
     const removeProfile = async (profileId) => {
        
         const status = await removeData(deleteInterviewer + profileId, "Interviewer")

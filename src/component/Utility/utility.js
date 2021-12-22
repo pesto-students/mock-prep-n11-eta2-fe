@@ -7,10 +7,10 @@ export const utilityFunction = {
     logOut : function (dispatch,removeCookie,cookies){
         authActionCreator.logOut(dispatch);
         removeCookie('user');
-        console.log(cookies)
+      
     },
     logIn : function (dispatch,user,role,setCookie) {
-        console.log(user)
+       
         setCookie('user', JSON.stringify(user) )
         authActionCreator.testLogin(dispatch,user,role)
     },

@@ -7,7 +7,6 @@ export default function Slides({testimonials}) {
     const contentStyle = {
         width: "85%",
         margin: "auto",
-       
     };
 
     return (

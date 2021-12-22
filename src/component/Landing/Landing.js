@@ -16,7 +16,8 @@ export default function Landing() {
         <div id="landing-page">
            <Header/>
                 <section id="landing-container">
-                    <Introduction/>
+                <Introduction /> 
+                  
                     <Interviewer/>
                     <WhyMockPrep/>
                     <Analytics/>
