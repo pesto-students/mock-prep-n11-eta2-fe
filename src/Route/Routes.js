@@ -16,7 +16,6 @@ const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
 export default function Routes() {
     
     const loginState = useSelector(state => state.authReducer);
-
     return (
         <div>
             <PublicRoute exact path="/" component={Landing} loggedIn={loginState.isLoggedIn} restricted="false" />
@@ -25,8 +24,8 @@ export default function Routes() {
             <PublicRoute exact path="/join" component={Join}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/contact" component={Contact}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/signIn" component={SignIn}  loggedIn={loginState.isLoggedIn} restricted="false" />
-            <PrivateRoute exact path="/admin/login" component={AdminLogin} loggedIn={loginState.isLoggedIn}/>
-            <PrivateRoute path="/admin" component={Admin} loggedIn={loginState.isLoggedIn}/>
+            <PrivateRoute exact path="/admin/login" component={AdminLogin} loggedIn={loginState}/>
+            <PrivateRoute path="/admin" component={Admin} loggedIn={loginState}/>
         </div>
     )
 }

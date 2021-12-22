@@ -23,19 +23,8 @@ export default function JoinUs({ isSignUp }) {
     
     const [cookies, setCookie,removeCookie] = useCookies()
     const dispatch = useDispatch()
-    console.log(cookies)
 
-    const error = useSelector(state => state.errorReducer)
 
-    useEffect (() => {
-        if(error.error){
-            notification.open({
-                message: error.error,
-                icon: errorSign,
-              });
-        }
-    },[error])
-    
 
     const handleLogin = async (googleData,role) => {
         console.log(googleData,role);
