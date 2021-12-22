@@ -8,7 +8,7 @@ import { deleteInterviewer, getInterviewers, updateInterviewer } from 'Constant/
 import { removeData, updateData } from 'api/Api';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
 import dataActions from 'Redux/Actions/dataAction';
-import "../List/InterviewerList.css"
+import "./InterviewerList.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const InterviewerCardList = lazy(() => import("component/Common/Cards/Interviewer/interviewerCardList"))
@@ -39,8 +39,9 @@ export default function InterviewerList() {
     }; 
     
     const removeProfile = async (profileId) => {
+       
+        const status = await removeData(deleteInterviewer + profileId, "Interviewer")
         setInterviewer(interviewers.filter(e => e._id !== profileId))
-        const status = await removeData(deleteInterviewer+profileId,"Interviewer")
         setKey(!key)
     }; 
 

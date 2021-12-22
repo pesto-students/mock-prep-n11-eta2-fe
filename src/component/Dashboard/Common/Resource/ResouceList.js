@@ -1,104 +1,68 @@
-import React, { lazy,useState,useEffect} from 'react'
-import "../Topics/List/TopicsList.css"
+import React, { lazy, useState, useEffect } from 'react'
+import { useParams} from "react-router-dom" 
+import { useSelector,useDispatch} from "react-redux"
 import { Input} from "antd"
 import { resourceIcon } from "Constant/antIcons"
-import { Button } from 'antd'
-import { resources } from 'Constant/data'
-import { fallback, topicsFilter } from 'Constant/navList'
-import { adminNavList } from 'Constant/navList'
-import { resourceForm } from 'Constant/formData'
-import Forms  from 'component/Common/Form/Forms';
-import { getData } from 'api/Api'
-import { getResources, insertResource } from 'Constant/apiUrl'
-import { insertData } from 'api/Api'
+import { getResources } from 'Constant/apiUrl'
+import ResourceCard from 'component/Common/Cards/Resource/ResouceCard'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+import "../Topics/List/TopicsList.css"
+import { removeData } from 'api/Api'
+import { deleteIcon } from "Constant/antIcons"
+import { fallback } from 'Constant/navList'
 
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
-const ResourceCard = lazy(() => import('component/Common/Cards/Resource/ResouceCard'))
+
+
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
-const Modals = lazy(() => import("component/Common/Modal/Modals"))
+
 
 export default function ResourceList() {
-    
-    let [topics, setInterviewer] = useState([]);
 
-    let [topicsList, setInterviewerList] = useState([]);
     
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getResources);
-           
-            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
-        }
-        getInterviewer()
-    },[])
-
+    
     const { Search } = Input;
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    let { topicId} = useParams()
+    let [resourceList, setResourceList] = useState([]);
+    let [resource, setResource] = useState([]);
+    let data = useSelector(state => state.dataReducer)
+    const dispatch = useDispatch()
 
-    const interviewerForm = JSON.parse(JSON.stringify(resourceForm));
-    delete interviewerForm.id
-
-
-    const handleFilter = (value) => {
-
-        let filtered = resources.filter(fil => value.some(e => fil.title.includes(e)));
-        setInterviewer(filtered)
-
-        if (value.length === 0) {
-            setInterviewer(resources)
+    useEffect(() => { dataActionCreator.getAdminData(dispatch, getResources, dataActions.setResource) }, [dispatch])
+    useEffect(() => {
+        if (data.resources !== undefined) {
+            setResource(data.resources.data);
+            setResourceList(data.resources.data);
         }
-    }
+    }, [data])
+
     
+    
+    const handleRemove = (resourceId) => { 
+        setResourceList(resource.filter(e => e._id !== resourceId))
+        // removeData(deleteRsource+resourceId)
+    }
+
     const onSearch = (value) => {
-        let filtered = resources.filter(val => val.title.includes(value) );
-       
-        setInterviewer(filtered)
-        if (value === "") { 
-            setInterviewer(topics)
-        }
+        let filtered = resource.filter(val => val.title.includes(value) ||  val.description.includes(value) );
+        setResourceList(filtered)
     }; 
 
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-    
-    const handleOk = (value) => {
-        setIsModalVisible(false);
-    };
-    
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
-
-    const submit = (value) => { 
-        console.log(value)
-        insertData(insertResource,value)
-    }
-
-    const data = <Forms populate={false} submitFunction={submit} formFields={interviewerForm} buttonValue="Add Topic" /> 
-
-    const search = <><Filter filterOptions={topicsFilter} filterFunction={handleFilter} placeholder="Filter Resource" /><section className="search"><Search placeholder="Search Resource" onSearch={onSearch} style={{ width: 200 }} />
-       
-    </section></>
-
+    const search =<> <section className="search"><Search placeholder="Search resource" onSearch={onSearch} style={{ width: 200 }} /></section></>
     return (
         <div>
-            <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <section className='topics-container'>
+            <section className='resource-container'>
                 <DashboardHeader title="Resources List" icon={resourceIcon} rightComponent={search} />
-                <Button onClick={showModal} id="addTopicBtn" type="primary">Add Resource</Button>
-                {topicsList.length > 0 ?
-                    <section className="topics">
-                        {topicsList.map((res, index) => (
-                            <ResourceCard key={index} description={res.description} image={res.image} url={res.url} title={res.title} />
-                        ))}
-                    </section>
-                    :
+                <section id="topics">
+                {
+                    resourceList.length > 0 ?
+                    resourceList.map((resource, index) => (
+                            <ResourceCard key={index} delIcon={deleteIcon} id={resource._id} remove={handleRemove} title={resource.title} description={resource.description} image={resource.image} url={resource.url}  />
+                        )) :
                     <section>{fallback}</section>
-                }
+                    }
+                </section>
             </section>
-            <Modals animation={false} data={data} title="Add Resource" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
         </div>
     )
 }

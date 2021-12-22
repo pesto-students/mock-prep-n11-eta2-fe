@@ -16,6 +16,8 @@ export const getQuizList = baseUrl + "/quiz/getQuizLists"
 export const deleteInterviewer = baseUrl + "/interviewer/deleteInterviewer/"
 export const deleteStudent = baseUrl + "/student/deleteStudent/"
 export const daleteResource = baseUrl + "/resource/getResources"
+export const deleteTopic = baseUrl + "/topic/deleteTopic/"
+export const deleteQuizList = baseUrl + "/quiz/deleteQuizList/"
 
 // Update
 export const updateInterviewer = baseUrl + "/interviewer/updateInterviewer/"
