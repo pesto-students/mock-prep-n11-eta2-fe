@@ -216,7 +216,50 @@ export const tableColumns = [
             {
               text: 'HTML',
               value: 'HTML',
-            },],
+            },
+            {
+                text: 'CSS',
+                value: 'CSS',
+            },
+            {
+                text: 'BootStrap',
+                value: 'BootStrap',
+            },
+            {
+                text: 'React',
+                value: 'React',
+            },
+            {
+                text: 'UI',
+                value: 'UI',
+            },
+            {
+                text: 'UX',
+                value: 'UX',
+            },
+            {
+                text: 'System Design',
+                value: 'System Design',
+              },
+              {
+                text: 'Mongo Db',
+                value: 'Mongo Db',
+              },
+              {
+                text: 'Node',
+                value: 'Node',
+            },
+            {
+                text: 'DS',
+                value: 'DS',
+            },
+            {
+                text: 'Algo',
+                value: 'Algo',
+            },
+              
+
+        ],
             onFilter: (value, record) => record.topic.indexOf(value) === 0,
 
     },

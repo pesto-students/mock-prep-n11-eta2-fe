@@ -1,123 +1,106 @@
-import React, {useState,useEffect, lazy} from 'react'
-import { smileIcon,deleteIcon } from "Constant/antIcons"
+import React, { useState, useEffect, lazy } from 'react'
+import { useSelector,useDispatch } from 'react-redux';
+import { idCardIcon,deleteIcon } from "Constant/antIcons"
 import { Input,Tabs,Button} from 'antd';
 import { Link} from "react-router-dom"
-import { fallback, interviewerFilter} from "Constant/navList"
-import "./StudentList.css"
-import { adminNavList} from "Constant/navList"
+import { fallback} from "Constant/navList"
 import { deleteStudent, getStudents, updateStudent } from 'Constant/apiUrl';
-import { getData } from 'api/Api';
-import { updateData } from 'api/Api';
-import { removeData } from 'api/Api';
+import { removeData, updateData } from 'api/Api';
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
+import dataActions from 'Redux/Actions/dataAction';
+import "../List/StudentList.css"
 
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const InterviewerCardList = lazy(() => import("component/Common/Cards/Interviewer/interviewerCardList"))
 
-export default function InterviewerList() {
+export default function StudentList() {
 
-    
     const { Search } = Input;
     const { TabPane } = Tabs;
 
-    let [students, setStudents] = useState([])
-    let [interviewerList, setInterviewer] = useState([]); 
-
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getStudents);
-            if (interviewer) { setStudents(interviewer); setInterviewer(interviewer) }
-        }
-        getInterviewer()
-    }, [])
+    let [studentList,setstudentList] = useState([])
+    let [students,setstudent] = useState([])
+    let [key,setKey] = useState(false)
+    let [newstudentList,setNewList] = useState([])
+    let [existingstudentList, setExistingList] = useState([])
     
-    let newInterviewerList;
-    let existingInterviewerList;
-  
-    if (students.length>0) { 
-        newInterviewerList = interviewerList.filter(int => int.listed !== true)
-        existingInterviewerList = interviewerList.filter(int => int.listed === true)
-    }
+    let interData = useSelector(state => state.dataReducer)
 
+    const dispatch = useDispatch()
 
-
-    const handleFilter = (value) => {
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudents,dataActions.setStudents)},[dispatch])
+    useEffect(() => { if (interData.studentData != undefined) { setstudent(interData.studentData.data); setstudentList(interData.studentData.data) } }, [interData])
+    useEffect(() => { if (students.length > 0) { setNewList(studentList.filter(int => int.onboarded !== true)); setExistingList(studentList.filter(int => int.onboarded === true))}}, [key,students,studentList])
       
-        let filtered = students.filter(fil => value.some(e => fil.skills.includes(e)));
-        setInterviewer(filtered)
-
-        if (value.length === 0) {
-            setInterviewer(students)
-        }
-    }
-    
     const onSearch = (value) => {
-        let filtered = students.filter(val => val.name.includes(value) || val.company.includes(value) || val.designation.includes(value));
-       
-        setInterviewer(filtered)
+        let filtered = students.filter(val => val.name.includes(value) ||  val.designation.includes(value) ||  val.company.includes(value) ||  val.skills.includes(value)   );
+        setstudentList(filtered)
     }; 
-
-    const deList = (profileId) => { 
-      
-        students.forEach(x => { 
-            if (x._id === profileId) { 
-                x.listed = false;
-                updateData(updateStudent+x._id,x)
-            }
-        })
     
-        setInterviewer(students)
-    }
-
-    const removeProfile = (profileId) => {
-        setInterviewer(interviewerList.filter(e => e._id !== profileId))
-        removeData(deleteStudent+profileId)
+    const removeProfile = async (profileId) => {
+       
+        const status = await removeData(deleteStudent+profileId)
+        setstudent(students.filter(e => e._id !== profileId))
+        setstudentList(students.filter(e => e._id !== profileId))
     }; 
 
     const addProfile = (profileId) => { 
-       console.log("add")
+       
         students.forEach(x => { 
             if (x._id === profileId) { 
-                x.listed = true
+                x.onboarded = true;
                 updateData(updateStudent+x._id,x)
             }
         })
-        setInterviewer(students)
+        setstudent(students)
+        setKey(!key)
+    }
+
+    const deList = (profileId) => { 
+       
+        students.forEach(x => { 
+            if (x._id === profileId) { 
+                x.onboarded = false;
+                updateData(updateStudent+x._id,x)
+            }
+        })
+
+        setstudent(students)
+        setKey(!key)
     }
     
-
-    const search = <><Filter filterOptions={interviewerFilter} filterFunction={handleFilter} placeholder="Filter Interviewer" /><section className="search"><Search placeholder="Search Interviewer" onSearch={onSearch} style={{ width: 200 }} /></section></>
+    const search = <><section className="search"><Search placeholder="Search student by any parameter" onSearch={onSearch} style={{ width: 200 }} /></section></>
 
     const viewProfileButton = <Button className='viewProfileBtn'>View Profile</Button>
  
     return (
         <>
-          <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <div className="interviewerListContainer">
+            <div className="studentListContainer">
 
-                <DashboardHeader title="Student List" icon={smileIcon} rightComponent={search}  />
-                {interviewerList.length>0?
-                <section className="interviewersList">
-                <Tabs defaultActiveKey="1" >
-                        <TabPane tab="Listed Students" key="1">
-                            <section className='interviewerListCard'>
-                                {existingInterviewerList.map(interviewer => (
-                                    <InterviewerCardList  key={interviewer._id}  btn1={<Link to={`/admin/studentProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(interviewer._id)}} className='removeProfileBtn'>DeList Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills}  name={interviewer.name} image={interviewer.image} degree={interviewer.degree} company={interviewer.company}    contact={interviewer.contact} />
-                                ))}
-                            </section>
-                    </TabPane>
-                    <TabPane tab="Delisted Students" key="2">
-                            <section className='interviewerListCard'>
-                                {newInterviewerList.map(interviewer => (
-                                    <InterviewerCardList  key={interviewer._id}  btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(interviewer._id) }} className='addProfileBtn'>List Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>}   className='interviewerlistProfile' skills={interviewer.skills}name={interviewer.name} image={interviewer.image} degree={interviewer.degree} company={interviewer.company} contact={interviewer.contact} />
-                                ))}
-                            </section>
-                    </TabPane>
-                    </Tabs>
-                </section>:
-                <section>{fallback}</section>}
+                <DashboardHeader title="Students List" icon={idCardIcon} rightComponent={search}  />
 
+                {studentList.length>0 ?
+                    <section className="studentsList">
+                        <Tabs defaultActiveKey="1" >
+                            <TabPane tab="New students" key="1">
+                                <section className='studentListCard'>
+                                    {newstudentList.map(student => (
+                                        <InterviewerCardList key={student._id} btn1={<Link to={`/admin/studentProfile/${student._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(student._id) }} className='addProfileBtn'>List Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(student._id)} className="closeProfile">{deleteIcon}</Link>} className='studentlistProfile' skills={student.skills} name={student.name} image={student.image} degree={student.degree} company={student.company} contact={student.contact} />
+                                    ))}
+                                </section>
+                                    
+                            </TabPane>
+                            <TabPane tab="Exisiting students" key="2">
+                                <section className='studentListCard'>
+                                    {existingstudentList.map(student => (
+                                        <InterviewerCardList key={student._id} btn1={<Link to={`/admin/studentProfile/${student._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(student._id) }} className='removeProfileBtn'>DeList Student</Button>} delIcon={<Link to="#" onClick={() => removeProfile(student._id)} className="closeProfile">{deleteIcon}</Link>} className='studentlistProfile' skills={student.skills} name={student.name} image={student.image} degree={student.degree} company={student.company} contact={student.contact} />
+                                    ))}
+                                </section>
+                            </TabPane>
+                        </Tabs>
+                    </section>
+                    :<section>{fallback}</section>
+                }
             </div>
         </>
     )

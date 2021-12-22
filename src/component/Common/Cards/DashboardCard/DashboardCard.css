@@ -1,6 +1,6 @@
 .card{
     width: 20vw;
-    height: 18vh;
+    height: 15vh;
     border-left: 3px solid rgb(21, 52, 146) !important;
     border-radius: 2px;
     border: 1px solid lightgray;
@@ -14,9 +14,7 @@
     justify-content: space-between;
     color:rgb(118, 117, 117);
     margin-top: 5vh;
+    color: #161280;font-size: large;font-weight: 500;
 }
 
-.card>p{
-    font-size: medium;
-    font-weight: bold;
-}
+.lightText{color: grey;}

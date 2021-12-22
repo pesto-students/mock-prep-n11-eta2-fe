@@ -1,6 +1,7 @@
 import React from 'react'
 import { logoWhiteUrl } from 'Constant/const_url'
 import "./Footer.css"
+import { Link} from "react-router-dom"
 
 export default function Footer () {
     return (
@@ -12,26 +13,26 @@ export default function Footer () {
             <section>
                 <h2>Pages</h2>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Packages</li>
-                    <li>Join Us</li>
+                    <Link  className="link" to="/">Home</Link>
+                    <Link className="link"  to="/about">About</Link>
+                    <Link className="link"  to="/package">Packages</Link>
+                    <Link className="link"  to="/join">Join Us</Link>
                 </ul>
             </section>
             <section>
                 <h2>Packages</h2>
                 <ul>
-                    <li>Interview Prep  pack</li>
-                    <li>Mock Interview</li>
-                    <li>Mentorship and consulting</li>
+                    <Link  className="link" to="package">Interview Prep pack</Link>
+                    <Link className="link"  to="package">Mock Interview</Link>
+                    <Link className="link"  to="package">Mentorship and consulting</Link>
                 </ul>
             </section>
             <section>
                 <h2>Support</h2>
                 <ul>
-                    <li>Book a demo session</li>
-                    <li>Contact Us</li>
-                    <li>Queries</li>
+                    <Link  className="link" to="/"  >Book a demo session</Link>
+                    <Link className="link"  to="/contact">Contact Us</Link>
+                    <Link  className="link" to="/contact">Queries</Link>
                 </ul>
             </section>
         </footer>

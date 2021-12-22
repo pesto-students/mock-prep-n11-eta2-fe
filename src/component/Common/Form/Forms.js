@@ -31,13 +31,12 @@ export default function Forms  ({submitFunction,formFields,textArea,buttonValue,
                         ))}
                     </Col>
                 </Row>
-                <Form.Item  >
-                   {textArea ? <TextArea className="about" defaultValue={textArea} allowClear  label={"about"} name="about"  />: <></>} 
-
-                    <Button type="primary"  style={{width:"10vw !important"}} htmlType="submit">
+                <Form.Item className="form-input" name="about" label={"about".toUpperCase()} >
+                    <TextArea className="about" defaultValue={textArea}  />
+                </Form.Item>
+                <Button type="primary"  style={{width:"10vw !important"}} htmlType="submit">
                         {buttonValue}
-                    </Button>
-                 </Form.Item>
+                </Button>
             </Form>
         </div>
     )

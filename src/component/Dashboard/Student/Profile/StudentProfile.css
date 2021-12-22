@@ -1,5 +1,5 @@
-.interviewer-profile{
-    width: 82.5vw;
+.student-profile{
+    width: 100%;
     position: absolute;
     right: 0;   
 }
@@ -44,6 +44,15 @@ h3>.fa-star{
     margin:1vw 5px;
 }
 
+#bar{
+    width: 50%;
+    margin-left: 3%;
+}
+
+.rating{
+    display: flex;
+}
+
 .about{
     color: grey;
     height: auto !important;
@@ -61,10 +70,18 @@ h3>.fa-star{
 .heading{margin: 1vh 0;}
 
 
-.interviewer-profile>.header>.tab-options{
+.student-profile>.header>.tab-options{
     justify-content: right;
 }
 
 .fa-star{
     color: rgb(245, 187, 40) !important;
+}
+
+.int-profile-form{
+    width: 90%;
+    border: 1px solid lightgrey;
+    margin: 4vw auto;
+    padding: 4vw;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

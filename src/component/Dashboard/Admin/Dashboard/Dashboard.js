@@ -1,43 +1,39 @@
 import React, {lazy,useState,useEffect} from 'react'
 import { DashboardIcon } from 'Constant/antIcons'
-import { adminNavList, fallback } from "Constant/navList"
-
-import "./Dashboard.css"
-import { getData } from 'api/Api'
 import { getAdminDashboard } from 'Constant/apiUrl'
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { fallback } from 'Constant/navList'
+import dataActions from 'Redux/Actions/dataAction'
+import "./Dashboard.css"
+
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const DashBoardCard = lazy(() => import('component/Dashboard/Admin/Dashboard/Cards/DashboardCards'))
 const DashboardCharts = lazy(() => import("component/Dashboard/Admin/Dashboard/Charts/DashboardCharts"))
 const Feedback = lazy(() => import("component/Dashboard/Admin/Dashboard/Feedback/Feedback"))
 const InterviewTable = lazy(() => import("component/Dashboard/Admin/Dashboard/InterviewTable/InterviewTable"))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
+
 
 export default function Dashboard() {
 
-    
     let [adminDashboard,setAdminDashboard] = useState([])
+    let data = useSelector(state => state.dataReducer)
+    const dispatch = useDispatch()
 
-    useEffect(() => { 
-        const getAdminDash = async () => { 
-            const adminDash = await getData(getAdminDashboard);
-            if (adminDash) setAdminDashboard(adminDash[0])
-           
-        }
-        getAdminDash()
-    },[])
-
+    useEffect(() => { dataActionCreators.getAdminData(dispatch, getAdminDashboard, dataActions.setAdminData) }, [dispatch])
+    useEffect(() => { if (Object.keys(data.adminDashboard).length > 0) { setAdminDashboard(data.adminDashboard.data[0])}}, [data])
+  
     return (
-        <div className="dashboard">
-            <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <DashboardHeader title="Admin Dashboard" icon={DashboardIcon} />
-            {adminDashboard.length !== 0 ?<>
-                <DashBoardCard data={adminDashboard.cards} />
-                <DashboardCharts data={adminDashboard} />
-                <Feedback data={adminDashboard} /> 
-                <InterviewTable data={adminDashboard.tableDataSource} />
-                </>
-                : <section>{fallback}</section>
+        <div>
+             <DashboardHeader title="Admin Dashboard" icon={DashboardIcon} />
+            {adminDashboard.length !== 0 ? <>
+                    <DashBoardCard data={adminDashboard.cards} />
+                    <DashboardCharts data={adminDashboard} />
+                    <Feedback data={adminDashboard} /> 
+                <InterviewTable data={adminDashboard.tableDataSource} /></>:
+            <section>{fallback}</section>
             }
         </div>
     )

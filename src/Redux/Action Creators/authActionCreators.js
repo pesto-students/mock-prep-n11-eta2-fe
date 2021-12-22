@@ -1,5 +1,5 @@
 import { authActions } from "Redux/Actions/authActions";
-import { errorActions } from "Redux/Actions/errorAction";
+import errorActions from "Redux/Actions/errorAction";
 
 
 
@@ -12,7 +12,7 @@ const authActionCreator = {
                     dispatch({type : authActions.setRole, isLoggedIn : isLoggedIn})
                 },     
     loginAdmin : function(dispatch,{userName, password}){
-                    fetch('/admin/adminLogin',{
+                    fetch('https://mockprep.herokuapp.com/admin/adminLogin',{
                         method : 'POST',
                         headers : {
                             'Content-Type': 'application/json'
@@ -30,6 +30,15 @@ const authActionCreator = {
                         }
                       })
                       .catch(error => console.log(error))
+                    },
+    setUser : function (dispatch, user){
+                        dispatch({type : authActions.setUser, user : user,role : "Student"})
+                    },
+    testLogin : function (dispatch,user){
+                        dispatch({type : authActions.test, user})
+                    },
+    logOut : function (dispatch){
+                        dispatch({type : authActions.logout})
                     }
 }
 

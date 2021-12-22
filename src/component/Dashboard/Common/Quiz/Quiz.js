@@ -1,72 +1,69 @@
 import React, {useEffect, lazy,useState} from 'react'
 import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
-import { trophyIcon } from "Constant/antIcons"
-import { fallback, topicsFilter } from 'Constant/navList'
-import { adminNavList } from 'Constant/navList'
-import { topicForm } from 'Constant/formData'
-import { getData } from 'api/Api'
-import { getQuizList } from 'Constant/apiUrl'
 
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
+import { trophyIcon } from "Constant/antIcons"
+import { fallback } from 'Constant/navList'
+import { useDispatch, useSelector } from 'react-redux'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+
+import { useParams} from "react-router-dom" 
+import { getQuizList } from 'Constant/apiUrl'
+import { deleteIcon } from 'Constant/antIcons'
+import { deleteQuizList } from 'Constant/apiUrl'
+import { removeData } from 'api/Api'
+
 const QuizCard = lazy(() => import('component/Common/Cards/Quiz/Quiz'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
+
 
 export default function QuizList() {
     
-    
-    let [quiz, setInterviewer] = useState([]);
-
-    let [topicsList, setInterviewerList] = useState([]);
-    
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getQuizList);
-           
-            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
-            console.log(interviewer)
-        }
-        getInterviewer()
-    },[])
-
     const { Search } = Input;
-    const interviewerForm = JSON.parse(JSON.stringify(topicForm));
-    delete interviewerForm.id
+    let { topicId} = useParams()
+    let [quizList, setQuizList] = useState([]);
+    let [quiz, setQuiz] = useState([]);
+    let data = useSelector(state => state.dataReducer)
+    const dispatch = useDispatch()
 
-
-    const handleFilter = (value) => {
-
-        let filtered = quiz.filter(fil => value.some(e => fil.title.includes(e)));
-        setInterviewer(filtered)
-
-        if (value.length === 0) {
-            setInterviewer(quiz)
+    useEffect(() => { dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz) }, [dispatch])
+    useEffect(() => {
+        if (data.quiz !== undefined) {
+            setQuiz(data.quiz.data);
+            setQuizList(data.quiz.data);
         }
-    }
+    }, [data])
+
     
+    
+    const handleRemove = (quizId) => { 
+        setQuizList(quiz.filter(e => e._id !== quizId))
+        removeData(deleteQuizList + quizId)
+        
+    }
+
     const onSearch = (value) => {
-        let filtered = quiz.filter(val => val.title.includes(value) );
-       
-        setInterviewer(filtered)
+        let filtered = quiz.filter(val => val.title.includes(value) ||  val.category.includes(value) );
+        setQuizList(filtered)
     }; 
 
-    const search = <><Filter filterOptions={topicsFilter} filterFunction={handleFilter} placeholder="Filter Quiz" /><section className="search"><Search placeholder="Search Quiz" onSearch={onSearch} style={{ width: 200 }} />
-       
-    </section></>
+    const search =<> <section className="search"><Search placeholder="Search quiz" onSearch={onSearch} style={{ width: 200 }} /></section></>
+
 
     return (
         <div>
-            <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <section className='topics-container'>
+          <section className='quiz-container'>
                 <DashboardHeader title="Quiz List" icon={trophyIcon} rightComponent={search} />
-                {topicsList.length > 0 ?
-                    <section className="topics">
-                        {topicsList.map((topic, index) => (<QuizCard key={index} route={"/quiz/quizContent/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
+               
+                {quizList.length > 0 ?
+                    <section id="quiz">
+                        {quizList.map((topic, index) => (<QuizCard key={index} delIcon={deleteIcon} id={topic._id} remove={handleRemove} route={"/quizContent/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
                     </section>
                     :
-                < section > { fallback }</section>
-                }
+                     < section > { fallback }</section>
+                    }
+              
             </section>
         </div>
     )

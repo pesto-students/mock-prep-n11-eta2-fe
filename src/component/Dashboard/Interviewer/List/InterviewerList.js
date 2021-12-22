@@ -1,63 +1,48 @@
-import React, {useState,useEffect, lazy} from 'react'
+import React, { useState, useEffect, lazy } from 'react'
+import { useSelector,useDispatch } from 'react-redux';
 import { idCardIcon,deleteIcon } from "Constant/antIcons"
 import { Input,Tabs,Button} from 'antd';
 import { Link} from "react-router-dom"
-import { fallback, interviewerFilter} from "Constant/navList"
-import "./InterviewerList.css"
-import { adminNavList} from "Constant/navList"
-import { getData } from 'api/Api';
+import { fallback} from "Constant/navList"
 import { deleteInterviewer, getInterviewers, updateInterviewer } from 'Constant/apiUrl';
-import { removeData ,updateData} from 'api/Api';
+import { removeData, updateData } from 'api/Api';
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
+import dataActions from 'Redux/Actions/dataAction';
+import "./InterviewerList.css"
 
-
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const InterviewerCardList = lazy(() => import("component/Common/Cards/Interviewer/interviewerCardList"))
 
 export default function InterviewerList() {
 
     const { Search } = Input;
     const { TabPane } = Tabs;
-   
+
     let [interviewerList,setInterviewerList] = useState([])
     let [interviewers,setInterviewer] = useState([])
-
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getInterviewers);
-            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
-        }
-        getInterviewer()
-    },[])
-
-
-    let newInterviewerList;
-    let existingInterviewerList;
-  
-    if (interviewers.length>0) { 
-        newInterviewerList = interviewerList.filter(int => int.onboarded !== true)
-        existingInterviewerList = interviewerList.filter(int => int.onboarded === true)
-    }
-
-    const handleFilter = (value) => {
-        let filtered = interviewerList.filter(fil => value.some(e => fil.skills.includes(e)));
-        setInterviewerList(filtered)
-
-        if (value.length === 0) {
-            setInterviewerList(interviewers)
-        }
-    }
+    let [key,setKey] = useState(false)
+    let [newInterviewerList,setNewList] = useState([])
+    let [existingInterviewerList, setExistingList] = useState([])
     
+    let interData = useSelector(state => state.dataReducer)
+
+    const dispatch = useDispatch()
+
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)},[dispatch])
+    useEffect(() => { if (interData.interviewerData != undefined) { setInterviewer(interData.interviewerData.data); setInterviewerList(interData.interviewerData.data) } }, [interData])
+    useEffect(() => { if (interviewers.length > 0) { setNewList(interviewerList.filter(int => int.onboarded !== true)); setExistingList(interviewerList.filter(int => int.onboarded === true))}}, [key,interviewers,interviewerList])
+      
     const onSearch = (value) => {
-        let filtered = interviewers.filter(val => val.name.includes(value) ||  val.designation.includes(value) ||  val.company.includes(value)    );
-        setInterviewerList(filtered)    
+        let filtered = interviewers.filter(val => val.name.includes(value) ||  val.designation.includes(value) ||  val.company.includes(value) ||  val.skills.includes(value)   );
+        setInterviewerList(filtered)
+        console.log(interviewers)
     }; 
-    
+
     const removeProfile = async (profileId) => {
+       
+        const status = await removeData(deleteInterviewer + profileId, "Interviewer")
         setInterviewer(interviewers.filter(e => e._id !== profileId))
-        const status = await removeData(deleteInterviewer+profileId,"Interviewer")
-        console.log(status);
+        setKey(!key)
     }; 
 
     const addProfile = (profileId) => { 
@@ -69,7 +54,7 @@ export default function InterviewerList() {
             }
         })
         setInterviewer(interviewers)
-
+        setKey(!key)
     }
 
     const deList = (profileId) => { 
@@ -82,15 +67,15 @@ export default function InterviewerList() {
         })
 
         setInterviewer(interviewers)
+        setKey(!key)
     }
     
-    const search = <><Filter filterOptions={interviewerFilter} filterFunction={handleFilter} placeholder="Filter Interviewer" /><section className="search"><Search placeholder="Search Interviewer" onSearch={onSearch} style={{ width: 200 }} /></section></>
+    const search = <><section className="search"><Search placeholder="Search Interviewer by any parameter" onSearch={onSearch} style={{ width: 200 }} /></section></>
 
     const viewProfileButton = <Button className='viewProfileBtn'>View Profile</Button>
  
     return (
         <>
-          <SideNav sideNavList={adminNavList} userName="admin"></SideNav>
             <div className="interviewerListContainer">
 
                 <DashboardHeader title="Onboard Interviewers" icon={idCardIcon} rightComponent={search}  />
@@ -101,7 +86,7 @@ export default function InterviewerList() {
                             <TabPane tab="New Interviewers" key="1">
                                 <section className='interviewerListCard'>
                                     {newInterviewerList.map(interviewer => (
-                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(interviewer._id) }} className='addProfileBtn'>Add Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
+                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(interviewer._id) }} className='addProfileBtn'>Onboard Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
                                     ))}
                                 </section>
                                     
@@ -109,13 +94,13 @@ export default function InterviewerList() {
                             <TabPane tab="Exisiting Interviewers" key="2">
                                 <section className='interviewerListCard'>
                                     {existingInterviewerList.map(interviewer => (
-                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(interviewer._id) }} className='removeProfileBtn'>Remove Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
+                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(interviewer._id) }} className='removeProfileBtn'>DeList Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
                                     ))}
                                 </section>
                             </TabPane>
                         </Tabs>
                     </section>
-                    : <section>{fallback}</section>
+                    :<section>{fallback}</section>
                 }
             </div>
         </>

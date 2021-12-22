@@ -14,7 +14,7 @@ export default function DashboardCharts({data})  {
                     {data.earnings? <DashboardChart options={earningChartOptions} data={data.earnings} />:<p></p>}
                 </section>
                 <section className="resourceChart">
-                    <h2 className="headline">Earning % based on topics</h2>
+                    <h2 className="headline">Earning % based on packages</h2>
                     {data.incomeResources? <DashboardPie options={resourceChartOptions} data={data.incomeResources} />:<p></p>}
                 </section>
             </section>
