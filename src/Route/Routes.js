@@ -1,8 +1,8 @@
 import React, { lazy } from 'react'
-import { useSelector } from "react-redux";
-import PublicRoute from "Route/PublicRoute";
-import PrivateRoute from "Route/PrivateRoute";
-import { useCookies } from "react-cookie"
+// import { useSelector } from "react-redux";
+// import PublicRoute from "Route/PublicRoute";
+// import PrivateRoute from "Route/PrivateRoute";
+// import { useCookies } from "react-cookie"
 import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Landing = lazy(() => import("component/Landing/Landing"))
@@ -12,14 +12,13 @@ const Join = lazy(() => import("component/Join/Join"))
 const Contact = lazy(() => import("component/Contact/Contact"))
 const SignIn = lazy(() => import("component/Join/SignIn/SignIn"))
 const Admin = lazy(() => import("component/Dashboard/Admin/Dashboard/Admin"))
-const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
-
+// const AdminLogin = lazy(() => import("component/Join/AdminLogin/adminLogin"))
 const QuizContent = lazy(() => import("component/Dashboard/Common/Quiz/QuizContent/QuizContent"))
 
 
 export default function Routes() {
 
-    const loginState = useSelector(state => state.authReducer);
+    // const loginState = useSelector(state => state.authReducer);
     return (
         <div>
             {/* <PublicRoute exact path="/" component={Landing} loggedIn={loginState.isLoggedIn} restricted="false" />

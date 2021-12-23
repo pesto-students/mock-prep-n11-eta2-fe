@@ -14,7 +14,6 @@ import "../Topics/List/TopicsList.css"
 const QuizCard = lazy(() => import('component/Common/Cards/Quiz/Quiz'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 
-
 export default function QuizList() {
     
     const { Search } = Input;

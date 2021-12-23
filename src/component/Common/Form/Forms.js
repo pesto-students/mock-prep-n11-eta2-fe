@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Input, Button, Row, Col,Select } from 'antd';
-
 import "./Forms.css"
 
 export default function Forms  ({submitFunction,formFields,textArea,buttonValue,populate,about,topics}) {
@@ -13,12 +12,8 @@ export default function Forms  ({submitFunction,formFields,textArea,buttonValue,
     const firstCol = keys.splice(0, middleIndex);   
     const secondCol = keys.splice(-middleIndex);
 
-    function handleChange(value) {
-        console.log(`selected ${value}`);
-      }
-  
     return (
-        <div>
+    <div>
             <Form name="control-hooks form" onFinish={submitFunction} autoComplete="on">
                 { topics?
                 <Form.Item className="form-input" name="topic" label={"Topic".toUpperCase()} >
@@ -55,6 +50,6 @@ export default function Forms  ({submitFunction,formFields,textArea,buttonValue,
                         {buttonValue}
                 </Button>
             </Form>
-        </div>
+    </div>
     )
 }

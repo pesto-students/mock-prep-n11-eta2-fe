@@ -1,5 +1,4 @@
 import axios from "axios"
-import errorActionCreator from "Redux/Action Creators/erroActionCreators";
 
 //Get Call
 export async function getData(url,) {

@@ -1,11 +1,9 @@
 import React from 'react'
-import { Form, Input, Button, Row, Col } from 'antd';
+import { Form, Input, Button } from 'antd';
 
 import "./Forms.css"
 
 export default function ContactForm  ({submitFunction,buttonValue,}) {
-
-    const { TextArea } = Input;
     return (
         <div>
             <Form  name="control-hooks form" onFinish={submitFunction} autoComplete="on">
