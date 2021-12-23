@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { logoUrl } from "Constant/const_url"
+import { logoUrl } from "constant/const_url"
 import { UserOutlined} from "@ant-design/icons"
 import "./SideNav.css"
 

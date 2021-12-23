@@ -1,20 +1,20 @@
 import React, { lazy,useState,useEffect} from 'react'
-import { DBIcon,editIcon } from "Constant/antIcons"
-import { deleteTopic, getTopics, insertTopic } from 'Constant/apiUrl'
+import { DBIcon,editIcon } from "constant/antIcons"
+import { deleteTopic, getTopics, insertTopic } from 'constant/apiUrl'
 import { Input} from "antd"
 import { useSelector, useDispatch } from "react-redux"
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
-import { fallback } from 'Constant/navList'
+import { fallback } from 'constant/navList'
 import TopicsCard from 'component/Common/Cards/Topics/TopicsCard'
-import { deleteIcon } from 'Constant/antIcons'
+import { deleteIcon } from 'constant/antIcons'
 import "./TopicsList.css"
 import { insertData, removeData, updateData } from 'api/Api'
 import { Button } from 'antd'
 import Modals from 'component/Common/Modal/Modals'
-import { topicForm } from 'Constant/formData'
+import { topicForm } from 'constant/formData'
 import Forms from 'component/Common/Form/Forms';
-import { updateTopic } from 'Constant/apiUrl'
+import { updateTopic } from 'constant/apiUrl'
 import { C } from 'caniuse-lite/data/features/aac'
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))

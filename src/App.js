@@ -1,12 +1,12 @@
 import React,{ Suspense, useEffect } from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { fallback } from "Constant/navList";
+import { fallback } from "constant/navList";
 import Route  from "Route/Routes"
 import 'antd/dist/antd.css';
 import './App.css';
 import { useSelector } from "react-redux";
 import {  notification } from 'antd';
-import { errorSign } from "Constant/antIcons";
+import { errorSign } from "constant/antIcons";
 import { utilityFunction } from "component/Utility/utility";
 import { useDispatch } from "react-redux";
 import { useCookies} from "react-cookie"

@@ -2,20 +2,20 @@ import React, { lazy, useState, useEffect } from 'react'
 import { useParams} from "react-router-dom" 
 import { useSelector,useDispatch} from "react-redux"
 import { Input} from "antd"
-import { resourceIcon } from "Constant/antIcons"
-import { daleteResources, getResources, getTopics, insertResource, updateResource } from 'Constant/apiUrl'
+import { resourceIcon } from "constant/antIcons"
+import { daleteResources, getResources, getTopics, insertResource, updateResource } from 'constant/apiUrl'
 import ResourceCard from 'component/Common/Cards/Resource/ResouceCard'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import "../Topics/List/TopicsList.css"
 import { insertData, removeData, updateData } from 'api/Api'
-import { deleteIcon,editIcon } from "Constant/antIcons"
-import { fallback } from 'Constant/navList'
+import { deleteIcon,editIcon } from "constant/antIcons"
+import { fallback } from 'constant/navList'
 import { Button} from "antd"
 import Modals from 'component/Common/Modal/Modals'
 import Forms from "component/Common/Form/Forms"
-import { resourceForm } from "Constant/formData"
-import { resources } from 'Constant/data'
+import { resourceForm } from "constant/formData"
+import { resources } from 'constant/data'
 import { resizeobserver } from 'caniuse-lite/data/features'
 
 

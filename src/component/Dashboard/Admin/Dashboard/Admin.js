@@ -1,5 +1,5 @@
 import React, {lazy} from 'react'
-import { adminNavList } from "Constant/navList"
+import { adminNavList } from "constant/navList"
 import { BrowserRouter as Switch,Router, Route } from "react-router-dom";
 import { useRouteMatch} from "react-router-dom"
 import { useSelector } from 'react-redux'

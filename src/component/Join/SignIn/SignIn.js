@@ -1,11 +1,11 @@
 import React, { lazy } from 'react'
 import { Link,Redirect } from "react-router-dom"
-import { logoUrl } from 'Constant/const_url'
+import { logoUrl } from 'constant/const_url'
 import GoogleLogin from "react-google-login"
 import { Button, Tabs } from "antd"
 import "./SignIn.css"
 import { insertData } from 'api/Api'
-import { loginUser } from 'Constant/apiUrl'
+import { loginUser } from 'constant/apiUrl'
 import { utilityFunction } from 'component/Utility/utility'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCookies } from 'react-cookie'

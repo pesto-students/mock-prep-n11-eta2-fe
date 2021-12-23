@@ -1,5 +1,5 @@
 import SideNav from 'component/Dashboard/Common/SideNav/SideNav'
-import { dashbordNames, interviewerNavList } from '../../../../Constant/sideNavList'
+import { dashbordNames, interviewerNavList } from '../../../../constant/sideNavList'
 
 
 

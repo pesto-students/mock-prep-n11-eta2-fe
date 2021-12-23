@@ -1,10 +1,10 @@
 import { lazy ,useEffect,useState} from "react"
 import { Link } from "react-router-dom"
-import { logoUrl } from 'Constant/const_url'
+import { logoUrl } from 'constant/const_url'
 import { Tabs } from "antd"
 import GoogleLogin from "react-google-login"
 import { useDispatch, useSelector } from "react-redux"
-import { insertUser,insertInterviewer,insertStudent } from "Constant/apiUrl"
+import { insertUser,insertInterviewer,insertStudent } from "constant/apiUrl"
 import { insertData } from "api/Api"
 import { useCookies } from 'react-cookie';
 import { utilityFunction } from "component/Utility/utility"

@@ -1,4 +1,4 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "Constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "constant/antIcons"
 import { Spin } from "antd"
 
 export const adminNavList = [

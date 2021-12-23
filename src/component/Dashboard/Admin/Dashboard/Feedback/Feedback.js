@@ -1,6 +1,6 @@
 import React, { lazy,useState,useEffect } from 'react'
-import { totalSaleOption} from "Constant/data"
-import { getReviews } from 'Constant/apiUrl'
+import { totalSaleOption} from "constant/data"
+import { getReviews } from 'constant/apiUrl'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import { useDispatch, useSelector } from 'react-redux'

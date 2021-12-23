@@ -2,14 +2,14 @@ import React, {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Button,Progress ,Alert} from 'antd';
 import "./QuizContent.css"
-import { logoUrl } from 'Constant/const_url';
+import { logoUrl } from 'constant/const_url';
 import DashboardHeader from '../../Header/DashboardHeader'
 import { getData } from 'api/Api';
-import { getInterviewers, getQuizContent, getQuizList } from 'Constant/apiUrl';
+import { getInterviewers, getQuizContent, getQuizList } from 'constant/apiUrl';
 import "./QuizContent.css"
 import QuizOptionForm from "./QuizOptionForm"
 import QuizNavigator from './QuizNavigator';
-import { fallback } from 'Constant/navList';
+import { fallback } from 'constant/navList';
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
 import { useDispatch,useSelector } from 'react-redux';
 import dataActions from 'Redux/Actions/dataAction';
