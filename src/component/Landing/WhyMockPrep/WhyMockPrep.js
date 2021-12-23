@@ -1,5 +1,5 @@
 import React from 'react'
-import { mockPrepAdvantages } from 'constant/data'
+import { mockPrepAdvantages } from 'Constant/data'
 import "./WhyMockPrep.css"
 
 export default function WhyMockPrep () {

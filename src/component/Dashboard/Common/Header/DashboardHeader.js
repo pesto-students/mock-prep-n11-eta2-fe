@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link} from "react-router-dom"
 import "./DashboardHeader.css"
-import { MenuIcon } from "constant/antIcons"
+import { MenuIcon } from "Constant/antIcons"
 
 export default function DashboardHeader({icon,title,rightComponent})  {
 

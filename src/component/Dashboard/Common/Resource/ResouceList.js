@@ -2,13 +2,13 @@ import React, { lazy, useState, useEffect } from 'react'
 import { useParams} from "react-router-dom" 
 import { useSelector,useDispatch} from "react-redux"
 import { Input} from "antd"
-import { resourceIcon } from "constant/antIcons"
-import { daleteResources, getResources, getTopics, insertResource, updateResource } from 'constant/apiUrl'
+import { resourceIcon } from "Constant/antIcons"
+import { daleteResources, getResources, getTopics, insertResource, updateResource } from 'Constant/apiUrl'
 import { insertData, removeData, updateData } from 'api/Api'
-import { deleteIcon,editIcon } from "constant/antIcons"
-import { fallback } from 'constant/navList'
+import { deleteIcon,editIcon } from "Constant/antIcons"
+import { fallback } from 'Constant/navList'
 import { Button} from "antd"
-import { resourceForm } from "constant/formData"
+import { resourceForm } from "Constant/formData"
 import Modals from 'component/Common/Modal/Modals'
 import Forms from "component/Common/Form/Forms"
 import ResourceCard from 'component/Common/Cards/Resource/ResouceCard'

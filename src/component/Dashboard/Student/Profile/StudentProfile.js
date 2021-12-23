@@ -1,11 +1,11 @@
 import React, { useState,lazy,useEffect} from 'react'
 import { Tag,Progress } from "antd"
-import { UserIcon } from 'constant/antIcons';
+import { UserIcon } from 'Constant/antIcons';
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { updateData } from 'api/Api';
-import { getStudents, updateStudent } from 'constant/apiUrl';
-import { fallback } from 'constant/navList';
+import { getStudents, updateStudent } from 'Constant/apiUrl';
+import { fallback } from 'Constant/navList';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
 import dataActions from 'Redux/Actions/dataAction';
 import Forms  from 'component/Common/Form/Forms';

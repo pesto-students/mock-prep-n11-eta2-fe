@@ -9,8 +9,8 @@ export default function ResourceCard({ image, title, description,url,id,delIcon,
         <Card hoverable 
                 id="topicCard"
                 cover={<img alt="example" id="cardImage" src={image} />}>
-            <a href="#" className="icon" onClick={() => remove(id)}> {delIcon}</a>
-            <a href="#" className="icon" onClick={() => update(id)}> { editIIcon}</a>
+                    <p className="icon" onClick={() => remove(id)}> {delIcon}</p>
+                    <p  className="icon" onClick={() => update(id)}> { editIIcon}</p>
                 <Meta title={title} description={description} />
                 <a rel="noreferrer" target="_blank" href={url}><Button  id="topics-btn" type="primary">Learn More..</Button></a>
         </Card>   

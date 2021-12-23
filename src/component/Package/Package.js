@@ -1,6 +1,6 @@
 import { lazy ,useState,useEffect} from "react"
-import { getPricing } from "constant/apiUrl"
-import { fallback } from "constant/navList"
+import { getPricing } from "Constant/apiUrl"
+import { fallback } from "Constant/navList"
 import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreator from "Redux/Action Creators/dataActionCreators"
 import dataActions from "Redux/Actions/dataAction"

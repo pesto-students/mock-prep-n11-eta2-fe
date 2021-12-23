@@ -1,6 +1,6 @@
 import React, { lazy,useEffect,useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { getInterviewers } from 'constant/apiUrl'
+import { getInterviewers } from 'Constant/apiUrl'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import "./Interviewers.css"

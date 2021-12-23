@@ -1,10 +1,10 @@
 import React, {lazy,useState,useEffect} from 'react'
-import { DashboardIcon } from 'constant/antIcons'
-import { getAdminDashboard } from 'constant/apiUrl'
+import { DashboardIcon } from 'Constant/antIcons'
+import { getAdminDashboard } from 'Constant/apiUrl'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { fallback } from 'constant/navList'
+import { fallback } from 'Constant/navList'
 import dataActions from 'Redux/Actions/dataAction'
 import "./Dashboard.css"
 

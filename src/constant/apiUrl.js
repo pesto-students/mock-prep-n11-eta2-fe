@@ -12,6 +12,8 @@ export const getAdminDashboard = baseUrl + "/adminDashboard/getData"
 export const getResources = baseUrl + "/resource/getResources"
 export const getQuizList = baseUrl + "/quiz/getQuizLists"
 export const getQueries = baseUrl + "/query/getData"
+export const getUsers = baseUrl + "/user/getUsers"
+
 
 // Delete
 export const deleteInterviewer = baseUrl + "/interviewer/deleteInterviewer/"
@@ -30,7 +32,8 @@ export const updateTopic = baseUrl + "/topic/updateTopic/"
 export const getInterviewerById = baseUrl + "/interviewer/getInterviewer/"
 export const getStudentById = baseUrl + "/student/getStudent/"
 export const getResourById = baseUrl + "/resource/getResource/"
-export const getQuizContent= baseUrl + "/quiz/getQuizList/"
+export const getQuizContent = baseUrl + "/quiz/getQuizList/"
+
 
 //Insert
 export const insertUser = baseUrl + "/user/addUser"

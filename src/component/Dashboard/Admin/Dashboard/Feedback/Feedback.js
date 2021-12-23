@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { getReviews } from 'constant/apiUrl'
+import { getReviews } from 'Constant/apiUrl'
 import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'

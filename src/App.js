@@ -1,11 +1,12 @@
 import React,{ Suspense, useEffect } from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { fallback } from "constant/navList";
+import { fallback } from "Constant/navList";
 import { useSelector } from "react-redux";
 import {  notification } from 'antd';
-import { errorSign } from "constant/antIcons";
+import { errorSign } from "Constant/antIcons";
 import { utilityFunction } from "component/Utility/utility";
 import { useDispatch } from "react-redux"; 
+import {  useCookies } from "react-cookie";
 import Route  from "Route/Routes"
 import 'antd/dist/antd.min.css';
 import './App.css';
@@ -13,8 +14,10 @@ import './App.css';
 
 function App() {
   
+  const [cookies,removeCookie] = useCookies(['name']);
   const dispatch = useDispatch()
   const error = useSelector(state => state.errorReducer)
+  const auth = useSelector(state => state.authReducer)
 
   useEffect (() => {
     if(error.error){
@@ -25,12 +28,25 @@ function App() {
         setTimeout(() => {
           utilityFunction.setError(dispatch, null)
         },3000)
-      }
-    },[error,dispatch])
+    }
+    
+  
+    },[auth,error,dispatch])
 
+  
+  useEffect(() => { 
+
+    if (cookies.length>0) {
+      
+      utilityFunction.logIn(dispatch, cookies, cookies.user.role)
+    }
+    else { 
+      utilityFunction.logIn(dispatch, removeCookie)
+    }
+  },[cookies,dispatch,removeCookie])
+  
   return (
 
-   
     <div className="App">
       <Router>
         <Suspense fallback={fallback}>

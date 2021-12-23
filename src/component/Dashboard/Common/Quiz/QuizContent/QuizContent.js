@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Button,Progress ,Alert} from 'antd';
-import { logoUrl } from 'constant/const_url';
-import { getQuizList } from 'constant/apiUrl';
-import { fallback } from 'constant/navList';
+import { logoUrl } from 'Constant/const_url';
+import { getQuizList } from 'Constant/apiUrl';
+import { fallback } from 'Constant/navList';
 import { useDispatch, useSelector } from 'react-redux';
 import DashboardHeader from '../../Header/DashboardHeader'
 import QuizOptionForm from "./QuizOptionForm"

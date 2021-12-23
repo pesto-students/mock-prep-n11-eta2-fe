@@ -1,4 +1,4 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "Constant/antIcons"
 import { Spin } from "antd"
 
 export const adminNavList = [
@@ -40,6 +40,85 @@ export const adminNavList = [
     }
     
 ]
+
+export const interviewerNavList = [
+    {
+        id: 1,
+        url:"/interviewer/dashboard",
+        linkName: "Dashboard",
+        icon: DashboardIcon
+    },  
+    // {
+    //     id: 2,
+    //     url:"/interviewer/interviewerList",
+    //     linkName: "Interviewer List",
+    //     icon: idCardIcon
+    // },
+    {
+        id: 3,
+        url:"/interviewer/studentList",
+        linkName: "Student List",
+        icon: smileIcon
+    },
+    {
+        id: 4,
+        url:"/interviewer/topicsList",
+        linkName: "Topics List",
+        icon: DBIcon
+    },
+    {
+        id: 5,
+        url:"/interviewer/resourceList",
+        linkName: "Resource List",
+        icon: resourceIcon
+    },
+    {
+        id: 6,
+        url:"/interviewer/quizList",
+        linkName: "Quiz List",
+        icon: resourceIcon
+    }
+]
+
+export const studentNavList = [
+    {
+        id: 1,
+        url:"/student/dashboard",
+        linkName: "Dashboard",
+        icon: DashboardIcon
+    },  
+    {
+        id: 2,
+        url:"/student/interviewerList",
+        linkName: "Interviewer List",
+        icon: idCardIcon
+    },
+    // {
+    //     id: 3,
+    //     url:"/interviewer/studentList",
+    //     linkName: "Student List",
+    //     icon: smileIcon
+    // },
+    {
+        id: 4,
+        url:"/student/topicsList",
+        linkName: "Topics List",
+        icon: DBIcon
+    },
+    {
+        id: 5,
+        url:"/student/resourceList",
+        linkName: "Resource List",
+        icon: resourceIcon
+    },
+    {
+        id: 6,
+        url:"/student/quizList",
+        linkName: "Quiz List",
+        icon: resourceIcon
+    }
+]
+
 
 export const studentFilter = [
     {id: 1, value: "Javascript" },

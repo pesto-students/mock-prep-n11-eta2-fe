@@ -1,14 +1,14 @@
 import React, { lazy,useState,useEffect} from 'react'
-import { DBIcon, editIcon } from "constant/antIcons"
+import { DBIcon, editIcon } from "Constant/antIcons"
 import { insertData, removeData, updateData } from 'api/Api'
-import { deleteTopic, getTopics, insertTopic } from 'constant/apiUrl'
+import { deleteTopic, getTopics, insertTopic } from 'Constant/apiUrl'
 import { Input} from "antd"
 import { useSelector, useDispatch } from "react-redux"
-import { fallback } from 'constant/navList'
-import { deleteIcon } from 'constant/antIcons'
+import { fallback } from 'Constant/navList'
+import { deleteIcon } from 'Constant/antIcons'
 import { Button } from 'antd'
-import { topicForm } from 'constant/formData'
-import { updateTopic } from 'constant/apiUrl'
+import { topicForm } from 'Constant/formData'
+import { updateTopic } from 'Constant/apiUrl'
 import Forms from 'component/Common/Form/Forms';
 import TopicsCard from 'component/Common/Cards/Topics/TopicsCard'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'

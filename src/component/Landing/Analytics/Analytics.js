@@ -1,7 +1,7 @@
 import React, { lazy,useState,useEffect } from 'react'
-import { BarChartOptions,PieChartOptions } from 'constant/data'
+import { BarChartOptions,PieChartOptions } from 'Constant/data'
 import { UserAddOutlined } from "@ant-design/icons"
-import { getDashboards } from 'constant/apiUrl'
+import { getDashboards } from 'Constant/apiUrl'
 import { useDispatch, useSelector } from 'react-redux'
 
 import dataActions from 'Redux/Actions/dataAction'

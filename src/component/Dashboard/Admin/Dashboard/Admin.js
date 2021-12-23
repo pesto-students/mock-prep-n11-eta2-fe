@@ -1,5 +1,5 @@
 import React, {lazy} from 'react'
-import { adminNavList } from "constant/navList"
+import { adminNavList } from "Constant/navList"
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useRouteMatch} from "react-router-dom"
 import { InterviewerProfile } from 'component/Dashboard/Interviewer/Profile/InterviewerProfile';

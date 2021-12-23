@@ -1,11 +1,11 @@
 import React, { lazy } from 'react'
-import { Link,Redirect } from "react-router-dom"
-import { logoUrl } from 'constant/const_url'
-import { insertData } from 'api/Api'
-import { loginUser } from 'constant/apiUrl'
+import { Link } from "react-router-dom"
+import { logoUrl } from 'Constant/const_url'
+import { getData } from 'api/Api'
+import { getUsers} from "Constant/apiUrl"
 import { utilityFunction } from 'component/Utility/utility'
 import { useDispatch, useSelector } from 'react-redux'
-import { useCookies } from 'react-cookie'
+import {  useCookies } from 'react-cookie'
 import { Button, Tabs } from "antd"
 import GoogleLogin from "react-google-login"
 
@@ -18,42 +18,47 @@ const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/Joi
 
 export default function SignIn() {
     const dispatch = useDispatch();
-    const [setCookie] = useCookies()
+    const [ setCookie] = useCookies(["user"])
+    const reduxLogin  = useSelector(state => state.authReducer)
     
-    const user = useSelector(state => state.authReducer)
-
+    console.log(reduxLogin)
+ 
+  
     const handleLogin = async (googleData) => {
        
-        const data = {
-            name: googleData.profileObj.name,
-            email: googleData.profileObj.email,
-            googleObj:googleData
-        }
-    
-        const response = await insertData(loginUser,{email :data.email})
-        if (response.status === "success") { 
-
-            const {res} = response;
-            const [user] = res.data
-            utilityFunction.logIn(dispatch,user,user.role,setCookie)
+        let data = {"name": googleData.profileObj.name,"email": googleData.profileObj.email, }
+       
+        const response = await getData(getUsers)
+        if (response.data.length>0) { 
+           
+            response.data.forEach(res => { 
+                if (res.email === data.email) {
+                    
+                    utilityFunction.logIn(dispatch, res, res.role)
+                    setCookie("user", res)
+                }
+            })
+           
         }  
         else {
-            utilityFunction.setError(dispatch, "Sign Up Failed")
+            utilityFunction.setError(dispatch, "Login Failed")
         }     
     
     }
     
-    const dummyLogin = () => { 
-        const user = {};
-        user.nanme = "saif";
-        user.role = "admin"
-        utilityFunction.logIn(dispatch,user,user.role,setCookie)
+    const dummyLogin = (role) => { 
+        const user = {
+            "name" :"saif",
+            "role" : "admin"
+        };
+      
+        utilityFunction.logIn(dispatch, user, user.role, setCookie);
+        window.location.href = role;
     }
 
     return (
         <>
-            <Header />
-            {user.isLoggedIn ?  <Redirect to="/admin/dashboard" /> : <Redirect to="/signIn" />}
+        <Header />
             <div className="SignIn">
                 <section className="signInBox">
                     <img src={logoUrl} alt="profile" />
@@ -66,9 +71,9 @@ export default function SignIn() {
                             </TabPane>
                             <TabPane tab={<span>Dummy Login</span>} key="2">                            
                                 <section className="dummyButtons">
-                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Student</Button></Link>
-                                        <Link to="/admin/dashboard"><Button  className="dummybtn">Sign In as Interviewer</Button></Link>
-                                        <Button onClick={()=>dummyLogin()} className="dummybtn">Sign In as Admin</Button>
+                                        <Button  className="dummybtn">Sign In as Student</Button>
+                                        <Button className="dummybtn">Sign In as Interviewer</Button>
+                                        <Button onClick={dummyLogin("admin")}  className="dummybtn">Sign In as Admin</Button>
                                         <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>   
                                 </section>
                             </TabPane>
@@ -86,7 +91,7 @@ function TabDetailsPane({handleLogin}){
                  <GoogleLogin
                     clientId={"213326872377-nnd677fts32vl9asl3e3c8hb3iltt393.apps.googleusercontent.com"}
                     render={renderProps => (
-                        <button onClick={renderProps.onClick} className="google-login-button" disabled={renderProps.disabled}><JoinUsButton className="sign-btn"  type={"google"} /></button>
+                        <button onClick={renderProps.onClick} className="google-login-button" disabled={renderProps.disabled}><JoinUsButton signin="true" className="sign-btn"  type={"google"} /></button>
                     )}
                     
                             onSuccess={(googleData) => handleLogin(googleData)}
