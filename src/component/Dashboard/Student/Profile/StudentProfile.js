@@ -3,13 +3,13 @@ import { Tag,Progress } from "antd"
 import { UserIcon } from 'constant/antIcons';
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
-import "./StudentProfile.css"
-import Forms  from 'component/Common/Form/Forms';
 import { updateData } from 'api/Api';
 import { getStudents, updateStudent } from 'constant/apiUrl';
 import { fallback } from 'constant/navList';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
 import dataActions from 'Redux/Actions/dataAction';
+import Forms  from 'component/Common/Form/Forms';
+import "./StudentProfile.css"
 
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))
 const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
@@ -25,8 +25,7 @@ export const StudentProfile = () => {
     const dispatch = useDispatch()
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudents,dataActions.setStudents)},[dispatch])
-    useEffect(() => {  if (interData.studentData != undefined) setstudent(interData.studentData.data.find(e => e._id===profileId)) },[interData])
-
+    useEffect(() => {  if (interData.studentData !== undefined) setstudent(interData.studentData.data.find(e => e._id===profileId)) },[profileId,interData])
 
     const studentForm = JSON.parse(JSON.stringify(student));
     delete studentForm._id

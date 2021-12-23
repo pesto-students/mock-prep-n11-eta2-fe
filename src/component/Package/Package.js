@@ -2,11 +2,9 @@ import { lazy ,useState,useEffect} from "react"
 import { getPricing } from "constant/apiUrl"
 import { fallback } from "constant/navList"
 import { useDispatch, useSelector } from 'react-redux'
-
 import dataActionCreator from "Redux/Action Creators/dataActionCreators"
 import dataActions from "Redux/Actions/dataAction"
 import "./Package.css"
-import { datauri } from "caniuse-lite/data/features"
 
 const Header = lazy(() => import("component/Common/Header/Header"))
 const PackageCard = lazy(() => import("component/Common/Cards/Packages/PackageCard"))

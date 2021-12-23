@@ -1,18 +1,15 @@
 import React, {useEffect, lazy,useState} from 'react'
-import "../Topics/List/TopicsList.css"
 import { Input} from "antd"
-
 import { trophyIcon } from "constant/antIcons"
 import { fallback } from 'constant/navList'
 import { useDispatch, useSelector } from 'react-redux'
-import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
-import dataActions from 'Redux/Actions/dataAction'
-
-import { useParams} from "react-router-dom" 
 import { getQuizList } from 'constant/apiUrl'
 import { deleteIcon } from 'constant/antIcons'
 import { deleteQuizList } from 'constant/apiUrl'
 import { removeData } from 'api/Api'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+import "../Topics/List/TopicsList.css"
 
 const QuizCard = lazy(() => import('component/Common/Cards/Quiz/Quiz'))
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
@@ -21,7 +18,6 @@ const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/Das
 export default function QuizList() {
     
     const { Search } = Input;
-    let { topicId} = useParams()
     let [quizList, setQuizList] = useState([]);
     let [quiz, setQuiz] = useState([]);
     let data = useSelector(state => state.dataReducer)

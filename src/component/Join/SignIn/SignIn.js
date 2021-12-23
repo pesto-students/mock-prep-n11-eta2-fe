@@ -1,24 +1,24 @@
 import React, { lazy } from 'react'
 import { Link,Redirect } from "react-router-dom"
 import { logoUrl } from 'constant/const_url'
-import GoogleLogin from "react-google-login"
-import { Button, Tabs } from "antd"
-import "./SignIn.css"
 import { insertData } from 'api/Api'
 import { loginUser } from 'constant/apiUrl'
 import { utilityFunction } from 'component/Utility/utility'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCookies } from 'react-cookie'
+import { Button, Tabs } from "antd"
+import GoogleLogin from "react-google-login"
+
+import "./SignIn.css"
 
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
 const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/JoinUsButton"))
 
-
 export default function SignIn() {
     const dispatch = useDispatch();
-    const [cookies, setCookie, removeCookie] = useCookies()
+    const [setCookie] = useCookies()
     
     const user = useSelector(state => state.authReducer)
 
@@ -42,7 +42,6 @@ export default function SignIn() {
         }     
     
     }
-
     
     const dummyLogin = () => { 
         const user = {};
@@ -50,8 +49,7 @@ export default function SignIn() {
         user.role = "admin"
         utilityFunction.logIn(dispatch,user,user.role,setCookie)
     }
- 
-    
+
     return (
         <>
             <Header />
@@ -81,7 +79,6 @@ export default function SignIn() {
         </>
     )
 }
-
 
 function TabDetailsPane({handleLogin}){
     return (

@@ -1,19 +1,16 @@
 import React, {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Button,Progress ,Alert} from 'antd';
-import "./QuizContent.css"
 import { logoUrl } from 'constant/const_url';
+import { getQuizList } from 'constant/apiUrl';
+import { fallback } from 'constant/navList';
+import { useDispatch, useSelector } from 'react-redux';
 import DashboardHeader from '../../Header/DashboardHeader'
-import { getData } from 'api/Api';
-import { getInterviewers, getQuizContent, getQuizList } from 'constant/apiUrl';
-import "./QuizContent.css"
 import QuizOptionForm from "./QuizOptionForm"
 import QuizNavigator from './QuizNavigator';
-import { fallback } from 'constant/navList';
+import dataActions from 'Redux/Actions/dataAction'; 
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
-import { useDispatch,useSelector } from 'react-redux';
-import dataActions from 'Redux/Actions/dataAction';
-
+import "./QuizContent.css"
 
 export default function QuizContent() {
 
@@ -49,7 +46,7 @@ export default function QuizContent() {
                 setQuiz(question)
             }
         }
-    }, [data])
+    }, [data,quizId])
 
   
     const logo =<Link to="/"><img alt="logo" className='headerLogo' src={logoUrl}></img></Link>
@@ -64,15 +61,11 @@ export default function QuizContent() {
         quiz.find(e => e.answer.question === index).answer.attempted = true;
         
         quiz[index].correctAnswers.find((c, ind2) => {
-
-         
-           
             if (c.answer_a && ind2 === ind) {
-                console.log("correct" + ind2)
-                console.log("chosen"+ind)
                 quiz.find(e => e.answer.question === index).answer.answer = true;
                 return true;
             }
+            return false;
         })
 
     }

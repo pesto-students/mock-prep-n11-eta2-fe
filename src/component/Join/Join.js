@@ -1,15 +1,15 @@
-import { lazy ,useEffect,useState} from "react"
+import { lazy ,useEffect} from "react"
 import { Link } from "react-router-dom"
 import { logoUrl } from 'constant/const_url'
 import { Tabs } from "antd"
-import GoogleLogin from "react-google-login"
 import { useDispatch, useSelector } from "react-redux"
 import { insertUser,insertInterviewer,insertStudent } from "constant/apiUrl"
 import { insertData } from "api/Api"
 import { useCookies } from 'react-cookie';
 import { utilityFunction } from "component/Utility/utility"
-import "./Join.css"
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
+import GoogleLogin from "react-google-login"
+import "./Join.css"
 
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
@@ -18,12 +18,11 @@ const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/Joi
 
 export default function JoinUs({ isSignUp }) {
     
-    const [cookies, setCookie,removeCookie] = useCookies()
+    const [setCookie] = useCookies()
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.authReducer)
 
-  
     useEffect(() => { console.log(user)},[user])
 
     const handleLogin = async (googleData,role) => {
@@ -47,7 +46,7 @@ export default function JoinUs({ isSignUp }) {
             utilityFunction.setError(dispatch, "Sign Up Failed")
         }     
         utilityFunction.logIn(dispatch,data,role,setCookie) 
-        console.log("Function Completed")
+       
     }
 
     return (

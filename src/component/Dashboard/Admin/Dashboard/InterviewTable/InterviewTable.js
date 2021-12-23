@@ -15,6 +15,7 @@ export default function InterviewTable({data}) {
     const onSearch = (value) => {
         let filtered = tableDataList.filter(val => val.interviewer.includes(value) || val.student.includes(value));
         setTableData(filtered)
+        setTableList(tableDataList)
     }; 
 
     const search = <><section className="search"><Search placeholder="Search Interviews" onSearch={onSearch} style={{ width: 200 }} /></section></>

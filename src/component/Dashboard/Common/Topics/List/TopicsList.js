@@ -1,21 +1,21 @@
 import React, { lazy,useState,useEffect} from 'react'
-import { DBIcon,editIcon } from "constant/antIcons"
+import { DBIcon, editIcon } from "constant/antIcons"
+import { insertData, removeData, updateData } from 'api/Api'
 import { deleteTopic, getTopics, insertTopic } from 'constant/apiUrl'
 import { Input} from "antd"
 import { useSelector, useDispatch } from "react-redux"
+import { fallback } from 'constant/navList'
+import { deleteIcon } from 'constant/antIcons'
+import { Button } from 'antd'
+import { topicForm } from 'constant/formData'
+import { updateTopic } from 'constant/apiUrl'
+import Forms from 'component/Common/Form/Forms';
+import TopicsCard from 'component/Common/Cards/Topics/TopicsCard'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
-import { fallback } from 'constant/navList'
-import TopicsCard from 'component/Common/Cards/Topics/TopicsCard'
-import { deleteIcon } from 'constant/antIcons'
-import "./TopicsList.css"
-import { insertData, removeData, updateData } from 'api/Api'
-import { Button } from 'antd'
 import Modals from 'component/Common/Modal/Modals'
-import { topicForm } from 'constant/formData'
-import Forms from 'component/Common/Form/Forms';
-import { updateTopic } from 'constant/apiUrl'
-import { C } from 'caniuse-lite/data/features/aac'
+
+import "./TopicsList.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 
@@ -32,10 +32,8 @@ export default function TopicsList() {
     let data = useSelector(state => state.dataReducer)
     const dispatch = useDispatch()
    
-    
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch, key])
     useEffect(() => { if (data.topics !== undefined) { setTopics(data.topics.data); setTopicsList(data.topics.data) } }, [data, topics, key]);
-  
   
     const onSearch = (value) => {
         let filtered = topics.filter(val => val.title.includes(value) || val.description.includes(value));
@@ -78,7 +76,6 @@ export default function TopicsList() {
     const Form = JSON.parse(JSON.stringify(topicForm));
     delete Form.id
 
-   
     let topic = topics.filter(f => f._id === topicId)
     
     let Form2;
@@ -89,11 +86,6 @@ export default function TopicsList() {
     } else {
          Form2 = JSON.parse(JSON.stringify([]));
     }
-
-
-    // delete Form2._id
-    // delete Form2.__v
-
 
     const form = <Forms about="false" populate={false} submitFunction={submit} formFields={Form} buttonValue="Add Topic" /> 
     const form2 = <Forms about="false" populate={true} submitFunction={submit2} formFields={Form2} buttonValue="Update Topic" /> 

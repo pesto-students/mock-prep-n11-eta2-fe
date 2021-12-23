@@ -29,7 +29,7 @@ export default function StudentList() {
     const dispatch = useDispatch()
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudents,dataActions.setStudents)},[dispatch])
-    useEffect(() => { if (interData.studentData != undefined) { setstudent(interData.studentData.data); setstudentList(interData.studentData.data) } }, [interData])
+    useEffect(() => { if (interData.studentData !== undefined) { setstudent(interData.studentData.data); setstudentList(interData.studentData.data) } }, [interData])
     useEffect(() => { if (students.length > 0) { setNewList(studentList.filter(int => int.onboarded !== true)); setExistingList(studentList.filter(int => int.onboarded === true))}}, [key,students,studentList])
       
     const onSearch = (value) => {
@@ -38,8 +38,7 @@ export default function StudentList() {
     }; 
     
     const removeProfile = async (profileId) => {
-       
-        const status = await removeData(deleteStudent+profileId)
+        await removeData(deleteStudent+profileId)
         setstudent(students.filter(e => e._id !== profileId))
         setstudentList(students.filter(e => e._id !== profileId))
     }; 

@@ -1,4 +1,4 @@
-import {UserOutlined, SearchOutlined,DeleteOutlined,   UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,CloseOutlined,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
+import {UserOutlined, SearchOutlined,DeleteOutlined,   UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
 
 export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;

@@ -4,24 +4,19 @@ import { useSelector,useDispatch} from "react-redux"
 import { Input} from "antd"
 import { resourceIcon } from "constant/antIcons"
 import { daleteResources, getResources, getTopics, insertResource, updateResource } from 'constant/apiUrl'
-import ResourceCard from 'component/Common/Cards/Resource/ResouceCard'
-import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
-import dataActions from 'Redux/Actions/dataAction'
-import "../Topics/List/TopicsList.css"
 import { insertData, removeData, updateData } from 'api/Api'
 import { deleteIcon,editIcon } from "constant/antIcons"
 import { fallback } from 'constant/navList'
 import { Button} from "antd"
+import { resourceForm } from "constant/formData"
 import Modals from 'component/Common/Modal/Modals'
 import Forms from "component/Common/Form/Forms"
-import { resourceForm } from "constant/formData"
-import { resources } from 'constant/data'
-import { resizeobserver } from 'caniuse-lite/data/features'
-
-
+import ResourceCard from 'component/Common/Cards/Resource/ResouceCard'
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+import "../Topics/List/TopicsList.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-
 
 export default function ResourceList() {
 
@@ -38,7 +33,7 @@ export default function ResourceList() {
     const [key, setKey] = useState(false);
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getResources, dataActions.setResource) }, [dispatch,key])
-    useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [])
+    useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
    
     useEffect(() => {
         if (data.resources !== undefined) {
@@ -55,7 +50,7 @@ export default function ResourceList() {
                 setTopics(data.topics.data)
             }
         }
-    }, [data])
+    }, [data,topicId])
 
     const handleOk = (value) => {
         setIsModalVisible(false);
@@ -75,7 +70,7 @@ export default function ResourceList() {
                 if (e.title === value.topic) {
                     return e._id
                 }
-               
+                return 0;
             })
 
             value.topicId = id;
@@ -113,7 +108,6 @@ export default function ResourceList() {
     }; 
 
     
-
     let res = resourceList.filter(f => f._id === resourceId)
     const Form = JSON.parse(JSON.stringify(resourceForm));
     delete Form._id

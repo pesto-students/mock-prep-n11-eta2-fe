@@ -3,17 +3,16 @@ import { Tag } from "antd"
 import { UserIcon } from 'constant/antIcons';
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
-import "./InterviewerProfile.css"
-import Forms  from 'component/Common/Form/Forms';
 import { updateData } from 'api/Api';
-import { getInterviewerById, getInterviewers, updateInterviewer } from 'constant/apiUrl';
-import { fallback } from 'constant/navList';
+import { getInterviewers, updateInterviewer } from 'constant/apiUrl';
+import { fallback } from 'constant/navList'; 
+import Forms  from 'component/Common/Form/Forms';
 import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
+import "./InterviewerProfile.css"
 
 const DashboardHeader = lazy(() => import("component/Dashboard/Common/Header/DashboardHeader"))
 const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
-
 
 export const InterviewerProfile = () => {
 
@@ -27,7 +26,7 @@ export const InterviewerProfile = () => {
     let interData = useSelector(state => state.dataReducer)
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)},[dispatch])
-    useEffect(() => {  if (interData.interviewerData != undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[interData])
+    useEffect(() => {  if (interData.interviewerData !== undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[profileId,   interData])
 
     const interviewerForm = JSON.parse(JSON.stringify(interviewer));
     delete interviewerForm._id

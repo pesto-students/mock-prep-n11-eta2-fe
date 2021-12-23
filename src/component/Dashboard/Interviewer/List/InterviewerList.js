@@ -29,7 +29,7 @@ export default function InterviewerList() {
     const dispatch = useDispatch()
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)},[dispatch])
-    useEffect(() => { if (interData.interviewerData != undefined) { setInterviewer(interData.interviewerData.data); setInterviewerList(interData.interviewerData.data) } }, [interData])
+    useEffect(() => { if (interData.interviewerData !== undefined) { setInterviewer(interData.interviewerData.data); setInterviewerList(interData.interviewerData.data) } }, [interData])
     useEffect(() => { if (interviewers.length > 0) { setNewList(interviewerList.filter(int => int.onboarded !== true)); setExistingList(interviewerList.filter(int => int.onboarded === true))}}, [key,interviewers,interviewerList])
       
     const onSearch = (value) => {
@@ -40,7 +40,7 @@ export default function InterviewerList() {
 
     const removeProfile = async (profileId) => {
        
-        const status = await removeData(deleteInterviewer + profileId, "Interviewer")
+        await removeData(deleteInterviewer + profileId, "Interviewer")
         setInterviewer(interviewers.filter(e => e._id !== profileId))
         setKey(!key)
     }; 

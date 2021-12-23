@@ -1,12 +1,9 @@
-import React, { lazy,useState,useEffect } from 'react'
-import { totalSaleOption} from "constant/data"
+import React, { useState,useEffect } from 'react'
 import { getReviews } from 'constant/apiUrl'
+import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
-import { useDispatch, useSelector } from 'react-redux'
 import "./Feedback.css"
-
-const DashboardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
 
 export default function Feedback({ data }) {
     
@@ -14,7 +11,7 @@ export default function Feedback({ data }) {
     let feedbackdata = useSelector(state => state.dataReducer.feedback)
     const dispatch = useDispatch();
     
-    useEffect(() => { dataActionCreators.getAdminData(dispatch,getReviews,dataActions.setFeedback)}, [])
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getReviews,dataActions.setFeedback)}, [dispatch])
     useEffect(() => {   if (feedbackdata !== undefined) { setTestimonial(feedbackdata.data)}}, [feedbackdata])
     
     return (
