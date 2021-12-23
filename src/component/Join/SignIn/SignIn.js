@@ -55,7 +55,7 @@ export default function SignIn() {
     return (
         <>
             <Header />
-            {user.isLoggedIn ?  <Redirect to="/admin" /> : <Redirect to="/signIn" />}
+            {user.isLoggedIn ?  <Redirect to="/admin/dashboard" /> : <Redirect to="/signIn" />}
             <div className="SignIn">
                 <section className="signInBox">
                     <img src={logoUrl} alt="profile" />

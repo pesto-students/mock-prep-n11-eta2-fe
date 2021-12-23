@@ -1,16 +1,17 @@
 #topicCard{
-    width: 17vw;
+    width: 14vw;
     height: auto;
     margin: 2vh 1vw;
     padding: 2vh 0;
     border-radius: 10px;
+    border: 1px solid lightblue;
     text-align: center;
 }
 
 #cardImage{
-    width: 10vw;
+    width: 7vw;
     margin: auto;
-    height: 10vw;
+    height: 7vw;
 }
 
 #topics-btn{
@@ -21,10 +22,22 @@
     display: block !important;
 }
 
-#topicCard>.ant-card-body>#icon>.anticon-delete{
+#topicCard:hover .anticon-edit{
+    display: block !important;
+}
+
+#topicCard>.ant-card-body>.icon>.anticon-delete{
     position: absolute !important;
     top: 10px !important;
     right: 10px !important;
+    color: grey !important;
+    display: none;
+}
+
+.anticon-edit{
+    position: absolute !important;
+    top: 10px !important;
+    right: 45px !important;
     color: grey !important;
     display: none;
 }

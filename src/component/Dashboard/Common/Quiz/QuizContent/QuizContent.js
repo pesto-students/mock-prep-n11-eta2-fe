@@ -36,8 +36,8 @@ export default function QuizContent() {
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz) }, [dispatch])
     useEffect(() => {
         if (data.quiz !== undefined) {
-            // setQuiz(data.quiz.data);
-            // setDetails(data.quiz.data);
+            setQuiz(data.quiz.data);
+            setDetails(data.quiz.data);
             if (data.quiz.data.length > 0) { 
 
                 let question = data.quiz.data.filter(e => e._id === quizId)[0].questions;
@@ -51,11 +51,6 @@ export default function QuizContent() {
         }
     }, [data])
 
-
-
-   console.log(quiz)
-   
-  
   
     const logo =<Link to="/"><img alt="logo" className='headerLogo' src={logoUrl}></img></Link>
 
@@ -64,15 +59,20 @@ export default function QuizContent() {
     }
 
     const attempted = (ind) => { 
+
+
         quiz.find(e => e.answer.question === index).answer.attempted = true;
         
         quiz[index].correctAnswers.find((c, ind2) => {
-            if (c.answer_a && ind2 === ind) {
 
+         
+           
+            if (c.answer_a && ind2 === ind) {
+                console.log("correct" + ind2)
+                console.log("chosen"+ind)
                 quiz.find(e => e.answer.question === index).answer.answer = true;
                 return true;
             }
-            return true;
         })
 
     }
@@ -165,22 +165,22 @@ export default function QuizContent() {
                                                 } </>:
                                             <Progress className='progress' type="circle" percent={99} format={percent => `${que.answer.question+1}`} /> 
                                         }
-                      </section>
-              ))
-                  :
-              <p></p>
-              }
+                                                </section>
+                                        ))
+                                            :
+                                        <p></p>
+                                        }
 
-      </section>
-                                </div>
-                               
-                          </section>
-                       </section>
-                        
-                }
+                                </section>
+                                                            </div>
+                                                        
+                                                    </section>
+                                                </section>
+                                                    
+                                            }
 
-                </>
-               :
+                                            </>
+               :    
             <section>{fallback}</section>
             }
         </div>
