@@ -1,4 +1,4 @@
-import {UserOutlined, SearchOutlined,DeleteOutlined,   UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
+import {UserOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
 
 export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;
@@ -17,4 +17,6 @@ export const trophyIcon = < TrophyTwoTone classID="trophy" />
 export const leftSlide = <LeftOutlined />
 export const rightSlide = <RightOutlined />
 export const editIcon = <EditOutlined />
+export const CalenderIcon = <CalendarOutlined />
+export const upcomingInter = <AlertTwoTone />
 export const errorSign = <InfoCircleOutlined style={{ color: '##FF0000' }} />

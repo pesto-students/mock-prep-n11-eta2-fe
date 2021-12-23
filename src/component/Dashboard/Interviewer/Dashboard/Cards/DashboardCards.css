@@ -1,0 +1,16 @@
+.admin-dashboard-cards{
+    display: flex;
+    width:96%;
+    margin: 5vh auto;
+    justify-content: space-between;
+}
+
+.admin-dashboard-cards>.card{
+    width: 18vw !important;
+    border-left-color: goldenrod !important;
+    color: goldenrod;
+}
+
+.admin-dashboard-cards>.card>.bottom{
+    color: rgb(128, 93, 7) !important;
+}

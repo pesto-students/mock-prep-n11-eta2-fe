@@ -44,7 +44,6 @@
     justify-content: left;
     width: 60%;
     margin: 2vh auto;
-    margin-top: 18vh;
     color: rgb(9, 30, 92);
     display: flex;
 }
@@ -57,3 +56,9 @@
     color:white !important;
 }
 
+#bottom{
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+
+}

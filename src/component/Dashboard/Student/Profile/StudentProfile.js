@@ -22,6 +22,8 @@ export const StudentProfile = () => {
     let [update, setUpdate] = useState(false)
     let interData = useSelector(state => state.dataReducer)
 
+    let userRole = useSelector(state => state.authReducer.user.role)
+
     const dispatch = useDispatch()
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudents,dataActions.setStudents)},[dispatch])
@@ -71,7 +73,7 @@ export const StudentProfile = () => {
     return (
         <>
             <div className="student-profile">
-                <DashboardHeader title="Student Profile" icon={UserIcon} rightComponent={update ? component1: component2} />
+                <DashboardHeader title="Student Profile" icon={UserIcon} rightComponent={  userRole === "admin" ?<> {update ? component1: component2} </>: <></>} />
                 {Object.keys(student).length !== 0 ?
                     <>
                         {!update ?

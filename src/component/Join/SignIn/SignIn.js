@@ -5,7 +5,7 @@ import { getData } from 'api/Api'
 import { getUsers} from "Constant/apiUrl"
 import { utilityFunction } from 'component/Utility/utility'
 import { useDispatch, useSelector } from 'react-redux'
-import {  useCookies } from 'react-cookie'
+import {  Cookies, useCookies } from 'react-cookie'
 import { Button, Tabs } from "antd"
 import GoogleLogin from "react-google-login"
 
@@ -18,12 +18,9 @@ const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/Joi
 
 export default function SignIn() {
     const dispatch = useDispatch();
-    const [ setCookie] = useCookies(["user"])
+    const [ cookie,setCookie] = useCookies(["user"])
     const reduxLogin  = useSelector(state => state.authReducer)
     
-    console.log(reduxLogin)
- 
-  
     const handleLogin = async (googleData) => {
        
         let data = {"name": googleData.profileObj.name,"email": googleData.profileObj.email, }
@@ -35,7 +32,13 @@ export default function SignIn() {
                 if (res.email === data.email) {
                     
                     utilityFunction.logIn(dispatch, res, res.role)
-                    setCookie("user", res)
+
+                    data.id = res._id;
+                    data.role = res.role;
+                    console.log(res)
+                    setCookie("user",data )
+                    console.log(cookie)
+                    window.location.href = res.role;
                 }
             })
            
@@ -47,12 +50,17 @@ export default function SignIn() {
     }
     
     const dummyLogin = (role) => { 
-        const user = {
-            "name" :"saif",
-            "role" : "admin"
-        };
       
-        utilityFunction.logIn(dispatch, user, user.role, setCookie);
+        const user = {
+            "name": "millie taylor",
+            "email":"millie.taylor@gmail.com",
+            "role": role,
+            "id":"61c35291b7809a993100293c",
+            "isLoggedIn":true
+        };
+       
+        utilityFunction.logIn(dispatch, user);
+        setCookie('user',user)
         window.location.href = role;
     }
 
@@ -71,9 +79,9 @@ export default function SignIn() {
                             </TabPane>
                             <TabPane tab={<span>Dummy Login</span>} key="2">                            
                                 <section className="dummyButtons">
-                                        <Button  className="dummybtn">Sign In as Student</Button>
-                                        <Button className="dummybtn">Sign In as Interviewer</Button>
-                                        <Button onClick={dummyLogin("admin")}  className="dummybtn">Sign In as Admin</Button>
+                                        <Button  onClick={()=>dummyLogin("student")}  className="dummybtn">Sign In as Student</Button>
+                                        <Button  onClick={()=>dummyLogin("interviewer")}  className="dummybtn">Sign In as Interviewer</Button>
+                                        <Button onClick={()=>dummyLogin("admin")}  className="dummybtn">Sign In as Admin</Button>
                                         <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>   
                                 </section>
                             </TabPane>

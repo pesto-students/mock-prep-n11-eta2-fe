@@ -84,6 +84,29 @@ export const earningChartOptions = {
     
 }
 
+export const interviewOptions = {
+    
+    scales: {
+        x: {
+            grid: {
+                display:false
+            } ,
+            ticks: {
+                    display: false //this will remove only the label
+                }
+            },
+        y: {
+            grid: {
+                display:false
+            },
+            
+            ticks: {
+                    display: false //this will remove only the label
+            }
+        }
+}    
+}
+
 export const BarChartOptions = {
     title: {
         display:true

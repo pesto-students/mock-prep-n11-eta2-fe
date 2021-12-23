@@ -35,7 +35,7 @@ export default function Routes() {
             <PrivateRoute  path={`/quizContent/:quizId?`} component={QuizContent} loggedIn={loginState.isLoggedIn} /> */} 
 
             <Route path="/admin" component={Admin} />
-            <Route path="/interviewer" component={Interviewer} />\
+            <Route path="/interviewer" component={Interviewer} />
             <Route path="/student" component={Student} />
             <Route path={`/quizContent/:quizId?`} component={QuizContent} />
         </div>

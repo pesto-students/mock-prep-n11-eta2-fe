@@ -31,6 +31,8 @@ export default function TopicsList() {
     let [key, setKey] = useState(false)
     let data = useSelector(state => state.dataReducer)
     const dispatch = useDispatch()
+
+    let user = useSelector(state => state.authReducer.user)
    
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch, key])
     useEffect(() => { if (data.topics !== undefined) { setTopics(data.topics.data); setTopicsList(data.topics.data) } }, [data, topics, key]);
@@ -87,6 +89,11 @@ export default function TopicsList() {
          Form2 = JSON.parse(JSON.stringify([]));
     }
 
+    let route;
+    if (user.role) { 
+        route = user.role+"/resourceList/"+user.id
+    }
+
     const form = <Forms about="false" populate={false} submitFunction={submit} formFields={Form} buttonValue="Add Topic" /> 
     const form2 = <Forms about="false" populate={true} submitFunction={submit2} formFields={Form2} buttonValue="Update Topic" /> 
     const search =<> <section className="search"><Search placeholder="Search Topics" onSearch={onSearch} style={{ width: 200 }} /></section></>
@@ -95,12 +102,12 @@ export default function TopicsList() {
         <div>
             <section className='topics-container'>
                 <DashboardHeader title="Topics List" icon={DBIcon} rightComponent={search} />
-                <Button id="addItem" type="primary" onClick={() => { setIsModalVisible(true)}}>Add Topics</Button>
+                {user.roll === "admin" ? <Button id="addItem" type="primary" onClick={() => { setIsModalVisible(true) }}>Add Topics</Button> : <></>}
                 <section id="topics">
                     {
                     topicsList.length > 0 ?
                         topicsList.map((topic, index) => (
-                            <TopicsCard key={index} title={topic.title} update={update} editIcon={editIcon} delIcon={deleteIcon} id={topic._id} remove={handleRemove} description={topic.description} image={topic.image} route={`/admin/resourceList/${topic._id}`}  />
+                            <TopicsCard key={index} title={topic.title} update={update} editIcon={editIcon} delIcon={deleteIcon} id={topic._id} remove={handleRemove} description={topic.description} image={topic.image} route={route}  />
                         )) :
                     <section>{fallback}</section>
                     }

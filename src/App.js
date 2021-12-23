@@ -36,14 +36,12 @@ function App() {
   
   useEffect(() => { 
 
-    if (cookies.length>0) {
-      
-      utilityFunction.logIn(dispatch, cookies, cookies.user.role)
+    if (cookies.user) {
+      console.log(cookies.user)
+      utilityFunction.logIn(dispatch, cookies.user, cookies.user.role)
     }
-    else { 
-      utilityFunction.logIn(dispatch, removeCookie)
-    }
-  },[cookies,dispatch,removeCookie])
+   
+  },[cookies])
   
   return (
 

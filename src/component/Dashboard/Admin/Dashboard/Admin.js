@@ -35,7 +35,6 @@ export default function Admin() {
                         <Route  path={`${path}/topicsList`} component={TopicsList} />
                         <Route  path={`${path}/resourceList/:topicId?`} component={ResourceList} />
                         <Route  path={`${path}/quizList/:topicId?`} component={QuizList} />
-                       
                         </section>
                 </Route>
             </div>

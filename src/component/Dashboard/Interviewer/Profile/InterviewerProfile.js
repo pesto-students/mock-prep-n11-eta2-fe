@@ -21,7 +21,6 @@ export const InterviewerProfile = () => {
     let [interviewer, setInterviewer] = useState({})
     let [update, setUpdate] = useState(false)
    
-
     const dispatch = useDispatch()
     let interData = useSelector(state => state.dataReducer)
 

@@ -1,15 +1,20 @@
 import React from 'react'
 import { Link} from "react-router-dom"
-import { Card,Button } from "antd"
+import { Card, Button } from "antd"
+import { useSelector } from 'react-redux'
 import "./TopicsCard.css"
 
-export default function TopicsCard({ id,image, title, description,route,delIcon,remove,editIcon ,update}) {
+export default function TopicsCard({ id, image, title, description, route, delIcon, remove, editIcon, update }) {
+    
+
+    let userRole = useSelector(state => state.authReducer.user.role)
+   
     
     const { Meta } = Card;
     return (
         <Card hoverable id="topicCard" cover={<img alt="example" id="cardImage" src={image} />}>
-            <p className="icon"  onClick={() => remove(id)}> {delIcon}</p>
-            <p className="icon"  onClick={() => update(id)}> {editIcon}</p>
+            {userRole=== "admin" ? 
+                <><p className="icon"  onClick={() => remove(id)}> {delIcon}</p><p className="icon" onClick={() => update(id)}> {editIcon}</p></>: <></>}
             <Meta title={title} description={description} />
             <Link to={route}><Button id="topics-btn" type="primary">Start Learning..</Button></Link>
         </Card>

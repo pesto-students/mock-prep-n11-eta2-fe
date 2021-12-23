@@ -1,5 +1,7 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "Constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter, UserIcon } from "Constant/antIcons"
 import { Spin } from "antd"
+
+
 
 export const adminNavList = [
     {
@@ -47,37 +49,37 @@ export const interviewerNavList = [
         url:"/interviewer/dashboard",
         linkName: "Dashboard",
         icon: DashboardIcon
-    },  
-    // {
-    //     id: 2,
-    //     url:"/interviewer/interviewerList",
-    //     linkName: "Interviewer List",
-    //     icon: idCardIcon
-    // },
+    },
+    {
+        id: 2,
+        url:"/interviewer/interviewerProfile",
+        linkName: "My Profile",
+        icon: idCardIcon
+    },
     {
         id: 3,
+        url:"/interviewer/upcomingInterviews",
+        linkName: "Upcoming Interviews",
+        icon: upcomingInter
+    },
+    {
+        id: 4,
         url:"/interviewer/studentList",
         linkName: "Student List",
         icon: smileIcon
     },
     {
-        id: 4,
+        id: 5,
         url:"/interviewer/topicsList",
         linkName: "Topics List",
         icon: DBIcon
     },
     {
-        id: 5,
+        id: 6,
         url:"/interviewer/resourceList",
         linkName: "Resource List",
         icon: resourceIcon
     },
-    {
-        id: 6,
-        url:"/interviewer/quizList",
-        linkName: "Quiz List",
-        icon: resourceIcon
-    }
 ]
 
 export const studentNavList = [
