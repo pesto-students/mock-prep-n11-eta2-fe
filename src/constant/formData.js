@@ -17,5 +17,5 @@ export const resourceForm = {
         description: "Basics of HTML",
         url:"https://www.w3schools.com/html/",
         image: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
-        topicId:1
+        topicId: 1,
 }

@@ -16,14 +16,15 @@ export const getQueries = baseUrl + "/query/getData"
 // Delete
 export const deleteInterviewer = baseUrl + "/interviewer/deleteInterviewer/"
 export const deleteStudent = baseUrl + "/student/deleteStudent/"
-export const daleteResource = baseUrl + "/resource/getResources"
+export const daleteResources = baseUrl + "/resource/deleteResource/"
 export const deleteTopic = baseUrl + "/topic/deleteTopic/"
 export const deleteQuizList = baseUrl + "/quiz/deleteQuizList/"
 
 // Update
 export const updateInterviewer = baseUrl + "/interviewer/updateInterviewer/"
 export const updateStudent = baseUrl + "/student/updateStudent/"
-export const updateResource = baseUrl + "/resource/getResources"
+export const updateResource = baseUrl + "/resource/updateResource/"
+export const updateTopic = baseUrl + "/topic/updateTopic/"
 
 // FindbyId
 export const getInterviewerById = baseUrl + "/interviewer/getInterviewer/"

@@ -22,6 +22,12 @@ export default function Admin() {
 
     let { path, url } = useRouteMatch();
     const loginState = useSelector(state => state.authReducer);
+
+    const logout = () => { 
+        window.location.reload("/signIn")
+        loginState.isLoggedIn = false
+    }
+   
  
     return (
         <>
@@ -29,10 +35,10 @@ export default function Admin() {
             <div className="dashboard">
              <Route path={`${path}`}>
                 <section className="sideNav">
-                            <SideNav sideNavList={adminNavList} userName={"Admin"}></SideNav>
+                            <SideNav sideNavList={adminNavList} logout={logout} userName={"Admin"}></SideNav>
                 </section>
                
-                    <section className="mainContainer">
+                        <section className="mainContainer">
                         <Route  path={`${path}/dashboard`} component={Dashboard} />
                         <Route  path={`${path}/interviewerList`} component={InterviewerList} />
                         <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
@@ -40,7 +46,8 @@ export default function Admin() {
                         <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
                         <Route  path={`${path}/topicsList`} component={TopicsList} />
                         <Route  path={`${path}/resourceList/:topicId?`} component={ResourceList} />
-                        <Route  path={`${path}/quizList/:topicId?`} component={QuizList} />
+                        <Route path={`${path}/quizList/:topicId?`} component={QuizList} />
+                       
                         </section>
                 </Route>
             </div>

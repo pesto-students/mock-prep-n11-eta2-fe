@@ -40,7 +40,8 @@ export default function Routes() {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/join" component={Join} />
             <Route exact path="/signIn" component={SignIn} />
-            <Route  path="/admin" component={Admin} />
+            <Route path="/admin" component={Admin} />
+            <Route  path={`/quizContent/:quizId?`} component={QuizContent} />
         </div>
     )
 }
