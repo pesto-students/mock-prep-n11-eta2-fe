@@ -16,7 +16,7 @@ export default function TopicsCard({ id, image, title, description, route, delIc
             {userRole=== "admin" ? 
                 <><p className="icon"  onClick={() => remove(id)}> {delIcon}</p><p className="icon" onClick={() => update(id)}> {editIcon}</p></>: <></>}
             <Meta title={title} description={description} />
-            <Link to={route}><Button id="topics-btn" type="primary">Start Learning..</Button></Link>
+            <Link to={`/interviewer/resourceList/${id}`}><Button id="topics-btn" type="primary">Start Learning..</Button></Link>
         </Card>
         
     )

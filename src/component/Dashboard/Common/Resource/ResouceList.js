@@ -31,6 +31,7 @@ export default function ResourceList() {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isModalVisible2, setIsModalVisible2] = useState(false);
     const [key, setKey] = useState(false);
+    let userRole = useSelector(state => state.authReducer.user.role)
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getResources, dataActions.setResource) }, [dispatch,key])
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
@@ -131,7 +132,7 @@ export default function ResourceList() {
            
             <section className='resource-container'>
                 <DashboardHeader title="Resources List" icon={resourceIcon} rightComponent={search} />
-                <Button id="addItem" type="primary" onClick={() => { setIsModalVisible(true)}}>Add Resource</Button>
+                {userRole==="admin" ? <Button id="addItem" type="primary" onClick={() => { setIsModalVisible(true)}}>Add Resource</Button> :<></>}
                 <section id="topics">
                 {
                     resourceList.length > 0 ?

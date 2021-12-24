@@ -29,15 +29,11 @@ function App() {
           utilityFunction.setError(dispatch, null)
         },3000)
     }
-    
-  
-    },[auth,error,dispatch])
+  },[auth,error,dispatch])
 
   
   useEffect(() => { 
-
     if (cookies.user) {
-      console.log(cookies.user)
       utilityFunction.logIn(dispatch, cookies.user, cookies.user.role)
     }
    

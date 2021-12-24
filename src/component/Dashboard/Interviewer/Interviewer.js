@@ -18,6 +18,7 @@ export default function Interviewer() {
 
     let { path } = useRouteMatch();
     let userId = useSelector(state => state.authReducer.user.id)
+     let userRole = useSelector(state => state.authReducer.user.role)
 
     useEffect(() => {
         interviewerNavList[1].url = "/interviewer/interviewerProfile/"+userId
@@ -38,7 +39,7 @@ export default function Interviewer() {
                             <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
                             <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
                             <Route  path={`${path}/topicsList/`} component={TopicsList} />
-                            <Route  path={`${path}/resourceList/topicId?`} component={ResourceList} />
+                            <Route  path={`${path}/resourceList`} component={ResourceList} />
                         </section>
                 </Route>
             </div>
