@@ -9,7 +9,7 @@ import { removeData, updateData } from 'api/Api';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
 import dataActions from 'Redux/Actions/dataAction';
 import "./InterviewerList.css"
-
+import { useRouteMatch } from 'react-router-dom/cjs/react-router-dom.min';
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const InterviewerCardList = lazy(() => import("component/Common/Cards/Interviewer/interviewerCardList"))
 
@@ -17,6 +17,8 @@ export default function InterviewerList() {
 
     const { Search } = Input;
     const { TabPane } = Tabs;
+    let { path } = useRouteMatch();
+    console.log(path)
 
     let [interviewerList,setInterviewerList] = useState([])
     let [interviewers,setInterviewer] = useState([])
@@ -25,6 +27,7 @@ export default function InterviewerList() {
     let [existingInterviewerList, setExistingList] = useState([])
     
     let interData = useSelector(state => state.dataReducer)
+    let userRole = useSelector(state => state.authReducer.user.role)
 
     const dispatch = useDispatch()
 
@@ -82,11 +85,13 @@ export default function InterviewerList() {
 
                 {interviewerList.length>0 ?
                     <section className="interviewersList">
-                        <Tabs defaultActiveKey="1" >
+                        {userRole && userRole === "admin" ?
+                            <>
+                            <Tabs defaultActiveKey="1" >
                             <TabPane tab="New Interviewers" key="1">
                                 <section className='interviewerListCard'>
                                     {newInterviewerList.map(interviewer => (
-                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(interviewer._id) }} className='addProfileBtn'>Onboard Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
+                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(interviewer._id) }} className='addProfileBtn'>Onboard Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
                                     ))}
                                 </section>
                                     
@@ -94,11 +99,22 @@ export default function InterviewerList() {
                             <TabPane tab="Exisiting Interviewers" key="2">
                                 <section className='interviewerListCard'>
                                     {existingInterviewerList.map(interviewer => (
-                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`/admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(interviewer._id) }} className='removeProfileBtn'>DeList Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
+                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`admin/interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { deList(interviewer._id) }} className='removeProfileBtn'>DeList Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
                                     ))}
                                 </section>
                             </TabPane>
                         </Tabs>
+                            </> :
+                            <>
+                                 <section className='interviewerListCard'>
+                                    {interviewerList.map(interviewer => (
+                                        <InterviewerCardList key={interviewer._id} btn1={<Link to={`interviewerProfile/${interviewer._id}`} >{viewProfileButton}</Link>} btn2={<Button onClick={() => { addProfile(interviewer._id) }} className='addProfileBtn'>Onboard Interviewer</Button>} delIcon={<Link to="#" onClick={() => removeProfile(interviewer._id)} className="closeProfile">{deleteIcon}</Link>} className='interviewerlistProfile' skills={interviewer.skills} name={interviewer.name} image={interviewer.image} designation={interviewer.designation} company={interviewer.company} contact={interviewer.contact} />
+                                    ))}
+                                </section>
+                            </>
+                        }
+
+                       
                     </section>
                     :<section>{fallback}</section>
                 }

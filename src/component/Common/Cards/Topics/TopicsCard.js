@@ -4,7 +4,7 @@ import { Card, Button } from "antd"
 import { useSelector } from 'react-redux'
 import "./TopicsCard.css"
 
-export default function TopicsCard({ id, image, title, description, route, delIcon, remove, editIcon, update }) {
+export default function TopicsCard({ id, image, title, description,dashboard, route, delIcon, remove, editIcon, update }) {
     
 
     let userRole = useSelector(state => state.authReducer.user.role)
@@ -16,7 +16,12 @@ export default function TopicsCard({ id, image, title, description, route, delIc
             {userRole=== "admin" ? 
                 <><p className="icon"  onClick={() => remove(id)}> {delIcon}</p><p className="icon" onClick={() => update(id)}> {editIcon}</p></>: <></>}
             <Meta title={title} description={description} />
-            <Link to={`/interviewer/resourceList/${id}`}><Button id="topics-btn" type="primary">Start Learning..</Button></Link>
+            <Link to={`resourceList/${id}`}>
+                {!dashboard ?
+                    <Button id="topics-btn" type="primary"> Start Learning..</Button>
+                    : <Button id="topics-btn" type="primary"> Continue Learning..</Button>
+                }
+            </Link>
         </Card>
         
     )

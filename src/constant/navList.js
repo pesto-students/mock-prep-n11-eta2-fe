@@ -1,4 +1,4 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter, UserIcon } from "Constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter, UserIcon, LaptopIcon } from "Constant/antIcons"
 import { Spin } from "antd"
 
 
@@ -91,32 +91,32 @@ export const studentNavList = [
     },  
     {
         id: 2,
+        url:"/student/studentProfile/",
+        linkName: "My Profile",
+        icon: smileIcon
+    },
+    {
+        id: 3,
         url:"/student/interviewerList",
-        linkName: "Interviewer List",
+        linkName: "Book Interview",
         icon: idCardIcon
     },
-    // {
-    //     id: 3,
-    //     url:"/interviewer/studentList",
-    //     linkName: "Student List",
-    //     icon: smileIcon
-    // },
     {
         id: 4,
         url:"/student/topicsList",
-        linkName: "Topics List",
+        linkName: "View Topics",
         icon: DBIcon
     },
     {
         id: 5,
         url:"/student/resourceList",
-        linkName: "Resource List",
+        linkName: "Study Resource",
         icon: resourceIcon
     },
     {
         id: 6,
         url:"/student/quizList",
-        linkName: "Quiz List",
+        linkName: "Take Quiz",
         icon: resourceIcon
     }
 ]

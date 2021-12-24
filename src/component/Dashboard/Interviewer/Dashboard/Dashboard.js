@@ -4,7 +4,7 @@ import { DashboardIcon } from 'Constant/antIcons'
 import "./Dashboard.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const Interviews = lazy(() => import('component/Dashboard/Interviewer/Dashboard/Upcoming Interviews/Interviews'))
+const Interviews = lazy(() => import('component/Dashboard/Student/dashboard/Upcoming Interviews/Interviews'))
 const DashboardCards = lazy(() => import('component/Dashboard/Interviewer/Dashboard/Cards/DashboardCards'))
 const Earnings = lazy(() => import("component/Dashboard/Interviewer/Dashboard/Earning/Earnings"))
 const Feedback = lazy(() => import("component/Dashboard/Interviewer/Dashboard/Feedback/Feedback"))

@@ -23,6 +23,7 @@ export const InterviewerProfile = () => {
    
     const dispatch = useDispatch()
     let interData = useSelector(state => state.dataReducer)
+    let auth = useSelector(state => state.authReducer)
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)},[dispatch])
     useEffect(() => {  if (interData.interviewerData !== undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[profileId,   interData])
@@ -35,6 +36,10 @@ export const InterviewerProfile = () => {
     delete interviewerForm.__v;
     delete interviewerForm.interviewCount;
     delete interviewerForm.rating
+
+    if (auth.user.role !== "admin") { 
+        delete interviewerForm.onboarded
+    }
 
     const showModal = () => {
         setUpdate(true);
@@ -75,7 +80,8 @@ export const InterviewerProfile = () => {
     return (
         <>
             <div className="interviewer-profile">
-                <DashboardHeader title="Interviewer Profile" icon={UserIcon} rightComponent={update ? component1: component2} />
+                <DashboardHeader title="Interviewer Profile" icon={UserIcon} rightComponent={auth.user.role !== "student" ?<> {update ? component1: component2} </>: <></>} />
+                  
                 {Object.keys(interviewer).length !== 0 ?
                     <>
                         {!update ?
@@ -125,8 +131,8 @@ export const InterviewerProfile = () => {
                             </div>
                         }
                     </>
-
-                  :<section>{ fallback}</section>}
+                    : <section>{fallback}</section>
+                }
             </div>
         </>
     )

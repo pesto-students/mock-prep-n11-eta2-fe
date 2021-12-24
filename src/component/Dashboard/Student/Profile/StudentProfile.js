@@ -25,10 +25,10 @@ export const StudentProfile = () => {
     let userRole = useSelector(state => state.authReducer.user.role)
 
     const dispatch = useDispatch()
-
+    
     useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudents,dataActions.setStudents)},[dispatch])
-    useEffect(() => {  if (interData.studentData !== undefined) setstudent(interData.studentData.data.find(e => e._id===profileId)) },[profileId,interData])
-
+    useEffect(() => { if (interData.studentData !== undefined) setstudent(interData.studentData.data.find(e => e._id === profileId)) }, [profileId, interData])
+    
     const studentForm = JSON.parse(JSON.stringify(student));
     delete studentForm._id
     delete studentForm.userId
@@ -37,6 +37,10 @@ export const StudentProfile = () => {
     delete studentForm.__v;
     delete studentForm.interviewCount;
     delete studentForm.rating
+    console.log(userRole)
+    if (userRole === "student") {
+        delete studentForm.listed
+    }
 
     const showModal = () => {
         setUpdate(true);
@@ -73,7 +77,7 @@ export const StudentProfile = () => {
     return (
         <>
             <div className="student-profile">
-                <DashboardHeader title="Student Profile" icon={UserIcon} rightComponent={  userRole === "admin" ?<> {update ? component1: component2} </>: <></>} />
+                <DashboardHeader title="Student Profile" icon={UserIcon} rightComponent={  userRole !== "interviewer" ?<> {update ? component1: component2} </>: <></>} />
                 {Object.keys(student).length !== 0 ?
                     <>
                         {!update ?

@@ -14,7 +14,7 @@ import Forms from "component/Common/Form/Forms"
 import ResourceCard from 'component/Common/Cards/Resource/ResouceCard'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
-import "../Topics/List/TopicsList.css"
+import "./ResourceList.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 
@@ -27,11 +27,11 @@ export default function ResourceList() {
     let [resourceId, setResourceId] = useState([]);
     let [topics, setTopics] = useState([]);
     let data = useSelector(state => state.dataReducer)
+    let userRole = useSelector(state => state.authReducer.user.role)
     const dispatch = useDispatch()
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isModalVisible2, setIsModalVisible2] = useState(false);
     const [key, setKey] = useState(false);
-    let userRole = useSelector(state => state.authReducer.user.role)
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getResources, dataActions.setResource) }, [dispatch,key])
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
@@ -108,7 +108,6 @@ export default function ResourceList() {
         setResourceList(filtered)
     }; 
 
-    
     let res = resourceList.filter(f => f._id === resourceId)
     const Form = JSON.parse(JSON.stringify(resourceForm));
     delete Form._id
@@ -128,8 +127,7 @@ export default function ResourceList() {
     const search = <> <section className="search"><Search placeholder="Search Topics" onSearch={onSearch} style={{ width: 200 }} /></section></>
     
     return (
-        <div>
-           
+        <div>  
             <section className='resource-container'>
                 <DashboardHeader title="Resources List" icon={resourceIcon} rightComponent={search} />
                 {userRole==="admin" ? <Button id="addItem" type="primary" onClick={() => { setIsModalVisible(true)}}>Add Resource</Button> :<></>}

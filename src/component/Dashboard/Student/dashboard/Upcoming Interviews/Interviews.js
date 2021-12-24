@@ -1,9 +1,9 @@
 import React, { lazy} from 'react'
-import { Button } from "antd"
+import { Button,Progress } from "antd"
 import { Link } from 'react-router-dom'
 import { CalenderIcon} from "Constant/antIcons"
 import "./Interview.css"
-import { PreviousInterviewChart } from '../Charts/PreviousMonth'
+import { PreviousInterviewChart } from '../../../Interviewer/Dashboard/Charts/PreviousMonth'
 
 
 export default function Interviews() {
@@ -39,6 +39,23 @@ export default function Interviews() {
         }
     ]
 
+    let tasks = [
+        {
+            task: "Web Developer Preparation",
+            interviewCount: 6,
+            quizScore: 8,
+            interviewScore: 7,
+        },
+        {
+            task: "JavaScript Developer",
+            interviewCount: 2,
+            quizScore: 8.5,
+            interviewScore: 9,
+        },
+
+    ]
+       
+
     return (
         <div>
             <section id="interview-details-dashboard">
@@ -56,7 +73,7 @@ export default function Interviews() {
                                     <p>{e.date}</p>
                                 </span>
                                     <p>{e.slot} </p>
-                                    <p>{e.studentName}</p>
+                                    <p>{e.interviewerName}</p>
                               
                                 <span>
                                     <p>{e.topic}</p>
@@ -71,7 +88,21 @@ export default function Interviews() {
                     
                 </section>
                 <section id="previousInterviews">   
-                    <PreviousInterviewChart />
+                    <h2 className='title'>Progress</h2>
+                    <section id="student-info">
+                        {tasks.map((task, index) => (
+                            <section key={index} id="task">
+                                <Progress type="circle" id="progressCircle" strokeColor="lightgreen" percent={((task.quizScore + task.interviewScore) / 2) * 10} />
+                            <span>
+                             <h4>{task.task}</h4>
+                             <p>Quiz Score: {task.quizScore}</p>
+                             <p>Mock Interview Score: {task.interviewScore}</p>
+                             </span>
+                         </section>
+                        ))
+                        }
+                       
+                    </section>
                 </section>
             </section>
         </div>

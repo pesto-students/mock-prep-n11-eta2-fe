@@ -11,6 +11,7 @@ import QuizNavigator from './QuizNavigator';
 import dataActions from 'Redux/Actions/dataAction'; 
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
 import "./QuizContent.css"
+import { UserIcon } from 'Constant/antIcons';
 
 export default function QuizContent() {
 
@@ -28,6 +29,7 @@ export default function QuizContent() {
     const [quizDetail, setDetails] = useState([]);
     const dispatch = useDispatch()
     const data = useSelector(state => state.dataReducer)
+    const auth = useSelector(state => state.authReducer)
 
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz) }, [dispatch])
@@ -95,11 +97,8 @@ export default function QuizContent() {
 
     return (
         <div className='quiz'>
-            <DashboardHeader title={logo} rightComponent={<><h3 style={{ margin: " 0 2vw" }}>{" username"}</h3>  <Link to="/admin/quizList"><Button>Exit Quiz</Button></Link></> }></DashboardHeader>
-            {quiz 
-                ?
-                <>
-                    {index!==quiz.length?
+            <DashboardHeader title={logo} rightComponent={<><h3 style={{ margin: " 0 2vw" }}>{UserIcon}{ auth.user.name}</h3>  <Link to="/admin/quizList"><Button>Exit Quiz</Button></Link></> }></DashboardHeader>
+            {quiz ?<>{index!==quiz.length?
                         <section id="slides">
                            <section id="slide">
                                <section id="slideCard">
@@ -126,12 +125,9 @@ export default function QuizContent() {
                                     <section id="score">
                                         {pending ?
                                            <> <Alert className='alertQuiz' type="error" description="Please Attempt all the questions to submit" /> </>:
-                                            <Alert className='alertQuiz' type="success" description={ desc} />
-                                            
+                                            <Alert className='alertQuiz' type="success" description={ desc} />       
                                     }
-                                      
                                     </section>
-
                                       <section id="navigationBtn">
                                           <Button type="danger" onClick={() => {if(index>0) setIndex(index-1) }}>Previous Question</Button>
                                           <Button type="primary" id="next" onClick={() => { if(index<quiz.length) setIndex(index + 1) }}>Next Question</Button>
@@ -145,37 +141,20 @@ export default function QuizContent() {
                                         <h3>{quizDetail.title}<br/>  <p>{quizDetail.description}</p></h3>
                                     </section>
                                     <section id="nav">
-              
-                            {quiz?
-                                quiz.map((que,index) => (
+                                        {quiz?
+                                            quiz.map((que,index) => (
                                     <section key={index}>
-                                        {
-                                            que.answer.attempted ?<>
-                                                {
-                                            que.answer.answer ?
+                                        {que.answer.attempted ?<>{que.answer.answer ?
                                                 <Progress className='progress' type="circle" percent={100} format={percent => `${que.answer.question+1}`} /> :
                                                 <Progress className='progress' type="circle" percent={100} format={percent => `${que.answer.question+1}`}  status="exception"     />
-                                                } </>:
-                                            <Progress className='progress' type="circle" percent={99} format={percent => `${que.answer.question+1}`} /> 
-                                        }
-                                                </section>
-                                        ))
-                                            :
-                                        <p></p>
-                                        }
-
-                                </section>
-                                                            </div>
-                                                        
-                                                    </section>
-                                                </section>
-                                                    
-                                            }
-
-                                            </>
-               :    
-            <section>{fallback}</section>
-            }
+                                                } </>:<Progress className='progress' type="circle" percent={99} format={percent => `${que.answer.question+1}`} /> 
+                                        }</section>
+                                        )):<p></p>}
+                                    </section>
+                                </div>                                    
+                            </section>
+                </section>}</> :
+                <section>{fallback}</section>}
         </div>
     )
 }

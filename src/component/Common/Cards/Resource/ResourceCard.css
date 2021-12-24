@@ -1,0 +1,27 @@
+#resourceCard{
+    width: 43%;
+    height: 15vh;
+    margin: 1vw 1vw;
+    padding: 1vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgrey;
+}
+
+.resourceCard>img{
+    width: 5vw !important;
+    height: 5vw;
+    vertical-align: middle;
+    display: flex;
+    align-content: center;
+    margin-top: 2vh;
+}
+
+#resourceIcon>img{
+    width: 6vw !important;
+
+}
+
+#resourceContent{width: 80%;margin-top: 1vh;}

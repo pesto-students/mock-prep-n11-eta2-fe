@@ -5,26 +5,22 @@ import { useSelector } from "react-redux"
 import { useCookies } from "react-cookie"
 import { useDispatch } from "react-redux"
 import './Header.css'
+import { setUser } from "@sentry/react"
 
-import authActionCreator from "Redux/Action Creators/authActionCreators";
 
 const Button = lazy(() => import("component/Common/Button/CommonButton"))
 
 export default function Header() {
    
-    let isLoggedIn = useSelector(state => state.authReducer.user.isLoggedIn)
-    let userRole = useSelector(state => state.authReducer.user.role)
+   
+    let auth = useSelector(state => state.authReducer)
+    let [user,setUser] = useState([])
 
-
-    const [cookies,getCookie, removeCookie] = useCookies(["user"])
-    const dispatch = useDispatch()
-    let [log, setLog] = useState(false)
-    
     useEffect(() => {
-        isLoggedIn = isLoggedIn;
-        userRole = userRole;
-    }, [isLoggedIn,userRole ])
-    
+        if (auth.isLoggedIn) { 
+            setUser(auth.user)
+        }
+    }, [user,auth])
 
     return(
         <header id="main-header">
@@ -35,9 +31,9 @@ export default function Header() {
                 <Link className="header-icons" to="/about"> About </Link>
                 <Link className="header-icons" to="/package"> Package </Link> 
                 <Link className="header-icons" to="/contact"> Contact Us </Link> 
-                {!isLoggedIn ?
+                {!user.isLoggedIn ?
                     <Link className="header-icons" to="/signIn">Sign In</Link>:
-                    <Link to={`${userRole}/dashboard`}> <Button buttonType='primary' buttonName={"Dashboard"} isDisabled="false" /></Link>
+                    <Link to={`${user.role}/dashboard`}> <Button buttonType='primary' buttonName={"Dashboard"} isDisabled="false" /></Link>
                 }
 
             </div>   

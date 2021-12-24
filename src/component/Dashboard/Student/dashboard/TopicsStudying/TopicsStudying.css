@@ -1,0 +1,26 @@
+.topicsOngoing{
+    width: 100%;
+    padding: 1vh 3vw;
+}
+
+.title{
+ color: purple !important;   
+}
+
+.topics-container{
+    width: 100%;
+    position: absolute;
+    right: 0;
+}
+.header>.tab-options{
+    justify-content: right;
+}
+
+#topics{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#quiz{display: flex}
+
+#addItem{margin: 2vh 1vw ;}

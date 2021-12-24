@@ -30,8 +30,6 @@ export default function QuizList() {
         }
     }, [data])
 
-    
-    
     const handleRemove = (quizId) => { 
         setQuizList(quiz.filter(e => e._id !== quizId))
         removeData(deleteQuizList + quizId)
@@ -45,20 +43,17 @@ export default function QuizList() {
 
     const search =<> <section className="search"><Search placeholder="Search quiz" onSearch={onSearch} style={{ width: 200 }} /></section></>
 
-
     return (
         <div>
           <section className='quiz-container'>
                 <DashboardHeader title="Quiz List" icon={trophyIcon} rightComponent={search} />
-               
                 {quizList.length > 0 ?
                     <section id="quiz">
                         {quizList.map((topic, index) => (<QuizCard key={index} delIcon={deleteIcon} id={topic._id} remove={handleRemove} route={"/quizContent/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
                     </section>
                     :
                      < section > { fallback }</section>
-                    }
-              
+                }
             </section>
         </div>
     )

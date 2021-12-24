@@ -49,19 +49,40 @@ export default function SignIn() {
     
     }
     
-    const dummyLogin = (role) => { 
-      
-        const user = {
-            "name": "millie taylor",
-            "email":"millie.taylor@gmail.com",
-            "role": role,
-            "id":"61c35291b7809a993100293c",
-            "isLoggedIn":true
-        };
+    const dummyLogin = (role) => {
+        let user;
+        if (role === "interviewer") {
+            user = {
+                "name": "millie taylor",
+                "email": "millie.taylor@gmail.com",
+                "role": role,
+                "id": "61c35291b7809a993100293c",
+                "isLoggedIn": true
+            };
+        }
+        else if (role === "student") {
+            user = {
+                "name": "Silki Hansen",
+                "email": "silki.hansen@gmail.com",
+                "role": role,
+                "id": "61c35cefb7809a9931002a2c",
+                "isLoggedIn": true
+            };
+        }
+
+        else if (role === "admin") {
+            user = {
+                "name": "Mohammed Saif",
+                "email": "saifmohammed888@gmail.com",
+                "role": role,
+                "id": "61c35cefb7809a9931002a2c",
+                "isLoggedIn": true
+            };
+        }
        
         utilityFunction.logIn(dispatch, user);
         setCookie('user',user)
-        window.location.href = role;
+        window.location.href = role+"/dashboard";
     }
 
     return (
