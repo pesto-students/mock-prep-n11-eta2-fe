@@ -49,11 +49,9 @@ export default function QuizList() {
                 <DashboardHeader title="Quiz List" icon={trophyIcon} rightComponent={search} />
                 {quizList.length > 0 ?
                     <section id="quiz">
-                        {quizList.map((topic, index) => (<QuizCard key={index} delIcon={deleteIcon} id={topic._id} remove={handleRemove} route={"/quizContent/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
+                        {quizList.map((topic, index) => (<QuizCard key={index} delIcon={deleteIcon} id={topic._id} remove={handleRemove} route={"quizContent/" + topic._id} image={topic.image} title={topic.title} category={topic.category} />))}
                     </section>
-                    :
-                     < section > { fallback }</section>
-                }
+                    :<section> { fallback }</section>}
             </section>
         </div>
     )

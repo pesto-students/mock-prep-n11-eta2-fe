@@ -14,7 +14,7 @@ export default function ResourceCard({ image, title, description,url,id,delIcon,
             </section>
             <section id="resourceContent">
                 <h3>{title}</h3>
-                <p>{description} <a href={url}>Click to read</a></p>
+                <p>{description} <a target="_blank" href={url}>Click to read</a></p>
             </section>
         </div>
     )

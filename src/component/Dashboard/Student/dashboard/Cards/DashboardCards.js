@@ -22,7 +22,7 @@ export default function DashboardCards() {
         {
             "description": "Interviewer Rating",
             "value": 7.8,
-            "icon": "fa fa-star",
+            "icon": "fa fa-award",
             "_id": "61c381bd61769ed09217557d"
         },
         {

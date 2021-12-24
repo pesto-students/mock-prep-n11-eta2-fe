@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Button,Progress ,Alert} from 'antd';
+import { Button,Progress ,Alert, Input} from 'antd';
 import { logoUrl } from 'Constant/const_url';
 import { getQuizList } from 'Constant/apiUrl';
 import { fallback } from 'Constant/navList';
@@ -12,12 +12,13 @@ import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
 import "./QuizContent.css"
 import { UserIcon } from 'Constant/antIcons';
+import { resourceIcon } from 'Constant/antIcons';
 
 export default function QuizContent() {
 
     
     const [index, setIndex] = useState(0)
- 
+    const { Search } = Input;
     let percent = 0;
     let count = 0;
     let score = 0;
@@ -36,7 +37,7 @@ export default function QuizContent() {
     useEffect(() => {
         if (data.quiz !== undefined) {
             setQuiz(data.quiz.data);
-            setDetails(data.quiz.data);
+            setDetails(data.quiz.data.filter(f=>f._id===quizId));
             if (data.quiz.data.length > 0) { 
 
                 let question = data.quiz.data.filter(e => e._id === quizId)[0].questions;
@@ -92,13 +93,15 @@ export default function QuizContent() {
         percent = (count / quiz.length) * 100;
     }
 
+  
+
     score = (score / quiz.length) * 100;
     let desc = "Congrats You scored " + score + " percent!!";
 
     return (
         <div className='quiz'>
-            <DashboardHeader title={logo} rightComponent={<><h3 style={{ margin: " 0 2vw" }}>{UserIcon}{ auth.user.name}</h3>  <Link to="/admin/quizList"><Button>Exit Quiz</Button></Link></> }></DashboardHeader>
-            {quiz ?<>{index!==quiz.length?
+            <DashboardHeader title="Quiz" icon={resourceIcon} />
+               {quiz ?<>{index!==quiz.length?
                         <section id="slides">
                            <section id="slide">
                                <section id="slideCard">

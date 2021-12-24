@@ -10,11 +10,12 @@ export default function QuizNavigator({ details, information, questions, index ,
     
     let attempt = questions[index].answer.attempted;
     let answer = questions[index].answer.answer;
+    console.log(details)
     return (
         <div id="quizNavigator">
             <section id="navHead">
                  <Progress type="circle" id="prog" strokeColor={{ '0%': '#108ee9','100%': '#87d068',}} percent={percent}/>
-                <h3>{details.title}<br/>  <p>{details.description}</p></h3>
+                <h3>{details[0].title}<br/>  <p>{details[0].description}</p></h3>
             </section>
             <section id="collapse">
                 {attempt ?

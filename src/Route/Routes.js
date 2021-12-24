@@ -16,7 +16,6 @@ const Interviewer = lazy(() => import("component/Dashboard/Interviewer/Interview
 const Student = lazy(() => import("component/Dashboard/Student/Student"))
 const QuizContent = lazy(() => import("component/Dashboard/Common/Quiz/QuizContent/QuizContent"))
 
-
 export default function Routes() {
 
     const loginState = useSelector(state => state.authReducer);
@@ -37,7 +36,7 @@ export default function Routes() {
             <Route path="/admin" component={Admin} />
             <Route path="/interviewer" component={Interviewer} />
             <Route path="/student" component={Student} />
-            <Route path={`/quizContent/:quizId?`} component={QuizContent} />
+            {/* <Route path={`/quizContent/:quizId?`} component={QuizContent} /> */}
         </div>
     )
 }

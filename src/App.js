@@ -11,7 +11,6 @@ import Route  from "Route/Routes"
 import 'antd/dist/antd.min.css';
 import './App.css';
 
-
 function App() {
   
   const [cookies,removeCookie] = useCookies(['name']);
