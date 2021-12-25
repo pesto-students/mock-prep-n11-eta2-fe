@@ -1,5 +1,4 @@
 import React, { lazy } from 'react'
-import { useSelector } from "react-redux";
 import PublicRoute from "Route/PublicRoute";
 // import PrivateRoute from "Route/PrivateRoute";
 // import { useCookies } from "react-cookie"
