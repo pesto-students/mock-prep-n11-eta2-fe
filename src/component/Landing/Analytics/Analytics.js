@@ -1,14 +1,13 @@
 import React, { lazy,useState,useEffect } from 'react'
 import { BarChartOptions,PieChartOptions } from 'constant/data'
-import { UserAddOutlined } from "@ant-design/icons"
 import { getDashboards } from 'constant/apiUrl'
 import { useDispatch, useSelector } from 'react-redux'
 import dataActions from 'Redux/Actions/dataAction'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
-import "./Analytics.css"
 import DoughNutChart from 'component/Common/Charts/Doughnut/Doughnut'
 
-const PieChart = lazy(() => import("component/Common/Charts/Pie/PieChart"))
+import "./Analytics.css"
+
 const DashBoardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
 const DashBoardCard = lazy(() => import("component/Common/Cards/DashboardCard/DashBoardCard"))
 

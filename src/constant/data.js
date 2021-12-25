@@ -1,5 +1,4 @@
 import { Tag} from "antd"
-import { fallback } from "./navList"
 
 export const mockPrepAdvantages = [
     {

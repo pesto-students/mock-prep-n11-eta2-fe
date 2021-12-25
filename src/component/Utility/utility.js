@@ -1,8 +1,6 @@
 import authActionCreator from "Redux/Action Creators/authActionCreators";
 import errorActionCreator from "Redux/Action Creators/erroActionCreators";
 
-
-
 export const utilityFunction = {
     logOut : function (dispatch,removeCookie){
         authActionCreator.logOut(dispatch);

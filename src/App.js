@@ -18,7 +18,7 @@ function App() {
     if (cookies.user) {
       utilityFunction.logIn(dispatch, cookies.user, cookies.user.role)
     }
-  }, [cookies])
+  }, [cookies,dispatch])
   
   return (
 
