@@ -1,9 +1,5 @@
 import React, { lazy,useState,useEffect } from 'react'
 import { BarChartOptions,PieChartOptions } from 'constant/data'
-<<<<<<< HEAD
-=======
-import { UserAddOutlined } from "@ant-design/icons"
->>>>>>> 7e8f9a880f43c494b1131331a80b7165848d3b47
 import { getDashboards } from 'constant/apiUrl'
 import { useDispatch, useSelector } from 'react-redux'
 import dataActions from 'Redux/Actions/dataAction'
