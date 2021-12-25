@@ -2,7 +2,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Button from "react-bootstrap/Button"
-import { logo } from "Constant/utility"
+import { logo } from "constant/utility"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import './Header.css'

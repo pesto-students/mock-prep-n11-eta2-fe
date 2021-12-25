@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { earningChartOptions,resourceChartOptions } from 'Constant/data'
+import { earningChartOptions,resourceChartOptions } from 'constant/data'
 import "./DashboardChart.css"
 
 const DashboardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))

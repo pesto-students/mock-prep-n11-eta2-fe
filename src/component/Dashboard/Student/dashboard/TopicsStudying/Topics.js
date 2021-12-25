@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import TopicsCard from 'component/Common/Cards/Topics/TopicsCard'
-import { getTopics} from 'Constant/apiUrl'
+import { getTopics} from 'constant/apiUrl'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import "./TopicsStudying.css"

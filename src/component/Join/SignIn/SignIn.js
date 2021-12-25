@@ -1,8 +1,8 @@
 import React, { lazy } from 'react'
 import { Link } from "react-router-dom"
-import { logoUrl } from 'Constant/const_url'
+import { logoUrl } from 'constant/const_url'
 import { getData } from 'api/Api'
-import { getUsers} from "Constant/apiUrl"
+import { getUsers} from "constant/apiUrl"
 import { utilityFunction } from 'component/Utility/utility'
 import { useDispatch, useSelector } from 'react-redux'
 import {  Cookies, useCookies } from 'react-cookie'

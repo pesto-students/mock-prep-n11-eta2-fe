@@ -1,9 +1,9 @@
 import { lazy,useState,useEffect } from "react"
 import { Link, Redirect } from "react-router-dom"
-import { logoUrl } from 'Constant/const_url'
+import { logoUrl } from 'constant/const_url'
 import { Tabs } from "antd"
 import { useDispatch, useSelector } from "react-redux"
-import { insertUser,insertInterviewer,insertStudent } from "Constant/apiUrl"
+import { insertUser,insertInterviewer,insertStudent } from "constant/apiUrl"
 import { insertData } from "api/Api"
 import { useCookies } from "react-cookie";
 import { utilityFunction } from "component/Utility/utility"

@@ -1,6 +1,6 @@
 
 import React, { lazy } from 'react'
-import { upcomingInter ,CalenderIcon} from 'Constant/antIcons'
+import { upcomingInter ,CalenderIcon} from 'constant/antIcons'
 
 import "./Interviews.css"
 import { Tabs,Tag ,Input} from "antd"

@@ -1,11 +1,11 @@
 import React, {useEffect, lazy,useState} from 'react'
 import { Input} from "antd"
-import { trophyIcon } from "Constant/antIcons"
-import { fallback } from 'Constant/navList'
+import { trophyIcon } from "constant/antIcons"
+import { fallback } from 'constant/navList'
 import { useDispatch, useSelector } from 'react-redux'
-import { getQuizList } from 'Constant/apiUrl'
-import { deleteIcon } from 'Constant/antIcons'
-import { deleteQuizList } from 'Constant/apiUrl'
+import { getQuizList } from 'constant/apiUrl'
+import { deleteIcon } from 'constant/antIcons'
+import { deleteQuizList } from 'constant/apiUrl'
 import { removeData } from 'api/Api'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'

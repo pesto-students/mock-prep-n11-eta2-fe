@@ -1,5 +1,5 @@
 import React, {lazy,useEffect} from 'react'
-import { interviewerNavList } from "Constant/navList"
+import { interviewerNavList } from "constant/navList"
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useRouteMatch} from "react-router-dom"
 import "./Interviewer.css"
