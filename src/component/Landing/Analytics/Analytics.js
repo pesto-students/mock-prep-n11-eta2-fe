@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import dataActions from 'Redux/Actions/dataAction'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import DoughNutChart from 'component/Common/Charts/Doughnut/Doughnut'
-
 import "./Analytics.css"
 
 const DashBoardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
