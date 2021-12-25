@@ -1,5 +1,5 @@
 
-import {  earningChartOptions, resourceChartOptions    } from "Constant/data";
+import {  earningChartOptions, resourceChartOptions    } from "constant/data";
 import DashBoardChart from 'component/Common/Charts/Bar/BarChart';
 import PieChart from 'component/Common/Charts/Pie/PieChart';
 

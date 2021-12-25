@@ -1,5 +1,5 @@
 import React, {lazy,useEffect} from 'react'
-import { studentNavList } from "Constant/navList"
+import { studentNavList } from "constant/navList"
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useRouteMatch} from "react-router-dom"
 import { useSelector } from 'react-redux';

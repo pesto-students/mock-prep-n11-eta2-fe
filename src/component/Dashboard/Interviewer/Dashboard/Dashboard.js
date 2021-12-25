@@ -1,6 +1,6 @@
 
 import React, { lazy } from 'react'
-import { DashboardIcon } from 'Constant/antIcons'
+import { DashboardIcon } from 'constant/antIcons'
 import "./Dashboard.css"
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))

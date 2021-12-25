@@ -1,10 +1,10 @@
 import React, { useState, useEffect, lazy } from 'react'
 import { useSelector,useDispatch } from 'react-redux';
-import { idCardIcon,deleteIcon } from "Constant/antIcons"
+import { idCardIcon,deleteIcon } from "constant/antIcons"
 import { Input,Tabs,Button} from 'antd';
 import { Link} from "react-router-dom"
-import { fallback} from "Constant/navList"
-import { deleteInterviewer, getInterviewers, updateInterviewer } from 'Constant/apiUrl';
+import { fallback} from "constant/navList"
+import { deleteInterviewer, getInterviewers, updateInterviewer } from 'constant/apiUrl';
 import { removeData, updateData } from 'api/Api';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
 import dataActions from 'Redux/Actions/dataAction';

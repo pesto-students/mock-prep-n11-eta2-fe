@@ -1,11 +1,11 @@
 import React, { useState,lazy,useEffect} from 'react'
 import { Tag } from "antd"
-import { UserIcon } from 'Constant/antIcons';
+import { UserIcon } from 'constant/antIcons';
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { updateData } from 'api/Api';
-import { getInterviewers, updateInterviewer } from 'Constant/apiUrl';
-import { fallback } from 'Constant/navList'; 
+import { getInterviewers, updateInterviewer } from 'constant/apiUrl';
+import { fallback } from 'constant/navList'; 
 import Forms  from 'component/Common/Form/Forms';
 import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';

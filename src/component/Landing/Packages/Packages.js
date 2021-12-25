@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { packages } from 'Constant/data'
+import { packages } from 'constant/data'
 import "./Packages.css"
 
 const Bundle = lazy(() => import("component/Common/Bundle/InterviewBundle"))

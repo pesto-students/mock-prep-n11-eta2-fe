@@ -1,6 +1,6 @@
 import React,{ Suspense, useEffect } from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { fallback } from "Constant/navList";
+import { fallback } from "constant/navList";
 import { utilityFunction } from "component/Utility/utility";
 import { useDispatch } from "react-redux"; 
 import {  useCookies } from "react-cookie";

@@ -1,6 +1,6 @@
 
 import React, { lazy } from 'react'
-import { DashboardIcon } from 'Constant/antIcons'
+import { DashboardIcon } from 'constant/antIcons'
 import "./dashboard.css"
 import { LeaderBoard } from './LeaderBoard/LeaderBoard'
 

@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Button,Progress ,Alert, Input} from 'antd';
-import { logoUrl } from 'Constant/const_url';
-import { getQuizList } from 'Constant/apiUrl';
-import { fallback } from 'Constant/navList';
+import { logoUrl } from 'constant/const_url';
+import { getQuizList } from 'constant/apiUrl';
+import { fallback } from 'constant/navList';
 import { useDispatch, useSelector } from 'react-redux';
 import DashboardHeader from '../../Header/DashboardHeader'
 import QuizOptionForm from "./QuizOptionForm"
@@ -11,8 +11,8 @@ import QuizNavigator from './QuizNavigator';
 import dataActions from 'Redux/Actions/dataAction'; 
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
 import "./QuizContent.css"
-import { UserIcon } from 'Constant/antIcons';
-import { resourceIcon } from 'Constant/antIcons';
+import { UserIcon } from 'constant/antIcons';
+import { resourceIcon } from 'constant/antIcons';
 
 export default function QuizContent() {
 

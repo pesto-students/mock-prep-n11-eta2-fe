@@ -1,6 +1,6 @@
 import React, { useEffect ,useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux';
-import { getReviews } from 'Constant/apiUrl';
+import { getReviews } from 'constant/apiUrl';
 import Slides from "component/Landing/Testimonials/Slides"
 import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';

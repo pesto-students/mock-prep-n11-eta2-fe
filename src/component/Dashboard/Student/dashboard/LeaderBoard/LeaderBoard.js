@@ -1,7 +1,7 @@
 import React from 'react'
 import "./LeaderBoard.css"
 import { Tag } from 'antd'
-import { trophyIcon } from 'Constant/antIcons'
+import { trophyIcon } from 'constant/antIcons'
 
 export const LeaderBoard = () => {
 

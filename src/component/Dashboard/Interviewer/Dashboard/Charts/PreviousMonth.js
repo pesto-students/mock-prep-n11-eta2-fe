@@ -1,5 +1,5 @@
 import React, { lazy} from 'react'
-import { interviewOptions } from 'Constant/data'
+import { interviewOptions } from 'constant/data'
 import "./Chart.css"
 const DashboardChart = lazy(() => import("component/Common/Charts/Pie/PieChart"))
 
