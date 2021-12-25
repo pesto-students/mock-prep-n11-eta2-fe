@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/"
+  to = "https://mockprep.netlify.app/"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/*"
+  to = "https://mockprep.netlify.app/about"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
