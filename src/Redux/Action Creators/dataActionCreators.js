@@ -5,7 +5,7 @@ const dataActionCreator = {
     
     getAdminData: async function (dispatch, url, type) {
                     const data = await getData(url);
-                    {dispatch({type : type,data : data})}
+                    dispatch({type : type,data : data})
                 }
 }
 

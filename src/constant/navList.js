@@ -1,4 +1,4 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter, UserIcon, LaptopIcon } from "constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter } from "constant/antIcons"
 import { Spin } from "antd"
 
 
