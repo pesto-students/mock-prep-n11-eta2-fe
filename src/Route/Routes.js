@@ -22,7 +22,7 @@ export default function Routes() {
 
     return (
         <div>
-            <PublicRoute exact path="/" component={Landing} loggedIn={loginState.isLoggedIn} />
+            <PublicRoute exact path="/"  component={Landing} loggedIn={loginState.isLoggedIn} />
             {/* <PublicRoute exact path="/about" component={About}  loggedIn={loginState.isLoggedIn} restricted="false" />
             <PublicRoute exact path="/package" component={Package}  loggedIn={loginState.isLoggedIn} restricted="false"/>
             <PublicRoute exact path="/join" component={Join}  loggedIn={loginState.isLoggedIn} restricted="false"/>
