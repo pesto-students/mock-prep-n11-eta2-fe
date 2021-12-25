@@ -10,12 +10,14 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 adminDashboard : action.data
             }
         }
+            
         case 'SET_LANDING_ANALYTICS':{
             return {
                 ...state,
                 analyticsLandingData : action.data
             }
         }
+            
         case 'SET_INTERVIEWER': {
 
             return {
@@ -23,6 +25,7 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 interviewerData : action.data
             }
         }
+            
         case 'SET_STUDENTS': {
 
             return {
@@ -30,12 +33,14 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 studentData : action.data
             }
         }
+            
         case "SET_TESTIMONIALS" :{
             return {
                 ...state,
                 testimonials : action.data
             }
         }
+            
         case 'SET_FEEDBACK' : {
             return {
                 ...state,
@@ -78,10 +83,6 @@ export default function dataReducer (state = {adminDashboard : {}},action){
             }
         }
             
-            
-            
-            
-
         default:
             return state;
     }

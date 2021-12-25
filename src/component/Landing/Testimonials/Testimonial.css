@@ -1,10 +1,10 @@
 .testimonial{
     display: flex !important;
-    width: 80%;
+    width: 75% !important;
     margin: auto;
-    border: 1px solid lightgrey;
     padding: 1vw;
     border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 
@@ -19,3 +19,20 @@
     margin: 2vh 2vh !important;
     color: grey;
 }
+
+.title{
+    margin: 5vh auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    .testimonial{width: 90% !important;}
+ }
+ 
+ @media only screen and (max-width: 768px) {
+    .testimonial{width: 100% !important;}
+ }
+ 
+ 
+ @media only screen and (max-width: 450px) {
+    .package-details{display: block;}
+ }

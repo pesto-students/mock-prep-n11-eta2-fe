@@ -1,4 +1,5 @@
 import { Tag} from "antd"
+import { fallback } from "./navList"
 
 export const mockPrepAdvantages = [
     {
@@ -44,7 +45,7 @@ export const packages = [
     },
     {
         id: 2,
-        title: "Interview Preparation Bundle",
+        title: "Interview Preparation",
         description: "For all-round interview preparation",
         icon: "fas fa-check",
         details: [
@@ -136,11 +137,20 @@ export const BarChartOptions = {
 
 export const PieChartOptions = {
     title: {
-        display:true
+        display: false
     },
+  
+        tooltips: {
+          enabled: false,
+        },
+        legend: {
+          display: false
+        },
+  
+
     scales: {
         x: {
-            stacked:true,   
+            stacked:false,   
             grid: {
                 display: false
             },
@@ -159,6 +169,7 @@ export const PieChartOptions = {
         }
         
     },
+ 
    
 }
 

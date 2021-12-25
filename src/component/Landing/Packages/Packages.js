@@ -9,7 +9,7 @@ export default function Package () {
         <>
             <h2 className="title">Packages</h2>
             <section className="package-details">
-                {packages.map((pack,index) => (<Bundle key={index} id={pack.id} title={pack.title} description={pack.description} details={pack.details} />))}
+                {packages.map((pack, index) => (<Bundle key={index} {...pack} />))}
             </section>
         </>
     )

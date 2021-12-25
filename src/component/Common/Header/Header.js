@@ -1,42 +1,41 @@
-import {lazy,useState,useEffect} from "react"
+import Navbar from "react-bootstrap/Navbar"
+import Container from "react-bootstrap/Container"
+import Nav from "react-bootstrap/Nav"
+import Button from "react-bootstrap/Button"
+import { logo } from "Constant/utility"
 import { Link } from "react-router-dom"
-import { logoUrl } from "Constant/const_url"
 import { useSelector } from "react-redux"
-import { useCookies } from "react-cookie"
-import { useDispatch } from "react-redux"
 import './Header.css'
-import { setUser } from "@sentry/react"
-
-
-const Button = lazy(() => import("component/Common/Button/CommonButton"))
 
 export default function Header() {
-   
-   
-    let auth = useSelector(state => state.authReducer)
-    let [user,setUser] = useState([])
 
-    useEffect(() => {
-        if (auth.isLoggedIn) { 
-            setUser(auth.user)
-        }
-    }, [user,auth])
-
+    const auth = useSelector(state => state.authReducer)
+   
     return(
         <header id="main-header">
-            <div id="headerLogo">
-                <Link to="/"> <img src={logoUrl} alt="logo" id="brand-logo"></img></Link>                  
-            </div>
-            <div id="headerItems">            
-                <Link className="header-icons" to="/about"> About </Link>
-                <Link className="header-icons" to="/package"> Package </Link> 
-                <Link className="header-icons" to="/contact"> Contact Us </Link> 
-                {!user.isLoggedIn ?
-                    <Link className="header-icons" to="/signIn">Sign In</Link>:
-                    <Link to={`${user.role}/dashboard`}> <Button buttonType='primary' buttonName={"Dashboard"} isDisabled="false" /></Link>
+           <Navbar className="navbar" collapseOnSelect expand="lg" bg="white">
+            <Container fluid >
+            <Navbar.Brand href="/">{logo}</Navbar.Brand>
+            <Navbar.Toggle id="toggle" aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            </Nav>
+            <Nav>
+                <Link to="/about" className="link">About Us</Link>
+                <Link to="/contact" className="link">Contact Us</Link>
+                <Link to="/pricing" className="link">Pricing</Link>
+                
+                    {auth.user !== null && !auth.user.isLoggedIn ?
+                    <section>
+                        <img id="profileImage" src={auth.user.image} alt="profileImage"></img>          
+                        <Link to={`${auth.user.role}/dashboard`}><Button variant="light" className="btn signIn text-secondary btn-outline-primary">Dashboard</Button></Link> 
+                    </section>
+                    : <Link to="/signIn"><Button variant="light" className="btn text-secondary signIn btn-outline-warning">Sign In</Button></Link> 
                 }
-
-            </div>   
+            </Nav>
+            </Navbar.Collapse>
+            </Container>
+            </Navbar>
         </header>
     )
 }

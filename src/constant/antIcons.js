@@ -1,4 +1,4 @@
-import {UserOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
+import {UserOutlined,FacebookOutlined,YoutubeOutlined,CheckCircleOutlined, InstagramOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
 
 export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;
@@ -19,4 +19,8 @@ export const rightSlide = <RightOutlined />
 export const editIcon = <EditOutlined />
 export const CalenderIcon = <CalendarOutlined />
 export const upcomingInter = <AlertTwoTone />
+export const facebookIcon = <FacebookOutlined />
+export const instagramIcon =<InstagramOutlined />
+export const youtubeIcon = <YoutubeOutlined />
+export const checkIcon = <CheckCircleOutlined style={{color:"green",marginBottom:"5px"}} />
 export const errorSign = <InfoCircleOutlined style={{ color: '##FF0000' }} />

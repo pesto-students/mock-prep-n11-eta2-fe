@@ -1,0 +1,31 @@
+.title{
+    color: rgb(58, 79, 148);;
+    width: 30vw !important;
+    margin: auto;
+}   
+
+#offerings{width: 100vw;height: auto;margin:2vh 0;}
+#steps-container{width: 80vw;justify-content:center;height: 30vh;margin:4vh auto;display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;gap:20px;align-content: center;}
+#steps-container>section{width: 15vw;height: auto;text-align: center;align-content: center;}
+#steps-container>section>.fa-book{font-size: 2.3rem;margin: 2vh 0;color: rgb(58, 79, 148);;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+#steps-container>section>.fa-book-open{font-size: 2.3rem;margin: 2vh 0;color: goldenrod;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+#steps-container>section>.fa-question{font-size: 2.3rem;margin: 2vh 0;color: red;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+#steps-container>section>.fa-users{font-size: 2.3rem;margin: 2vh 0;color: purple;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+
+
+@media only screen and (max-width:1024px){
+   .title{width: 60vw !important;}
+   #steps-container{width: 90vw}
+   #steps-container>section{width: 100%};
+}
+
+@media only screen and (max-width:768px){
+    #steps-container{width: 96vw;height: auto; display: grid;grid-template-columns: 1fr 1fr;}
+}
+
+@media only screen and (max-width:450px){
+    .title{width: 98vw !important;margin: 5vh 0;}
+    #steps-container{display: block;margin:5vh 0;width: 100%;;}
+    #steps-container>section{width: 100%};
+    #offerings{margin:15vh auto;}
+}

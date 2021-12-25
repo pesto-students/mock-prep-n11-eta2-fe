@@ -1,5 +1,3 @@
-import { authActions } from "Redux/Actions/authActions";
-
 export default function authReducer(state = { role: null , isLoggedIn : false, user : null}, action)
 
 {
@@ -10,17 +8,8 @@ export default function authReducer(state = { role: null , isLoggedIn : false, u
                     ...state,
                     isLoggedIn : action.isLoggedIn
                 }
-            }
-        case authActions.setUser:
-            {
-               
-                return {
-                    ...state,
-                    user : action.user.data,
-                    role : action.user.role
-                }
-            }
-        case  'TEST':{
+        }
+        case  'LOGIN':{
             state.isLoggedIn = true;
             state.user = action.user
             state.role = action.role

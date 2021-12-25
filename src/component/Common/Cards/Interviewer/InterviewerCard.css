@@ -1,14 +1,25 @@
 .personCard{
     width: 20vw;
     height: auto;
-    margin: 20px 10px;
+    margin: 20px auto;
     text-align: center;
 }
+
+.personCard:hover{
+    transform: scale(1.09);
+    transition: ease-in-out 1s;
+}
+
+.personCard:hover #profile{
+    border: 1px solid red;
+}
+
+
 
 #profile{
     width: 10vw;
     border-radius: 100%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
 }
 
 .designation-text{
@@ -25,3 +36,15 @@
 .person{
     height: auto !important;
 }
+
+@media only screen and (max-width:768px){
+    #profile{width: 15vw;}
+    
+   
+ }
+ 
+ @media only screen and (max-width:450px){
+    #profile{width: 20vw;}
+  
+ }
+ 

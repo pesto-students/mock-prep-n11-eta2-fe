@@ -1,16 +1,28 @@
 import React, { lazy } from 'react'
-import "./Introduction.css"
 import { Link } from "react-router-dom"
+import Button from "react-bootstrap/Button"
+import "./Introduction.css"
 
-const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
+const Header = lazy(() => import("component/Common/Header/Header"))
 
 export default function Introduction  ()  {
     return (
+        <>
         <div id="introduction">
-            <h1 id="headline">Prepare for your upcoming interview <br /> with a "Google" Interviewer</h1>
-            <p className="light-text">Take mock interviews & 1-on-1 mentoring sessions with real-life interviewers from the world’s best companies</p>
-                <Link to="/package"> <CommonButton buttonType='primary'  buttonName="Explore Packages" isDisabled = "false" size = "large" width = {"15%"} /></Link>
-            <p className="light-text">A package for every interview preparation problem that you’ll ever face</p>
-        </div>
+            <Header />
+            <section id="banner-text">
+                <h2>Prepare your interview with a <span id="highlight">"Google Interviewer"</span></h2>
+                <p>Mockprep is a interview preparation platform,allowing users to engage with experts to guide and mentor 
+                    to prepare best way possible.
+                </p>
+                <section id="join-button">
+                <Link to="/join"><Button className="btn join-btn btn-warning">Join</Button></Link>
+                <Link to="/signIn"><Button className="btn join-btn btn-primary mx-4">Sign In</Button></Link>
+                </section>    
+            </section>           
+        </div> 
+        </>
     )
 }
+
+

@@ -17,5 +17,5 @@ export default function Testimonials() {
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getReviews, dataActions.setTestimonials) }, [dispatch])
     useEffect(() => { if (data.testimonials !== undefined) { setTestimonials(data.testimonials.data) }}, [data])
     
-    return (<div>{testimonials.length>0 ? <section id="testimonials"><Slides testimonials={ testimonials} /></section>: <p>Loading..</p>}</div>)
+    return (<div>{testimonials.length>0 ? <><h2 className="title">Testimonial</h2><section id="testimonials"><Slides testimonials={ testimonials} /></section></>: <p>Loading..</p>}</div>)
 }

@@ -1,15 +1,47 @@
 #introduction{
-    width: 100%;
-    text-align: center;
-    margin: 10vh 0;
+    width: 100vw;
+    height: 80vh;
+    background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640397494/Mockprep/topics/Orange_and_Brown_Nurse_Clinical_Friendly_Vaccine_Information_General_Health_Banner_pil73a.gif");
+    background-size: cover;
+    background-position: right;
+    position: relative;
 }
-
-#headline{
-    color: #161280;
+#banner-text{
+    width: 50vw;
+    height: auto;
+    margin: 0 3vw;
+    margin-top: 20vh;
+    text-align: left;
 }
-
+#banner-text>h2{font-size: 2.75rem;color: rgb(58, 79, 148);}
+#banner-text>p{width: 35vw;font-size: 1.1rem;}
+.join-btn{width: 10vw !important;}
 .light-text{
     color: grey;
     margin: 3vh 0;
 }
 
+@media only screen and (max-width:1024px){
+    #banner-text>h2{font-size: 1.75rem;}
+    #banner-text{width: 40vw;}
+    #banner-text>p{font-size: 0.9rem;}
+}
+
+@media only screen and (max-width:968px){
+    
+}
+
+
+@media only screen and (max-width:768px){
+    
+    #introduction{height: 130vh;background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640424837/Mockprep/topics/Cream_and_Brown_Geometric_Pattern_Event_-_Celebration_Diwali_Poster_1_kwzcxg.gif");}
+    #banner-text{width: 98vw;margin: 4vh auto;text-align: center;}
+    #banner-text>p{width: 90vw;text-align: center;margin: auto;}
+    .join-btn{width: 20vw !important;margin-top: 5vh;}
+    #banner-text{position: absolute !important;top: 10vh;}
+}
+
+@media only screen and (max-width:450px){
+    #introduction{height: 100vh !important;background-position: center;}
+    .join-btn{width: 30vw !important;margin-top: 5vh;}
+}
