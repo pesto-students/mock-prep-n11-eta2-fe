@@ -1,0 +1,29 @@
+.title{text-align: center;color: rgb(29, 57, 141);}
+.contactBtn{margin:5vh auto !important;}
+
+#team{
+    width: 80%;
+    margin: 10vh auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#teamProfile{text-align: center;}
+#teamProfile>img{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+}
+#teamProfile>h3{margin: 1vh 0;}
+#teamContainer{text-align: center;}
+
+
+@media only screen and (max-width:450px){
+   
+    #teamProfile>img{
+        width: 30vw;
+        height: 30vw;
+        border-radius: 100%;
+    }
+
+    .title{margin: 10vh 0 !important;}
+}

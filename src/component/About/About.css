@@ -1,27 +1,52 @@
 .aboutContainer{
     width:100vw;
-    padding: 10vh 5vw;
-    height: auto;
-    text-align: left;
-    color: gray;
+    height: 70vh;
+    background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640456074/Mockprep/topics/Orange_and_Brown_Nurse_Clinical_Friendly_Vaccine_Information_General_Health_Banner_1_iu88r5.png");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10vh;
 }
 
-.aboutContainer>h2{
-    color:rgb(19, 56, 168);
+#aboutContent{
+    width: 60vw;
+    margin: 10vh auto;
+    text-align: center;
 }
 
-.aboutContainer>p,.about>ul>li{
-    font-size: 1.1rem;
-    color: gray;
+#title{
+    color: rgb(30, 54, 126);
 }
 
-footer{
-    position: relative;
-    bottom: 0;
+.about{
+   font-size: 1.03rem;
 }
 
-@media only screen and (max-width: 430px) {
-    .aboutContainer>p{
-        font-size: 0.8rem ;
+@media only screen and (max-width:1024px){
+
+    .aboutContainer{background-position: -12vw !important;}
+    #aboutContent{
+        margin: 3vh auto !important;
     }
+    #missionContainer{width: 98% !important;}
+}
+
+@media only screen and (max-width:992px) {
+    #aboutContent{ width: 100%;   position: absolute;top: 10vh;}
+}
+
+@media only screen and (max-width:768px){
+    #missionContainer>section>p{font-size: 0.7rem;}
+    .aboutContainer{height:70vh;}
+    #aboutContent{width: 100%;margin: auto;}
+    .about{font-size: 0.9rem;}
+    #team{width: 98% !important;}
+
+    #mission{height: auto !important;}
+}
+
+@media only screen and (max-width:450px){
+    .aboutContainer{height:90vh;}
+    #missionContainer{display: block !important;height: auto !important;}
+    #missionContainer>section>p{font-size: 0.95rem;}
+    #team{margin: 4vh auto;display: inline !important;}
 }

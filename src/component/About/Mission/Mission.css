@@ -1,0 +1,19 @@
+#mission{
+    width: 100vw;
+    height: 40vh;
+}
+
+#missionContainer{
+    width: 90%;
+    margin: auto;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vw;
+
+}
+
+#missionContainer>section{text-align: center;}
+#missionContainer>section>h3{color: rgb(23, 50, 133);}
+#missionContainer>section>p{color: grey;}
+section>.fa{font-size: 3rem;color: rgb(27, 56, 146);}
