@@ -1,10 +1,8 @@
-import React, { lazy} from 'react'
+import React from 'react'
 import { Button,Progress } from "antd"
 import { Link } from 'react-router-dom'
 import { CalenderIcon} from "constant/antIcons"
 import "./Interview.css"
-import { PreviousInterviewChart } from '../../../Interviewer/Dashboard/Charts/PreviousMonth'
-
 
 export default function Interviews() {
     

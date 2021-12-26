@@ -1,8 +1,7 @@
-import { lazy,useState,useEffect } from "react"
-import {  Link,Redirect } from "react-router-dom"
+import { lazy,useEffect,useState } from "react"
+import {  Link } from "react-router-dom"
 import { logoUrl } from 'constant/const_url'
 import { Tabs } from "antd"
-import { useDispatch, useSelector } from "react-redux"
 import { insertUser,insertInterviewer,insertStudent } from "constant/apiUrl"
 import { insertData } from "api/Api"
 import { useCookies } from "react-cookie"
@@ -10,6 +9,8 @@ import GoogleLogin from "react-google-login"
 import { googleIcon } from "constant/antIcons"
 import alertActionCreator from "Redux/Action Creators/alertActionCreator"
 import authActionCreator from "Redux/Action Creators/authActionCreators"
+import { useDispatch, useSelector } from 'react-redux'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import "./Join.css"
 
 const { TabPane } = Tabs;
@@ -18,16 +19,15 @@ const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function JoinUs({ isSignUp }) {
     
+    const [loggedIn,setLoggedIn] = useState(false)
     const [cookies, setCookie,removeCookie] = useCookies(['name']);
     const dispatch = useDispatch()
-    const [userLoggedIn,setUserLoggedIn] = useState(false)
-
-    const auth = useSelector(state => state.authReducer);
+  
+    const auth = useSelector(state => state.authReducer)
 
     useEffect(() => {
-
-        if ( auth.user !==null &&  auth.user.isLoggedIn) { 
-            setUserLoggedIn(true)
+        if (auth.user && auth.user.isLoggedIn) { 
+            setLoggedIn(true)
         }
     }, [auth])
 
@@ -53,12 +53,18 @@ export default function JoinUs({ isSignUp }) {
             data.isLoggedIn = true;
             data.role = role;
             
-            setCookie('user',data)
+            removeCookie('user')
+            setCookie('user', data)
+            
+          
+            
             authActionCreator.logIn(dispatch, data)
-            alertActionCreator.setMessage(dispatch,"Sign up succesfull")
+            alertActionCreator.setMessage(dispatch, "Sign up succesfull")
+           
         }  
         else {
             alertActionCreator.setError(dispatch, "Sign up failed")  
+            
         }     
        
     }
@@ -66,7 +72,7 @@ export default function JoinUs({ isSignUp }) {
     return (
         <>
             <Header />
-                {userLoggedIn ? <Redirect to={`${auth.user.role}/dashboard`} /> : <Redirect to="/join" /> }
+            {loggedIn && auth.user ? <Redirect to={`${auth.user.role}/dashboard`} />: <Redirect to="/signIn" /> }
                 <div className="Join">
                     <section id="signUpBox">
                         <section id="welcome">

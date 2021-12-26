@@ -20,7 +20,6 @@ export default function Student() {
 
     let { path } = useRouteMatch();
     let userId = useSelector(state => state.authReducer.user.id)
-    let userRole = useSelector(state => state.authReducer.user.role)
 
     useEffect(() => {
         studentNavList[1].url = "/student/studentProfile/"+userId

@@ -1,35 +1,33 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { logoUrl } from "constant/const_url"
-import { UserOutlined } from "@ant-design/icons"
 import { useCookies } from 'react-cookie'
 import { useDispatch } from 'react-redux'
 import authActionCreator from 'Redux/Action Creators/authActionCreators'
 
 import "./SideNav.css"
+import alertActionCreator from 'Redux/Action Creators/alertActionCreator'
 export default function SideNav({ sideNavList }) {
     
     const [cookies, removeCookie] = useCookies(["user"])
-    const [userName, setUserName] = useState("User")
+    const [user, setUser] = useState({})
+    
     
     const dispatch = useDispatch()
 
     useEffect(() => { 
-      
         if (cookies.user) {
-            console.log(cookies.user.name)
-            setUserName(cookies.user.name)
+            setUser(cookies.user)
         }
-    
-    }, [cookies, userName])
+    }, [cookies])
 
-    
-    
+
     const logOut = () => { 
-        if (cookies.user.isLoggedIn) { 
-          
-            authActionCreator.logOut(dispatch);
+        if (user.isLoggedIn) { 
             removeCookie("user");
+            authActionCreator.logOut(dispatch);
+            alertActionCreator.setError(dispatch, "Logged out succesfully");
+           
             window.location.href="/signIn"
         }
     }
@@ -43,7 +41,8 @@ export default function SideNav({ sideNavList }) {
                 
                 <section id="bottom">
                 <section id="admin" >
-                    <h3 className="icon">  <UserOutlined /> {userName}</h3>
+                    <img alt="profile" id="userProfile" src={user.image}></img>
+                    <p className="icon">  {user.name}</p>
                 </section>
                     <button id="logoutBtn" onClick={() => logOut()}>Logout</button>
                 </section>

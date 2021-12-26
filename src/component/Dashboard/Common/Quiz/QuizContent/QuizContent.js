@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { Button,Progress ,Alert, Input} from 'antd';
-import { logoUrl } from 'constant/const_url';
+import { useParams } from 'react-router-dom'
+import { Button,Progress ,Alert} from 'antd';
 import { getQuizList } from 'constant/apiUrl';
 import { fallback } from 'constant/navList';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,14 +10,12 @@ import QuizNavigator from './QuizNavigator';
 import dataActions from 'Redux/Actions/dataAction'; 
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators';
 import "./QuizContent.css"
-import { UserIcon } from 'constant/antIcons';
 import { resourceIcon } from 'constant/antIcons';
 
 export default function QuizContent() {
 
     
     const [index, setIndex] = useState(0)
-    const { Search } = Input;
     let percent = 0;
     let count = 0;
     let score = 0;
@@ -30,8 +27,6 @@ export default function QuizContent() {
     const [quizDetail, setDetails] = useState([]);
     const dispatch = useDispatch()
     const data = useSelector(state => state.dataReducer)
-    const auth = useSelector(state => state.authReducer)
-
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz) }, [dispatch])
     useEffect(() => {
@@ -51,8 +46,6 @@ export default function QuizContent() {
         }
     }, [data,quizId])
 
-  
-    const logo =<Link to="/"><img alt="logo" className='headerLogo' src={logoUrl}></img></Link>
 
     const handleSubmit = (e) => {
       

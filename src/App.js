@@ -1,13 +1,13 @@
 import React,{ Suspense, useEffect } from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { fallback } from "constant/navList";
-import { utilityFunction } from "component/Utility/utility";
 import { useDispatch } from "react-redux"; 
 import {  useCookies } from "react-cookie";
 import Route from "Route/Routes"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.min.css';
 import './App.css';
+import authActionCreator from "Redux/Action Creators/authActionCreators";
 
 function App() {
   
@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => { 
     if (cookies.user) {
-      utilityFunction.logIn(dispatch, cookies.user, cookies.user.role)
+      authActionCreator.logIn(dispatch, cookies.user)
     }
   }, [cookies,dispatch])
   

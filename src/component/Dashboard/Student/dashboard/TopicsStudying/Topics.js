@@ -6,7 +6,7 @@ import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import "./TopicsStudying.css"
 
-export default function () {
+export default function Topics() {
     
     const dispatch = useDispatch()
     let [topicsList, setTopicsList] = useState([]);
@@ -24,7 +24,7 @@ export default function () {
 
             setTopicsList(topic);
         }
-    }, [data]);
+    }, [data,studentData.ongoingTopics]);
        
     return (
         <div className='topicsOngoing'>

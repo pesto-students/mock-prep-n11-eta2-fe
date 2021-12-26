@@ -27,14 +27,14 @@ export default function Admin() {
                                     <SideNav sideNavList={adminNavList} userName={"Admin"}></SideNav>
                         </section>
                         <section className="mainContainer">
-                        <Route  path={`${path}/dashboard`} component={Dashboard} />
-                        <Route  path={`${path}/interviewerList`} component={InterviewerList} />
-                        <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
-                        <Route  path={`${path}/studentList`} component={StudentList} />
-                        <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
-                        <Route  path={`${path}/topicsList`} component={TopicsList} />
-                        <Route  path={`${path}/resourceList/:topicId?`} component={ResourceList} />
-                        <Route  path={`${path}/quizList/:topicId?`} component={QuizList} />
+                            <Route  path={`${path}/dashboard`} component={Dashboard} />
+                            <Route  path={`${path}/interviewerList`} component={InterviewerList} />
+                            <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
+                            <Route  path={`${path}/studentList`} component={StudentList} />
+                            <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
+                            <Route  path={`${path}/topicsList`} component={TopicsList} />
+                            <Route  path={`${path}/resourceList/:topicId?`} component={ResourceList} />
+                            <Route  path={`${path}/quizList/:topicId?`} component={QuizList} />
                         </section>
                 </Route>
             </div>

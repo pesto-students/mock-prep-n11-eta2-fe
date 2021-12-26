@@ -1,3 +1,4 @@
+import { useState,useEffect} from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
@@ -9,8 +10,19 @@ import './Header.css'
 
 export default function Header() {
 
+    const [loggedIn,setLoggedIn] = useState(false)
+    
+  
     const auth = useSelector(state => state.authReducer)
-   
+
+    useEffect(() => {
+        if (auth.user && auth.user.isLoggedIn) { 
+            setLoggedIn(true)
+        }
+    
+    }, [auth])
+
+
     return(
         <header id="main-header">
            <Navbar className="navbar" collapseOnSelect expand="lg" bg="white">
@@ -25,7 +37,7 @@ export default function Header() {
                 <Link to="/contact" className="link">Contact Us</Link>
                 <Link to="/pricing" className="link">Pricing</Link>
                 
-                    {auth.user !== null && !auth.user.isLoggedIn ?
+                    {loggedIn && auth.user ? 
                     <section>
                         <img id="profileImage" src={auth.user.image} alt="profileImage"></img>          
                         <Link to={`${auth.user.role}/dashboard`}><Button variant="light" className="btn signIn text-secondary btn-outline-primary">Dashboard</Button></Link> 

@@ -1,13 +1,14 @@
-import React, { lazy } from 'react'
+import React, { lazy,useState,useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { logoUrl } from 'constant/const_url'
 import { getData } from 'api/Api'
 import { getUsers} from "constant/apiUrl"
-import { useDispatch } from 'react-redux'
+import { useDispatch ,useSelector} from 'react-redux'
 import {  useCookies } from 'react-cookie'
 import {  Tabs } from "antd"
 import GoogleLogin from "react-google-login"
 import { googleIcon } from 'constant/antIcons'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 
 import "../Join.css"
 import authActionCreators from 'Redux/Action Creators/authActionCreators'
@@ -19,8 +20,17 @@ const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function SignIn() {
     
+    const [loggedIn,setLoggedIn] = useState(false)
     const dispatch = useDispatch();
-    const [ cookies,setCookie,removeCookie] = useCookies(["user"])
+    const [cookies, setCookie, removeCookie] = useCookies(["user"])
+    const auth = useSelector(state => state.authReducer)
+
+    useEffect(() => {
+        if (auth.user && auth.user.isLoggedIn) { 
+            setLoggedIn(true)
+        }
+    
+    }, [auth])
 
     const login = async (googleData) => {
 
@@ -40,10 +50,11 @@ export default function SignIn() {
                         data.role = res.role;
                         data.isLoggedIn = true;
                         
+                        removeCookie('user')
                         setCookie('user',data)
                         authActionCreators.logIn(dispatch, data)
                         alertActionCreator.setMessage(dispatch,"Sign in succesfull")
-                        window.location.href = data.role+"/dashboard";
+                        
                     }
                 })
                
@@ -55,14 +66,13 @@ export default function SignIn() {
         else {
             alertActionCreator.setError(dispatch, "Login Failed")
         } 
-         
-    
     }
     
     const dummyLogin = (role) => {
 
         if (cookies.user) { 
             removeCookie('user')
+            console.log("removed")
         }
        
         let user;
@@ -72,6 +82,7 @@ export default function SignIn() {
                 "email": "millie.taylor@gmail.com",
                 "role": role,
                 "id": "61c35291b7809a993100293c",
+                "image":"https://randomuser.me/api/portraits/women/75.jpg",
                 "isLoggedIn": true
             };
         }
@@ -81,6 +92,7 @@ export default function SignIn() {
                 "email": "silki.hansen@gmail.com",
                 "role": role,
                 "id": "61c35cefb7809a9931002a2c",
+                "image":"https://randomuser.me/api/portraits/women/67.jpg",
                 "isLoggedIn": true
             };
         }
@@ -90,19 +102,22 @@ export default function SignIn() {
                 "name": "Mohammed Saif",
                 "email": "saifmohammed888@gmail.com",
                 "role": role,
+                "image":"https://lh3.googleusercontent.com/a-/AOh14GhmpreGO6PiwTPnHhF6w-UDq8_ihcgxpAlqV5kBvQ=s96-c",
                 "id": "61c35cefb7809a9931002a2c",
                 "isLoggedIn": true
             };
         }
        
+        removeCookie('user')
         setCookie('user',user)
         authActionCreators.logIn(dispatch,user)
         alertActionCreator.setMessage(dispatch,"Sign in succesfull")
-        window.location.href = role+"/dashboard";
+       
     }
 
     return (
         <>
+        {loggedIn && auth.user ? <Redirect to={`${auth.user.role}/dashboard`} />: <Redirect to="/signIn" /> }
         <Header />
                 <div className="Join">
                     <section id="signUpBox">

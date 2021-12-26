@@ -37,7 +37,7 @@ export default function DashboardCards() {
         <div>
              <section className="admin-dashboard-cards">
                 {data.map((metric,index) => (
-                    <DashboardCard key={index} id="int-dash-card"  id={metric.id} description={metric.description} value={metric.value} icon={<i className={metric.icon}></i>} />
+                    <DashboardCard key={index} id="int-dash-card" {...metric} icon={<i className={metric.icon}></i>} />
                 )) }
             </section>
         </div>

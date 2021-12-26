@@ -1,0 +1,10 @@
+#error{
+    width: 100vw;
+    height: 60vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#error>h2{color: rgb(206, 92, 50) !important;}
