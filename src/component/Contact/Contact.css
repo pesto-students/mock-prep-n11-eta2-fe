@@ -1,31 +1,59 @@
-.queryForm{
-    width: 40vw;
-    min-height: 30vh;
-    height: auto;
-    margin: 2vh auto;
-    border:1px solid lightgrey;
-    padding: 3vh 15px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    text-align: center;
-
-}
-
-
 .contact{
-    margin: 10vh 0;
-    text-align: center;
+    width: 100vw;
+    height: auto;
+}
+#contactForm{
+    width: 55vw;
+    min-height: 50vh;
+    height: atuo;
+    margin: 5vh auto;
+    border-radius: 10px;
+    background-color: rgb(31, 59, 146);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 1vw;
+    padding: 10px;
+}
+#query{height: auto;}
+#info{padding: 1vw;position: relative;}
+#info>h3{
+    color: white;
+}
+#info>p{
+    color: rgb(192, 192, 192);
+    width: 20vw;
+    margin-bottom: 5vh
+}
+#info>.link{text-decoration: none !important;color: gray;}
+#info>.link>p:hover {border-color: white;color: white;}
+#info>span{display: block;position: absolute;bottom: 3vh;}
+#info>span>i{
+    color: white;
+    font-size: 1.5rem;
+    margin: 1vh 1vw;
+}
+.link>p{border: 1px solid grey;width: 20vw;padding: 0.2vw;border-radius: 10px;}
+
+
+@media only screen and (max-width:1024px) {
+   #contactForm{width: 70vw;}
+   #contactform{width: 30vw !important;height: auto !important;}
+   .link>p{width: auto ;}
+   #info>span{bottom: 1px;}
+   
 }
 
-.contact>h2{color:rgb(20, 58, 172)}
-.contact>p{color: grey;}
+@media only screen and (max-width:768px) {
+    #contactForm{width: 85vw;}
+    #contactform{width: 35vw !important;}
+   
+ }
 
-
-@media only screen  and (max-width:768px){
-    .queryForm{width: 80vw !important;}
-}
-
-@media only screen  and (max-width:768px){
-    .contact>p{width:90vw;margin:5vh auto;font-size: 0.8rem !important;}
-    .queryForm{width: 90vw !important;margin: 2vh auto;}
-}
+ @media only screen and (max-width:450px) {
+    #contactForm{width: 85vw;display: block;}
+    #info>p{width: 100%;margin: 2vh auto;}
+    #info>span{position: relative;}
+    #contactform{width: 100% !important;margin: 5vh 0 !important;}
+   
+ }

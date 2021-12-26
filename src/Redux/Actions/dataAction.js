@@ -12,7 +12,7 @@
     setPricing: 'SET_PRICING',
     setTopic: 'SET_TOPIC',
     setResource: "SET_RESOURCE",
-    
+  
 }
 
 export default dataActions

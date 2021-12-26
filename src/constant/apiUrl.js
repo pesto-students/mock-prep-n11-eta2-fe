@@ -1,5 +1,5 @@
-const baseUrl = "https://mockprep.herokuapp.com"
-// const baseUrl = "http://localhost:8080"
+// const baseUrl = "https://mockprep.herokuapp.com"
+const baseUrl = "http://localhost:8080"
 
 //Get
 export const getInterviewers = baseUrl + "/interviewer/getInterviewers"
