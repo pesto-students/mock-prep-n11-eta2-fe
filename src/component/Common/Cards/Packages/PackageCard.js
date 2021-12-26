@@ -1,3 +1,4 @@
+import { checkIcon } from "constant/antIcons";
 import "./PackageCard.css"
 
 export default function PackageCard({ id, title, price, description, benefits, clickFunction }) {
@@ -19,18 +20,14 @@ export default function PackageCard({ id, title, price, description, benefits, c
     return (
         <section className="person" key={id}>
             <p id="pricing-title">{title}</p>
-            <h1 id="pricing-price">{price}</h1>
+            <h3 id="pricing-price">{price}</h3>
             <p id="pricing-description">{description}</p>
             <ul id="pricing-ben">
                 {benefits.map((ben, index) => (
-                    <li key={index}>{ben}</li>
+                   <li key={index}> {checkIcon}{ben}</li>
                 ))}
             </ul>
-         
-            <div className="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_IaY1xlGwuOQS85/view" data-text="Pay Now" data-color="#528FF0" data-size="medium">
-
-            </div>
-    
+            <button className="btn btn-outline-primary w-75 choose">Choose Plan</button>
         </section>
 )
 }

@@ -25,5 +25,5 @@ export const youtubeIcon = <YoutubeOutlined />
 export const emailIcon = <MailOutlined />
 export const phoneIcon = <PhoneOutlined />
 export const mapIcon = <AimOutlined />
-export const checkIcon = <CheckCircleOutlined style={{color:"green",marginBottom:"5px"}} />
+export const checkIcon = <CheckCircleOutlined style={{color:"grey",marginBottom:"15px",marginRight:"5px"}} />
 export const errorSign = <InfoCircleOutlined style={{ color: '##FF0000' }} />

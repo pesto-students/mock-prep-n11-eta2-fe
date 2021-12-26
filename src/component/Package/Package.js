@@ -1,13 +1,13 @@
 import { lazy ,useState,useEffect} from "react"
 import { getPricing } from "constant/apiUrl"
-import { fallback } from "constant/navList"
+
 import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreator from "Redux/Action Creators/dataActionCreators"
 import dataActions from "Redux/Actions/dataAction"
 import "./Package.css"
 
 const Header = lazy(() => import("component/Common/Header/Header"))
-const PackageCard = lazy(() => import("component/Common/Cards/Packages/PackageCard"))
+const Pricing = lazy(() => import("component/Package/Pricing"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
 
 export default function Package() {
@@ -21,7 +21,9 @@ export default function Package() {
     
     return (
         <>
-            <Header /><h2 className="pricing-header">Pricing and packages</h2>{pricing.length>0?<section className="package-detail">{pricing.map((pricing,index) => (<PackageCard key={index} title={pricing.title} price={pricing.price} benefits={pricing.benefits} description={pricing.description}/>))}</section>:<span>{fallback}</span>}<Footer />
+            <Header/>
+                <Pricing pricing={pricing} />  
+            <Footer/>
         </>
     )
 }

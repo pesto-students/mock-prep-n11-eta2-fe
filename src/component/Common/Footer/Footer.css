@@ -5,6 +5,7 @@ footer{
     padding: 2vh 17vw;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: rgb(24, 50, 128);
+  
 }
 
 footer>section>img{

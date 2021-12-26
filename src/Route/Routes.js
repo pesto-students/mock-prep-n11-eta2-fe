@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
 const Contact = lazy(() => import("component/Contact/Contact"))
+const Pricing = lazy(() => import("component/Package/Package"))
 const SuccessAlert = lazy(() => import("component/Alerts/Success"))
 const ErrorAlert = lazy(()=>import("component/Alerts/Error"))
 
@@ -40,7 +41,8 @@ export default function Routes() {
             {isError ? <ErrorAlert message={message} /> : <></>}
             <PublicRoute exact path="/" component={Landing} />
             <PublicRoute exact path="/about" component={About} />
-            <PublicRoute exact path="/contact" component={Contact}  />
+            <PublicRoute exact path="/contact" component={Contact} />
+            <PublicRoute exact path="/pricing" component={Pricing}  />
         </div>
     )
 }

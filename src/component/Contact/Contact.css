@@ -1,6 +1,8 @@
 .contact{
     width: 100vw;
-    height: auto;
+    height: 70vh;
+    background-image: linear-gradient(rgb(255, 228, 232),rgb(216, 241, 251));
+
 }
 #contactForm{
     width: 55vw;

@@ -4,8 +4,19 @@
     margin: 5vh auto;
     display: flex;
     justify-content: space-around;
+    
 }
 
+.pricing-header{color:rgb(28, 59, 151);text-align: center;margin: 10vh 0;font-size: 1.5rem;}
 
-.pack>h2{color: rgb(32, 69, 179);}
-.pricing-header{margin: 4vh auto;color: rgb(8, 25, 73);width: 30vw;text-align: center;}
+#introduction{
+    width: 100vw;
+    height: auto;
+    position: relative;
+    
+}
+#banner-text{position: absolute !important;top: 10vh;}
+
+@media only screen and(max-width:450px) {
+    .package-detail{width: 100%;}
+}
