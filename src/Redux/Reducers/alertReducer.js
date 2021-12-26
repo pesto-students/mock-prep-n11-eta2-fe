@@ -1,8 +1,7 @@
 import { alertActions } from "Redux/Actions/alertActions"
 
-
 export default function alertReducer(state = { error: null }, action) {
-    console.log(action)
+   
     switch(action.type){
         case alertActions.setMessage:
             state.message = action.data;

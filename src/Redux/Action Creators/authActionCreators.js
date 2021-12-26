@@ -1,21 +1,22 @@
 import { authActions } from "Redux/Actions/authActions";
 
+
 const authActionCreator = {
  
-    setRole: function (dispatch, isLoggedIn,setCookie) {
-        setCookie("isLoggedIn",isLoggedIn)
+    setRole: function (dispatch, isLoggedIn) {
+      
         dispatch({ type: authActions.setRole, isLoggedIn: isLoggedIn })
     },
     
-    LogIn: function (dispatch, user, setCookie) {
-        setCookie("user",user)
+    logIn: function (dispatch, user ) {
+       
         dispatch({type : authActions.login, user})
     },
     
-    logOut: function (dispatch, removeCookie) {
-        removeCookie("user")
+    logOut: function (dispatch) {
+        
         dispatch({type : authActions.logout})
     }
 }
 
-export default authActionCreator;
+export default authActionCreator;   

@@ -46,11 +46,6 @@ export default function Contact() {
                             <a href="/contact" className="link"><p>{phoneIcon} 8553548534</p></a><br />
                             <a href="mailto:email@example.com?subject=Subject&body=Body%20goes%20here'" className="link"><p>{emailIcon} info@mockprep.com</p></a><br />
                             <a href="/contact" className="link"><p>{mapIcon} #123, Infinity Park, Bangalore</p></a>
-                            <span>
-                                <i className='fa fa-facebook'></i>
-                                <i className='fa fa-instagram'></i>
-                                <i className='fa fa-youtube'></i>
-                            </span>
                         </section>
                         <section id="query">
                             <ContactForm submitFunction={submit} />

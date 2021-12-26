@@ -42,6 +42,7 @@ export const insertResource = baseUrl + "/resource/addResource"
 export const insertInterviewer = baseUrl + "/interviewer/addInterviewer"
 export const insertStudent = baseUrl + "/student/addStudent"
 export const insertQuery = baseUrl + "/query/addData"
+export const createRazorOrder = baseUrl + "/razorpay/createOrder"
 
 //Login 
 export const loginUser = baseUrl + "/user/loginUser"

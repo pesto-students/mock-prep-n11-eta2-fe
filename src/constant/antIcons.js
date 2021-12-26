@@ -1,4 +1,4 @@
-import {UserOutlined,FacebookOutlined,AimOutlined,MailOutlined ,PhoneOutlined,YoutubeOutlined,CheckCircleOutlined, InstagramOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
+import {UserOutlined,FacebookOutlined,GoogleOutlined ,AimOutlined,MailOutlined ,PhoneOutlined,YoutubeOutlined,CheckCircleOutlined, InstagramOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
 
 export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;
@@ -25,5 +25,6 @@ export const youtubeIcon = <YoutubeOutlined />
 export const emailIcon = <MailOutlined />
 export const phoneIcon = <PhoneOutlined />
 export const mapIcon = <AimOutlined />
+export const googleIcon = <GoogleOutlined style={{ fontSize: '40px', color: '#EA4335'}}/>
 export const checkIcon = <CheckCircleOutlined style={{color:"grey",marginBottom:"15px",marginRight:"5px"}} />
 export const errorSign = <InfoCircleOutlined style={{ color: '##FF0000' }} />

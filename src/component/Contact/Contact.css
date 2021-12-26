@@ -1,33 +1,7 @@
-.contact{
-    width: 100vw;
-    height: 70vh;
-    background-image: linear-gradient(rgb(255, 228, 232),rgb(216, 241, 251));
-
-}
-#contactForm{
-    width: 55vw;
-    min-height: 50vh;
-    height: atuo;
-    margin: 5vh auto;
-    border-radius: 10px;
-    background-color: rgb(31, 59, 146);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 1vw;
-    padding: 10px;
-}
 #query{height: auto;}
-#info{padding: 1vw;position: relative;}
-#info>h3{
-    color: white;
-}
-#info>p{
-    color: rgb(192, 192, 192);
-    width: 20vw;
-    margin-bottom: 5vh
-}
-#info>.link{text-decoration: none !important;color: gray;}
+.link>p{width: 20vw;padding: 0.4vw 0.5vw;margin:0;
+    border-radius: 1px;}
+#info>.link{text-decoration: none !important;color: white;}
 #info>.link>p:hover {border-color: white;color: white;}
 #info>span{display: block;position: absolute;bottom: 3vh;}
 #info>span>i{
@@ -35,27 +9,58 @@
     font-size: 1.5rem;
     margin: 1vh 1vw;
 }
-.link>p{border: 1px solid grey;width: 20vw;padding: 0.2vw;border-radius: 10px;}
+#info>h3{
+    color: white;
+}
+#info>p{
+    color: white;
+    width: 20vw;
+    margin-bottom: 2vh
+}
+#info{padding: 1vw;position: relative;background-color: rgb(18, 42, 114);
+    background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640531506/Mockprep/Cream_and_Brown_Geometric_Pattern_Event_-_Celebration_Diwali_Poster_bewazc.png");
+    background-position: bottom;
+    background-size: cover;
+}
+.contact{
+    width: 100vw;
+    height: 80vh;
+   
 
+}
+#contactForm{
+    width: 50vw;
+    min-height: 50vh;
+    height: auto;
+    margin: 5vh auto;
+    border: 1px solid lightgrey;
+    /* background-color: rgb(31, 59, 146); */
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 10px;
+    margin-bottom: 1vw;
+}
 
 @media only screen and (max-width:1024px) {
    #contactForm{width: 70vw;}
    #contactform{width: 30vw !important;height: auto !important;}
    .link>p{width: auto ;}
    #info>span{bottom: 1px;}
-   
+   .link>p{color: white !important ;}
 }
 
 @media only screen and (max-width:768px) {
     #contactForm{width: 85vw;}
     #contactform{width: 35vw !important;}
+    .link>p{color: white !important ;}
    
- }
+}
 
- @media only screen and (max-width:450px) {
-    #contactForm{width: 85vw;display: block;}
+@media only screen and (max-width:450px) {
+    #contactForm{width: 85vw;display: block;height: auto;}
     #info>p{width: 100%;margin: 2vh auto;}
-    #info>span{position: relative;}
+    #info>span{position: relative;margin: 3vh 0;}
     #contactform{width: 100% !important;margin: 5vh 0 !important;}
+    .contact{height: auto;}
    
- }
+}

@@ -6,6 +6,8 @@ const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
 const Contact = lazy(() => import("component/Contact/Contact"))
 const Pricing = lazy(() => import("component/Package/Package"))
+const Join = lazy(() => import("component/Join/Join"))
+const SignIn = lazy(() => import("component/Join/SignIn/SignIn"))
 const SuccessAlert = lazy(() => import("component/Alerts/Success"))
 const ErrorAlert = lazy(()=>import("component/Alerts/Error"))
 
@@ -18,7 +20,7 @@ export default function Routes() {
     const alert = useSelector(state => state.alertReducer)
 
     useEffect(() => {
-        if (alert && alert.message) { 
+        if (alert && alert.message && !alert.isError) { 
             setAlert(true)
             setMessage(alert.message)
         }
@@ -29,7 +31,7 @@ export default function Routes() {
         setTimeout(() => {
             setAlert(false)
             setError(false)
-        }, 2000)
+        }, 3000)
         
     }, [alert])
 
@@ -43,6 +45,8 @@ export default function Routes() {
             <PublicRoute exact path="/about" component={About} />
             <PublicRoute exact path="/contact" component={Contact} />
             <PublicRoute exact path="/pricing" component={Pricing}  />
+            <PublicRoute exact path="/join" component={Join} />
+            <PublicRoute exact path="/signIn" component={SignIn}  />
         </div>
     )
-}
+}   

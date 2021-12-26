@@ -13,7 +13,7 @@ export async function insertData(url, data) {
         return {status : "success",res};
     }
     catch (err){
-        return  {status : "failure",err : "Sign Up Failed"};
+        return  {status : "failure",err : "Inserting Data Failed"};
     }
     
     
@@ -32,4 +32,13 @@ export async function updateData(url, data) {
 }
 
 
-
+//Post Call
+export async function createOrder(url, data) {
+    try{
+        let res = await axios.post(url,data);
+        return {status : "success",res};
+    }
+    catch (err){
+        return  {status : "failure",err : "Creating order Failed"};
+    }
+}

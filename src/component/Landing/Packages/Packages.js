@@ -4,7 +4,9 @@ import "./Packages.css"
 
 const Bundle = lazy(() => import("component/Common/Bundle/InterviewBundle"))
 
-export default function Package () {
+export default function Package() {
+    
+    
     return (
         <>
             <h2 className="title">Packages</h2>

@@ -1,35 +1,85 @@
 .Join {
-    width: 98.5vw;
-    height: auto;
-    display: flex;
-    justify-content: center;
+    width: 100vw;
+    height: 70vh;
 }
+
+
+#signUpBox{
+    width: 50vw;
+    height: 50vh;
+    margin: 10vh auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    border: 1px solid lightgrey;
+}
+
+
+#signUpForm{background-color: white;padding: 1vw;}
+
+#welcome{
+    width: 100%;
+    height: 100%;
+    padding: 1vw;
+    padding-top: 10vh;
+    text-align: center;
+    color: white;
+    background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640531506/Mockprep/Cream_and_Brown_Geometric_Pattern_Event_-_Celebration_Diwali_Poster_bewazc.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+#welcome>h3{
+    color: white;
+
+}
+
+#signLogo{
+    width: 16vw;
+    margin-left: 5vw;
+}
+
+#signForm{
+    width: 80%;
+    margin: 3vh auto;
+
+}
+
+#signForm>h4{font-weight: lighter;}
 
 .ant-tabs-nav-wrap{
-    display: flex;
-    justify-content: center;
+    text-justify: left !important;
+    text-align: left !important;
 }
 
-.signBox{
-    width: 25vw;
-    height: 40vh;
-    margin: 10vh auto;
+#signInLink{
+    margin-top: 5vh;
+}
+
+.google-login-button,.dummyBtn{
+    width: 100%;
+    background-color: white;
+    padding: 3px;
     border-radius: 10px;
-    border: 1px solid grey;
-    text-align: center;
+    border: 1px solid lightgrey;
 }
 
-.signBox>img{width: 13vw;}
-
-.sign-btn{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    margin: 10px !important;
+.dummyBtn:hover{
+    background-color: rgb(24, 51, 131);
+    color: white;
 }
 
-.google-login-button{
-    padding: 0;
-    border: none;
-    background: none;
-    margin: 5% 0 25% 0 ;
-    cursor: pointer;
-}
+@media only screen and (max-width:1024px) {
+    #signUpBox{width: 75vw;}
+ }
+
+ @media only screen and (max-width:768px) {
+    #signUpBox{width: 95vw;}
+ }
+
+ 
+ @media only screen and (max-width:450px) {
+    #signUpBox{width: 95vw;grid-template-columns: 1fr;height: auto;}
+    #welcome{height: 40vh;}
+    .Join{height: auto;}
+ }

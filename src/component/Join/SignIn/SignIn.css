@@ -1,63 +1,65 @@
-.signInBox{
-    width: 25vw;
-    height: auto;
+.Join {
+    width: 100vw;
+    height: 70vh;
+}
+
+
+#signUpBox{
+    width: 50vw;
+    height: 50vh;
     margin: 10vh auto;
-    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
     border: 1px solid lightgrey;
-    border-radius: 10px;
-}
-
-.SignIn{
-    height: 60vh;
-    widows: 100vw;
 }
 
 
-.JoinUsButton{
-    width:20vw !important;
-    padding: 0.5vw auto !important;
+#signUpForm{background-color: white;padding: 1vw;}
+
+#welcome{
+    width: 100%;
+    height: 100%;
+    padding: 1vw;
+    padding-top: 10vh;
+    text-align: center;
+    color: white;
+    background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640531506/Mockprep/Cream_and_Brown_Geometric_Pattern_Event_-_Celebration_Diwali_Poster_bewazc.png");
+    background-position: bottom;
+    background-size: cover;
 }
 
-.signInBox>img{
-    width: 17vw;
-    height: 10vh;
+#welcome>h3{
+    color: white;
+
 }
+
+#signLogo{
+    width: 16vw;
+    margin-left: 5vw;
+}
+
+#signForm{
+    width: 80%;
+    margin: 3vh auto;
+
+}
+
+#signForm>h4{font-weight: lighter;}
 
 .ant-tabs-nav-wrap{
-    width:20vw !important;
-    justify-content: center;
+    text-justify: left !important;
+    text-align: left !important;
 }
 
-.dummy{
-    margin: 3vh 0 !important;
+#signInLink{
+    margin-top: 5vh;
 }
 
 .google-login-button{
+    width: 100%;
     background-color: white;
-    border: none;
-    margin: 2vh 0;
-}
-
-.dummy>.btn,.sign-btn{
-    width: 10vw !important;
-}
-
-.dummyButtons{
-    display: block;
-}
-
-.dummybtn{
-    width: 80% !important;
-    margin: 2vh 0;
-    
-}
-
-.dummyToggle{
-    width: 10vw;
-}
-
-
-
-#signBtn>.JoinUsButton{
-    margin: 6vh auto;
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
 }

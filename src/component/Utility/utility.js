@@ -7,8 +7,8 @@ export const utilityFunction = {
         removeCookie('user');
       
     },
-    logIn : function (dispatch,user,role) {
-        authActionCreator.testLogin(dispatch,user,role)
+    logIn : function (dispatch,user,role,setCookie) {
+        authActionCreator.logIn(dispatch,user,role,setCookie)
     },
     setError : function(dispatch,err){
         errorActionCreator.setError(dispatch,err)

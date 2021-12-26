@@ -3,53 +3,68 @@ import { Link } from "react-router-dom"
 import { logoUrl } from 'constant/const_url'
 import { getData } from 'api/Api'
 import { getUsers} from "constant/apiUrl"
-import { utilityFunction } from 'component/Utility/utility'
-import { useDispatch, useSelector } from 'react-redux'
-import {  Cookies, useCookies } from 'react-cookie'
-import { Button, Tabs } from "antd"
+import { useDispatch } from 'react-redux'
+import {  useCookies } from 'react-cookie'
+import {  Tabs } from "antd"
 import GoogleLogin from "react-google-login"
+import { googleIcon } from 'constant/antIcons'
 
-import "./SignIn.css"
+import "../Join.css"
+import authActionCreators from 'Redux/Action Creators/authActionCreators'
+import alertActionCreator from 'Redux/Action Creators/alertActionCreator'
 
 const { TabPane } = Tabs;
 const Header = lazy(() => import("component/Common/Header/Header"))
 const Footer = lazy(() => import("component/Common/Footer/Footer"))
-const JoinUsButton = lazy(() => import("component/Common/Button/JoinUsButton/JoinUsButton"))
 
 export default function SignIn() {
-    const dispatch = useDispatch();
-    const [ cookie,setCookie] = useCookies(["user"])
-    const reduxLogin  = useSelector(state => state.authReducer)
     
-    const handleLogin = async (googleData) => {
+    const dispatch = useDispatch();
+    const [ cookies,setCookie,removeCookie] = useCookies(["user"])
+
+    const login = async (googleData) => {
+
+        if (cookies.user){ 
+            removeCookie('user')
+        }
        
         let data = {"name": googleData.profileObj.name,"email": googleData.profileObj.email, }
        
         const response = await getData(getUsers)
-        if (response.data.length>0) { 
-           
-            response.data.forEach(res => { 
-                if (res.email === data.email) {
-                    
-                    utilityFunction.logIn(dispatch, res, res.role)
+        if (response.status === 200) {
+            if (response.data.length>0) { 
+                response.data.forEach(res => { 
+                    if (res.email === data.email) {
 
-                    data.id = res._id;
-                    data.role = res.role;
-                    console.log(res)
-                    setCookie("user",data )
-                    console.log(cookie)
-                    window.location.href = res.role;
-                }
-            })
-           
-        }  
+                        data.id = res._id;
+                        data.role = res.role;
+                        data.isLoggedIn = true;
+                        
+                        setCookie('user',data)
+                        authActionCreators.logIn(dispatch, data)
+                        alertActionCreator.setMessage(dispatch,"Sign in succesfull")
+                        window.location.href = data.role+"/dashboard";
+                    }
+                })
+               
+            }
+            else {
+                alertActionCreator.setError(dispatch, "Login Failed")
+            }    
+        }
         else {
-            utilityFunction.setError(dispatch, "Login Failed")
-        }     
+            alertActionCreator.setError(dispatch, "Login Failed")
+        } 
+         
     
     }
     
     const dummyLogin = (role) => {
+
+        if (cookies.user) { 
+            removeCookie('user')
+        }
+       
         let user;
         if (role === "interviewer") {
             user = {
@@ -80,54 +95,44 @@ export default function SignIn() {
             };
         }
        
-        utilityFunction.logIn(dispatch, user);
         setCookie('user',user)
+        authActionCreators.logIn(dispatch,user)
+        alertActionCreator.setMessage(dispatch,"Sign in succesfull")
         window.location.href = role+"/dashboard";
     }
 
     return (
         <>
         <Header />
-            <div className="SignIn">
-                <section className="signInBox">
-                    <img src={logoUrl} alt="profile" />
-                    <Tabs defaultActiveKey="1">
-                            <TabPane tab={<span>Login</span>} key="1">
-                              
-                                    <TabDetailsPane handleLogin={handleLogin} />
-                                    <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>
-                             
-                            </TabPane>
-                            <TabPane tab={<span>Dummy Login</span>} key="2">                            
-                                <section className="dummyButtons">
-                                        <Button  onClick={()=>dummyLogin("student")}  className="dummybtn">Sign In as Student</Button>
-                                        <Button  onClick={()=>dummyLogin("interviewer")}  className="dummybtn">Sign In as Interviewer</Button>
-                                        <Button onClick={()=>dummyLogin("admin")}  className="dummybtn">Sign In as Admin</Button>
-                                        <p>New to MockPrep ? <Link to="/join">Sign up</Link> </p>   
-                                </section>
-                            </TabPane>
-                    </Tabs>
-                </section>          
-            </div>
+                <div className="Join">
+                    <section id="signUpBox">
+                        <section id="welcome">
+                            <h3>Welcome to Mockprep</h3>
+                            <p>Login with your account, to continue your learning journey</p>
+                        </section>
+                        <section id="signUpForm">
+                            <img src={logoUrl} id="signLogo" alt="profile" />
+                            <section id="signForm">
+                            <h4>Sign In</h4>
+                            <Tabs defaultActiveKey="1">
+                                <TabPane tab={<span>SSO Login</span>} key="1">
+                                    <p style={{color:"green"}}>Continue to login as Interviewer</p>
+                                    <GoogleLogin clientId={"213326872377-nnd677fts32vl9asl3e3c8hb3iltt393.apps.googleusercontent.com"} render={renderProps => (<button onClick={renderProps.onClick} className="google-login-button" disabled={renderProps.disabled}>{googleIcon}Sign In with Google</button>)} onSuccess={(googleData) => login(googleData)}  onFailure = {() => alertActionCreator.setError("Error Signing in.")} cookiePolicy={'single_host_origin'}/>
+       
+                                </TabPane>
+                                <TabPane tab={<span>Dummy Login</span>} key="2">
+                                    <button onClick={() => { dummyLogin("student") }}  className="dummyBtn mt-3">Sign In as Student</button>
+                                    <button onClick={() => { dummyLogin("interviewer") }} className="dummyBtn mt-3">Sign In as Interviewer</button>
+                                    <button onClick={() => { dummyLogin("admin") }}  className="dummyBtn mt-3">Sign In as Admin</button>
+                                </TabPane>
+                            </Tabs>
+                            <p id="signInLink">Already have an account ? <Link to="/join">Sign up</Link></p>
+                            </section>   
+                        </section>
+                    </section>
+                </div>
         <Footer/>
         </>
     )
 }
 
-function TabDetailsPane({handleLogin}){
-    return (
-            <>
-                 <GoogleLogin
-                    clientId={"213326872377-nnd677fts32vl9asl3e3c8hb3iltt393.apps.googleusercontent.com"}
-                    render={renderProps => (
-                        <button onClick={renderProps.onClick} className="google-login-button" disabled={renderProps.disabled}><JoinUsButton signin="true" className="sign-btn"  type={"google"} /></button>
-                    )}
-                    
-                            onSuccess={(googleData) => handleLogin(googleData)}
-                            
-                            onFailure = {() => console.log("Login Failure")}
-                            cookiePolicy={'single_host_origin'}
-                />
-            </>
-    )
-}
