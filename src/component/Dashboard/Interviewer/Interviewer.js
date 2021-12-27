@@ -2,10 +2,10 @@ import React, {lazy,useEffect} from 'react'
 import { interviewerNavList } from "constant/navList"
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useRouteMatch} from "react-router-dom"
-import "./Interviewer.css"
 import { StudentProfile } from '../Student/Profile/StudentProfile';
 import { InterviewerProfile } from './Profile/InterviewerProfile';
 import { useSelector } from 'react-redux';
+import "./Interviewer.css"
 
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const Dashboad = lazy(() => import("component/Dashboard/Interviewer/Dashboard/Dashboard"))
