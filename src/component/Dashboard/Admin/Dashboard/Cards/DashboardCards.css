@@ -8,3 +8,32 @@
 .admin-dashboard-cards>.card{
     width: 18vw !important;
 }
+
+
+
+@media only screen and (max-width:768px){
+    
+    .admin-dashboard-cards{margin: 1vw;}
+    .admin-dashboard-cards>.card {
+        width: 23vw !important;
+        margin: 3vh auto;
+    }
+ }
+ 
+
+ @media only screen and (max-width:450px){
+    
+    .admin-dashboard-cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .admin-dashboard-cards>.card {
+        width: 45vw !important;
+        margin: 2vh auto;
+    }
+ }
+ 
+
+ 

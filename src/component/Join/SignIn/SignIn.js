@@ -72,7 +72,6 @@ export default function SignIn() {
 
         if (cookies.user) { 
             removeCookie('user')
-            console.log("removed")
         }
        
         let user;

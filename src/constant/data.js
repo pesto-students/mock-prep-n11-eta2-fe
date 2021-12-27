@@ -80,7 +80,25 @@ export const earningChartOptions = {
                 display:false
             }   
         }
-    }
+    },
+
+    title: {
+        display: false
+    },
+  
+        tooltips: {
+          enabled: false,
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+            enabled: false,
+          },
+          legend: {
+            display: false
+          },
+    
     
 }
 

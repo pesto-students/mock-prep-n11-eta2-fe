@@ -29,10 +29,11 @@ export default function Dashboard() {
         <div>
              <DashboardHeader title="Admin Dashboard" icon={DashboardIcon} />
             {adminDashboard.length !== 0 ? <>
-                    <DashBoardCard data={adminDashboard.cards} />
+                   <DashBoardCard data={adminDashboard.cards} /> 
                     <DashboardCharts data={adminDashboard} />
-                    <Feedback data={adminDashboard} /> 
-                <InterviewTable data={adminDashboard.tableDataSource} /></>:
+                    {/* <Feedback data={adminDashboard} />   */}
+                {/* <InterviewTable data={adminDashboard.tableDataSource} /> */}
+            </> :
             <section>{fallback}</section>
             }
         </div>

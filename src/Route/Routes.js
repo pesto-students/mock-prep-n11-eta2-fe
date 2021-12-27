@@ -44,11 +44,9 @@ export default function Routes() {
     }, [alert])
 
     useEffect(() => {
-       
         if (cookies.user  && cookies.user.isLoggedIn) { 
             setIsLoggedIn(true)
         }
-        console.log(cookies)
     }, [cookies])
 
     return (

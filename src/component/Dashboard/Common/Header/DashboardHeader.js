@@ -5,15 +5,15 @@ import { MenuIcon } from "constant/antIcons"
 
 export default function DashboardHeader({icon,title,rightComponent})  {
 
-    const sideNav = () => { 
+    const sideNav = () => {
         let sideNavBar = document.getElementById("sideNav");
+        if (sideNavBar.style.display === "block") { 
+            sideNavBar.style.display = "none"
+        }
+        else {
+            sideNavBar.style.display = "block"
+        }
        
-        if (sideNavBar.style.left === "0px") {
-            sideNavBar.style.left = "-70vw";
-        }
-        else { 
-            sideNavBar.style.left = "0";
-        }
     }
 
     return (
@@ -24,7 +24,7 @@ export default function DashboardHeader({icon,title,rightComponent})  {
                 </section>
                 <section className="tab-options">
                     {rightComponent}
-                    <Link to="#" id="toggleBtn" onClick={sideNav}>{MenuIcon}</Link>
+                    <Link to="#" id="toggleBtn" onClick={()=>sideNav()}>{MenuIcon}</Link>
                 </section>
         </div>
     )

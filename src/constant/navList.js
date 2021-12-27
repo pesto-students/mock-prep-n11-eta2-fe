@@ -1,6 +1,5 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter } from "constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter, questionIcon } from "constant/antIcons"
 import { Spin } from "antd"
-
 
 
 export const adminNavList = [
@@ -39,6 +38,12 @@ export const adminNavList = [
         url:"/admin/quizList",
         linkName: "Quiz List",
         icon: resourceIcon
+    },
+    {
+        id: 7,
+        url:"/admin/queryList",
+        linkName: "Queries",
+        icon: questionIcon
     }
     
 ]

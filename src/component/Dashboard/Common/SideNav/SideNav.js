@@ -7,6 +7,7 @@ import authActionCreator from 'Redux/Action Creators/authActionCreators'
 
 import "./SideNav.css"
 import alertActionCreator from 'Redux/Action Creators/alertActionCreator'
+
 export default function SideNav({ sideNavList }) {
     
     const [cookies, removeCookie] = useCookies(["user"])
@@ -42,7 +43,7 @@ export default function SideNav({ sideNavList }) {
                 <section id="bottom">
                 <section id="admin" >
                     <img alt="profile" id="userProfile" src={user.image}></img>
-                    <p className="icon">  {user.name}</p>
+                        <p style={{marginLeft:"1vw"}}>{user.name}<br /><span style={{textTransform:"capitalize"}}>{user.role}</span></p>
                 </section>
                     <button id="logoutBtn" onClick={() => logOut()}>Logout</button>
                 </section>

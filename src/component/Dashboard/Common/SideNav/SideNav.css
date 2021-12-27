@@ -4,7 +4,7 @@
 }
 
 .logo-img{
-    width: 90%;
+    width: 100%;
 }
 
 .sidebar-list{
@@ -30,6 +30,9 @@
 
 .icon{
     margin: 0px 10px;
+    font-size: 1.05rem;
+    align-items: flex-end;
+    display: flex;
 }
 
 #logoutBtn{
@@ -42,7 +45,8 @@
 
 #admin{
     justify-content: left;
-    width: 60%;
+    width: 100%;
+    padding: 0 10%;
     margin: 2vh auto;
     color: rgb(9, 30, 92);
     display: flex;
@@ -60,11 +64,61 @@
     width: 100%;
     position: absolute;
     bottom: 5vh;
-
 }
 
 #userProfile{
     width: 50px;
     height: 50px;
     border-radius: 100%;
+}
+
+@media only screen and (max-width:1024px) {
+    #sideNav{width: 20vw;}
+    .sidebar-list{padding: 0 1vw;}
+    .sidebar-list-item{margin: 4vh 0;}
+    #bottom{width: 100%;}
+    #admin{width: 120%;margin: 1vh 0;}
+    .mainContainer{width: 80vw;}
+}
+
+@media only screen and (max-width:768px) {
+   
+    .logo-img{width: 40vw;}
+    #sideNav{
+        display: none;
+        height: 100vh;
+        width: 35vw;
+        position: absolute;
+        top: 3vh;
+        z-index: 1;
+        background-color: white;
+    }
+    .mainContainer{width: 100vw;}
+    .logo-img{width: 70%;}
+
+}
+
+@media only screen and (max-width:450px) {
+    .logo-img{width: 40vw;}
+    #sideNav{
+        display: none;
+        height: 90vh;
+        width: 100vw;
+        position: absolute;
+        top: 10vh;
+        z-index: 1;
+        background-color: white;
+    }
+    .sidebar-list{position: relative;padding-left: 5vw;}
+  
+    .icon:hover #sideNav{display: block !important;}
+
+    #admin{margin-top: 5vh;position: fixed ;}
+    #bottom{
+        position: absolute;
+        bottom: 5vh;
+        padding-left: 5vw;
+    }
+    #admin{position:absolute;bottom:5vh;margin: 0 5vw;}
+
 }
