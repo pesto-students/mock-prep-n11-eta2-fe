@@ -2,7 +2,7 @@
     width: 95%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
 }
 
 #earningChart{
@@ -21,16 +21,30 @@
     margin-right: 1vw;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+#round{display: flex;}
 
 .chartHeader{color:rgb(23, 50, 131);font-size: 1.3rem;}
-#resourceChart2{
-    width: 19vw;
-    height: 37vh;
-    padding: 1vw; 
-    margin: 0;
-    margin-right: 1vw;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
 .trendingChart{width: 170px !important;height: 150px;}
 
  
+@media only screen and (max-width:1024px) {
+    .admin-dashboard-charts{display: block;}
+    #earningChart{width:55vw;    margin-bottom: 5vh;}
+    #resourceChart{width: 27vw;}; 
+
+}
+
+@media only screen and (max-width:768px) {
+    .admin-dashboard-charts{display: block;width: 96%;}
+    #earningChart{width:80vw;height: auto;  }
+    #resourceChart{width: 40vw;height: auto;};
+}
+
+@media only screen and (max-width:450px) {
+    .admin-dashboard-charts{display: block;}
+    #earningChart{width:94vw;height: auto;  }
+    #round{display: block;}
+    #resourceChart{width: 70vw;margin: 2vh 0};
+    .chartHeader{font-size: initial;}
+
+}

@@ -17,8 +17,8 @@ export default function Feedback({ data }) {
     return (
         <div>
              <section className="customer-feedback">
-                <section className="total-earning">
-                    <h2 className="headline">Total Earnings </h2>
+                <section id="total-earning">
+                    <h2 id="earningHeadline">Total Earnings </h2>
                     <section className="top">
                         <p>Total Revenue</p>
                         <h4>₹287,493</h4>
@@ -36,7 +36,7 @@ export default function Feedback({ data }) {
                     </section>
                 </section>
                 <section className="cust-review">   
-                    <h2 className="headline">Customer Reviews</h2>
+                    <h2 id="earningHeadline">Customer Reviews</h2>
                     {testimonials.length>0 ?
                         <section>
                             {testimonials.map((review, index) => (

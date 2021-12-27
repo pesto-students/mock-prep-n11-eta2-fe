@@ -113,7 +113,8 @@
   
     .icon:hover #sideNav{display: block !important;}
 
-    #admin{margin-top: 5vh;position: fixed ;}
+    #admin{margin-top: 5vh;position: fixed ;    margin-left: 0;
+        padding-left: 0;}
     #bottom{
         position: absolute;
         bottom: 5vh;

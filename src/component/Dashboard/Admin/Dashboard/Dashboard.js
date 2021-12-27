@@ -31,8 +31,8 @@ export default function Dashboard() {
             {adminDashboard.length !== 0 ? <>
                    <DashBoardCard data={adminDashboard.cards} /> 
                     <DashboardCharts data={adminDashboard} />
-                    {/* <Feedback data={adminDashboard} />   */}
-                {/* <InterviewTable data={adminDashboard.tableDataSource} /> */}
+                    <Feedback data={adminDashboard} />  
+                <InterviewTable data={adminDashboard.tableDataSource} />
             </> :
             <section>{fallback}</section>
             }
