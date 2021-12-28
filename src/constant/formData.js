@@ -19,3 +19,38 @@ export const resourceForm = {
         image: "https://freepowerpointtemplates.com/wp-content/uploads/HTML5-Featured-FreePowerPointTemplates-1024x565.png",
         topicId: 1,
 }
+
+export const interviewerForm = {
+   
+    email: "",
+    name: "",
+    contact: "",
+    designation: "",
+    experience: 10,
+    company: "",
+    skills: [
+        
+    ],
+    image: "",
+    about: "",
+    topics: [ 
+    ]
+}
+
+
+export const studentForm = {
+   
+    email: "",
+    name: "",
+    contact: "",
+    degree: "",
+    experience: 10,
+    company: "",
+    skills: [
+        
+    ],
+    image: "",
+    about: "",
+    topics: [ 
+    ]
+}

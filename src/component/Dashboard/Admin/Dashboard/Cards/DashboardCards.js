@@ -9,7 +9,7 @@ export default function DashboardCards({ data }) {
         <div>
              <section className="admin-dashboard-cards">
                 {data.map((metric,index) => (
-                    <DashboardCard {...metric} key={index} icon={<i className={metric.icon}></i>} />
+                    <DashboardCard {...metric} key={index} icon={metric.icon} />
                 )) }
             </section>
         </div>

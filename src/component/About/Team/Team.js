@@ -1,10 +1,11 @@
 import { balaji, raghuUrl, saif } from 'constant/const_url'
-import React from 'react'
+import React, { Suspense} from 'react'
 import { Link } from 'react-router-dom'
 import "./Team.css"
 
 export default function Team  () {
     return (
+        <Suspense fallback={<div>Loading</div>}>
         <div id="teamContainer">
             <h2 className='title'>Meet Our Team</h2>
             <section id="team">
@@ -26,5 +27,6 @@ export default function Team  () {
             </section>
             <Link to="/contact"> <button className='btn contactBtn btn-warning my-4'>Contact Us</button></Link>
         </div>
+        </Suspense>
     )
 }

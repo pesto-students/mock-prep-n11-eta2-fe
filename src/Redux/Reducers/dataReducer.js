@@ -82,6 +82,20 @@ export default function dataReducer (state = {adminDashboard : {}},action){
                 resources : action.data
             }
         }
+                
+        case 'SET_QUERY':{
+            return {
+                ...state,
+                query : action.data
+            }
+        }
+        case 'SET_INTERVIEWS':{
+            return {
+                ...state,
+                interviews : action.data
+            }
+        }
+            
             
        
             

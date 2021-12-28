@@ -1,7 +1,32 @@
 #alert{
-    width: 15vw;
+    width: 30vw;
     height: auto;
     position: absolute;
     right: 5vw;
     top: 7vh;
+    margin-top: 5vh;
+}
+
+
+@media only screen and (max-width:1024px) {
+    #alert{
+        width: 30vw;
+        margin-top: 5vh;
+    }
+}
+
+
+@media only screen and (max-width:768px) {
+    #alert{
+        width: 30vw;
+        margin-top: 5vh;
+    }
+}
+
+
+@media only screen and (max-width:1024px) {
+    #alert{
+        width: 80vw;
+        margin-top: 4vh;
+    }
 }

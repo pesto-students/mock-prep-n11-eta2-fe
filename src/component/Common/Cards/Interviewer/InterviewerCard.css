@@ -1,50 +1,91 @@
 .personCard{
-    width: 20vw;
-    height: auto;
-    margin: 20px auto;
+    width: 15vw !important;
+    height: 37vh;
+    border: 1px solid lightgrey;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     text-align: center;
+    padding: 10px;
+    margin: 2vh 1vw;
+    position: relative;
+}
+
+.profile{
+    width: 7vw;
+    height: 7vw;
+    border-radius: 100% !important;
+    margin-bottom: 2vh;
+}
+
+#deleteIcon{
+    position: absolute;
+    right: 1vw;
+}
+
+.hoverCard{
+  
+    display: none;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    width: 15vw !important;
+    height: 37vh;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(27, 54, 133);
+    opacity: 0.92;
+   
+}
+
+#interviewerCardButtons{
+    margin-top: 10vh;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.personCard:hover > .hoverCard{
+    display: block;
 }
 
 .personCard:hover{
-    transform: scale(1.09);
-    transition: ease-in-out 1s;
+    
+    padding:0;
 }
 
-.personCard:hover #profile{
-    border: 1px solid red;
-}
-
-
-
-#profile{
-    width: 10vw;
-    border-radius: 100%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-}
-
-.designation-text{
-    color:grey;
-    margin: 1vh 0;
-}
-
-.bold-text{
-    color: #161280;
-    margin: 1vh auto;
-    font-size: 1.2rem;
-}
-
-.person{
-    height: auto !important;
+@media only screen and (max-width:1024px){
+    .personCard,.hoverCard{
+        width: 23vw !important;
+        height: 40vh;
+    }
 }
 
 @media only screen and (max-width:768px){
-    #profile{width: 15vw;}
+    .personCard,.hoverCard{
+        width: 30vw !important;
+        height: 40vh;
+    }
     
+    .profile{
+        width: 17vw;
+        height: 17vw;
+       border-radius: 100%;
+    }
+    .interviewerListContainer>.header>.tab-options>#toggleBtn{margin: 0 2vw;}
    
- }
- 
- @media only screen and (max-width:450px){
-    #profile{width: 20vw;}
-  
- }
- 
+}
+
+@media only screen and (max-width:450px){
+
+    .interviewerListContainer>.header>.tab-options>#toggleBtn{margin: 0 2vw;}
+    .personCard,.hoverCard{
+        width: 45vw !important;
+        height: 37vh;
+    }
+    
+    .profile{
+        width: 22vw;
+        height: 22vw;
+       border-radius: 100%;
+    }
+   
+}
+

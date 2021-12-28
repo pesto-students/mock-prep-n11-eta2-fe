@@ -1,4 +1,4 @@
-import React, {lazy,useState} from 'react'
+import React, {lazy,Suspense,useState} from 'react'
 import { Table,Input } from 'antd';
 import { tableColumns } from 'constant/data';
 import "./InterviewTable.css"
@@ -8,12 +8,12 @@ const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/Das
 export default function InterviewTable({data}) {
 
     const { Search } = Input;
-
+   
     let [tableData, setTableData] = useState(data);
     let [tableDataList, setTableList] = useState(data);
 
     const onSearch = (value) => {
-        let filtered = tableDataList.filter(val => val.interviewer.includes(value) || val.student.includes(value));
+        let filtered = tableDataList.filter(val => val.interviewer.name.includes(value) || val.student.name.includes(value));
         setTableData(filtered)
         setTableList(tableDataList)
     }; 
@@ -22,8 +22,10 @@ export default function InterviewTable({data}) {
    
     return (
         <div className='interview-details'>
-              <DashboardHeader title="Interview List for Current Month" rightComponent={search}  />
-              <Table dataSource={tableData} columns={tableColumns} />;
+            <DashboardHeader title="Interview List for Current Month" rightComponent={search} />
+            <Suspense fallback={<div>Loading</div>}>
+                <Table dataSource={tableData} columns={tableColumns} />;
+            </Suspense>
         </div>
     )
 }

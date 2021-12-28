@@ -1,4 +1,4 @@
-import { lazy } from "react"
+import { lazy,Suspense } from "react"
 import { Link} from "react-router-dom"
 import "./About.css"
 
@@ -12,6 +12,7 @@ export default function About() {
         <>
             <section className="aboutContainer">
                 <Header />
+                <Suspense fallback={<div>Loading</div>}>
                 <section id="aboutContent">
                     <h2 >We are <span id="title">Mock Prep</span></h2>
                     <p>Providing solutions to interview preparation</p>
@@ -27,6 +28,7 @@ export default function About() {
                     <button className="btn btn-transparent border-secondary hover">Join as Instructor</button>
                     </Link>
                 </section>
+                </Suspense>
 
             </section>
             <Mission />

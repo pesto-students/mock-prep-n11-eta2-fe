@@ -52,7 +52,7 @@ export default function Routes() {
     return (
         <div>
             {isAlert ? <SuccessAlert message={message} /> : <></>}
-            {isError ? <ErrorAlert message={message} /> : <></>}
+            {isError ? <ErrorAlert  message={message} /> : <></>}
 
             <PublicRoute exact path="/" component={Landing} />
             <PublicRoute exact path="/about" component={About} />

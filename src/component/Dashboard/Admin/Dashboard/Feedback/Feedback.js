@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, {Suspense, useState,useEffect } from 'react'
 import { getReviews } from 'constant/apiUrl'
 import { useDispatch, useSelector } from 'react-redux'
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
@@ -37,20 +37,24 @@ export default function Feedback({ data }) {
                 </section>
                 <section className="cust-review">   
                     <h2 id="earningHeadline">Customer Reviews</h2>
+                    <Suspense fallback={<div>Loading</div>}>
                     {testimonials.length>0 ?
                         <section>
                             {testimonials.map((review, index) => (
-                                <section key={index} className="review-container">
-                                    <span style={{ display: "flex" }}>
-                                        <img src={review.image} alt="profile" />
-                                        <p>{review.name}<br />{review.review}</p>
-                                    </span>
-                                    <p>{review.rating}/5</p>
-                                </section>
+                              
+                                    <section key={index} className="review-container">
+                                        <span style={{ display: "flex" }}>
+                                            <img src={review.image} alt="profile" />
+                                            <p>{review.name}<br />{review.review}</p>
+                                        </span>
+                                        <p>{review.rating}/5</p>
+                                    </section>
+                               
                             ))}
                         </section> :
                         <p>Loading</p>
-                    }
+                        }
+                    </Suspense >
                 </section>
             </section>
         </div>

@@ -27,3 +27,8 @@
 .App{
   position: relative;
 }
+
+.alertBox{
+  width: 30vw !important;
+
+}

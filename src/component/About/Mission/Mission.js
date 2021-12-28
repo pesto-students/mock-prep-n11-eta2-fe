@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Suspense} from 'react'
 import "./Mission.css"
 
 export default function Mission  () {
     return (
+        <Suspense fallback={<div>Loading</div>}>
         <div id="mission"> 
             <section id="missionContainer">
-
             <section>
                     <i className="fa fa-eye"></i>
                     <h3>Vision</h3>
@@ -29,5 +29,6 @@ export default function Mission  () {
             </section>
             </section>  
         </div>
+        </Suspense>
     )
 }

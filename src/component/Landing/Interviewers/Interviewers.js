@@ -1,4 +1,4 @@
-import React, { lazy,useEffect,useState } from 'react'
+import React, {Suspense, lazy,useEffect,useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { getInterviewers } from 'constant/apiUrl'
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
@@ -18,9 +18,11 @@ export default function Interviewers() {
       
     return (
         <>  <h2 className="title">Meet our Interviewers</h2>
+            <Suspense fallback={<div>Loading</div>}>
             <section className="interviewer-list">
                 {interviewers.length>0 ? interviewers.map((person, index) => (<InterviewerCard key={index} id={person.id} name={person.name} pic={person.image} designation={person.designation} company={person.company} />)):<p>Loading..</p>}
-            </section>
+                </section>
+            </Suspense>
         </>
     )
 }

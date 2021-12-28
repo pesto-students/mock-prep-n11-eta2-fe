@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense} from 'react'
 import { Carousel } from 'antd'
 import "./Testimonial.css"
 
@@ -11,6 +11,7 @@ export default function Slides({testimonials}) {
 
     return (
         <div>
+            <Suspense fallback={<div>Loading</div>}>
             <Carousel style={contentStyle} autoplay>
                 {testimonials.map((test,index) => (
                         <section key={index} className="testimonial">
@@ -24,7 +25,8 @@ export default function Slides({testimonials}) {
                             </section>
                         </section>
                     ))}
-            </Carousel>,
+                </Carousel>
+            </Suspense>
         </div>
     )
 }

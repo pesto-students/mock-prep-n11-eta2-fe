@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, {Suspense, lazy } from 'react'
 import { packages } from 'constant/data'
 import "./Packages.css"
 
@@ -11,7 +11,9 @@ export default function Package() {
         <>
             <h2 className="title">Packages</h2>
             <section className="package-details">
-                {packages.map((pack, index) => (<Bundle key={index} {...pack} />))}
+            <Suspense fallback={<div>Loading</div>}>
+                    {packages.map((pack, index) => (<Bundle key={index} {...pack} />))}
+            </Suspense>
             </section>
         </>
     )

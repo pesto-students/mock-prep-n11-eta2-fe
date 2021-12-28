@@ -1,4 +1,4 @@
-import React, { useEffect ,useState} from 'react'
+import React, {Suspense, useEffect ,useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux';
 import { getReviews } from 'constant/apiUrl';
 import Slides from "component/Landing/Testimonials/Slides"
@@ -17,5 +17,12 @@ export default function Testimonials() {
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getReviews, dataActions.setTestimonials) }, [dispatch])
     useEffect(() => { if (data.testimonials !== undefined) { setTestimonials(data.testimonials.data) }}, [data])
     
-    return (<div>{testimonials.length>0 ? <><h2 className="title">Testimonial</h2><section id="testimonials"><Slides testimonials={ testimonials} /></section></>: <p>Loading..</p>}</div>)
+    return (
+        <Suspense fallback={<div>Loading</div>}>
+        <div>{testimonials.length > 0 ?
+                <><h2 className="title">Testimonial</h2><section id="testimonials"><Slides testimonials={testimonials} /></section></>: <p>Loading..</p>
+            }
+            </div>
+        </Suspense>
+    )
 }

@@ -1,82 +1,37 @@
-.studentListContainer{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    right: 0;
-}
+.interviewerListContainer>.header>.tab-options{justify-content: right !important;}
 
-.studentsList{
-    padding: 1vh 2vw !important;
+.interviewerList{
+    width: 97%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: left;
 }
 
-.studentListCard{
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.studentListCard>.person{
-    width: 15vw !important;
+.interviewerTabContainer{
+    width: 100%;
     height: auto;
-    min-height: 37vh !important;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    margin: 2vh 1vw;
+    margin: 5vh 1vw;
 }
 
-.studentListCard>.person>.profile{
-    width: 70%;
+
+.cardContainer{
+    width: auto;
+    height: 40vh !important;
 }
 
-#hoverCard{
-    height: 37vh;
-    display: none;
-    border-radius: 5px;
+.interviewerTabContainer>.search{display: none;}
+
+ @media only screen and (max-width:768px){
+   
+    .interviewerListContainer>.header>.tab-title>.icon{font-size: 0.9rem;width: 50vw;}
+    .interviewerListContainer>.header>.tab-options>.search{display: none;margin-right: 2vw;}
+    .interviewerTabContainer>.search{display: block !important;width: 100vw;}
+    .interviewerTabContainer>.search>.ant-input-search{width: 40vw !important;}
 }
 
-.studentListCard>.person:hover{
-   padding: 0;
-}
-
-.closeProfile{
-    position: absolute;
-    right: 0;
-    margin: 10px;
+@media only screen and (max-width:450px){
+    .interviewerListContainer{height: auto;}
+    .interviewerTabContainer>.search>.ant-input-search{width: 60vw !important;}
     
-}
-
-.studentListCard>.person:hover #hoverCard{
-    padding:0;
-    display: block;
-    background-color: rgb(41, 69, 121);
-    width: 15vw;
-    z-index: 9;
-    position: absolute;
-    opacity: 0.9;
-}
-
-.viewProfileBtn{
-    background-color: orange;
-    color: white;
-    margin: 2vh auto;
-    display: grid;
-    margin-top: 10vh;
-}
-
-.addProfileBtn{
-    background-color: green;
-    color: white;
-    margin: 2vh auto;
-}
-
-.removeProfileBtn{
-    background-color: red;
-    color: white;
-    margin: 2vh auto;
-}
-
-.studentListContainer>.header>.tab-options{justify-content: right !important;}
-
-.ant-tabs-nav-wrap{justify-content: left;}
+} 

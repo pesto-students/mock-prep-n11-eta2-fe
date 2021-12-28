@@ -12,6 +12,8 @@
     setPricing: 'SET_PRICING',
     setTopic: 'SET_TOPIC',
     setResource: "SET_RESOURCE",
+     setQuery: "SET_QUERY",
+     setInterviews: "SET_INTERVIEWS",
   
 }
 

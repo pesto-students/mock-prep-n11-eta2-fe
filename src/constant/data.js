@@ -248,7 +248,7 @@ export const CustomerReviews = [
 export const tableColumns = [
     {
       title: 'Id',
-      dataIndex: 'id',
+      dataIndex: '_id',
         key: 1,
         sorter: (a, b) => a.id - b.id,
         sortDirections: ['descend'],
@@ -311,7 +311,7 @@ export const tableColumns = [
               
 
         ],
-            onFilter: (value, record) => record.topic.indexOf(value) === 0,
+        onFilter: (value, record) => record.topic.indexOf(value) === 0,
 
     },
     {
@@ -320,7 +320,15 @@ export const tableColumns = [
         key: 3,
         sorter: (a, b) => a.interviewer.length - b.interviewer.length,
         sortDirections: ['descend'],
-        rowKey:3,
+        rowKey: 3,
+        render: (st,index) => {
+          
+            return (
+                <section key={ index}>
+                    {st.name }
+                </section>
+            )
+        }
     },
     {
         title: 'Student',
@@ -328,7 +336,14 @@ export const tableColumns = [
         key: 4,
         sorter: (a, b) => a.student.length - b.student.length,
         sortDirections: ['descend'],
-        rowKey:4,
+        rowKey: 4,
+        render: (int,index) => {
+            return (
+                <section key={ index}>
+                    {int.name }
+                </section>
+            )
+        }
     },
     {
         title: 'Date (MM/DD.YY)',
@@ -355,7 +370,7 @@ export const tableColumns = [
         sortDirections: ['descend'],
         render: (tags,index) => {
             let color = "green";
-            if (tags !== "Completed") {
+            if (tags !== "completed") {
                 color="red"
             }
             return (
