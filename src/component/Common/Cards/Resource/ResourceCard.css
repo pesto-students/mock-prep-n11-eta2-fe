@@ -3,11 +3,11 @@
     height: 15vh;
     margin: 1vw 1vw;
     padding: 1vw;
-    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid lightgrey;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
 }
 
 .resourceCard>img{
@@ -25,3 +25,48 @@
 }
 
 #resourceContent{width: 80%;margin-top: 1vh;}
+#resourceContent>p{color: grey;}
+#resourceContent>p>a{color: rgb(0, 17, 255);font-weight: 500;}
+#resourceContent>h3{font-size: 1.3rem;color: grey;}
+
+
+@media only screen and (max-width:1024px){
+    #resourceCard{
+        width: 90vw !important;
+        height: 20vh;
+        margin: 1vw;
+    }
+
+    
+
+    #resourceIcon>img {
+        width: 9vw!important;
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    #resourceCard{
+        width: 46vw !important;
+        height: auto;
+        margin: 1vw;
+    }
+
+    #resourceIcon>img{
+        width: 8vw !important;
+    }
+}
+
+
+@media only screen and (max-width:450px){
+    #resourceCard{
+        width: 94vw !important;
+    }
+
+    #resourceIcon>img{
+        width: 15vw !important;
+    }
+    #resourceContent>h3{font-size: 1rem !important;}
+
+
+}

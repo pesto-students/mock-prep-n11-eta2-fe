@@ -1,4 +1,4 @@
-.topicsCard{
+.quizCard{
     width: 20%;
     height: 40vh;
     margin: 1vw;
@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.topicProfile{
+.quizProfile{
     width: 90%;
     height: 50%;
     opacity: 0.5;
@@ -15,15 +15,15 @@
     margin-bottom: 10%;
 }
 
-.topicsCard:hover >.topicProfile{
+.quizCard:hover >.quizProfile{
     opacity: 1;
 }
 
-.topicsCard:hover >.editIcons{
+.quizCard:hover >.editIcons{
     display: block;
 }
 
-.topicCardDetails{
+.quizCardDetails{
     margin-top: 2vh;
 }
 
@@ -50,22 +50,23 @@
     color: blue;
 }
 
+
 @media only screen and (max-width:1024px){
-    .topicsCard{
+    .quizCard{
         width: 22vw;
         height: 40vh;
     }
 }
 
 @media only screen and (max-width:768px){
-    .topicsCard{
+    .quizCard{
         width: 30vw !important;
         height: 40vh;
     }
 }
 
 @media only screen and (max-width:450px){
-    .topicsCard{
+    .quizCard{
         width: 60vw !important;
         height: 40vh;
         margin: 2vh auto;

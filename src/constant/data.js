@@ -1,5 +1,5 @@
-import { Tag} from "antd"
 
+import { Tag} from "antd"
 export const mockPrepAdvantages = [
     {
         id: 1,
@@ -92,14 +92,6 @@ export const earningChartOptions = {
         legend: {
           display: false
         },
-        tooltips: {
-            enabled: false,
-          },
-          legend: {
-            display: false
-          },
-    
-    
 }
 
 export const interviewOptions = {

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { createOrder, getData, updateData } from "api/Api";
 import { checkIcon } from "constant/antIcons";
-import { createRazorOrder, getStudentById, getStudents, updateStudent } from "constant/apiUrl";
+import { createRazorOrder, getStudentById, updateStudent } from "constant/apiUrl";
 import { useSelector,useDispatch } from "react-redux";
 
 
@@ -24,7 +24,6 @@ function loadRazorPay  ()  {
    
 }   
 
-
 export default function PackageCard({ id, title, price, description, benefits }) {
 
     const user = useSelector(state => state.authReducer)
@@ -36,15 +35,17 @@ export default function PackageCard({ id, title, price, description, benefits })
             case "Basic":
                 intCount = 1;
                 break;
-            case "Basic":
+            case "Advance":
                 intCount = 3;
                 break;
-            case "Basic":
+            case "Premium":
                 intCount = 7;
                 break;
-            case "Basic":
+            case "Super":
                 intCount = 10;
                 break;
+            default:
+                intCount = 0;
         }
 
         return intCount;
@@ -122,7 +123,7 @@ export default function PackageCard({ id, title, price, description, benefits })
      
     return (
         <Suspense fallback={<div>Loading</div>}>
-        <section className="person" key={id}>
+            <section className="person" key={id}>
             <p id="pricing-title">{title}</p>
             <h3 id="pricing-price">{price}</h3>
             <p id="pricing-description">{description}</p>

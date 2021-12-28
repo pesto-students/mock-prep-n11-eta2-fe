@@ -27,9 +27,9 @@ export default function SideNav({ sideNavList }) {
         if (user.isLoggedIn) { 
             removeCookie("user");
             authActionCreator.logOut(dispatch);
+          
             alertActionCreator.setError(dispatch, "Logged out succesfully");
-           
-            window.location.href="/signIn"
+            window.location.href="/join"
         }
     }
    

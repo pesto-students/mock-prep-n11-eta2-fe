@@ -9,7 +9,8 @@ export const calculatorIcon = <CalculatorOutlined />;
 export const LaptopIcon = <LaptopOutlined />;
 export const MenuIcon = <MenuUnfoldOutlined />;
 export const idCardIcon = <IdcardTwoTone />;
-export const deleteIcon = <DeleteOutlined style={{color:"white"}}/>;
+export const deleteIcon = <DeleteOutlined style={{ color: "white" }} />;
+export const trashIcon = <DeleteOutlined />;
 export const smileIcon = <SmileTwoTone />;
 export const DBIcon = <HddTwoTone />;
 export const resourceIcon = <ReconciliationTwoTone />

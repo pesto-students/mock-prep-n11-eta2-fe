@@ -51,6 +51,16 @@
     padding:0;
 }
 
+.interviewerCard{
+    width: 15vw;
+    text-align: center;
+    margin: 3vh 1vw;
+}
+
+#interviewerProfile{
+    border-radius: 100%;
+}
+
 @media only screen and (max-width:1024px){
     .personCard,.hoverCard{
         width: 23vw !important;
@@ -70,7 +80,10 @@
        border-radius: 100%;
     }
     .interviewerListContainer>.header>.tab-options>#toggleBtn{margin: 0 2vw;}
-   
+    .interviewerCard{
+        width: 20vw;
+        margin: auto;
+    }
 }
 
 @media only screen and (max-width:450px){
@@ -85,6 +98,12 @@
         width: 22vw;
         height: 22vw;
        border-radius: 100%;
+    }
+
+    .interviewerCard{
+        width: 80vw;
+        margin: auto;
+        display: block;
     }
    
 }

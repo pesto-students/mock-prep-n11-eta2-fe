@@ -54,3 +54,11 @@ export const studentForm = {
     topics: [ 
     ]
 }
+
+export const topicFormData = {
+   
+    title: "",
+    description: "",
+    image: "",
+  
+}

@@ -40,7 +40,7 @@ export default function StudentList() {
        
         await removeData(deleteStudent + profileId)
         setInterviewerList(interviewerList.filter(e => e._id !== profileId))
-        alertActionCreator.setError(dispatch, "  Deleted profile from mockprep")
+        alertActionCreator.setError(dispatch,"Deleted profile from mockprep")
     }; 
 
     const listProfile = (profileId) => {    
@@ -63,16 +63,16 @@ export default function StudentList() {
             if (x._id === profileId) { 
                 x.onboarded = false;
                 updateData(updateStudent + x._id)
-                alertActionCreator.setEror(dispatch,x.name +"  Delisted")
+                alertActionCreator.setError(dispatch,"Delisted profile from mockprep")
             }
         })
     
         setInterviewerList(interviewerList)
+       
     }
     
     const search = <><section className="search"><Search placeholder="Search Student by any parameter" onSearch={onSearch} style={{ width: 200 }} /></section></>
 
- 
     return (
         <>
             <div className="interviewerListContainer">
