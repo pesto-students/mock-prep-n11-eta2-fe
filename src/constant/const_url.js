@@ -6,3 +6,5 @@ export const reviewUrl = "https://res.cloudinary.com/mock-prep/image/upload/v164
 export const raghuUrl = "https://res.cloudinary.com/mock-prep/image/upload/v1640463773/Mockprep/Team/unnamed_i7xpvo.jpg" 
 export const balaji = "https://res.cloudinary.com/mock-prep/image/upload/v1640463773/Mockprep/Team/download_prktb9.jpg"
 export const saif = "https://res.cloudinary.com/mock-prep/image/upload/v1639545693/Mockprep/Team/download_v2sg9e.jpg"
+
+export const sentrydsn = "https://ebdef591d0804c97978eaab66ccf4b47@o1101574.ingest.sentry.io/6127576";
