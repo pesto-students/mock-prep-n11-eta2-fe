@@ -1,10 +1,8 @@
-#modal{
-       width: 50vw;
-        height: 40vh !important;
-   }
+#modal{height: 40vh !important;}
 
 #body{
-    height: 40vh ;
+    height: auto;
+    min-height: 40vh ;
 }
 
 #closeBtn{

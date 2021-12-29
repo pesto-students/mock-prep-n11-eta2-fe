@@ -22,8 +22,6 @@ export const resourceForm = {
     
 }
 
-
-
 export const interviewerForm = {
    
     email: "",
@@ -59,3 +57,8 @@ export const studentForm = {
     ]
 }
 
+export const queryResponseForm =  {
+    name: "",
+    email: "",
+    title: "",
+}

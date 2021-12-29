@@ -14,7 +14,7 @@ const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/Top
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
 const QuizContent = lazy(() => import("component/Dashboard/Common/Quiz/QuizContent/QuizContent"))
-
+const QueryList = lazy(() => import ("component/Dashboard/Common/Queries/Queries"))
 
 export default function Admin() {
 
@@ -37,7 +37,8 @@ export default function Admin() {
                             <Route  path={`${path}/topicsList`} component={TopicsList} />
                             <Route  path={`${path}/resourceList/:topicId?`} component={ResourceList} />
                             <Route  path={`${path}/quizList/:topicId?`} component={QuizList} /> 
-                            <Route  path={`${path}/quizContent/:quizId?`} component={QuizContent} /> 
+                            <Route path={`${path}/quizContent/:quizId?`} component={QuizContent} /> 
+                            <Route  path={`${path}/queryList`} component={QueryList} /> 
                         </section>
                 </Route>
             </div>

@@ -13,7 +13,8 @@
     setTopic: 'SET_TOPIC',
     setResource: "SET_RESOURCE",
      setQuery: "SET_QUERY",
-     setInterviews: "SET_INTERVIEWS",
+    setInterviews: "SET_INTERVIEWS",
+   
   
 }
 

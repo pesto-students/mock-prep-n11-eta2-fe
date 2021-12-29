@@ -1,5 +1,12 @@
 
 import { Tag} from "antd"
+import { Link } from "react-router-dom"
+
+const handleResponse = () => { 
+
+}
+
+
 export const mockPrepAdvantages = [
     {
         id: 1,
@@ -424,3 +431,4 @@ export const resources = [
         topicId:1
     }
 ]
+

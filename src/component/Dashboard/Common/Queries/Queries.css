@@ -1,0 +1,15 @@
+.query-container{
+    width: 96%;
+    height: 70vh;
+    margin: 1vh 0 5vh 2vh;
+}
+
+@media only screen and(max-width:1024px) {
+    .query-container{
+        overflow-x: scroll;
+    }
+
+    .ant-table-container{
+        overflow-x: scroll;
+    }
+}

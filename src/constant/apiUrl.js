@@ -30,7 +30,7 @@ export const updateInterviewer = baseUrl + "/interviewer/updateInterviewer/"
 export const updateStudent = baseUrl + "/student/updateStudent/"
 export const updateResource = baseUrl + "/resource/updateResource/"
 export const updateTopic = baseUrl + "/topic/updateTopic/"
-export const updateQuery = baseUrl + "/query/addData/"
+export const updateQuery = baseUrl + "/query/updateData/"
 export const updateInterviews = baseUrl + "/interviews/updateData/"
 
 
