@@ -2,7 +2,8 @@ import React, { lazy,useState,useEffect } from 'react'
 import PublicRoute from "Route/PublicRoute";
 import { useSelector } from 'react-redux';
 import PrivateRoute from './PrivateRoute';
-import { useCookies} from "react-cookie"
+import { useCookies} from "react-cookie";
+import * as Sentry from "@sentry/react";
 
 const Landing = lazy(() => import("component/Landing/Landing"))
 const About = lazy(() => import("component/About/About"))
@@ -50,6 +51,7 @@ export default function Routes() {
     }, [cookies])
 
     return (
+        <Sentry.ErrorBoundary fallback={<p>Error Occured </p>}  showDialog>
         <div>
             {isAlert ? <SuccessAlert message={message} /> : <></>}
             {isError ? <ErrorAlert  message={message} /> : <></>}
@@ -67,5 +69,6 @@ export default function Routes() {
             <PrivateRoute path="/interviewer" component={InterviewerDashboard} loggedIn={isLoggedIn} />
             <PrivateRoute path="/student" component={StudentDashboard} loggedIn={isLoggedIn} />
         </div>
+        </Sentry.ErrorBoundary> 
     )
 }   

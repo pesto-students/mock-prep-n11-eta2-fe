@@ -1,4 +1,5 @@
 import axios from "axios"
+import * as Sentry from "@sentry/react";
 
 //Get Call
 export async function getData(url,) {
@@ -13,6 +14,7 @@ export async function insertData(url, data) {
         return {status : "success",res};
     }
     catch (err){
+        Sentry.captureException(err);
         return  {status : "failure",err : "Inserting Data Failed"};
     }
     
@@ -39,6 +41,7 @@ export async function createOrder(url, data) {
         return {status : "success",res};
     }
     catch (err){
+        Sentry.captureException(err);
         return  {status : "failure",err : "Creating order Failed"};
     }
 }
