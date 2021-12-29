@@ -49,6 +49,16 @@
     margin: 0 5px;
     color: blue;
 }
+.quizEditIcons{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    display: none;
+}
+
+.quizCard:hover .quizEditIcons{
+    display: block;
+}
 
 
 @media only screen and (max-width:1024px){

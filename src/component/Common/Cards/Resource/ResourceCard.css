@@ -8,6 +8,7 @@
     align-items: center;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
+    position: relative;
 }
 
 .resourceCard>img{
@@ -29,6 +30,14 @@
 #resourceContent>p>a{color: rgb(0, 17, 255);font-weight: 500;}
 #resourceContent>h3{font-size: 1.3rem;color: grey;}
 
+
+
+.resourceEditIcons{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    /* display: none; */
+}
 
 @media only screen and (max-width:1024px){
     #resourceCard{

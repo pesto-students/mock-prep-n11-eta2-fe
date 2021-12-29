@@ -29,10 +29,11 @@ export default function StudentList() {
             setInterviewerList(data.studentData.data)
             setInterviewers(data.studentData.data)
         }
-    }, [data,interviewerList])
+    }, [data,interviewers])
     
     const onSearch = (value) => {
         let filtered = interviewers.filter(val => val.name.includes(value) ||  val.degree.includes(value) ||  val.company.includes(value) ||  val.skills.includes(value)   );
+        console.log(filtered)
         setInterviewerList(filtered)
     }; 
 

@@ -89,54 +89,64 @@ export default function QuizContent() {
   
 
     score = (score / quiz.length) * 100;
-    let desc = "Congrats You scored " + score + " percent!!";
+    let desc = "";
+    if (score < 30) {
+        desc = "You scored " + score + " percent!!, you can retake the test";
+    }
+    else if (score < 50) {
+        desc = "You scored " + score + " percent!!, you can do better please read our resources to improve";
+    }
+    else {
+        desc = "Congrats You scored " + score + " percent!!";
+    }
+  
 
     return (
         <div className='quiz'>
             <DashboardHeader title="Quiz" icon={resourceIcon} />
                {quiz ?<>{index!==quiz.length?
-                        <section id="slides">
-                           <section id="slide">
-                               <section id="slideCard">
+                        <section className="slides">
+                           <section className="slide">
+                               <section className="slideCard">
                                <p>Question {index+1} of {quiz.length} </p>
-                                   <h1 id="question">{quiz[index].question} ?</h1> 
+                                   <h1 className="question">{quiz[index].question} ?</h1> 
                                        <section className="option">
                                        <QuizOptionForm attempt={attempt} attempted={attempted} setQuiz={setQuiz} index={index} quiz={quiz} options={quiz[index].options}  multiple={quiz[index].multipleChoice} submit={handleSubmit}/>
                                        </section>
-                                       <section id="navigationBtn">
+                                       <section className="navigationBtn">
                                            <Button type="danger" onClick={() => {if(index>0) setIndex(index-1) }}>Previous Question</Button>
-                                           <Button type="primary" id="next" onClick={() => { if(index<quiz.length) setIndex(index + 1) }}>Next Question</Button>
+                                           <Button type="primary" className="next" onClick={() => { if(index<quiz.length) setIndex(index + 1) }}>Next Question</Button>
                                        </section>
                                </section>
                            </section>
-                           <section id="navigation">
+                           <section className="navigation">
                                <QuizNavigator percent={percent} index={index} questions={quiz} details={quizDetail} information={quiz[index].explanation} />
                            </section>
                         </section> :
-                        <section id="slides">
-                          <section id="slide">
-                                <section id="slideCard">    
-                                    <h1 id="question" className='completed'>Quiz Completed</h1> 
+                        <section className="slides">
+                            <section className="slide">
+                                <section className="slideCard">    
+                                    <h1 className="question" className='completed'>Quiz Completed</h1> 
                                     
-                                    <section id="score">
+                                    <section className="score">
                                         {pending ?
                                            <> <Alert className='alertQuiz' type="error" description="Please Attempt all the questions to submit" /> </>:
                                             <Alert className='alertQuiz' type="success" description={ desc} />       
                                     }
                                     </section>
-                                      <section id="navigationBtn">
+                                      <section className="navigationBtn">
                                           <Button type="danger" onClick={() => {if(index>0) setIndex(index-1) }}>Previous Question</Button>
-                                          <Button type="primary" id="next" onClick={() => { if(index<quiz.length) setIndex(index + 1) }}>Next Question</Button>
+                                          <Button type="primary" className="next" onClick={() => { if(index<quiz.length) setIndex(index + 1) }}>Next Question</Button>
                                       </section>
                               </section>
-                          </section>
-                          <section id="navigation">
-                                <div id="quizNavigator">
-                                    <section id="navHead">
-                                        <Progress type="circle" id="prog" strokeColor={{ '0%': '#108ee9','100%': '#87d068',}} percent="100"/>
-                                        <h3>{quizDetail.title}<br/>  <p>{quizDetail.description}</p></h3>
+                             </section>
+                            <section className="navigation">
+                                <div className="quizNavigator">
+                                    <section className="navHead">
+                                        <Progress type="circle" className="prog" strokeColor={{ '0%': '#108ee9','100%': '#87d068',}} percent="100"/>
+                                        <h3>Completed<br/>  <p>{quizDetail.description}</p></h3>
                                     </section>
-                                    <section id="nav">
+                                    <section className="nav">
                                         {quiz?
                                             quiz.map((que,index) => (
                                     <section key={index}>
@@ -149,7 +159,8 @@ export default function QuizContent() {
                                     </section>
                                 </div>                                    
                             </section>
-                </section>}</> :
+                        </section>}
+            </> :
                 <section>{fallback}</section>}
         </div>
     )

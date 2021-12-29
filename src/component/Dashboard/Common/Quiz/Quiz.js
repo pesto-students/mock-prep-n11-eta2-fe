@@ -2,15 +2,17 @@ import React, { lazy, useState, useEffect } from 'react'
 import { useSelector,useDispatch} from "react-redux"
 import { Input} from "antd"
 import { questionIcon } from "constant/antIcons"
-import {  getQuizList } from 'constant/apiUrl'
+import {  deleteQuizList, getQuizList } from 'constant/apiUrl'
 
 import { fallback } from 'constant/navList'
 
 
 import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
-// import "./QuizList.css"
+import "./Quiz.css"
 import QuizCard from 'component/Common/Cards/Quiz/Quiz'
+import { removeData } from 'api/Api'
+import alertActionCreator from 'Redux/Action Creators/alertActionCreator'
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 
@@ -19,6 +21,7 @@ export default function QuizList() {
     const { Search } = Input;
     let [quizList, setQuizList] = useState([]);
     let [quiz, setQuiz] = useState([]);
+    let [quizId, setQuizId] = useState([]);
  
     let data = useSelector(state => state.dataReducer)
     const dispatch = useDispatch()
@@ -36,6 +39,18 @@ export default function QuizList() {
         setQuizList(filtered)
     }; 
 
+
+    const handleDelete = (quizId) => { 
+        console.log(quizId)
+        quiz = quiz.filter((e) => e._id === quizId);
+        removeData(deleteQuizList+quizId)
+        setQuiz(quiz);
+        alertActionCreator.setError(dispatch,"Quiz Deleted")
+        
+    }
+    
+
+
     const search = <> <section className="search"><Search placeholder="Search Quiz" onSearch={onSearch} style={{ width: 200 }} /></section></>
     
     return (
@@ -43,7 +58,7 @@ export default function QuizList() {
             <section className='resource-container'>
                 <DashboardHeader title="Quiz List" icon={questionIcon} rightComponent={search} />
                 <section className="resource">
-                    {quizList.length > 0 ?quizList.map((quiz, index) => (<QuizCard key={index} quiz={quiz}  />)) :<section>{fallback}</section>}
+                    {quizList.length > 0 ? quizList.map((quiz, index) => (<QuizCard key={index} quiz={quiz}  handleDelete={handleDelete}  />)) :<section>{fallback}</section>}
                 </section>
             </section>
         </div>

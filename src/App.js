@@ -26,7 +26,7 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
         <Suspense fallback={fallback}>
           <Switch>
-              <Route/>
+            <Route/>
           </Switch>  
         </Suspense>
       </Router>
