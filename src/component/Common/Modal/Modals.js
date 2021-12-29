@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link} from "react-router-dom"
 import "./Modal.css"
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";

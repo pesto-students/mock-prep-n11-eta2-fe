@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux'
 import { fallback } from 'constant/navList'
 import dataActions from 'Redux/Actions/dataAction'
 import "./Dashboard.css"
-import * as Sentry from "@sentry/react";
 
 const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
 const DashBoardCard = lazy(() => import('component/Dashboard/Admin/Dashboard/Cards/DashboardCards'))

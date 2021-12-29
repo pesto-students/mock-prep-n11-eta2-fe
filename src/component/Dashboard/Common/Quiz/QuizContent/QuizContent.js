@@ -126,7 +126,7 @@ export default function QuizContent() {
                         <section className="slides">
                             <section className="slide">
                                 <section className="slideCard">    
-                                    <h1 className="question" className='completed'>Quiz Completed</h1> 
+                                    <h1 className='completed'>Quiz Completed</h1> 
                                     
                                     <section className="score">
                                         {pending ?

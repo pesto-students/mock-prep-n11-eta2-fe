@@ -2,8 +2,6 @@ import React, {useState,useEffect, lazy} from 'react'
 import { DBIcon } from "constant/antIcons"
 import { Input} from "antd"
 import { useSelector } from "react-redux"
-
-
 import { deleteTopic, getTopics } from 'constant/apiUrl'
 import { useDispatch } from 'react-redux'
 import dataActions from 'Redux/Actions/dataAction'
@@ -25,7 +23,6 @@ export default function TopicsList() {
     const { Search } = Input;
           
     const dispatch = useDispatch()
-    let userRole = useSelector(state => state.authReducer)
     let data = useSelector(state => state.dataReducer)
     let [topics, setTopics] = useState([])
     let [topicsList, setTopicsList] = useState([])

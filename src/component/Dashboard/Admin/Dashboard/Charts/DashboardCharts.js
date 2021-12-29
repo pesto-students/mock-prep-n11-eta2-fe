@@ -1,10 +1,8 @@
 import React, { lazy,Suspense } from 'react'
 import { earningChartOptions } from 'constant/data'
-import { Tag } from "antd"
 import { Link } from 'react-router-dom'
-import { useSelector} from 'react-redux'
 import "./DashboardChart.css"
-import { messageIcon, upcomingInter } from 'constant/antIcons'
+import { messageIcon } from 'constant/antIcons'
 
 
 const DashboardChart = lazy(() => import("component/Common/Charts/Bar/BarChart"))
@@ -12,9 +10,6 @@ const DashboardPie = lazy(() => import("component/Common/Charts/Pie/PieChart"))
 
 export default function DashboardCharts({ data,query }) {
     
-
-    const auth = useSelector(state => state.dataReducer)
-
     return (
         <div>
              <section className="admin-dashboard-charts">

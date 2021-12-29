@@ -21,7 +21,6 @@ export default function QuizList() {
     const { Search } = Input;
     let [quizList, setQuizList] = useState([]);
     let [quiz, setQuiz] = useState([]);
-    let [quizId, setQuizId] = useState([]);
  
     let data = useSelector(state => state.dataReducer)
     const dispatch = useDispatch()
@@ -41,7 +40,6 @@ export default function QuizList() {
 
 
     const handleDelete = (quizId) => { 
-        console.log(quizId)
         quiz = quiz.filter((e) => e._id === quizId);
         removeData(deleteQuizList+quizId)
         setQuiz(quiz);

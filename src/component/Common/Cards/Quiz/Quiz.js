@@ -1,4 +1,4 @@
-import { editIcon, trashIcon } from 'constant/antIcons';
+import {  trashIcon } from 'constant/antIcons';
 import React, { Suspense } from 'react'
 import { Link } from 'react-router-dom';
 import "./Quiz.css"
