@@ -12,6 +12,7 @@ export const getAdminDashboard = baseUrl + "/adminDashboard/getData"
 export const getResources = baseUrl + "/resource/getResources"
 export const getQuizList = baseUrl + "/quiz/getQuizLists"
 export const getQueries = baseUrl + "/query/getData"
+export const getStudentQueries = baseUrl + "/studentQuery/getData"
 export const getUsers = baseUrl + "/user/getUsers"
 export const getInterviews = baseUrl + "/interviews/getData"
 
@@ -31,6 +32,7 @@ export const updateStudent = baseUrl + "/student/updateStudent/"
 export const updateResource = baseUrl + "/resource/updateResource/"
 export const updateTopic = baseUrl + "/topic/updateTopic/"
 export const updateQuery = baseUrl + "/query/updateData/"
+export const updateStudentQuery = baseUrl + "/studentQuery/updateData/"
 export const updateInterviews = baseUrl + "/interviews/updateData/"
 
 
@@ -41,9 +43,8 @@ export const getStudentById = baseUrl + "/student/getStudent/"
 export const getResourById = baseUrl + "/resource/getResource/"
 export const getQuizContent = baseUrl + "/quiz/getQuizList/"
 export const getQuery = baseUrl + "/quiz/getData/"
+export const getStudentQuery = baseUrl + "/studentQuery/getData/"
 export const getInterivew = baseUrl + "/interviews/getData/"
-
-
 
 //Insert
 export const insertUser = baseUrl + "/user/addUser"
@@ -52,6 +53,7 @@ export const insertResource = baseUrl + "/resource/addResource"
 export const insertInterviewer = baseUrl + "/interviewer/addInterviewer"
 export const insertStudent = baseUrl + "/student/addStudent"
 export const insertQuery = baseUrl + "/query/addData"
+export const insertStudentQuery = baseUrl + "/studentQuery/addData"
 export const createRazorOrder = baseUrl + "/razorpay/createOrder"
 export const insertInterviews = baseUrl + "/interviews/addData"
 

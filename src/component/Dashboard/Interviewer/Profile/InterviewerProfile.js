@@ -28,7 +28,7 @@ export const InterviewerProfile = () => {
     useEffect(() => {
       
         if (interData.interviewer && interData.interviewer.data) { 
-            console.log(interData.interviewer.data)
+           
             setInterviewer(interData.interviewer.data)
         }
     
@@ -66,7 +66,7 @@ export const InterviewerProfile = () => {
     const component1 =  <button className="btn-interviewer btn btn-success" onClick={() => {setUpdate(false)}} >View Profile</button> 
     const component2 = <button className="btn-interviewer btn btn-primary" onClick={() => {setUpdate(true)}}>Update Details</button>
     
-    console.log(interviewer)
+
     return (
         <>
             <div className="interviewer-profile">

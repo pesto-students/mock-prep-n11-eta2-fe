@@ -1,34 +1,35 @@
 import { useEffect,useState} from "react"
 import { Table, Input,Tag } from "antd";
 import { questionIcon } from "constant/antIcons";
-import DashboardHeader from "../Header/DashboardHeader";
-import "./Queries.css"
 import dataActionCreator from "Redux/Action Creators/dataActionCreators";
 import { useDispatch,useSelector } from "react-redux";
-import { getQueries, updateQuery } from "constant/apiUrl";
+import {  getStudentQueries, updateQuery, updateStudentQuery } from "constant/apiUrl";
 import dataActions from "Redux/Actions/dataAction";
 import Modals from 'component/Common/Modal/Modals'
 import {  queryResponseForm } from "constant/formData";
 import QueryForm  from "component/Common/Form/QueryForm"
 import { updateData } from "api/Api";
 import alertActionCreator from "Redux/Action Creators/alertActionCreator";
+import DashboardHeader from "component/Dashboard/Common/Header/DashboardHeader";
+import "./Queries.css"
 
-
-export default function Queries() {
+export default function Queries  ()  {
 
     const { Search } = Input;
-    const search = <><section className="search"><Search placeholder="Search Queries" style={{ width: 200,marginTop:"5vh",marginLeft:"1vw" }} /></section></>
+
     const data = useSelector(state => state.dataReducer)
     const [tableData,setTableData] = useState([])
     const dispatch = useDispatch()
     let [showModal2, setShowModal2] = useState(false);
     let [query, setQuery] = useState([]);
+    let [queryList, setQueryList] = useState([]);
     
-    useEffect(() => { dataActionCreator.getAdminData(dispatch, getQueries, dataActions.setQuery) }, [dispatch])
+    useEffect(() => { dataActionCreator.getAdminData(dispatch, getStudentQueries, dataActions.setQuery) }, [dispatch])
     
     useEffect(() => {
         if (data.query && data.query.data.length>0) { 
             setTableData(data.query.data)
+            setQueryList(data.query.data)
         }
     }, [data])
     
@@ -50,10 +51,10 @@ export default function Queries() {
 
     const submit = (value) => { 
      
+       
         let queryIndex = query.findIndex(f => f._id === query[0]._id)
         for (var key in value) {
-         
-
+            
             if (value[key] !== undefined && key !== "comments") {
                 query[queryIndex][key] = value[key]
             }
@@ -62,14 +63,20 @@ export default function Queries() {
                 let comments = query[queryIndex].comments;
                 comments.push( "Interviewer: "+value.comments)
                 value.comments = comments;
+                // value.comments.push(query[queryIndex][key])
             }
         }
         setQuery(query)
-
-        updateData(updateQuery + query[0]._id, value)
+       
+        updateData(updateStudentQuery + query[0]._id, value)
         alertActionCreator.setMessage(dispatch, "Response updated")
         setShowModal2(false);
     }
+
+    const onSearch = (value) => {
+        let filtered = queryList.filter(val => val.name.includes(value) ||  val.email.includes(value) ||  val.status.includes(value)    );
+        setTableData(filtered)
+    }; 
 
     const queryTableColumns = [
 
@@ -135,9 +142,12 @@ export default function Queries() {
                     color = "green"
                 }
                 return (
-                    <Tag color={color} key={index}>
+                    <>{tags ? <>
+                        <Tag color={color} key={index}>
                         {tags.toUpperCase()}
-                    </Tag>
+                     </Tag>
+                    </> : <></>}</>
+                    
                 )
             }
         },
@@ -161,11 +171,11 @@ export default function Queries() {
      form =    <QueryForm submitFunction={submit} status={query[0].status} description={query[0].description} formFields={queryResponseForm} buttonValue={"Update Query"} />
     }
 
-
+    const search = <><section className="search"><Search onSearch={onSearch} placeholder="Search Queries" style={{ width: 200,marginTop:"5vh",marginLeft:"1vw" }} /></section></>
     return (<>
         <DashboardHeader title="User Queries" icon={questionIcon} />
             {search}
-                <section className='query-container'>
+            <section className='int-query-container'>
                 
                 <Table columns={queryTableColumns} dataSource={tableData} /> :
                 <Modals title={"Respond Query"} show={showModal2} onHide={hide} data={form}   />
@@ -173,4 +183,3 @@ export default function Queries() {
         </>
     )
 }
-

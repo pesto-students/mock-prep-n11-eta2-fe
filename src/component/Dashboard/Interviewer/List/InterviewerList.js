@@ -25,7 +25,7 @@ export default function InterviewerList() {
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch, getInterviewers, dataActions.setInterviewerList) }, [dispatch])
     useEffect(() => {
-        console.log(data)
+      
         if (data.interviewerList ) { 
             setInterviewerList(data.interviewerList.data)
             setInterviewers(data.interviewerList.data)

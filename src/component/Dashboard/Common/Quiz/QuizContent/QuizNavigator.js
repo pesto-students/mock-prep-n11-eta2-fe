@@ -10,7 +10,7 @@ export default function QuizNavigator({ details, information, questions, index ,
     
     let attempt = questions[index].answer.attempted;
     let answer = questions[index].answer.answer;
-    console.log(details)
+
     return (
         <div id="quizNavigator">
             <section id="navHead">

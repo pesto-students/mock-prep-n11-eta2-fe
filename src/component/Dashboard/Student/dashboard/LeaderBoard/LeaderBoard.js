@@ -2,73 +2,59 @@ import React from 'react'
 import "./LeaderBoard.css"
 import { Tag } from 'antd'
 import { trophyIcon } from 'constant/antIcons'
+import { getStudents } from 'constant/apiUrl'
+import { useState, useEffect } from "react"
+import { useDispatch,useSelector } from 'react-redux'
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
 
-export const LeaderBoard = () => {
 
+export const LeaderBoard = (studentList,interviews) => {
 
-    let leaderboard = [
-        {
-            image: "https://randomuser.me/api/portraits/men/0.jpg",
-            name: "Mohammed Saif",
-            skills: ["JavaSCript", "BootStrap", "UI"],
-            ranking: 1,
-        },
-        {
-            image: "https://randomuser.me/api/portraits/women/67.jpg",
-            name: "Silki Hansen",
-            skills: ["JavaSCript", "UI"],
-            ranking: 2,
-        },
-
-    ]
-
-    let actionItems = [{
-        title: "Read about Ux Mindset",
-        description: "",
-        deadline: "21/04/12",
-        status: "pending"
-    }]
-
+  
     return (
         <div id="leaderboard">
               <section className="cust-review">   
                     <h2 className="title">Student Leaderboard</h2>
-                    {leaderboard.length>0 ?
+                    {studentList.student.length>0 ?
                         <section>
-                            {leaderboard.map((review, index) => (
+                            {studentList.student.map((student, index) => (
                                 <section key={index} className="review-container">
                                     <span style={{ display: "flex" }}>
-                                        <img src={review.image} alt="profile" />
-                                        <p>{review.name} <br/>
-                                            {review.skills.map((s,index) => (
+                                        <img src={student.image} alt="profile" />
+                                        <p>{student.name} <br/>
+                                            {student.skills.map((s,index) => (
                                                 <Tag id={index} color="success" style={{marginTop:"2px"}} >{s}</Tag> 
                                             ))}
                                         </p>
                                       
                                     </span>
+                                    { student.analytics ?   <h5>  {trophyIcon} {student.analytics.ranking}</h5>:  <h5>  {trophyIcon} 0</h5>}
                                   
-                                    <h1>  {trophyIcon} {review.ranking}</h1>
                                 </section>
                             ))}
                         </section> :
                         <p>Loading</p>
                     }
             </section>
-            <section className="total-earning">
+            {interviews && interviews.actionItems > 0 ? <>
+                <section className="total-earning">
                 <h2 className="headline">Action Items </h2>
-                {actionItems.map((action,index) => (
+                {interviews.actionItems.map((action,index) => (
                     <section key={index} className="top">
                         <section>
                             <p>{action.title}</p>
                             <h4>{ action.description}</h4>
-                            <p>Due: {action.deadline}</p>
+                            <p>Due: {action.due}</p>
                         </section>
                         <Tag id="tag" color="red">{action.status}</Tag>
 
                     </section>
                 )) }
                    
-                </section>
+            </section>
+            </> : <></>}
+           
         </div>
     )
 }

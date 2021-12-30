@@ -54,7 +54,7 @@ export default function ResourceList() {
 
 
      const onSearch = (value) => {
-        console.log(topic)
+    
         let filtered = resource.filter(val => val.title.includes(value) ||  val.description.includes(value) );
         setResourceList(filtered)
     }; 

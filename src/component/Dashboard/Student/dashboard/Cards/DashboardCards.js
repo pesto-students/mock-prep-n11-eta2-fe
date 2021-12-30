@@ -3,42 +3,16 @@ import "./DashboardCards.css"
     
 const DashboardCard = lazy(() => import("component/Common/Cards/DashboardCard/DashBoardCard"))
 
-export default function DashboardCards() {
+export default function DashboardCards({analytics}) {
 
-    const data =[
-        {
-            "description": "Total Mock Interviews",
-            "value": 10,
-            "icon": "fa fa-laptop",
-            "_id": "61c381bd61769ed09217557a"
-        },
-
-        {
-            "description": "Topics Learning",
-            "value": 3,
-            "icon": "fa fa-book-open",
-            "_id": "61c381bd61769ed09217557c"
-        },
-        {
-            "description": "Interviewer Rating",
-            "value": 7.8,
-            "icon": "fa fa-award",
-            "_id": "61c381bd61769ed09217557d"
-        },
-        {
-            "description": "Mockprep Ranking (Current Month)",
-            "value": "8th",
-            "icon": "fa fa-trophy",
-            "_id": "61c381bd61769ed09217557d"
-        }
-    ]
 
     return (
         <div>
              <section className="admin-dashboard-cards">
-                {data.map((metric,index) => (
-                    <DashboardCard key={index} id="int-dash-card"  {...metric} icon={<i className={metric.icon}></i>} />
-                )) }
+                <DashboardCard key={1} className="int-dash-card2" description={"Total Interviews"} value={analytics.totalInterviews} icon={"fa fa-users"} />
+                <DashboardCard key={2} className="int-dash-card2" description={"Ongoing Topics"} value={analytics.topicsOngoing} icon={"fa fa-book-open"}/>
+                <DashboardCard key={3} className="int-dash-card2" description={"Interviews Rating"} value={analytics.interviewRating} icon={"fa fa-star"}/>
+                <DashboardCard key={4} className="int-dash-card2" description={"Ranking"} value={analytics.ranking} icon={"fa fa-trophy"}/>
             </section>
         </div>
     )

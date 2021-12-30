@@ -22,29 +22,26 @@ export default function InterviewerDashboard() {
     let auth = useSelector(state => state.authReducer)
     let data = useSelector(state => state.dataReducer)
     let [interviewer, setInterviewer] = useState([])
-    let [interviews,setInterviews] = useState([])
-    
+   
     useEffect(() => {
         if (auth.user) { 
             dataActionCreator.getAdminData(dispatch, getInterviewerById + auth.user.id, dataActions.setInterviewer)
-            dataActionCreator.getAdminData(dispatch, getInterviews, dataActions.setInterviews)
-            setInterviews(interviews.filter(e => e.interviewer.id === interviewer._id))
-            
+
         }
-    }, [dispatch,auth,interviews,interviewer])
+    }, [dispatch])
 
     useEffect(() => {
         if (data && data.interviewer) { setInterviewer(data.interviewer.data) }
-        if (data && data.interviews) { setInterviews(data.interviews.data)}
-    }, [dispatch,data])
 
-    console.log(interviews)
+    }, [data])
+
+
   
     return (
         <div className="interviewerDashboard">
                 <DashboardHeader title="Interviewer Dashboard" icon={DashboardIcon} />
                 <DashboardCards data={interviewer.analytics}/>
-                <Interviews interviews={interviews } />
+                <Interviews  />
                 <Earnings analytics={interviewer.analytics} />
                 <Feedback stats={interviewer} />
             </div> 

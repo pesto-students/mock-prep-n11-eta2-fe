@@ -31,7 +31,7 @@ export default function Interviews() {
         }
     }, [data,auth])
 
-    console.log(interviews)
+
 
     const onSearch = (value) => {
         let filtered = interviewsList.filter(val => val.student.name.includes(value) ||   val.topic.includes(value));

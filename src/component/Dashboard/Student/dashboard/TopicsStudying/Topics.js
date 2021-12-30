@@ -6,7 +6,7 @@ import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import "./TopicsStudying.css"
 
-export default function Topics() {
+export default function Topics(student) {
     
     const dispatch = useDispatch()
     let [topicsList, setTopicsList] = useState([]);
@@ -18,9 +18,11 @@ export default function Topics() {
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
     useEffect(() => {
-        if (data.topics !== undefined) {
+        if (data.topics !== undefined && student.length>0) {
 
-            let topic = data.topics.data.filter(f => studentData.ongoingTopics.includes(f._id));
+            let topic = data.topics.data.filter(f => { 
+                student.forEach(s => { s.learnings.topics.topicId === f._id;})
+            });
 
             setTopicsList(topic);
         }

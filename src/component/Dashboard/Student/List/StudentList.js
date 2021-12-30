@@ -25,7 +25,7 @@ export default function StudentList() {
 
     useEffect(() => { dataActionCreators.getAdminData(dispatch, getStudents, dataActions.setStudentList) }, [dispatch])
     useEffect(() => {
-        console.log(data)
+      
         if (data.studentList ) { 
             setInterviewerList(data.studentList.data)
             setInterviewers(data.studentList.data)

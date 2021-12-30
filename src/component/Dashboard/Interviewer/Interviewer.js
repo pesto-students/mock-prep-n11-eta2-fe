@@ -7,12 +7,14 @@ import { InterviewerProfile } from './Profile/InterviewerProfile';
 import { useSelector } from 'react-redux';
 import "./Interviewer.css"
 
+
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const Dashboad = lazy(() => import("component/Dashboard/Interviewer/Dashboard/Dashboard"))
 const upComingInterviews = lazy(() => import("component/Dashboard/Interviewer/Upcoming Interviews/Interviews"))
 const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentList"))
 const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
+const InterviewerQueries = lazy(() => import("component/Dashboard/Interviewer/Queries/Queries"))
 
 export default function Interviewer() {
 
@@ -22,7 +24,6 @@ export default function Interviewer() {
     useEffect(() => {
         interviewerNavList[1].url = "/interviewer/interviewerProfile/"+userId
     }, [userId])
-
 
 
     return (
@@ -41,7 +42,8 @@ export default function Interviewer() {
                             <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
                             <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
                             <Route  path={`${path}/topicsList/`} component={TopicsList} />
-                            <Route  path={`${path}/resourceList`} component={ResourceList} />
+                            <Route path={`${path}/resourceList`} component={ResourceList} />
+                            <Route  path={`${path}/queries`} component={InterviewerQueries} />
                         </section>
                 </Route>
             </div>

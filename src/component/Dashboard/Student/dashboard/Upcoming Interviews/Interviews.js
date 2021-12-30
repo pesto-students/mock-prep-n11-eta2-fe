@@ -3,56 +3,15 @@ import { Button,Progress } from "antd"
 import { Link } from 'react-router-dom'
 import { CalenderIcon} from "constant/antIcons"
 import "./Interview.css"
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { getInterviews } from 'constant/apiUrl'
 
-export default function Interviews() {
+import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
+
+export default function Interviews(student) {
     
-
-    let interviewList = [
-        {
-            id: 1,
-            studentName: "Mohammed Saif",
-            interviewerName: "Mark Taylor",
-            date: "10/12/21",
-            slot: "2pm - 3pm",
-            url: "teams",
-            topic:"Web Developemnet"
-        },
-        {
-            id: 2,
-            studentName: "Mohammed Salman",
-            interviewerName: "Mark Taylor",
-            date: "10/12/21",
-            slot: "2pm - 3pm",
-            url: "teams",
-            topic:"Web Developemnet"
-        },
-        {
-            id: 3,
-            studentName: "Mohammed Suhaib",
-            interviewerName: "Mark Taylor",
-            date: "13/12/21",
-            slot: "2pm - 3pm",
-            url: "teams",
-            topic:"HTML Developemnet"
-        }
-    ]
-
-    let tasks = [
-        {
-            task: "Web Developer Preparation",
-            interviewCount: 6,
-            quizScore: 8,
-            interviewScore: 7,
-        },
-        {
-            task: "JavaScript Developer",
-            interviewCount: 2,
-            quizScore: 8.5,
-            interviewScore: 9,
-        },
-
-    ]
-       
 
     return (
         <div>
@@ -63,21 +22,21 @@ export default function Interviews() {
                     </h2>
                     <section id="upcomingList">
                         {
-                            interviewList.map((e, index) => (
+                            student.interviews.map((e, index) => (
                                 <section key={index} id="interviewInfo">
                                    
                                 <span id="date">
                                 <i className="calender">{CalenderIcon}</i>
                                     <p>{e.date}</p>
                                 </span>
-                                    <p>{e.slot} </p>
-                                    <p>{e.interviewerName}</p>
+                                    <p>{e.time} </p>
+                                    <p>{e.student.name}</p>
                               
                                 <span>
                                     <p>{e.topic}</p>
                                 </span>
                                 <span>
-                                    <a href={e.url}>Join Meets</a>
+                                    <a href={e.meetingUrl}>Join Meets</a>
                                 </span>
                             </section>
                             ))
@@ -85,22 +44,22 @@ export default function Interviews() {
                     </section>
                     
                 </section>
-                {/* <section id="previousInterviews">   
+                <section id="previousInterviews">   
                     <h2 className='title'>Progress</h2>
                     <section id="student-info">
-                        {tasks.map((task, index) => (
+                        {student.student.learnings.map((task, index) => (
                             <section key={index} id="task">
-                                <Progress type="circle" id="progressCircle" strokeColor="lightgreen" percent={((task.quizScore + task.interviewScore) / 2) * 10} />
+                                <Progress type="circle" id="progressCircle" strokeColor="lightgreen" percent={(((task.quiz.score/10) + task.interview.score) / 2) * 10} />
                             <span>
-                             <h4>{task.task}</h4>
-                             <p>Quiz Score: {task.quizScore}</p>
-                             <p>Mock Interview Score: {task.interviewScore}</p>
+                             <h6>{task.topics.name}</h6>
+                             <p>Quiz Score: {task.quiz.score}</p>
+                             <p>Mock Interview Score: {task.interview.score}</p>
                              </span>
                          </section>
                         ))
                         }
                     </section>
-                </section> */}
+                </section>
             </section>
         </div>
     )

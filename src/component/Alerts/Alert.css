@@ -2,6 +2,7 @@
     width: 30vw;
     height: auto;
     position: absolute;
+    z-index: 9;
     right: 5vw;
     top: 7vh;
     margin-top: 5vh;

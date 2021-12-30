@@ -85,6 +85,12 @@ export const interviewerNavList = [
         linkName: "Resource List",
         icon: resourceIcon
     },
+    {
+        id: 7,
+        url:"/interviewer/queries",
+        linkName: "Student Queries",
+        icon: questionIcon
+    },
 ]
 
 export const studentNavList = [

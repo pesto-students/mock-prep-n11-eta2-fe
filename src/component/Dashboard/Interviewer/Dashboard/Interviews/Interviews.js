@@ -2,13 +2,11 @@ import React, { useState,useEffect} from 'react'
 import { Button } from "antd"
 import { Link } from 'react-router-dom'
 import { CalenderIcon} from "constant/antIcons"
-
 import { useSelector,useDispatch } from 'react-redux'
-import "./Interview.css"
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 import { getInterviews } from 'constant/apiUrl'
-
+import "./Interview.css"
 
 
 export default function Interviews() {
@@ -23,9 +21,7 @@ export default function Interviews() {
     useEffect(() => {
 
         if (data.interviews && auth.user) { 
-           
             setInterviews(data.interviews.data.filter(e => e.interviewer.id === auth.user.id))
-          
         }
     }, [data,auth])
 
