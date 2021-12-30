@@ -57,7 +57,7 @@ export const interviewerNavList = [
     },
     {
         id: 2,
-        url:"/interviewer/interviewerProfile",
+        url:"/interviewerProfile",
         linkName: "My Profile",
         icon: idCardIcon
     },
@@ -125,7 +125,6 @@ export const studentNavList = [
         icon: resourceIcon
     }
 ]
-
 
 export const studentFilter = [
     {id: 1, value: "Javascript" },

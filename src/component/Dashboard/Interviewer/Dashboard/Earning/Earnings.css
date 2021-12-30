@@ -2,13 +2,16 @@
     display: grid;
     margin: 2vh 2vw;
     grid-template-columns: 2fr 1fr;  
+
 }
 
-.earning-chart{
-    width: 90%;
-    height: 100%;
+.earning-chart{ 
+    width: 72%;
+    height: auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     padding: 1vw; 
+    margin: 1vh 1vw;
+
 }
 .resourceChart{
     width: 22vw;
@@ -17,4 +20,80 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.headline{color:rgb(16, 38, 105)}
+.resourceChart>section{width: 16vw;height: auto;margin: auto;padding: 0;}
+.headline{color:goldenrod;font-size: 1.2rem}
+
+
+@media only screen and (max-width:1024px) {
+    .interviewer-dashboard-charts{
+        grid-template-columns: 1fr;
+    }
+    .earning-chart{ 
+        width: 85%;
+        margin: 1vh 0vw;
+    }
+
+    .resourceChart{
+        width: 33vw;
+    }
+
+    .resourceChart>section{width: 30vw;}
+}
+
+@media only screen and (max-width:768px) {
+    .interviewer-dashboard-charts{
+        grid-template-columns: 1fr;
+    }
+    .earning-chart{ 
+        width: 80%;
+        margin: 1vh 0vw;
+    }
+
+    .resourceChart{
+        width: 45vw;
+    }
+
+    .resourceChart>section{width: 40vw;}
+}
+
+@media only screen and (max-width:768px) {
+    .interviewer-dashboard-charts{
+        grid-template-columns: 1fr;
+    }
+    .earning-chart{ 
+        width: 90%;
+        margin: 0 ;
+    }
+
+    .resourceChart{
+        width: 52vw;
+        margin: 2vh 0;
+    }
+
+    .resourceChart>section{width: 70%;margin: auto;}
+}
+
+@media only screen and (max-width:450px) {
+    .interviewer-dashboard-charts{
+        grid-template-columns: 1fr;
+    }
+
+    .onboard-chart{
+        height: 40vh;
+    }
+    .earning-chart{ 
+        width: 90%;
+        height: 30vh;
+        margin: 0 auto ;
+    }
+
+    .resourceChart{
+        width: 88vw;
+        margin: 2vh auto;
+    }
+    .resourceChart>section {
+        width: 100%;}
+    .trending-chart{width: 80vw;}
+
+    .resourceChart>section{width: 70%;margin: auto;}
+}

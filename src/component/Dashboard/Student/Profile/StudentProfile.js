@@ -4,7 +4,7 @@ import { starIcon, UserIcon } from 'constant/antIcons';
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { updateData } from 'api/Api';
-import { getStudents, updateStudent } from 'constant/apiUrl';
+import { getStudentById, updateStudent } from 'constant/apiUrl';
 import Forms  from 'component/Common/Form/Forms';
 import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
@@ -24,8 +24,8 @@ export const StudentProfile = () => {
     let interData = useSelector(state => state.dataReducer)
     let auth = useSelector(state => state.authReducer)
 
-    useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudents,dataActions.setStudents)},[dispatch])
-    useEffect(() => {  if (interData.studentData !== undefined) setInterviewer(interData.studentData.data.find(e => e._id===profileId)) },[profileId,   interData])
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getStudentById+profileId,dataActions.setStudent)},[dispatch,profileId])
+    useEffect(() => { if (interData.student) { setInterviewer(interData.student.data)}},[profileId,interData])
 
     if (Object.keys(interviewer).length>0) { 
         Object.keys(studentForm).forEach(key => studentForm[key] = interviewer[key]);

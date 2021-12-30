@@ -55,9 +55,7 @@ export default function JoinUs({ isSignUp }) {
             
             removeCookie('user')
             setCookie('user', data)
-            
-          
-            
+
             authActionCreator.logIn(dispatch, data)
             alertActionCreator.setMessage(dispatch, "Sign up succesfull")
            

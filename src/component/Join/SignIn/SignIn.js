@@ -54,7 +54,6 @@ export default function SignIn() {
                         setCookie('user',data)
                         authActionCreators.logIn(dispatch, data)
                         alertActionCreator.setMessage(dispatch,"Sign in succesfull")
-                        
                     }
                 })
                
@@ -80,7 +79,7 @@ export default function SignIn() {
                 "name": "millie taylor",
                 "email": "millie.taylor@gmail.com",
                 "role": role,
-                "id": "61c35291b7809a993100293c",
+                "id": "61ca4fce988a26bb406d59aa",
                 "image":"https://randomuser.me/api/portraits/women/75.jpg",
                 "isLoggedIn": true
             };

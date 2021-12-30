@@ -9,10 +9,10 @@
     margin: 0;
 }
 
-.tab-title{font-size:1.2rem;display: flex;color: grey;vertical-align: middle;}
-
+.tab-title{font-size:1.2rem;display: flex;color: grey;}
+.tab-title>i{ display: flex;align-items: center;}
 .tab-options{width:50%;display: flex;justify-content: space-around; align-items: center;align-content: center;}
-
+.icon{margin: 0 0.5vw;}
 .ant-select{display: flex;align-items: center;min-width: 15vw;} 
 .ant-select-selector{width: 15vw;}
 
@@ -22,13 +22,15 @@
     #toggleBtn{display: none; }
 }
 
-
 @media only screen and (max-width:768px) {
     .tab-title{
-        width: 50vw !important;
-        
+        width: 50vw !important;        
     }
 
     .tab-options{justify-content: right;}
+}
+
+@media only screen and (max-width:450px) {
+    .tab-title{width: 80vw !important;}
 }
 

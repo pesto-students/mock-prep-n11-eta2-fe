@@ -1,72 +1,72 @@
-import React from 'react'
-
+import React, {  useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import {  getStudents } from "constant/apiUrl"
+import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
+import dataActions from 'Redux/Actions/dataAction'
 import "./Feedback.css"
 
-export default function Feedback( ) {
+
+
+export default function Feedback({stats}) {
+    
     
 
-    const testimonials = [
-        {
-            "_id": "61c35d8ab7809a9931002a30",
-            "name": "Silki Hansen",
-            "email": "silki.hansen@gmail.com",
-            "company": "Razor Io",
-            "review": "Feedback was usefull in improving my skills",
-            "image": "https://randomuser.me/api/portraits/women/67.jpg",
-            "rating": 10,
-        },
-        {
-            "_id": "61c35f4cb7809a9931002a51",
-            "name": "Bobby Mertin",
-            "email": "bobby.martin@gmail.com",
-            "company": "Minsoft Tech",
-            "review": "Project Discussion was great, got much needed help",
-            "image": "https://randomuser.me/api/portraits/men/0.jpg",
-            "rating": 8,
-          
-        }
-    ]
+    const dispatch = useDispatch()
+   
+    let data = useSelector(state => state.dataReducer)
     
-    
+    useEffect(() => {
+        dataActionCreator.getAdminData(dispatch, getStudents, dataActions.setStudentList)
+        
+    }, [dispatch])
+ 
     return (
-        <div>
-             <section className="customer-feedback">
-                <section className="total-earning">
-                    <h2 className="headline">Quick Stats (2021)</h2>
-                    <section className="top">
-                        <p>Total Revenue</p>
-                        <h4>₹127,493</h4>
-                        <p>1.4% Growth</p>
-                    </section>
-                    <section className="top">
-                        <p>Total Interviews taken</p>
-                        <h4>112</h4>
-                        <p>Averaging 15 interviews a month</p>
-                    </section>
-                    <section className="top">
-                        <p>Average Rating</p>
-                        <h4>8.3</h4>
-                        <p>Out of 67 reviews</p>
-                    </section>
-                </section>
-                <section className="cust-review">   
-                    <h2 className="headline">Student Feedback</h2>
-                    {testimonials.length>0 ?
-                        <section>
-                            {testimonials.map((review, index) => (
-                                <section key={index} className="review-container">
-                                    <span style={{ display: "flex" }}>
-                                        <img src={review.image} alt="profile" />
-                                        <p>{review.name}<br />{review.review}</p>
-                                    </span>
-                                    <p>{review.rating}/5</p>
+        <>
+             {stats.analytics && stats.feedback && data.studentList ? 
+                <>
+                   <div>
+                        {<section className="customer-feedback">
+                            <section className="total-earning">
+                                <h2 className="headline">Quick Stats (2021)</h2>
+                                <section className="top">
+                                    <p>Total Revenue</p>
+                                    <h4>{stats.analytics.totalEarnings}</h4>
+                                    <p>1.4% Growth</p>
                                 </section>
-                            ))}
-                        </section> :
-                        <p>Loading</p>
-                    }
-                </section>
-            </section>
-        </div>
+                                <section className="top">
+                                    <p>Total Interviews taken</p>
+                                    <h4>{stats.analytics.totalInterviews}</h4>
+                                    <p>Averaging 15 interviews a month</p>
+                                </section>
+                                <section className="top">
+                                    <p>Average Rating</p>
+                                    <h4>{stats.rating}</h4>
+                                    <p>Out of 67 reviews</p>    
+                                </section>
+                            </section>
+                            <section className="cust-review">
+                                <h2 className="headline">Student Feedback</h2>
+                                {stats.feedback.length > 0 && data.studentList ?
+                                    <section>
+                                        {stats.feedback.map((review, index) => (
+                                            <section key={index} className="review-container">
+                                                <span style={{ display: "flex" }}>
+                                                    {/* <img src={review.image} alt="profile" /> */}
+                                                    <p>{review.name}<br />{review.review}</p>
+                                                </span>
+                                                <p>{review.rating}/5</p>
+                                            </section>
+                                        ))}
+                                    </section> :
+                                    <p>Loading</p>
+                                }
+                            </section>
+                        </section>}
+                    </div> 
+                </> :
+                <></>
+            }
+        </>
     )
 }

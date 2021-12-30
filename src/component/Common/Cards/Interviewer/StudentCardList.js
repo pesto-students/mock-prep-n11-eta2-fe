@@ -21,7 +21,7 @@ export default function StudentCardList({ interviewer, handleDelete, handleList,
                                 <button onClick={() => { handleList(interviewer._id) }} className="btn text-white  m-auto my-2  btn-success">List Profile</button> : 
                                 <button onClick={() => { handleDelist(interviewer._id) }} className="btn text-white m-auto  my-2 btn-danger">Delist Profile</button>}   
                             </section>
-                        : <Link to={`studentProfile${interviewer._id}`}><button className="btn m-auto btn-success">View Profile</button></Link>  
+                        : <Link to={`studentProfile/${interviewer._id}`}><button className="btn m-auto btn-success">View Profile</button></Link>  
                         }  
                 </section>
                 <img alt="int-profile" src={interviewer.image} className="profile" />

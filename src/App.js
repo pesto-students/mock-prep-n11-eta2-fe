@@ -9,6 +9,8 @@ import 'antd/dist/antd.min.css';
 import './App.css';
 import authActionCreator from "Redux/Action Creators/authActionCreators";
 
+import Component from "component/Dashboard/Interviewer/Dashboard/Dashboard"
+
 function App() {
   
   const [cookies] = useCookies(['user']);
@@ -27,6 +29,7 @@ function App() {
         <Suspense fallback={fallback}>
           <Switch>
             <Route/>
+            {/* <Component/> */}
           </Switch>  
         </Suspense>
       </Router>

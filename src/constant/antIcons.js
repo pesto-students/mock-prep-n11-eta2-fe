@@ -1,4 +1,4 @@
-import {UserOutlined,FacebookOutlined,StarTwoTone,MessageTwoTone,CloseCircleTwoTone ,GoogleOutlined,QuestionCircleTwoTone,MinusSquareTwoTone   ,AimOutlined,MailOutlined ,PhoneOutlined,YoutubeOutlined,CheckCircleOutlined, InstagramOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
+import {UserOutlined,FacebookOutlined,EyeFilled,StarTwoTone,MessageTwoTone,CloseCircleTwoTone ,GoogleOutlined,QuestionCircleTwoTone,MinusSquareTwoTone   ,AimOutlined,MailOutlined ,PhoneOutlined,YoutubeOutlined,CheckCircleOutlined, InstagramOutlined, SearchOutlined,DeleteOutlined,CalendarOutlined, AlertTwoTone,  UsergroupAddOutlined,HddTwoTone,LeftOutlined,RightOutlined,ReconciliationTwoTone ,TrophyTwoTone  , UserAddOutlined,CalculatorOutlined,LaptopOutlined,MenuUnfoldOutlined ,IdcardTwoTone,SmileTwoTone,AppstoreTwoTone,InfoCircleOutlined, EditOutlined } from "@ant-design/icons";
 
 export const DashboardIcon = <AppstoreTwoTone />;
 export const UserIcon = <UserOutlined />;
@@ -29,6 +29,7 @@ export const mapIcon = <AimOutlined />
 export const messageIcon = <MessageTwoTone style={{marginLeft:"1vw"}} />
 export const toggleIcon = <MinusSquareTwoTone />
 export const closeIcon = <CloseCircleTwoTone />
+export const eyeIcon = <EyeFilled />
 export const questionIcon = <QuestionCircleTwoTone />
 export const starIcon = <StarTwoTone twoToneColor="#e6a205" />
 export const googleIcon = <GoogleOutlined style={{ fontSize: '40px', color: '#EA4335'}}/>

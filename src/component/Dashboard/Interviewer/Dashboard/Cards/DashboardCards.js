@@ -1,45 +1,23 @@
-import React, {lazy} from 'react'
+
+import React, {lazy,Suspense} from 'react'
 import "./DashboardCards.css"
     
 const DashboardCard = lazy(() => import("component/Common/Cards/DashboardCard/DashBoardCard"))
 
-export default function DashboardCards() {
-
-    const data =[
-        {
-            "description": "Total Interviews",
-            "value": 120,
-            "icon": "fa fa-laptop",
-            "_id": "61c381bd61769ed09217557a"
-        },
-
-        {
-            "description": "Total Earnings",
-            "value": 127493,
-            "icon": "fa fa-rupee",
-            "_id": "61c381bd61769ed09217557c"
-        },
-        {
-            "description": "Total Students Mentored",
-            "value": 21,
-            "icon": "fa fa-user",
-            "_id": "61c381bd61769ed09217557d"
-        },
-        {
-            "description": "Number of days on mockprep",
-            "value": 140,
-            "icon": "fa fa-circle",
-            "_id": "61c381bd61769ed09217557d"
-        }
-    ]
+export default function DashboardCards({ data }) {
 
     return (
         <div>
-             <section className="admin-dashboard-cards">
-                {data.map((metric,index) => (
-                    <DashboardCard key={index} id="int-dash-card" {...metric} icon={<i className={metric.icon}></i>} />
-                )) }
-            </section>
+            <Suspense fallback={<div>Loading...</div>}>
+                { data ? 
+                <section className="admin-dashboard-cards">
+                            <DashboardCard key={1} id="int-dash-card" icon={"fa fa-users"}  value={data.totalInterviews} description={"Interviews Taken"} />
+                            <DashboardCard key={2} id="int-dash-card" icon={"fa fa-rupee"}  value={data.totalEarnings} description={"Total Earnings"} />
+                            <DashboardCard key={3} id="int-dash-card" icon={"fa fa-smile"}  value={data.totalStudentsMentored} description={"Students Mentored"} />
+                            <DashboardCard key={4} id="int-dash-card" icon={"fa fa-clock-o"} value={data.noOfDays} description={"Days with Mockprep"} />
+                    </section>:
+                <></>}
+            </Suspense >
         </div>
     )
 }

@@ -1,5 +1,5 @@
 .customer-feedback{
-    width: 96%;
+    width: 92%;
     margin: 2vh auto;
     height: auto;
     margin: auto;
@@ -7,11 +7,18 @@
     justify-content: center;
 }
 
+.headline{font-size: 1.1rem !important;color: rgb(16, 35, 94) !important;}
+
 .top{
     border-bottom: 1px solid lightgray;
     color:rgb(92, 92, 92);
     text-align: left;
     padding: 10px;
+}
+
+.top>h4{
+    font-size: 1.3rem;
+    color: goldenrod;
 }
 
 .total-earning>.bottom{
@@ -56,3 +63,22 @@
     margin-right: 20px;
 }
 
+@media screen and (max-width: 1024px) {
+    .customer-feedback{width: 98%;margin: auto;}
+    .cust-review{margin: 0 1vw; width: 49vw;height: 44vh;margin: 3vh 1vw;}
+    .total-earning {width: 25vw;}
+}
+
+
+@media screen and (max-width: 768px) {
+    .customer-feedback{width: 98%;margin: auto;}
+    .cust-review{margin: 0 1vw; width: 64vw;height: 44vh;margin: 3vh 1vw;}
+    .total-earning {width: 30vw;}
+}
+
+
+@media screen and (max-width: 450px) {
+    .customer-feedback{display: block;}
+    .cust-review{margin: 0 1vw; width: 94vw;height: 44vh;margin: 3vh auto;}
+    .total-earning {width: 70vw;margin: 5vh 5vw;}
+}

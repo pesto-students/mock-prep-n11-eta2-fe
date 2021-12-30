@@ -31,6 +31,7 @@ export default function ResourceList() {
     const dispatch = useDispatch()
     let [resourceId, setResourceId] = useState(""); 
 
+    let auth = useSelector(state => state.authReducer)
    
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getResources, dataActions.setResource) }, [dispatch])
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
@@ -121,7 +122,7 @@ export default function ResourceList() {
         <div>  
             <section className='resource-container'>
                 <DashboardHeader title="Resources List" icon={resourceIcon} rightComponent={search} />
-                <button className="btn btn-primary m-4" onClick={handleAdd}>Add Resources</button>
+                {auth && auth.role && auth.role === "admin" ? <button className="btn btn-primary m-4" onClick={handleAdd}>Add Resources</button> : <></>}
                 <section className="resource">
                     {resourceList.length > 0 ?resourceList.map((resource, index) => (<ResourceCard key={index} {...resource} handleEdit={handleEdit} handleDelete={handleDelete}  />)) :<section>{fallback}</section>}
                 </section>

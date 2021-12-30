@@ -19,8 +19,8 @@ export default function DashboardHeader({icon,title,rightComponent})  {
     return (
         <div className="header">
                 <section className="tab-title">
-                <i>{icon }</i> 
-                <p className="icon">{title}</p>
+                    <i>{icon }</i> 
+                    <p className="icon">{title}</p>
                 </section>
                 <section className="tab-options">
                     {rightComponent}

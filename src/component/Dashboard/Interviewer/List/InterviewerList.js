@@ -23,11 +23,13 @@ export default function InterviewerList() {
     let userRole = useSelector(state => state.authReducer.user.role)
     let data = useSelector(state => state.dataReducer)
 
-    useEffect(() => { dataActionCreators.getAdminData(dispatch, getInterviewers, dataActions.setInterviewer) }, [dispatch])
+    useEffect(() => { dataActionCreators.getAdminData(dispatch, getInterviewers, dataActions.setInterviewerList) }, [dispatch])
     useEffect(() => {
-        if (data.interviewerData ) { 
-            setInterviewerList(data.interviewerData.data)
-            setInterviewers(data.interviewerData.data)
+        console.log(data)
+        if (data.interviewerList ) { 
+            setInterviewerList(data.interviewerList.data)
+            setInterviewers(data.interviewerList.data)
+          
         }
     }, [data])
     

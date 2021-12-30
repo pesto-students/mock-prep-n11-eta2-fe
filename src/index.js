@@ -9,11 +9,11 @@ import { CookiesProvider } from "react-cookie";
 import { sentrydsn } from 'constant/const_url';
 import { Integrations } from "@sentry/tracing";
 
-Sentry.init({
-  dsn: sentrydsn,
-  integrations: [new Integrations.BrowserTracing()],
-  tracesSampleRate: 1.0,
-});
+// Sentry.init({
+//   dsn: sentrydsn,
+//   integrations: [new Integrations.BrowserTracing()],
+//   tracesSampleRate: 1.0,
+// });
 
 
 ReactDOM.render(

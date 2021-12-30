@@ -9,7 +9,7 @@ import "./Interviewer.css"
 
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const Dashboad = lazy(() => import("component/Dashboard/Interviewer/Dashboard/Dashboard"))
-const Interviews = lazy(() => import("component/Dashboard/Interviewer/Interviews/Interviews"))
+const upComingInterviews = lazy(() => import("component/Dashboard/Interviewer/Upcoming Interviews/Interviews"))
 const StudentList = lazy(() => import("component/Dashboard/Student/List/StudentList"))
 const TopicsList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
@@ -23,6 +23,8 @@ export default function Interviewer() {
         interviewerNavList[1].url = "/interviewer/interviewerProfile/"+userId
     }, [userId])
 
+
+
     return (
         <>
             <Switch>
@@ -32,8 +34,9 @@ export default function Interviewer() {
                                     <SideNav sideNavList={interviewerNavList} userName={"Interviewer"}></SideNav>
                         </section>
                         <section className="mainContainer">
-                            <Route  path={`${path}/dashboard`} component={Dashboad} />
-                            <Route  path={`${path}/upcomingInterviews`} component={Interviews} />
+                            <Route path={`${path}/dashboard`} component={Dashboad} />
+                           
+                            <Route  path={`${path}/upcomingInterviews`} component={upComingInterviews} />
                             <Route  path={`${path}/studentList`} component={StudentList} />
                             <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
                             <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />

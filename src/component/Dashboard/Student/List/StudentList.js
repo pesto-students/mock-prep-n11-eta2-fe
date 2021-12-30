@@ -23,17 +23,18 @@ export default function StudentList() {
     let userRole = useSelector(state => state.authReducer.user.role)
     let data = useSelector(state => state.dataReducer)
 
-    useEffect(() => { dataActionCreators.getAdminData(dispatch, getStudents, dataActions.setStudents) }, [dispatch])
+    useEffect(() => { dataActionCreators.getAdminData(dispatch, getStudents, dataActions.setStudentList) }, [dispatch])
     useEffect(() => {
-        if (data.studentData ) { 
-            setInterviewerList(data.studentData.data)
-            setInterviewers(data.studentData.data)
+        console.log(data)
+        if (data.studentList ) { 
+            setInterviewerList(data.studentList.data)
+            setInterviewers(data.studentList.data)
         }
     }, [data,interviewers])
-    
+ 
     const onSearch = (value) => {
         let filtered = interviewers.filter(val => val.name.includes(value) ||  val.degree.includes(value) ||  val.company.includes(value) ||  val.skills.includes(value)   );
-        console.log(filtered)
+       
         setInterviewerList(filtered)
     }; 
 

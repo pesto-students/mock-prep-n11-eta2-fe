@@ -30,6 +30,9 @@ export default function TopicsList() {
     let [showModal2, setShowModal2] = useState(false);
     let [topicId, setTopicId] = useState("");
 
+    
+    const auth = useSelector(state=> state.authReducer)
+
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
     useEffect(() => {
         if (data && data.topics) { 
@@ -118,7 +121,7 @@ export default function TopicsList() {
                 <DashboardHeader title="Topics List" icon={DBIcon} rightComponent={search} />
               
                 <section className="interviewerTabContainer">
-                    <button className="btn btn-primary m-4" onClick={handleAdd}>Add Topics</button>
+                    {auth && auth.role && auth.role === "admin" ? <button className="btn btn-primary m-4" onClick={handleAdd}>Add Topics</button> : <></>}
                 <section className='responsiveSearch'>{search}</section>
                     <section className="topicListContainer">{topics.length > 0 ?
                         <>{topics.map((topic,index) => (

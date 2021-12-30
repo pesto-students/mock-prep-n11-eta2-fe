@@ -85,7 +85,7 @@ export default function Interviews() {
                     </section>
                     
                 </section>
-                <section id="previousInterviews">   
+                {/* <section id="previousInterviews">   
                     <h2 className='title'>Progress</h2>
                     <section id="student-info">
                         {tasks.map((task, index) => (
@@ -99,9 +99,8 @@ export default function Interviews() {
                          </section>
                         ))
                         }
-                       
                     </section>
-                </section>
+                </section> */}
             </section>
         </div>
     )

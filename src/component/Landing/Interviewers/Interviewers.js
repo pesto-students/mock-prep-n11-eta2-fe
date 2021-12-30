@@ -13,8 +13,8 @@ export default function Interviewers() {
     let data = useSelector(state => state.dataReducer)
     const dispatch = useDispatch()
     
-    useEffect(() => { dataActionCreator.getAdminData(dispatch, getInterviewers, dataActions.setInterviewer) }, [dispatch])
-    useEffect(() => { if (data.interviewerData !== undefined) {setInterviewers(data.interviewerData.data.slice(0, 5));}}, [data])
+    useEffect(() => { dataActionCreator.getAdminData(dispatch, getInterviewers, dataActions.setInterviewerList) }, [dispatch])
+    useEffect(() => { if (data.interviewerList !== undefined) {setInterviewers(data.interviewerList.data.slice(0, 5));}}, [data])
       
     return (
         <>  <h2 className="title">Meet our Interviewers</h2>

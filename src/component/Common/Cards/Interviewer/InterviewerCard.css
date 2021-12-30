@@ -33,8 +33,15 @@
     padding: 10px;
     background-color: rgb(27, 54, 133);
     opacity: 0.92;
-   
+  
+    align-items: center !important;
+    justify-content: center !important;
+
+  
+  
 }
+
+
 
 #interviewerCardButtons{
     margin-top: 10vh;
@@ -43,7 +50,10 @@
 }
 
 .personCard:hover > .hoverCard{
-    display: block;
+   
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .personCard:hover{
@@ -100,6 +110,12 @@
        border-radius: 100%;
     }
 
+    .hoverCard{
+        width: 45vw !important;
+        height: 37vh;
+      
+     
+    }
     .interviewerCard{
         width: 80vw;
         margin: auto;

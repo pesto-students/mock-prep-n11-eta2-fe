@@ -51,7 +51,7 @@ export default function Routes() {
     }, [cookies])
 
     return (
-        <Sentry.ErrorBoundary fallback={<p>Error Occured </p>}  showDialog>
+        // <Sentry.ErrorBoundary fallback={<p>Error Occured </p>}  showDialog>
         <div>
             {isAlert ? <SuccessAlert message={message} /> : <></>}
             {isError ? <ErrorAlert  message={message} /> : <></>}
@@ -69,6 +69,6 @@ export default function Routes() {
             <PrivateRoute path="/interviewer" component={InterviewerDashboard} loggedIn={isLoggedIn} />
             <PrivateRoute path="/student" component={StudentDashboard} loggedIn={isLoggedIn} />
         </div>
-        </Sentry.ErrorBoundary> 
+        // </Sentry.ErrorBoundary> 
     )
 }   

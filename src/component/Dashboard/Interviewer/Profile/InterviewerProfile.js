@@ -1,10 +1,10 @@
 import React, { useState,lazy,useEffect} from 'react'
 import { Tag } from "antd"
-import { starIcon, UserIcon } from 'constant/antIcons';
+import {  starIcon, UserIcon } from 'constant/antIcons';
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { updateData } from 'api/Api';
-import { getInterviewers, updateInterviewer } from 'constant/apiUrl';
+import { getInterviewerById, updateInterviewer } from 'constant/apiUrl';
 import Forms  from 'component/Common/Form/Forms';
 import dataActions from 'Redux/Actions/dataAction';
 import dataActionCreators from 'Redux/Action Creators/dataActionCreators';
@@ -24,17 +24,22 @@ export const InterviewerProfile = () => {
     let interData = useSelector(state => state.dataReducer)
     let auth = useSelector(state => state.authReducer)
 
-    useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewers,dataActions.setInterviewer)},[dispatch])
-    useEffect(() => {  if (interData.interviewerData !== undefined) setInterviewer(interData.interviewerData.data.find(e => e._id===profileId)) },[profileId,   interData])
+    useEffect(() => { dataActionCreators.getAdminData(dispatch,getInterviewerById+profileId,dataActions.setInterviewer)},[profileId,dispatch])
+    useEffect(() => {
+      
+        if (interData.interviewer && interData.interviewer.data) { 
+            console.log(interData.interviewer.data)
+            setInterviewer(interData.interviewer.data)
+        }
+    
+    }, [profileId, interData])
 
     if (Object.keys(interviewer).length>0) { 
         Object.keys(interviewerForm).forEach(key => interviewerForm[key] = interviewer[key]);
-       
     }
 
     const submit = (value) => { 
       
-
         if (value.skills) { 
             value.skills = value.skills.split(",")
         }
@@ -58,20 +63,20 @@ export const InterviewerProfile = () => {
     }
   
     const data = <Forms populate="true" submitFunction={submit} formFields={interviewerForm} textArea={interviewer.about} buttonValue="Update Details" /> 
-    const component1 = <button className="btn btn-success" onClick={() => {setUpdate(false)}} >View Profile</button>
-    const component2 = <button className="btn btn-primary" onClick={() => {setUpdate(true)}}>Update Details</button>
+    const component1 =  <button className="btn-interviewer btn btn-success" onClick={() => {setUpdate(false)}} >View Profile</button> 
+    const component2 = <button className="btn-interviewer btn btn-primary" onClick={() => {setUpdate(true)}}>Update Details</button>
     
+    console.log(interviewer)
     return (
         <>
             <div className="interviewer-profile">
                 <DashboardHeader title="Interviewer Profile" icon={UserIcon} rightComponent={auth.user.role !== "student" ?<> {update ? component1: component2} </>: <></>} />
-                  
 
                 {update ?
                     // update Form
                     <div className="int-profile-form">{data}</div> :
                     // Profile
-                    <>{interviewer && Object.keys(interviewer).length>0 ?
+                    <>{interviewer && Object.keys(interviewer).length>0  ?
                         <>
                         <div className="int-profile-container">
                             <section className="left-profile">

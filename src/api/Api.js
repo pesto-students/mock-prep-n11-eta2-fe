@@ -7,14 +7,14 @@ export async function getData(url,) {
     return res;
 }
 
-//Post Call
+// Post Call
 export async function insertData(url, data) {
     try{
         let res = await axios.post(url,data);
         return {status : "success",res};
     }
     catch (err){
-        Sentry.captureException(err);
+        // Sentry.captureException(err);
         return  {status : "failure",err : "Inserting Data Failed"};
     }
     
@@ -35,13 +35,25 @@ export async function updateData(url, data) {
 
 
 //Post Call
+// export async function createOrder(url, data) {
+//     try{
+//         let res = await axios.post(url,data);
+//         return {status : "success",res};
+//     }
+//     catch (err){
+//         Sentry.captureException(err);
+//         return  {status : "failure",err : "Creating order Failed"};
+//     }
+// }
+
+// Post Call
 export async function createOrder(url, data) {
     try{
         let res = await axios.post(url,data);
         return {status : "success",res};
     }
     catch (err){
-        Sentry.captureException(err);
         return  {status : "failure",err : "Creating order Failed"};
     }
 }
+

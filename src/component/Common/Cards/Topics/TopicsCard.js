@@ -13,10 +13,10 @@ export default function TopicsList({ topic, handleDelete, handleEdit}) {
             <Suspense fallback={<div>Loading</div>}>
             {topic && auth.user ?
                 <section className="topicsCard" key={topic._id}>
-                    <span className='editIcons'>
+                    {auth && auth.role && auth.role === "admin" ? <span className='editIcons'>
                         <Link to="#" onClick={() => { handleDelete(topic._id) }} className="edit-icon"  >{trashIcon}</Link>
-                        <Link to="#" onClick={ () => { handleEdit(topic._id) }} className="edit-icon" >{editIcon}</Link>
-                    </span>
+                        <Link to="#" onClick={() => { handleEdit(topic._id) }} className="edit-icon" >{editIcon}</Link>
+                    </span> : <></>}
                     <img alt="topicProfile" src={topic.image} className="topicProfile" />
                     <span className="topicCardDetails">
                     <h2 className="int-details">{topic.title}</h2>
