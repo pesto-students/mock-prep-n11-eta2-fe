@@ -88,10 +88,6 @@ To make the process of preparing for an interview simple and effective for every
 		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867520/redux-logo_g2vd7e.png" title="Redux" height="100">
 	</a>
 	<br />
-	<a href="https://nodejs.org/en/">
-		<img src="https://blog.42mate.com/wp-content/uploads/2016/08/Node-js-Logo.png" title="Github Actions" height="100">
-	</a>
-	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="https://razorpay.com/">
 		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631811211/Razorpay-logo_bzojzt.png" title="Razorpay Payment Gateway" height="100">
 	</a>
