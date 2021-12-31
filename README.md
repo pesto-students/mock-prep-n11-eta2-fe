@@ -99,7 +99,7 @@ To make the process of preparing for an interview simple and effective for every
 		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867519/netlify-logo_i6ye1g.png" title="Netlify" height="100">
 	</a>
 	<a href="https://www.heroku.com/">
-		<img src="https://camo.githubusercontent.com/065f065d12a6ba6b2cfcff767aaafd438a7ed5ae615e3ac39051c022cebaa698/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667" title="Netlify" height="100">
+		<img src="https://camo.githubusercontent.com/065f065d12a6ba6b2cfcff767aaafd438a7ed5ae615e3ac39051c022cebaa698/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667" title="Heroku" height="100">
 	</a>
 </p>
 
