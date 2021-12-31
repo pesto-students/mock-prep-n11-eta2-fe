@@ -4,7 +4,7 @@ import { deleteIcon } from "constant/antIcons"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
-export default function InterviewerCardList({ interviewer, handleDelete, handleList, handleDelist}) {
+export default function InterviewerCardList({ interviewer, handleDelete, handleList, handleDelist,handleBooking}) {
     
     let userRole = useSelector(state => state.authReducer.user.role)
     
@@ -20,8 +20,12 @@ export default function InterviewerCardList({ interviewer, handleDelete, handleL
                                 {!interviewer.onboarded ?
                                 <button onClick={() => { handleList(interviewer._id) }} className="btn text-white  m-auto my-2  btn-success">Onboard Profile</button> : 
                                 <button onClick={() => { handleDelist(interviewer._id) }} className="btn text-white m-auto  my-2 btn-danger">Remove Profile</button>}   
-                            </section>
-                        : <Link to={`interviewerProfile/${interviewer._id}`}><button className="btn m-auto btn-success">View Profile</button></Link>  
+                        </section>
+                        
+                        : <section>
+                            <Link to={`interviewerProfile/${interviewer._id}`}><button className="btn m-auto btn-success">View Profile</button></Link>
+                            <Link to={`bookInterviewer/${interviewer._id}`}><button className="btn my-2 m-auto btn-warning">Book Interview</button></Link>
+                        </section>
                             }  
                 </section>
                 <img alt="int-profile" src={interviewer.image} className="profile" />

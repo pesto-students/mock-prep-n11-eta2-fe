@@ -7,7 +7,6 @@ import { InterviewerProfile } from './Profile/InterviewerProfile';
 import { useSelector } from 'react-redux';
 import "./Interviewer.css"
 
-
 const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
 const Dashboad = lazy(() => import("component/Dashboard/Interviewer/Dashboard/Dashboard"))
 const upComingInterviews = lazy(() => import("component/Dashboard/Interviewer/Upcoming Interviews/Interviews"))
@@ -42,8 +41,9 @@ export default function Interviewer() {
                             <Route  path={`${path}/studentProfile/:profileId?`} component={StudentProfile} />
                             <Route  path={`${path}/interviewerProfile/:profileId?`} component={InterviewerProfile} />
                             <Route  path={`${path}/topicsList/`} component={TopicsList} />
-                            <Route path={`${path}/resourceList`} component={ResourceList} />
+                            <Route  path={`${path}/resourceList`} component={ResourceList} />
                             <Route  path={`${path}/queries`} component={InterviewerQueries} />
+                          
                         </section>
                 </Route>
             </div>

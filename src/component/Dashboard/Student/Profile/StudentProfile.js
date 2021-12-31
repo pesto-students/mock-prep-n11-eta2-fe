@@ -101,7 +101,7 @@ export const StudentProfile = () => {
                                                 </section>
                                             ))}
                                     </section> 
-                                    <h3 className="interviewerProfileHeading" style={{ margin: "3vh 0" }}>Subscription : <span style={{ color: "orange" }}> { interviewer.package ?  <>{interviewer.package.name} { interviewer.package.interviewsLeft}</> :<></>} </span></h3>
+                                    <h3 className="interviewerProfileHeading" style={{ margin: "3vh 0" }}>Subscription : <span style={{ color: "orange" }}> { interviewer.package ?  <>{interviewer.package.name}: ({ interviewer.package.interviewsLeft})</> :<></>} </span></h3>
                                     <h3 className="interviewerProfileHeading" style={{ marginRight: "1vw", marginTop: "4px",marginBottom:"2vh" }}>Contact : {interviewer.contact }</h3>                      
                                     <h3 className=" interviewerProfileHeading rating" style={{ marginRight: "1vw", marginTop: "4px", marginBottom: "2vh" }}>Rating :
                                         {rating.map((rate, index) => (

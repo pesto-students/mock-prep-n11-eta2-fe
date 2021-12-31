@@ -10,7 +10,8 @@ export async function getData(url,) {
 // Post Call
 export async function insertData(url, data) {
     try{
-        let res = await axios.post(url,data);
+        let res = await axios.post(url, data);
+        console.log(res)
         return {status : "success",res};
     }
     catch (err){

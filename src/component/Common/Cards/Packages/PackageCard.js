@@ -3,31 +3,18 @@ import { createOrder, getData, updateData } from "api/Api";
 import { checkIcon } from "constant/antIcons";
 import { createRazorOrder, getStudentById, updateStudent } from "constant/apiUrl";
 import { useSelector,useDispatch } from "react-redux";
-
-
 import "./PackageCard.css"
 import alertActionCreator from "Redux/Action Creators/alertActionCreator";
+import { useEffect} from "react-redux"
 
-function loadRazorPay  ()  { 
-    return new Promise(resolve => {
-        const script = document.createElement("script");
-        script.src = "https://checkout.razorpay.com/v1/checkout.js"
-        document.body.appendChild(script)
-        script.onload = () => { 
-            resolve(true)
-        }
-        script.onError = () => {
-            resolve(false)
-        }
-        console.log(script.Razorpay)
-    })
-   
-}   
 
 export default function PackageCard({ id, title, price, description, benefits }) {
 
     const user = useSelector(state => state.authReducer)
+    const data = useSelector(state => state.dataReducer)
+
     const dispatch = useDispatch()
+
 
     const getIntCount = (title)=>{ 
         let intCount = 0;
@@ -53,15 +40,26 @@ export default function PackageCard({ id, title, price, description, benefits })
 
     const handlePayment = async (response, title) => { 
         
-     
-        let data = await getData(getStudentById + user.user.id);
-        data.package = {
-            name: title,
-            interviewsLeft: data.interviewsLeft+getIntCount(title)
+        let student = await getData(getStudentById+user.user.id)
+
+        if (student ) {
+        
+            let pack = {
+                "package": {
+                    "name":title,
+                  "interviewsLeft": student.data.package.interviewsLeft+ getIntCount(title)
+                }
+              }
+            await updateData(updateStudent+student.data._id ,pack)
+           
+            alertActionCreator.setMessage(dispatch, "Payment succesfull, Package " + title + " Added")
         }
-        await updateData(updateStudent + user.user.id)
-       
-        alertActionCreator.setMessage(dispatch, "Payment succesfull, Package " + title + " Added")  
+
+        else { 
+            alertActionCreator.setMessage(dispatch, "Payment succesfull, Package " + title + " Added")
+        }
+     
+     
         
     }
 
@@ -138,3 +136,19 @@ export default function PackageCard({ id, title, price, description, benefits })
 )
 }
 
+
+function loadRazorPay  ()  { 
+    return new Promise(resolve => {
+        const script = document.createElement("script");
+        script.src = "https://checkout.razorpay.com/v1/checkout.js"
+        document.body.appendChild(script)
+        script.onload = () => { 
+            resolve(true)
+        }
+        script.onError = () => {
+            resolve(false)
+        }
+        console.log(script.Razorpay)
+    })
+   
+}   

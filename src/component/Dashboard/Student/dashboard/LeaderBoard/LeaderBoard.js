@@ -12,7 +12,7 @@ import dataActions from 'Redux/Actions/dataAction'
 export const LeaderBoard = (studentList) => {
 
     let [interviews,setInterviews] = useState(studentList.interviews)
-   console.log(interviews)
+ 
     return (
         <div id="leaderboard">
             <section className="cust-review">   
@@ -45,9 +45,10 @@ export const LeaderBoard = (studentList) => {
                         {
                             interviews.map(int => (
                                 <section id="action">
+                                    {int.actionItems.length > 0 ? <>
                                     <span>
-                                    <p>{int.actionItems[0].title}</p>
-                                    <p>{int.actionItems[0].description}</p>
+                                        <p>{int.actionItems[0].title}</p>
+                                        <p>{int.actionItems[0].description}</p>
                                     </span>
                                   
                                     <span>
@@ -55,6 +56,8 @@ export const LeaderBoard = (studentList) => {
                                         <Tag color={"red"}>{int.actionItems[0].status}</Tag>
                                     </span>
                                   
+                                    </> : <></>}
+                                   
                                 </section>
                             ))
                         }
