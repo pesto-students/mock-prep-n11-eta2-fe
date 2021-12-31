@@ -159,8 +159,8 @@ We can also use `npm run cypress:headless` to run all the end to end test suits 
 
 ## Contributors
 
-Mohammed Saif - [GiHub](https://github.com/saifmohammed888) - [Email](mailto:saifmohammed888@gmail.com )
+Mohammed Saif - [GiHub](https://github.com/saifmohammed888) - [Email](mailto:saifmohammed888@gmail.com ) - [LinkedIn](https://www.linkedin.com/in/saifmohammed888/)
 
-Balaji Kamalesan - [GiHub](https://github.com/balaji-kamalesan-au3) - [Email](mailto:balajikamalesan96@gmail.com)
+Balaji Kamalesan - [GiHub](https://github.com/balaji-kamalesan-au3) - [Email](mailto:balajikamalesan96@gmail.com) [LinkedIn](https://in.linkedin.com/in/balaji-kamalesan)
 
 
