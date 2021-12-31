@@ -20,6 +20,7 @@
     height: 40vh !important;
 }
 
+
 .interviewerTabContainer>.search{display: none;}
 
  @media only screen and (max-width:768px){
@@ -28,10 +29,13 @@
     .interviewerListContainer>.header>.tab-options>.search{display: none;margin-right: 2vw;}
     .interviewerTabContainer>.search{display: block !important;width: 100vw;}
     .interviewerTabContainer>.search>.ant-input-search{width: 40vw !important;}
+    
 }
 
 @media only screen and (max-width:450px){
     .interviewerListContainer{height: auto;}
     .interviewerTabContainer>.search>.ant-input-search{width: 60vw !important;}
     
+    
+
 } 

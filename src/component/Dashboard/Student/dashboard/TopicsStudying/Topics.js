@@ -18,27 +18,23 @@ export default function Topics(student) {
 
     useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
     useEffect(() => {
-        if (data.topics !== undefined && student.length>0) {
-
-            let topic = data.topics.data.filter(f => { 
-                student.forEach(s => { s.learnings.topics.topicId === f._id;})
-            });
-
-            setTopicsList(topic);
+        if (data.topics !== undefined && data.topics.data.length > 0) {
+            setTopicsList(data.topics.data);
         }
-    }, [data,studentData.ongoingTopics]);
-       
+    }, [data]);
+       console.log(topicsList)
     return (
         <div className='topicsOngoing'>
             <h2 className='title'>My Topics</h2>
-            <section id="topics">
-                    {
-                    topicsList.length > 0 ?
-                        topicsList.map((topic, index) => (
-                            <TopicsCard dashboard={true} key={index} title={topic.title} id={topic._id}  description={topic.description} image={topic.image}  />
-                        )) :
-                    <section>No Topics yet...</section>
-                    }
+            <section id="studentTopics">
+                {topicsList.length > 0 ? 
+                    <>
+                        {topicsList.map((topic,index) => (
+                            <TopicsCard key={index} topic={topic} />
+                        ))}
+                    
+                    </>
+                : <></>}
             </section>
         </div>
     )

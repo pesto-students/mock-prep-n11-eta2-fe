@@ -21,7 +21,7 @@ export default function InterviewerCardList({ interviewer, handleDelete, handleL
                                 <button onClick={() => { handleList(interviewer._id) }} className="btn text-white  m-auto my-2  btn-success">Onboard Profile</button> : 
                                 <button onClick={() => { handleDelist(interviewer._id) }} className="btn text-white m-auto  my-2 btn-danger">Remove Profile</button>}   
                             </section>
-                        : <Link to={`interviewerProfile${interviewer._id}`}><button className="btn m-auto btn-success">View Profile</button></Link>  
+                        : <Link to={`interviewerProfile/${interviewer._id}`}><button className="btn m-auto btn-success">View Profile</button></Link>  
                             }  
                 </section>
                 <img alt="int-profile" src={interviewer.image} className="profile" />

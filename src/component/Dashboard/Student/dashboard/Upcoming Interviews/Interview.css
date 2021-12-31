@@ -107,3 +107,37 @@ p{
 #task>span>h6{margin: 0 !important;}
 
 #task>#progressCircle>.ant-progress-inner{background-color: black !important;}
+
+
+@media only screen and (max-width:768px) {
+    #interview-details-dashboard{
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+
+    #upcomingInterviews{
+        width: 80vw;
+    }
+    #student-info{
+        width: 60vw;
+        margin: 0;
+    }
+    #previousInterviews{width:auto;padding: 0;height: auto;}
+}
+
+@media only screen and (max-width:450px) {
+    #interview-details-dashboard{
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+
+    #upcomingInterviews{
+        width: 90vw;
+        margin: 3vh auto;
+    }
+    #student-info{
+        width: 90vw;
+        margin: 2vh auto;
+    }
+    #previousInterviews{width:auto;padding: 0;height: auto;}
+}

@@ -59,3 +59,43 @@
 
 
 .top>#tag{margin-top: 1vh !important;}
+
+.action-items{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 20vw;
+    padding: 10px;
+    min-height: 23vh;
+    margin: 2vh auto;
+}
+
+#action{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+@media only screen and (max-width:768px) {
+    #leaderboard{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .cust-review{width: 70vw;}
+    .action-items{width: 70vw;margin: 0;}
+}
+
+
+
+@media only screen and (max-width:450px) {
+    #leaderboard{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .cust-review{width: 90vw;margin: 2vh auto;}
+    .action-items{width: 90vw;margin: 0;}
+}

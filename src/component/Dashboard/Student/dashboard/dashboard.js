@@ -23,7 +23,7 @@ export default function InterviewerDashboard() {
     let [student, setStudent] = useState([])
     let [students, setStudents] = useState([])
     let [interviews, setInterviews] = useState([])
-   
+  
     useEffect(() => {
         if (auth.user) { 
             dataActionCreator.getAdminData(dispatch, getStudentById + auth.user.id, dataActions.setStudent)
@@ -40,8 +40,9 @@ export default function InterviewerDashboard() {
 
     }, [data])
 
+   
     interviews = interviews.filter(i => i.status !== "completed")
-    console.log(data)
+  
     return (
         <div>
             <DashboardHeader title="Student Dashboard" icon={DashboardIcon} />
