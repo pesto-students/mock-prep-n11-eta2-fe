@@ -1,74 +1,166 @@
-<<<<<<< HEAD
-# NINJA-TEMPLATE
-=======
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+    <img src="https://res.cloudinary.com/mock-prep/image/upload/v1638635421/Mockprep/mp_Logo_n7fhp6.png" alt="Logo" width="500" >
+</p>
 
-## Available Scripts
+<h1 align="center">Mock Prep</h1>
+<h3 align="center">
+	<a href="https://mockprep.netlify.app">Live URL</a>
+</h3>
+  
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#artefacts">Artefacts</a></li>
+        <li><a href="#backend-repo">Backend Repo</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#test-credentials">Test Credentials</a></li>
+        <li><a href="#other-available-scripts">Other Available Scripts</a></li>
+        <li><a href="#tools-and-libraries">Tools And Libraries</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributors">Contributors</a></li>
+  </ol>
+</details>
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
 
-### `yarn start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Mock Prep Banner](https://res.cloudinary.com/mock-prep/image/upload/v1640396151/Mockprep/topics/banner_plgqpf.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Mockprep is a interview preparation platform,allowing users to engage with experts to guide and mentor to prepare best way possible.
 
-### `yarn test`
+### Artefacts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a href="https://docs.google.com/document/d/13PP2jubRrUGr-iyKDsSAFyQuZj7SeGrclQT1MzZyCk0/edit?usp=sharing">PRD</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://drive.google.com/file/d/1EpXinZXhMikg9_xVgVGVUOQlWYgUnwdb/view?usp=sharing">One Pager</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.figma.com/file/RNbodcyvgvbJf4LZCu7qmZ/Mock-Prep-Wireframes?node-id=0%3A1">Wireframes</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
 
-### `yarn build`
+### Backend Repo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Backend Repo](https://github.com/pesto-students/mock-prep-n11-eta2-be)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Mission:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We provide a platform which enables users to engage with experts in their industry who can assist them in their interview preparation by conducting mock interviews
 
-### `yarn eject`
+**Vision:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To make the process of preparing for an interview simple and effective for everyone
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Goals:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-  Provide valuable resources.
+-  Provide quality tests.
+-  Provide goof mock interviews.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Features:**
 
-## Learn More
+- Best in industry experts availability .
+- Simple and consistent UI.
+- Secure SSO Authentication.
+- Learn with our resources.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">
+	<a href="https://reactjs.org/">
+		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867520/react-logo_aiqchy.png" title="React" height="100">
+	</a>
+	<a href="https://redux.js.org/">
+		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867520/redux-logo_g2vd7e.png" title="Redux" height="100">
+	</a>
+	<br />
+	<a href="https://razorpay.com/">
+		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631811211/Razorpay-logo_bzojzt.png" title="Razorpay Payment Gateway" height="100">
+	</a>
+	<a href="https://www.netlify.com/">
+		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867519/netlify-logo_i6ye1g.png" title="Netlify" height="100">
+	</a>
+	<a href="https://www.heroku.com/">
+		<img src="https://camo.githubusercontent.com/065f065d12a6ba6b2cfcff767aaafd438a7ed5ae615e3ac39051c022cebaa698/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667" title="Heroku" height="100">
+	</a>
+</p>
 
-### Code Splitting
+<!-- GETTING STARTED -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Getting Started
 
-### Analyzing the Bundle Size
+Following are the simple steps to run this project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Prerequisites
 
-### Making a Progressive Web App
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Clone the repo
+   ```sh
+   git clone https://github.com/pesto-students/mock-prep-n11-eta2-fe
+   ```
 
-### Deployment
+2. Install NPM packages
+   ```sh
+   cd mock-prep-n11-eta2-fe && npm install
+   ```
+3. Run
+   ```sh
+   npm start
+   ```
+5. Open http://localhost:3000 to view it in the browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+6. Run Test cases
+   ```sh
+   npm test
+   ```
 
-### `yarn build` fails to minify
+## Test Credentials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 8215c35856b5c2a51c4c33beab63d06976d7d402
+You can find the dummy login buttons in http://localhost:3000/signIn Page
+
+## Other Available Scripts
+
+**End-To-End Test**  
+To do end to end testing, we are using cypress.  
+Whenever we do `npm run cypress` cypress window will open and we can run any test suite that is written.  
+We can also use `npm run cypress:headless` to run all the end to end test suits at once.  
+
+<!--Tools-->
+
+## Tools and Libraries 
+
+- [Redux-Tool-Kit] - State Management
+- [Sentry] - Error Tracking
+- [Cypress] - End to End testing
+- [Chart Js] - Charts
+
+<!-- Contributors -->
+
+## Contributors
+
+Mohammed Saif - [GiHub](https://github.com/saifmohammed888) - [Email](mailto:saifmohammed888@gmail.com ) - [LinkedIn](https://www.linkedin.com/in/saifmohammed888/)
+
+Balaji Kamalesan - [GiHub](https://github.com/balaji-kamalesan-au3) - [Email](mailto:balajikamalesan96@gmail.com) [LinkedIn](https://in.linkedin.com/in/balaji-kamalesan)
+
+
