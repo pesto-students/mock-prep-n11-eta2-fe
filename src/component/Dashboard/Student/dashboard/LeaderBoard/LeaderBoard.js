@@ -9,12 +9,13 @@ import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
 import dataActions from 'Redux/Actions/dataAction'
 
 
-export const LeaderBoard = (studentList,interviews) => {
+export const LeaderBoard = (studentList) => {
 
-  
+    let [interviews,setInterviews] = useState(studentList.interviews)
+   console.log(interviews)
     return (
         <div id="leaderboard">
-              <section className="cust-review">   
+            <section className="cust-review">   
                     <h2 className="title">Student Leaderboard</h2>
                     {studentList.student.length>0 ?
                         <section>
@@ -37,24 +38,31 @@ export const LeaderBoard = (studentList,interviews) => {
                         <p>Loading</p>
                     }
             </section>
-            {interviews && interviews.actionItems > 0 ? <>
-                <section className="total-earning">
-                <h2 className="headline">Action Items </h2>
-                {interviews.actionItems.map((action,index) => (
-                    <section key={index} className="top">
+            <section className="action-items">   
+                    <h2 className="title">Action Items</h2>
+                    {interviews.length>0 ?
                         <section>
-                            <p>{action.title}</p>
-                            <h4>{ action.description}</h4>
-                            <p>Due: {action.due}</p>
-                        </section>
-                        <Tag id="tag" color="red">{action.status}</Tag>
-
-                    </section>
-                )) }
-                   
+                        {
+                            interviews.map(int => (
+                                <section id="action">
+                                    <span>
+                                    <p>{int.actionItems[0].title}</p>
+                                    <p>{int.actionItems[0].description}</p>
+                                    </span>
+                                  
+                                    <span>
+                                        <p>{int.actionItems[0].due}</p>
+                                        <Tag color={"red"}>{int.actionItems[0].status}</Tag>
+                                    </span>
+                                  
+                                </section>
+                            ))
+                        }
+                        </section> :
+                        <p>Loading</p>
+                    }
             </section>
-            </> : <></>}
-           
+            
         </div>
     )
 }

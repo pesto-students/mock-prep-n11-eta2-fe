@@ -31,7 +31,7 @@
 }
 
 .navigationBtn{display:flex;justify-content: space-between;}
-.ant-row{height: 35vh !important;margin-top: 5vh;}
+/* .ant-row{height: 35vh !important;margin-top: 5vh;} */
 
 
 .navigation{

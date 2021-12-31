@@ -61,6 +61,10 @@
     display: flex;
 }
 
+.interviewer-profile>.header>.tab-options{
+    padding: 0 2vw !important;
+}
+
 .rating>i{margin: 0 0.2vw;}
 
 @media only screen and (max-width:1024px){
@@ -91,6 +95,11 @@
 
     .left-profile{width: 98vw !important;padding:0 !important;}
     .right-profile{width: 98vw !important;padding:0 !important;}
+
+    .interviewerListContainer>.header>.tab-options>.btn{
+        font-size: 0.8rem;
+        width: 40vw !important;
+    }
     
 }
 

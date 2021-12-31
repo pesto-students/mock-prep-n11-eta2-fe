@@ -20,6 +20,9 @@
     height: 40vh !important;
 }
 
+.interviewerListContainer>.header>.tab-options{
+    padding: 0 2vw !important;
+}
 .interviewerTabContainer>.search{display: none;}
 
 @media only screen and (max-width:768px){

@@ -7,7 +7,6 @@ import { editIcon, trashIcon } from "constant/antIcons"
 export default function TopicsList({ topic, handleDelete, handleEdit}) {
     
     const auth = useSelector(state => state.authReducer)  
-    
 
     return (
             <Suspense fallback={<div>Loading</div>}>
