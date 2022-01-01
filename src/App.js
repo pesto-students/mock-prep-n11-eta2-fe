@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { fallback } from "constant/navList";
 import Routes from "Route/Routes";
-
+import { Switch } from "react-router"
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap";
 import "antd/dist/antd.min.css";

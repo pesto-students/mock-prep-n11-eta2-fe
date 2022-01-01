@@ -28,7 +28,7 @@ export default function CalendlyApp() {
       getInterviewerById + interviewerId,
       dataActions.setInterviewer
     );
-  }, [dispatch]);
+  }, [dispatch,interviewerId]);
 
   const handleBooking = async () => {
     if (

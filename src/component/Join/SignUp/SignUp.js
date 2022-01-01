@@ -9,7 +9,7 @@ import { googleIcon } from "constant/antIcons";
 import alertActionCreator from "Redux/Action Creators/alertActionCreator";
 import authActionCreator from "Redux/Action Creators/authActionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect }  from "react-router-dom"
+import { Redirect } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import { dummyProfile } from "constant/const_url";
 import "../SignUp.css";
@@ -22,7 +22,7 @@ export default function SignUp() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [cookie, setCookie, removeCookie] = useCookies(["name"]);
   const dispatch = useDispatch();
-
+  console.log(cookie.user);
   const auth = useSelector((state) => state.authReducer);
 
   useEffect(() => {
