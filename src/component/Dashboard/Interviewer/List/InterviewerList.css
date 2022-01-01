@@ -1,41 +1,26 @@
-.interviewerListContainer>.header>.tab-options{justify-content: right !important;}
-
-.interviewerList{
-    width: 97%;
-    height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+.interviewerList {
+  width: 97%;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.interviewerTabContainer{
-    width: 100%;
-    height: auto;
-    margin: 5vh 1vw;
+.interviewerTabContainer {
+  width: 100%;
+  height: auto;
+  margin: 5vh 1vw;
 }
 
-
-.cardContainer{
-    width: auto;
-    height: 40vh !important;
+.cardContainer {
+  width: auto;
+  height: 40vh !important;
 }
 
-.interviewerListContainer>.header>.tab-options{
-    padding: 0 2vw !important;
-}
-.interviewerTabContainer>.search{display: none;}
-
-@media only screen and (max-width:768px){
-   
-    .interviewerListContainer>.header>.tab-title>.icon{font-size: 0.9rem;width: 50vw;}
-    .interviewerListContainer>.header>.tab-options>.search{display: none;margin-right: 2vw;}
-    .interviewerTabContainer>.search{display: block !important;width: 100vw;}
-    .interviewerTabContainer>.search>.ant-input-search{width: 40vw !important;}
+@media only screen and (max-width: 768px) {
 }
 
-@media only screen and (max-width:450px){
-    .interviewerListContainer{height: auto;}
-    .interviewerTabContainer>.search>.ant-input-search{width: 60vw !important;}
-    
-    
+@media only screen and (max-width: 450px) {
+  .interviewerList {
+    height: auto !important;
+  }
 }

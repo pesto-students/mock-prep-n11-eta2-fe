@@ -1,0 +1,13 @@
+.admin-dashboard-cards {
+  display: flex;
+  width: 96%;
+  margin: 5vh auto;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 450px) {
+  .admin-dashboard-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,17 +1,17 @@
-.landing-page{
-    width: 100vw;
-    height: auto;
-    box-sizing: border-box;
-    overflow-x: hidden;
+.landing-page {
+  width: 100vw;
+  height: auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-#landing-container{
-    width: 100%;
-    margin: 5vh auto;
-    box-sizing: border-box;
+#landing-container {
+  width: 100%;
+  margin: 5vh auto;
+  box-sizing: border-box;
 }
 
-.title{
-    text-align: center;
-    color: #161280;
+.title {
+  text-align: center;
+  color: rgb(25, 50, 100);
 }

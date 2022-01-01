@@ -1,41 +1,23 @@
-.interviewer-list{
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 5vh auto;
+.interviewer-list {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5vh auto;
 }
 
-.person{
-    text-align: center;
+@media only screen and (max-width: 1024px) {
 }
 
-#profile{
-    border: 1px solid rgb(16, 16, 109);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+@media only screen and (max-width: 768px) {
+  .interviewer-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-
-
-@media only screen and (max-width:1024px){
-   
- }
- 
- @media only screen and (max-width:768px){
-    .interviewer-list{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-   
- }
- 
- @media only screen and (max-width:450px){
-    .interviewer-list{
-        display: block;
-
-    }
-
-    .interviewer-list>.personCard{width: 40vw;}
-  
- }
- 
+@media only screen and (max-width: 450px) {
+  .interviewer-list {
+    display: block;
+  }
+}

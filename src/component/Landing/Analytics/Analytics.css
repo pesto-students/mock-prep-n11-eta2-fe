@@ -1,69 +1,91 @@
-.landing-dashboard{
-    width: 80%;
-    margin: 6vh auto;
+.landing-dashboard {
+  width: 80%;
+  margin: 6vh auto;
 }
 
-.landing-cards>.card{
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 5vh auto;
+}
+
+.landing-charts {
+  display: flex;
+  justify-content: left;
+  margin: 6vh auto;
+}
+.landing-bar {
+  width: 35vw;
+  height: 35vh;
+}
+
+.landing-doughnut {
+  width: 17vw;
+  height: 17vh;
+  margin-left: 2vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  .landing-bar > section {
+    width: 50vw !important;
+    height: 60vh;
+  }
+
+  .landing-doughnut {
+    width: 25vw;
+    height: 20vh;
+    margin-left: 20vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing-charts {
+    display: block;
+    height: 75vh !important;
+  }
+  .landing-bar {
     height: auto;
-    margin: 0 0.5vw;
-    border-left: 1px solid rgb(11, 32, 94);
-}
+    width: auto;
+    margin: 4vh auto;
+  }
 
-.landing-cards>.card>.bottom{
-    margin: 0 !important;
-}
+  .landing-bar > section {
+    width: 65vw !important;
+    height: auto;
+  }
 
-.landing-cards{
-    display: flex;
-    justify-content: center;
-}
-
-.landing-bar{
-   
-    padding: 15px;
+  .landing-doughnut {
     width: 35vw;
+    height: 20vh;
+    margin: 0;
+  }
 }
 
-.landing-charts{
-    margin: 10vh 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+@media only screen and (max-width: 450px) {
+  .landing-cards {
+    display: block;
+    margin: 5vh auto;
+  }
 
-.landing-doughnut{
-    padding: 15px;
-    width: 18vw;
-    margin: 0 4vw;
-}
+  .landing-cards > .card {
+    width: 80vw !important;
+    margin: 2vh auto;
+  }
 
-.graphTitle{color: rgb(25, 48, 117);}
+  .landing-bar {
+    height: auto;
+    width: 80vw;
+    margin: 4vh auto;
+  }
 
-@media only screen and (max-width:1024px){
-    .landing-cards{
-       justify-content: space-between;
-       margin: auto;
-    }
+  .landing-bar > section {
+    width: 80vw !important;
+    height: auto;
+  }
 
-    .landing-bar{
-        width: 45vw;
-    }
-    .landing-doughnut{
-        width: 25vw;
-    }
- }
- 
- @media only screen and (max-width:768px){
-     .landing-charts{display: block;}
-    .landing-bar{width: 100%;}
-    .landing-doughnut{width: 55%;}
- }
- 
- @media only screen and (max-width:450px){
-     .landing-cards{display: block;}
-     .landing-cards>.card{width: 90%;margin: 2vh auto;}
-     .graphTitle{font-size: 1.1rem;}
-     .landing-doughnut{width: 100%;}
-     .onboard-chart{height: 25vh !important;width: auto;}
-     .resources-chart{height: 25vh !important;width: 25vh !important;}
+  .landing-doughnut {
+    width: 75vw;
+    height: 30vh;
+    margin: 0 auto;
+  }
 }

@@ -1,0 +1,122 @@
+.personCard {
+  width: 15vw !important;
+  height: 37vh;
+  border: 1px solid lightgrey;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  text-align: center;
+  padding: 10px;
+  margin: 2vh 1vw;
+  position: relative;
+}
+
+.profile {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 100% !important;
+  margin-bottom: 2vh;
+}
+
+#deleteIcon {
+  position: absolute;
+  right: 1vw;
+}
+
+.hoverCard {
+  display: none;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  width: 15vw !important;
+  height: 37vh;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(27, 54, 133);
+  opacity: 0.92;
+  justify-content: center !important;
+}
+
+#interviewerCardButtons {
+  margin-top: 10vh;
+}
+
+.personCard:hover > .hoverCard {
+  display: flex !important;
+}
+
+.personCard:hover {
+  padding: 0;
+}
+
+.interviewerCard {
+  width: 15vw;
+  text-align: center;
+  margin: 3vh 1vw;
+}
+
+#interviewerProfile {
+  border-radius: 100%;
+}
+
+.onboardBtn {
+  height: 4vh;
+}
+
+#interviewerCardButtons > a {
+  height: 5vh !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .personCard,
+  .hoverCard {
+    width: 21vw !important;
+    height: 40vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .personCard,
+  .hoverCard {
+    width: 30vw !important;
+    height: 40vh;
+  }
+
+  .profile {
+    width: 17vw;
+    height: 17vw;
+    border-radius: 100%;
+  }
+  .interviewerListContainer > .header > .tab-options > #toggleBtn {
+    margin: 0 2vw;
+  }
+  .interviewerCard {
+    width: 20vw;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .interviewerListContainer > .header > .tab-options > #toggleBtn {
+    margin: 0 2vw;
+  }
+  .personCard,
+  .hoverCard {
+    width: 45vw !important;
+    height: 40vh;
+  }
+
+  .profile {
+    width: 22vw;
+    height: 22vw;
+    border-radius: 100%;
+  }
+
+  .hoverCard {
+    width: 45vw !important;
+    height: 37vh;
+  }
+  .interviewerCard {
+    width: 80vw;
+    margin: auto;
+    display: block;
+  }
+}

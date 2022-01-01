@@ -1,85 +1,83 @@
-.quizCard{
-    width: 20%;
+.quizCard {
+  width: 20%;
+  height: 40vh;
+  margin: 1vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.quizProfile {
+  width: auto;
+  height: 50%;
+  opacity: 0.5;
+  margin: 5%;
+  margin-bottom: 10%;
+}
+
+.quizCard:hover > .quizProfile {
+  opacity: 1;
+}
+
+.quizCard:hover > .editIcons {
+  display: block;
+}
+
+.quizCardDetails {
+  margin-top: 2vh;
+}
+
+.int-details {
+  font-size: 1.05rem;
+  color: gray;
+}
+
+.learnButton {
+  position: absolute;
+  bottom: 4%;
+  left: 30%;
+  margin: auto;
+}
+
+.editIcons {
+  position: absolute;
+  right: 10px;
+  display: none;
+}
+
+.edit-icon {
+  margin: 0 5px;
+  color: blue;
+}
+.quizEditIcons {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  display: none;
+}
+
+.quizCard:hover .quizEditIcons {
+  display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+  .quizCard {
+    width: 22vw;
     height: 40vh;
-    margin: 1vw;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    text-align: center;
-    position: relative;
+  }
 }
 
-.quizProfile{
-    width: 90%;
-    height: 50%;
-    opacity: 0.5;
-    margin:5%;
-    margin-bottom: 10%;
+@media only screen and (max-width: 768px) {
+  .quizCard {
+    width: 30vw !important;
+    height: 40vh;
+  }
 }
 
-.quizCard:hover >.quizProfile{
-    opacity: 1;
+@media only screen and (max-width: 450px) {
+  .quizCard {
+    width: 60vw !important;
+    height: 40vh;
+    margin: 2vh auto;
+  }
 }
-
-.quizCard:hover >.editIcons{
-    display: block;
-}
-
-.quizCardDetails{
-    margin-top: 2vh;
-}
-
-.int-details{
-    font-size: 1.05rem;
-    color: gray;
-}
-
-.learnButton{
-    position: absolute;
-    bottom: 4%;
-    left: 30%;
-    margin: auto;
-}
-
-.editIcons{
-    position: absolute;
-    right: 10px;
-    display: none;
-}
-
-.edit-icon{
-    margin: 0 5px;
-    color: blue;
-}
-.quizEditIcons{
-    position: absolute;
-    right: 10px;
-    top: 0;
-    display: none;
-}
-
-.quizCard:hover .quizEditIcons{
-    display: block;
-}
-
-
-@media only screen and (max-width:1024px){
-    .quizCard{
-        width: 22vw;
-        height: 40vh;
-    }
-}
-
-@media only screen and (max-width:768px){
-    .quizCard{
-        width: 30vw !important;
-        height: 40vh;
-    }
-}
-
-@media only screen and (max-width:450px){
-    .quizCard{
-        width: 60vw !important;
-        height: 40vh;
-        margin: 2vh auto;
-    }
-}
-

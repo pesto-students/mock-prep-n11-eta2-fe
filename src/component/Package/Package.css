@@ -1,22 +1,35 @@
-.package-detail{
-    width: 75vw;
-    min-height: 40vh;
-    margin: 5vh auto;
-    display: flex;
-    justify-content: space-around;
-    
+.package-detail {
+  width: 75vw;
+  min-height: 40vh;
+  margin: 5vh auto;
+  display: flex;
+  justify-content: space-around;
 }
 
-.pricing-header{color:rgb(28, 59, 151);text-align: center;margin: 10vh 0;font-size: 1.5rem;}
-
-#introduction{
-    width: 100vw;
-    height: auto;
-    position: relative;
-    
+.pricing-header {
+  color: rgb(28, 59, 151);
+  text-align: center;
+  margin: 5vh 0;
+  font-size: 1.5rem;
 }
-#banner-text{position: absolute !important;top: 10vh;}
+
+#introduction {
+  width: 100vw;
+  height: auto;
+  position: relative;
+}
+
+#banner-text {
+  position: absolute !important;
+  top: 10vh;
+}
 
 @media only screen and(max-width:450px) {
-    .package-detail{width: 100%;}
+  .package-detail {
+    width: 100%;
+  }
+
+  .package-detail > .person {
+    height: 40vh !important;
+  }
 }

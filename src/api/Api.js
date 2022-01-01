@@ -1,60 +1,52 @@
-import axios from "axios"
+import axios from "axios";
 import * as Sentry from "@sentry/react";
 
 //Get Call
-export async function getData(url,) {
+export async function getData(url) {
+  try {
     let res = await axios.get(url);
-    return res;
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Inserting Data Failed" };
+  }
 }
 
 // Post Call
 export async function insertData(url, data) {
-    try{
-        let res = await axios.post(url, data);
-        console.log(res)
-        return {status : "success",res};
-    }
-    catch (err){
-        // Sentry.captureException(err);
-        return  {status : "failure",err : "Inserting Data Failed"};
-    }
-    
-    
+  try {
+    let res = await axios.post(url, data);
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Inserting Data Failed" };
+  }
 }
 
 // Delete Call
 export async function removeData(url) {
+  try {
     let res = await axios.delete(url);
-    return res;
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Removing Data Failed" };
+  }
 }
 
 // Update Call
 export async function updateData(url, data) {
-    let res = await axios.post(url,data);
-    return res;
+  try {
+    let res = await axios.post(url, data);
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Updating Data Failed" };
+  }
 }
-
-
-//Post Call
-// export async function createOrder(url, data) {
-//     try{
-//         let res = await axios.post(url,data);
-//         return {status : "success",res};
-//     }
-//     catch (err){
-//         Sentry.captureException(err);
-//         return  {status : "failure",err : "Creating order Failed"};
-//     }
-// }
 
 // Post Call
 export async function createOrder(url, data) {
-    try{
-        let res = await axios.post(url,data);
-        return {status : "success",res};
-    }
-    catch (err){
-        return  {status : "failure",err : "Creating order Failed"};
-    }
+  try {
+    let res = await axios.post(url, data);
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Creating order Failed" };
+  }
 }
-

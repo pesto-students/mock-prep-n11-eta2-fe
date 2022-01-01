@@ -1,4 +1,4 @@
-.interviewer-profile{
+/* .interviewer-profile{
     width: 100%;
 }
 
@@ -103,4 +103,10 @@
     
 }
 
+ */
 
+.btn-interviewer {
+  position: absolute;
+  right: 0;
+  margin: 1vh 3vw;
+}

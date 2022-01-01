@@ -1,4 +1,3 @@
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -67,9 +66,9 @@ To make the process of preparing for an interview simple and effective for every
 
 **Goals:**
 
--  Provide valuable resources.
--  Provide quality tests.
--  Provide goof mock interviews.
+- Provide valuable resources.
+- Provide quality tests.
+- Provide goof mock interviews.
 
 **Features:**
 
@@ -112,10 +111,10 @@ Following are the simple steps to run this project.
   npm install npm@latest -g
   ```
 
-
 ### Installation
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/pesto-students/mock-prep-n11-eta2-fe
    ```
@@ -128,9 +127,9 @@ Following are the simple steps to run this project.
    ```sh
    npm start
    ```
-5. Open http://localhost:3000 to view it in the browser
+4. Open http://localhost:3000 to view it in the browser
 
-6. Run Test cases
+5. Run Test cases
    ```sh
    npm test
    ```
@@ -144,23 +143,26 @@ You can find the dummy login buttons in http://localhost:3000/signIn Page
 **End-To-End Test**  
 To do end to end testing, we are using cypress.  
 Whenever we do `npm run cypress` cypress window will open and we can run any test suite that is written.  
-We can also use `npm run cypress:headless` to run all the end to end test suits at once.  
+We can also use `npm run cypress:headless` to run all the end to end test suits at once.
 
 <!--Tools-->
 
-## Tools and Libraries 
+## Tools and Libraries
 
 - [Redux-Tool-Kit] - State Management
 - [Sentry] - Error Tracking
 - [Cypress] - End to End testing
 - [Chart Js] - Charts
 
+## API Integrations
+
+- RazorPay - payments
+- Calendly - Slot Booking
+
 <!-- Contributors -->
 
 ## Contributors
 
-Mohammed Saif - [GiHub](https://github.com/saifmohammed888) - [Email](mailto:saifmohammed888@gmail.com ) - [LinkedIn](https://www.linkedin.com/in/saifmohammed888/)
+Mohammed Saif - [GiHub](https://github.com/saifmohammed888) - [Email](mailto:saifmohammed888@gmail.com) - [LinkedIn](https://www.linkedin.com/in/saifmohammed888/)
 
 Balaji Kamalesan - [GiHub](https://github.com/balaji-kamalesan-au3) - [Email](mailto:balajikamalesan96@gmail.com) - [LinkedIn](https://in.linkedin.com/in/balaji-kamalesan)
-
-
