@@ -8,7 +8,7 @@ import { useCookies } from "react-cookie";
 import { Tabs } from "antd";
 import { dummyProfile } from "constant/const_url";
 import { googleIcon } from "constant/antIcons";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { Redirect } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import authActionCreators from "Redux/Action Creators/authActionCreators";
 import alertActionCreator from "Redux/Action Creators/alertActionCreator";
