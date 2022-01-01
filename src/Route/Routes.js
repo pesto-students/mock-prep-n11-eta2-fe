@@ -36,7 +36,7 @@ export default function Routes() {
     if (cookies.user) {
       authActionCreator.logIn(dispatch, cookies.user);
     }
-  }, [cookies]);
+  }, [cookies, dispatch]);
 
   useEffect(() => {
     if (alert && alert.message && !alert.isError) {

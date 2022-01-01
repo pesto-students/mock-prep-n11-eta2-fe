@@ -1,5 +1,4 @@
 import axios from "axios";
-import * as Sentry from "@sentry/react";
 
 //Get Call
 export async function getData(url) {
