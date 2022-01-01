@@ -4,6 +4,7 @@ import { fallback } from "constant/navList";
 import Routes from "Route/Routes";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap";
 import "antd/dist/antd.min.css";
 import "./App.css";
 
