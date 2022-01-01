@@ -41,6 +41,7 @@
 
 .personCard:hover > .hoverCard {
   display: flex !important;
+  align-items: center;
 }
 
 .personCard:hover {

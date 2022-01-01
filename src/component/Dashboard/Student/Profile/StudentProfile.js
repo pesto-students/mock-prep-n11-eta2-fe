@@ -110,7 +110,7 @@ export const StudentProfile = () => {
         <DashboardHeader title="Student Profile" icon={UserIcon} />
 
         <section className="btn-interviewer">
-          {auth.user.role !== "student" ? (
+          {auth.user.role !== "interviewer" ? (
             <> {update ? component1 : component2} </>
           ) : (
             <></>

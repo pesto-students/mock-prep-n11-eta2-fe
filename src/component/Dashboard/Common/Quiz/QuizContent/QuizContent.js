@@ -29,7 +29,7 @@ export default function QuizContent() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.dataReducer);
   const auth = useSelector((state) => state.authReducer);
-  let [student, setStudent] = useState({});
+  let [student, setStudent] = useState([]);
 
   useEffect(() => {
     dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz);
@@ -119,11 +119,14 @@ export default function QuizContent() {
       },
     };
 
-    if (student.data && student.data.learnings) {
-      student.data.learnings.push(quizData);
+    if (student.res.data && student.res.data.learnings) {
+      console.log(student.res.data.learnings);
+      student.res.data.learnings.push(quizData);
       setStudent(student);
       insertData(updateStudent + auth.user.id, student);
+
       alertActionCreator.setMessage(dispatch, "Quiz Submitted");
+      window.location.reload();
     } else {
       alertActionCreator.setError(dispatch, "Quiz Submission Failed");
     }
