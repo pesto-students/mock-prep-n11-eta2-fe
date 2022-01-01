@@ -2,7 +2,7 @@ import React, { lazy, useState, useEffect } from "react";
 import { DashboardIcon } from "constant/antIcons";
 import { useDispatch, useSelector } from "react-redux";
 import "./Dashboard.css";
-import { getInterviewerById, getInterviews } from "constant/apiUrl";
+import { getInterviewerById } from "constant/apiUrl";
 import dataActions from "Redux/Actions/dataAction";
 import dataActionCreator from "Redux/Action Creators/dataActionCreators";
 
@@ -36,7 +36,7 @@ export default function InterviewerDashboard() {
         dataActions.setInterviewer
       );
     }
-  }, [dispatch]);
+  }, [dispatch, auth]);
 
   useEffect(() => {
     if (data && data.interviewer) {

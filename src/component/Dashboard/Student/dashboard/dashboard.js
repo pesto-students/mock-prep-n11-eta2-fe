@@ -1,11 +1,12 @@
 import React, { useState, useEffect, lazy } from "react";
 import { DashboardIcon } from "constant/antIcons";
-import "./dashboard.css";
+
 import { LeaderBoard } from "./LeaderBoard/LeaderBoard";
 import { useDispatch, useSelector } from "react-redux";
 import { getInterviews, getStudentById, getStudents } from "constant/apiUrl";
 import dataActionCreator from "Redux/Action Creators/dataActionCreators";
 import dataActions from "Redux/Actions/dataAction";
+import "./dashboard.css";
 
 const DashboardHeader = lazy(() =>
   import("component/Dashboard/Common/Header/DashboardHeader")
@@ -46,7 +47,7 @@ export default function InterviewerDashboard() {
         dataActions.setStudentList
       );
     }
-  }, [dispatch]);
+  }, [dispatch,auth]);
 
   useEffect(() => {
     if (data && data.student) {

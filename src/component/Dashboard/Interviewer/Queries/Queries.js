@@ -3,7 +3,7 @@ import { Table, Input,Tag } from "antd";
 import { questionIcon } from "constant/antIcons";
 import dataActionCreator from "Redux/Action Creators/dataActionCreators";
 import { useDispatch,useSelector } from "react-redux";
-import {  getStudentQueries, updateQuery, updateStudentQuery } from "constant/apiUrl";
+import {  getStudentQueries, updateStudentQuery } from "constant/apiUrl";
 import dataActions from "Redux/Actions/dataAction";
 import Modals from 'component/Common/Modal/Modals'
 import {  queryResponseForm } from "constant/formData";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { idCardIcon } from "constant/antIcons";
-import { Input, Tabs } from "antd";
+import {  Tabs } from "antd";
 import {
   deleteInterviewer,
   getInterviewers,
@@ -21,7 +21,7 @@ const InterviewerCardList = lazy(() =>
 );
 
 export default function InterviewerList() {
-  const { Search } = Input;
+
   const { TabPane } = Tabs;
 
   const dispatch = useDispatch();

@@ -3,12 +3,7 @@ import { Button, Progress } from "antd";
 import { Link } from "react-router-dom";
 import { CalenderIcon } from "constant/antIcons";
 import "./Interview.css";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getInterviews } from "constant/apiUrl";
 
-import dataActionCreators from "Redux/Action Creators/dataActionCreators";
-import dataActions from "Redux/Actions/dataAction";
 
 export default function Interviews(student) {
   return (

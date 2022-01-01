@@ -2,17 +2,11 @@ import React from 'react'
 import "./LeaderBoard.css"
 import { Tag } from 'antd'
 import { trophyIcon } from 'constant/antIcons'
-import { getStudents } from 'constant/apiUrl'
-import { useState, useEffect } from "react"
-import { useDispatch,useSelector } from 'react-redux'
-import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
-import dataActions from 'Redux/Actions/dataAction'
-
 
 export const LeaderBoard = (studentList) => {
 
-    let [interviews,setInterviews] = useState(studentList.interviews)
- 
+    let interviews = studentList;
+
     return (
         <div id="leaderboard">
             <section className="cust-review">   

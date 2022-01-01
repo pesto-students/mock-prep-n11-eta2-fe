@@ -10,9 +10,7 @@ export default function Topics(student) {
   const dispatch = useDispatch();
   let [topicsList, setTopicsList] = useState([]);
   let data = useSelector((state) => state.dataReducer);
-  let studentData = {
-    ongoingTopics: ["61c3a3b5719ad651ce51e29c", "61c3a4f7719ad651ce51e2a1"],
-  };
+  
 
   useEffect(() => {
     dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic);

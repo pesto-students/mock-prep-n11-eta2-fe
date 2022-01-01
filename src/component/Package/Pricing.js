@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from "react";
-import { fallback } from "constant/navList";
 
 const PackageCard = lazy(() =>
   import("component/Common/Cards/Packages/PackageCard")

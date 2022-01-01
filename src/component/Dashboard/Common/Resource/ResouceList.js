@@ -1,7 +1,6 @@
 import React, { lazy, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Input } from "antd";
 import { resourceIcon } from "constant/antIcons";
 import {
   getResources,
@@ -27,7 +26,7 @@ const DashboardHeader = lazy(() =>
 );
 
 export default function ResourceList() {
-  const { Search } = Input;
+
   let { topicId } = useParams();
   let [resourceList, setResourceList] = useState([]);
   let [resource, setResource] = useState([]);
@@ -146,18 +145,7 @@ export default function ResourceList() {
       buttonValue={"Add Resource"}
     />
   );
-  const search = (
-    <>
-      <section className="search">
-        <Search
-          placeholder="Search Resources"
-          onSearch={onSearch}
-          style={{ width: 200 }}
-        />
-      </section>
-    </>
-  );
-
+ 
   return (
     <div>
       <section className="resource-container">

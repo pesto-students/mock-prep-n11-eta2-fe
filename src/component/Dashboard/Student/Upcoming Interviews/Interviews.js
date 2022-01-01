@@ -127,7 +127,7 @@ export default function Interviews() {
                             <p>{e.topic}</p>
                           </span>
                           <span>
-                            <a target="_blank" href={e.meetingUrl}>
+                            <a rel="noreferrer" target="_blank" href={e.meetingUrl}>
                               Join Meets
                             </a>
                           </span>
