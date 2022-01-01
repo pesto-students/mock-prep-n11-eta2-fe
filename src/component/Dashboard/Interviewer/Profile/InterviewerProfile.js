@@ -11,7 +11,7 @@ import dataActions from "Redux/Actions/dataAction";
 import dataActionCreators from "Redux/Action Creators/dataActionCreators";
 
 import "./InterviewerProfile.css";
-import alertActionCreator from "Redux/Action Creators/alertActionCreator";
+import alertActionCreators from "Redux/Action Creators/alertActionCreator";
 
 const DashboardHeader = lazy(() =>
   import("component/Dashboard/Common/Header/DashboardHeader")
@@ -64,9 +64,9 @@ export const InterviewerProfile = () => {
     try {
       updateData(updateInterviewer + interviewer._id, interviewer);
       setUpdate(false);
-      alertActionCreator.setError("Profile Updated Successfully");
+      alertActionCreators.setError(dispatch, "Profile Updated Successfully");
     } catch (e) {
-      alertActionCreator.setError("Error Updating profile");
+      alertActionCreators.setError(dispatch, "Error Updating profile");
     }
   };
 
