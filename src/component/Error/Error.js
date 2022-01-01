@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy } from "react";
 import { useSelector } from "react-redux";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { Redirect } from "react-router-dom";
 import "./Error.css";
 
 const Header = lazy(() => import("component/Common/Header/Header"));

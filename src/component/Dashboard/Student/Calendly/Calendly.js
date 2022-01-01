@@ -4,7 +4,7 @@ import React from "react";
 import { InlineWidget } from "react-calendly";
 import alertActionCreator from "Redux/Action Creators/alertActionCreator";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams} from "react-router-dom"
 import {
   getInterviewerById,
   updateStudent,
