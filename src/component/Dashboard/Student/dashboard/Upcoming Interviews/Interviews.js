@@ -13,7 +13,7 @@ export default function Interviews(student) {
           <h2 className="title">
             Upcoming Interviews
             <Link to="Interviews/">
-              {" "}
+           
               <Button type="primary">View All</Button>
             </Link>
           </h2>
@@ -25,7 +25,7 @@ export default function Interviews(student) {
                   <p>{e.date}</p>
                 </span>
                 <p>{e.time} </p>
-                <p>{e.student.name}</p>
+                <p>{e.interviewer.name}</p>
 
                 <span>
                   <p>{e.topic}</p>

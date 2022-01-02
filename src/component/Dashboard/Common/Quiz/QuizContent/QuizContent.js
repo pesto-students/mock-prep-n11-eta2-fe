@@ -103,7 +103,7 @@ export default function QuizContent() {
   const handleComplete = async (e) => {
     let data = await getData(getStudentById + auth.user.id);
     setStudent(data);
-
+    console.log(data);
     let quizData = {
       topics: {
         name: quizDetail.title,
@@ -118,7 +118,7 @@ export default function QuizContent() {
         score: 8,
       },
     };
-
+    console.log(student.res);
     if (student.res.data && student.res.data.learnings) {
       console.log(student.res.data.learnings);
       student.res.data.learnings.push(quizData);

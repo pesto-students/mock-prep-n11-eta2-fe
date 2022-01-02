@@ -44,17 +44,20 @@ export default function PackageCard({
   };
 
   const handlePayment = async (response, title) => {
+    console.log(title);
     let student = await getData(getStudentById + user.user.id);
-
+    let counter = getIntCount(title);
+    console.log(counter);
     if (student) {
+      console.log(student.res.data);
+      let count = student.res.data.package.interviewsLeft + counter;
       let pack = {
         package: {
           name: title,
-          interviewsLeft:
-            student.data.package.interviewsLeft + getIntCount(title),
+          interviewsLeft: count,
         },
       };
-      await updateData(updateStudent + student.data._id, pack);
+      await updateData(updateStudent + student.res.data._id, pack);
 
       alertActionCreator.setMessage(
         dispatch,
