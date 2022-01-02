@@ -157,8 +157,24 @@ We can also use `npm run cypress:headless` to run all the end to end test suits 
 
 ## API Integrations
 
-- RazorPay - payments
+- RazorPay - Payments
 - Calendly - Slot Booking
+
+## Mobile Responsive
+
+- Fits to Mobile Screen
+- Fits to Tab Screen - Ipad
+- Fits to Desktop
+
+## Out of Scope
+
+```1. End to End Testing
+    2. Error Monitoring (Pending)
+    3. Student and Interviewer Feedbacks
+    4. Student Reports
+    5. Interviewer Performance reports
+    6. Admin to add and edit Quiz
+```
 
 <!-- Contributors -->
 
