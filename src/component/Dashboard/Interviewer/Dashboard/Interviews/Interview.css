@@ -1,0 +1,147 @@
+#interview-details-dashboard1{
+    width: 98%;
+    margin: 1vh auto;
+    height: auto;
+    padding: 0 1vw;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr !important;
+    justify-content: left;
+   
+}
+
+#upcomingInterviews1{
+    width: 100%;
+    height: auto;
+    margin: 0vh 0vw;
+    padding: 16px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.title{
+    font-size: 1.3rem;
+    color: rgb(13, 32, 88);
+    display: flex;
+    justify-content: space-between;
+}
+
+.stQueryDashboard{
+    width: 100%;
+    height: 30vh;
+    padding: 20px 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#studentQuery{
+    width: 100%;
+    padding: 3vh 1vw;
+}
+
+.stQuery{
+    margin: 0;
+    padding: 4px;
+    border-radius: 10px;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    justify-content: space-between;
+}
+
+#upcomingList1{
+    width: 100%;
+    min-height: 30vh;
+    height: auto;
+    margin: 2vh 0;
+    padding: 1vh;
+    /* background-color: rgb(13, 35, 102); */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    max-height: 40vh;
+    overflow-y: scroll;    
+}
+
+#interviewInfo1{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 2vh;
+    height: auto;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 1px solid goldenrod;
+
+}
+
+#interviewInfo1:hover{
+    border: 1px solid red;
+}
+
+#date{display: inline-flex;justify-content: space-between;}
+
+p{
+    margin: 0;
+}
+
+.calender{margin-right: 0.5vw;}
+
+#previousInterviews{
+  width: 35vw;
+  height: 40vh;
+  padding: 2vh 5vw;
+  text-align: center;
+}
+
+#student-info{
+    width: 30vw;
+    height: auto;
+    min-height: 29vh;
+    margin: 2vh auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 0.5vh;
+    
+}
+
+#progressCircle>.ant-progress-inner{
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 15px !important;
+}
+
+#task{
+    background-color: white;
+    margin: 1vw 1vh;
+    display: flex;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    border: 1px solid purple;
+}
+
+#task>span>h4, #task>span>p{
+    margin: 2px 20px;
+    text-align: left;
+}
+
+#task>span{display: flex;}
+
+@media only screen and (max-width:1024px) {
+    #interview-details-dashboard1{
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+
+    #upcomingInterviews1{width: 80%;}
+    #studentQuery{width: 80%;}
+    .stQuery{padding: 1vh 2vw;border: 1px solid lightgrey;}
+}
+
+
+@media only screen and (max-width:450px) {
+    #upcomingInterviews1{width: 98%;height: auto;text-align: left;}
+    #interviewInfo1{display: grid;justify-content: left;width: auto}
+    #date{justify-content: left;}
+
+    #studentQuery{width: 90%;margin: auto;}
+    .stQuery{height: auto;}
+}   

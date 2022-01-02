@@ -11,15 +11,23 @@
   height: 3px;
 }
 
-#loader{
+#loader {
   width: 100px !important;
   height: 100px !important;
   font-size: 1.3rem !important;
   text-align: center !important;
 }
 
-.spin{
+.spin {
   margin: 0 5vw !important;
   width: 100px;
   height: 100px;
+}
+
+.App {
+  position: relative;
+}
+
+.alertBox {
+  width: 30vw !important;
 }

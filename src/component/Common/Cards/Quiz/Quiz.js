@@ -1,18 +1,25 @@
-import React from 'react'
-import { Link} from "react-router-dom"
-import { Card,Button } from "antd"
-import "../Topics/TopicsCard.css"
+import React, { Suspense } from "react";
+import { Link } from "react-router-dom";
+import "./Quiz.css";
 
-export default function QuizCard({ pic, title, count,route }) {
-    
-    const { Meta } = Card;
-    return (
-        <Card hoverable 
-                id="topicCard"
-                cover={<img alt="example" id="cardImage" src={pic}/>}>
-                <Meta title={title} description={"No of Questions: "+count} />
-                <Link to={route}><Button  id="topics-btn" type="primary">Start Quiz</Button></Link>
-        </Card>
-        
-    )
+export default function QuizCard({ quiz, handleDelete }) {
+  return (
+    <Suspense fallback={<div>Loading</div>}>
+      <section className="quizCard" key={quiz._id}>
+        <span className="quizEditIcons">
+          {/* <Link to="#" onClick={() => { handleDelete(quiz._id) }} className="edit-icon"  >{trashIcon}</Link> */}
+        </span>
+        <img alt="quizProfile" src={quiz.image} className="quizProfile" />
+        <span className="quizCardDetails">
+          <h2 className="int-details">{quiz.title}</h2>
+          <p className="int-details">{quiz.description}</p>
+        </span>
+        <Link to={`quizContent/${quiz._id}`}>
+          <button className="btn btn-sm btn-info learnButton">
+            Start Quiz
+          </button>
+        </Link>
+      </section>
+    </Suspense>
+  );
 }

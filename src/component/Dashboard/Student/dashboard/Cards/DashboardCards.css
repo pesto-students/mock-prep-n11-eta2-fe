@@ -1,0 +1,25 @@
+.admin-dashboard-cards{
+    display: flex;
+    width:96%;
+    margin: 5vh auto;
+    justify-content: space-between;
+}
+
+.admin-dashboard-cards>.card{
+    width: 18vw !important;
+    border-left-color: purple !important;
+    color: purple;
+}
+
+.admin-dashboard-cards>.card>.bottom{
+    color: rgb(95, 0, 95) !important;
+}
+
+@media only screen and (max-width:768px){
+    .admin-dashboard-cards>.card{width: 24vw !important;}
+}
+
+@media only screen and (max-width:450px){
+    .admin-dashboard-cards{grid-template-columns: 1fr !important;display: grid;margin: 2vh 0;}
+    .admin-dashboard-cards>.card{width: 75vw !important;margin: 0.5vh auto;}
+}

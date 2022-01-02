@@ -1,41 +1,39 @@
-import { lazy ,useState,useEffect} from "react"
-import "./Package.css"
-import { getPricing } from "constant/apiUrl"
-import { getData } from "api/Fetch"
-import { fallback } from "constant/navList"
+import { lazy, useState, useEffect } from "react";
+import { getPricing } from "constant/apiUrl";
+import { useDispatch, useSelector } from "react-redux";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import dataActions from "Redux/Actions/dataAction";
+import { fallback } from "constant/navList";
+import "./Package.css";
 
-const Header = lazy(() => import("component/Common/Header/Header"))
-const PackageCard = lazy(() => import("component/Common/Cards/Packages/PackageCard"))
-const Footer = lazy(() => import("component/Common/Footer/Footer"))
-
-
+const Header = lazy(() => import("component/Common/Header/Header"));
+const Pricing = lazy(() => import("component/Package/Pricing"));
+const Footer = lazy(() => import("component/Common/Footer/Footer"));
 
 export default function Package() {
-    
-    let [pricing,setPricing] = useState([])
+  let [pricing, setPricing] = useState([]);
+  let data = useSelector((state) => state.dataReducer);
+  const dispatch = useDispatch();
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const prices = await getData(getPricing);
-            if(prices) setPricing(prices)
-        }
-        getInterviewer()
-    },[])
-    
-    return (<>
-        <Header />
-        <h2 className="pricing-header">Pricing and packages</h2>
-        {pricing?
-        <section className="package-detail">
-                {pricing.map((pricing,index) => (
-                    <PackageCard key={index} title={pricing.title} price={pricing.price} benefits={pricing.benefits}
-                        description={pricing.description}
-                    />
-                ))}
-        </section>
-        :<span>{fallback}</span>
-        }
-        <Footer />
-         </>
-    )
+  useEffect(() => {
+    dataActionCreator.getAdminData(
+      dispatch,
+      getPricing,
+      dataActions.setPricing
+    );
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (data.pricing !== undefined) {
+      setPricing(data.pricing.data);
+    }
+  }, [data]);
+
+  return (
+    <>
+      <Header />
+      {pricing.length ? <Pricing pricing={pricing} /> : <>{fallback}</>}
+      <Footer />
+    </>
+  );
 }

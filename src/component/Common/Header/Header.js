@@ -1,45 +1,66 @@
-import {lazy,useState} from "react"
-import { Link } from "react-router-dom"
-import { logoUrl } from "constant/const_url"
-import './Header.css'
+import { useState, useEffect } from "react";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { logo } from "constant/utility";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./Header.css";
 
-const Button = lazy(() => import("component/Common/Button/CommonButton"))
+export default function Header() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const auth = useSelector((state) => state.authReducer);
 
-export default function Header({ isLoggedIn }) {
-    
-    let [toggle, setToggle] = useState(true)
-
-    const handleResize = () => { 
- 
-        if (window.innerWidth <= 425) {
-            setToggle(false)
-        }
-
-        else if (window.innerWidth > 425) { 
-            setToggle(true)
-        }
+  useEffect(() => {
+    if (auth.user && auth.user.isLoggedIn) {
+      setLoggedIn(true);
     }
-    
-    window.addEventListener("resize", handleResize);
+  }, [auth]);
 
-    return(
-        <header id="main-header">
-            <div id="headerLogo">
-                <Link to="/"> <img src={logoUrl} alt="logo" id="brand-logo"></img></Link>
-                <Link to="/" id="toggle-btn" onClick={() => {if (toggle) { setToggle(false) }else {setToggle(true) }}}><i className="fas fa-bars fa-2x"></i></Link>
-            </div>
-               {toggle ?
-                 <div id="headerItems">            
-                    <Link className="header-icons" to="/about"> About </Link>
-                    <Link className="header-icons" to="/package"> Package </Link> 
-                    <Link className="header-icons" to="/join"> Join Us </Link> 
-                    <Link className="header-icons" to="/contact"> Contact Us </Link> 
-                    <Link className="header-icons" to="/join">
-                        <Button buttonType='primary' buttonName={isLoggedIn ? "Logout" : "Sign In"} isDisabled="false" size="middle" width={"100%"} />
-                    </Link>
-                </div> :
-                <></>
-            }          
-        </header>
-    )
+  return (
+    <Navbar className="navbar" collapseOnSelect expand="lg" bg="white">
+      <Container fluid>
+        <Navbar.Brand href="/">{logo}</Navbar.Brand>
+        <Navbar.Toggle id="toggle" aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto my-2 my-lg-0"></Nav>
+          <Nav>
+            <Link to="/about" className="link">
+              About Us
+            </Link>
+            <Link to="/contact" className="link">
+              Contact Us
+            </Link>
+            <Link to="/pricing" className="link">
+              Pricing
+            </Link>
+            {loggedIn && auth.user ? (
+              <section>
+                <img
+                  id="profileImage"
+                  src={auth.user.image}
+                  alt="profileImage"
+                ></img>
+                <Link to={`${auth.user.role}/dashboard`}>
+                  <Button
+                    variant="light"
+                    className="btn signIn text-secondary btn-outline-primary"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              </section>
+            ) : (
+              <Link to="/signIn">
+                <Button
+                  variant="light"
+                  className="btn text-secondary signIn btn-outline-warning"
+                >
+                  Sign In
+                </Button>
+              </Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }

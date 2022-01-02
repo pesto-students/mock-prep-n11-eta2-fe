@@ -1,0 +1,86 @@
+
+.slides{
+    width: 70%;
+    height: auto;
+    min-height: 60vh;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    padding: 10;
+    margin: 10vh auto;
+    border-radius: 1px solid #e8faf0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.slide{
+    padding: 3vh 2vw;
+}
+
+.question{font-size: 1.5rem;color: grey;height: 5vh}
+
+.slideCard{height: 45vh;}
+
+.options{
+    width: 30vw;
+    border-radius: 3%;
+    margin: 2vh;
+    margin-left: 0;
+    padding: 7px 15px;
+    text-align: left;
+    color: black;
+    background-color: rgb(253, 249, 241);
+}
+
+.navigationBtn{display:flex;justify-content: space-between;}
+/* .ant-row{height: 35vh !important;margin-top: 5vh;} */
+
+
+.navigation{
+    padding: 3vh 1vw;
+    background-color: rgb(11, 30, 90);
+}
+
+#navHead{display: flex;}
+
+#navHead>h3{font-size: 1rem;margin-left: 0.5rem;color: white}
+
+.ant-progress-text{color: white !important;border-color: white;}
+
+#prog>.ant-progress-inner {
+    width: 60px !important;
+    height:60px !important;
+    font-size: 20px !important;
+
+}
+
+.ant-progress-inner{
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 10px !important;
+    margin: 6px 10px;
+}
+
+.progress{
+    height: 3rem;
+    margin: 0.2rem;
+   background-color: rgb(11, 30, 90);
+}
+
+.score{
+    min-height: 45vh;
+}
+
+#nav{display: flex;flex-wrap: wrap;margin: 2vh auto;}
+.navHead{display: flex !important;color: white;}
+.navHead>h3{color: white;}
+.ant-alert-with-description {margin: 2vh auto;}
+
+@media only screen and (max-width:1024px) {
+    .slides{width: 95%;}
+    .options{width: 100%;}
+}
+
+@media only screen and (max-width:450px) {
+    .slides{display: flex;flex-direction: column-reverse;margin: 2vh auto;margin-bottom: 10vh !important;}
+    .slide{height: 60vh;width: 100%;}
+ 
+}

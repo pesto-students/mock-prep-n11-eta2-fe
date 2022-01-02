@@ -1,0 +1,43 @@
+.interview-details {
+  width: 95%;
+  margin: auto;
+  padding: 0;
+  height: auto !important;
+  position: relative;
+}
+
+#tableSearch {
+  width: 20vw;
+  margin-left: 58vw;
+  right: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .interview-details {
+    overflow-x: scroll;
+
+    border-radius: 10px;
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .interview-details > .header > .tab-options > #toggleBtn {
+    display: none !important;
+  }
+  .interview-details > .header > .tab-title > .icon {
+    font-size: 0.7rem;
+  }
+  .interview-details > .header > .tab-options > .search {
+    width: 100%;
+    margin-right: 1vh;
+  }
+}
+
+.interview-details > .header > .tab-options {
+  justify-content: right !important;
+}
+
+::-webkit-scrollbar {
+  height: 2px !important;
+}

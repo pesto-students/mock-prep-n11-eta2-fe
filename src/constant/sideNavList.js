@@ -1,38 +1,38 @@
-import { AccountBox, AttachMoney, DashboardOutlined, Event,School } from '@material-ui/icons';
+import { CalendarOutlined, ConsoleSqlOutlined, DashboardOutlined, DollarOutlined, ProfileOutlined } from "@ant-design/icons"
+
 
 export const interviewerNavList =[
     {
         id: 1,
         url:"/interviewer/dashboard",
         linkName: "Dashboard",
-        icon: <DashboardOutlined/>
+        icon: <DashboardOutlined />
     },
     {
         id: 2,
         url:"/interviewer/profile",
         linkName: "Profile",
-        icon: <AccountBox />
+        icon: <ProfileOutlined />
     },
     {
         id: 3,
         url:"/interviewer/earnings",
         linkName: "Earnings",
-        icon: <AttachMoney />
+        icon: <DollarOutlined />
     },
     {
         id: 4,
         url:"/interviewer/calendar",
         linkName: "Calendar",
-        icon: <Event />
+        icon: <CalendarOutlined />
     },
     {
         id: 5,
         url:"/interviewer/interviews",
         linkName: "Interviews",
-        icon: <School />
+        icon: <ConsoleSqlOutlined />
     },
 ]
-
 
 export const dashbordNames = {
     admin : "Admin",

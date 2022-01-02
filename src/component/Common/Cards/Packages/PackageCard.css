@@ -1,57 +1,100 @@
-.person{
-    width: 17vw;
-    min-height: 50vh;
-    padding: 1vh 0;
-    height: auto;
-    margin: 20px 10px;
-    border:1px solid lightgrey;   
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.profile{
-    width: 55%;
-    border-radius: 100%;
-    border: 1px solid rgb(31, 58, 139);
-    justify-content: center;
+.person {
+  width: 45vw;
+  margin: 0 1vw;
+  padding: 1vw;
+  text-align: left;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-#btns{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    vertical-align: middle;
-    margin-top: 15vh;
+#pricing-ben {
+  padding: 0;
+  list-style-type: none;
+}
+#pricing-ben > li {
+  color: rgb(24, 49, 124);
+}
+#pricing-title {
+  color: rgb(24, 49, 124);
+  font-size: 1.1rem;
+}
+#pricing-price {
+  color: rgb(24, 49, 124);
+  font-size: 1.5rem;
+}
+#pricing-description {
+  color: grey;
+  font-size: 1rem;
+}
+.choose {
+  margin-left: 12% !important;
 }
 
-#pricing-title{
-    width: 100%;
-    font-size: 1.1rem;
-    text-align: center;
-    padding: 1vh;
-
-    margin: 1vh auto;
-    color: white;
-    background-color: #6237fc;
-
+.person:hover {
+  background-color: rgb(24, 49, 124);
+  color: white !important;
+}
+.person:hover #pricing-title {
+  color: white;
+}
+.person:hover #pricing-description {
+  color: white;
+}
+.person:hover #pricing-price {
+  color: white;
+}
+.person:hover #pricing-ben > li {
+  color: white;
+}
+.person:hover .choose {
+  border-color: white !important;
+  color: white;
 }
 
-#pricing-ben{color: grey;}
-
-#pricing-price{
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 2vh 0;
-}
-
-#pricing-description{
-    font: 0.9rem;
-    color: grey;
-    padding: 1vh 1vw;
-}
-
-
-#price-btn{
+@media only screen and (max-width: 1440px) {
+  .package-detail {
+    width: 80%;
+  }
+  .person {
     width: auto;
-    margin-left: 30%;
-    color:white;
-    background-color: rgb(98, 55, 252);;
+    margin: 1vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .package-detail {
+    width: 98%;
+  }
+  .person {
+    width: auto;
+    margin: 1vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .package-detail {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .person {
+    width: auto;
+    margin: 2vh 1vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .package-detail {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .person {
+    width: 62vw;
+    margin: 2vh auto;
+    padding: 4vh 4vw;
+    height: auto;
+  }
+  .pricing-header {
+    margin: 5vh 0;
+  }
 }

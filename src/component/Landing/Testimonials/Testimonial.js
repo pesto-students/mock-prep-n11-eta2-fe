@@ -1,39 +1,45 @@
-import React, {useState,useEffect} from 'react'
-import "./Testimonial.css"
-import { getReviews } from 'constant/apiUrl';
-import {getData} from 'api/Fetch';
+import React, { Suspense, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getReviews } from "constant/apiUrl";
+import Slides from "component/Landing/Testimonials/Slides";
+import dataActions from "Redux/Actions/dataAction";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import "./Testimonial.css";
 
 export default function Testimonials() {
-    
-    let [testimonials,setTestimonial] = useState([])
+  let [testimonials, setTestimonials] = useState([]);
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const testimonial = await getData(getReviews);
-            if(testimonial) setTestimonial(testimonial)
-        }
-        getInterviewer()
-    },[])
+  const dispatch = useDispatch();
+  let data = useSelector((state) => state.dataReducer);
 
-    return (
-        <div>
-            <h2 className="headline">Testimonials </h2>
-            {
-                testimonials ?
-                    <section className="testimonials">
-                        {testimonials.map(test => (
-                            <section className="testimonial" key={test.id}>
-                                <img src={test.image} alt="profile" className="test-profile"></img>
-                                <section className="review">
-                                    <p>"{test.review}"</p>
-                                    <p className="test-person">{test.name}</p>
-                                    <p className="test-person">{test.company}</p>
-                                </section>
-                            </section>
-                        ))}
-                    </section>:
-            <p>Loading..</p>
-            }
-        </div>
-    )
+  useEffect(() => {
+    dataActionCreator.getAdminData(
+      dispatch,
+      getReviews,
+      dataActions.setTestimonials
+    );
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (data.testimonials) {
+      setTestimonials(data.testimonials.data);
+    }
+  }, [data]);
+
+  return (
+    <Suspense fallback={<div>Loading</div>}>
+      <div>
+        {testimonials.length > 0 ? (
+          <>
+            <h2 className="title">Testimonial</h2>
+            <section id="testimonials">
+              <Slides testimonials={testimonials} />
+            </section>
+          </>
+        ) : (
+          <p>Loading..</p>
+        )}
+      </div>
+    </Suspense>
+  );
 }

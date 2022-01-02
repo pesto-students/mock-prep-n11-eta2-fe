@@ -1,31 +1,61 @@
-.queryForm{
-    width: 60vw;
-    min-height: 40vh;
+.contact {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#contactForm {
+  width: 50vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid grey;
+  margin: 5vh auto;
+  position: relative;
+}
+
+#info {
+  background-image: url("https://res.cloudinary.com/mock-prep/image/upload/v1640983941/Mockprep/Uilities/res-console.cloudinary_bmts6k.jpg");
+  background-position: bottom;
+  background-size: cover;
+  padding: 2vw;
+  color: white;
+}
+
+#info > h3 {
+  color: white;
+}
+
+#query {
+  padding: 2vw;
+}
+
+#contactform > .btn {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  #contactForm {
+    width: 70vw;
+  }
+
+  #contactform {
+    margin: 1vw;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact {
     height: auto;
-    margin: 5vh auto;
-    border:1px solid lightgrey;
-    padding: 5vh 15px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    text-align: center;
-
+  }
+  #contactForm {
+    width: 90vw;
+  }
 }
 
-
-.contact{
-    margin: 10vh 0;
-    text-align: center;
-}
-
-.contact>h2{color:rgb(20, 58, 172)}
-.contact>p{color: grey;}
-
-
-@media only screen  and (max-width:768px){
-    .queryForm{width: 80vw !important;}
-}
-
-@media only screen  and (max-width:768px){
-    .contact>p{width:90vw;margin:5vh auto;font-size: 0.8rem !important;}
-    .queryForm{width: 90vw !important;margin: 2vh auto;}
+@media only screen and (max-width: 450px) {
+  #contactForm {
+    display: block;
+  }
 }

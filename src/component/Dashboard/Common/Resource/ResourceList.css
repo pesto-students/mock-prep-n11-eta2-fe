@@ -1,0 +1,29 @@
+.resource {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resource-container {
+  width: 100%;
+  height: auto;
+}
+
+.resource-container > .header > .tab-options {
+  justify-content: right !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .resource {
+    padding: 2vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .resource {
+    display: block;
+    justify-content: center;
+  }
+  .resource-container > .header > .tab-options > #toggleBtn {
+    margin-left: 2vw;
+  }
+}

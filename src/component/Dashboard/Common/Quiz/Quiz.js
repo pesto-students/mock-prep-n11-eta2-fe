@@ -1,56 +1,83 @@
-import React, { lazy,useState} from 'react'
-import "../Topics/List/TopicsList.css"
-import { Input} from "antd"
-import { trophyIcon } from "constant/antIcons"
-import { quiz } from 'constant/data'
-import { topicsFilter } from 'constant/navList'
-import { adminNavList } from 'constant/navList'
-import { topicForm } from 'constant/formData'
+import React, { lazy, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Input } from "antd";
+import { questionIcon } from "constant/antIcons";
+import { deleteQuizList, getQuizList } from "constant/apiUrl";
+import { fallback } from "constant/navList";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import dataActions from "Redux/Actions/dataAction";
+import QuizCard from "component/Common/Cards/Quiz/Quiz";
+import alertActionCreator from "Redux/Action Creators/alertActionCreator";
+import { removeData } from "api/Api";
+import "./Quiz.css";
 
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
-const QuizCard = lazy(() => import('component/Common/Cards/Quiz/Quiz'))
-const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
+const DashboardHeader = lazy(() =>
+  import("component/Dashboard/Common/Header/DashboardHeader")
+);
 
 export default function QuizList() {
-    
-    let [topicsList, setInterviewer] = useState(quiz);
+  const { Search } = Input;
+  let [quizList, setQuizList] = useState([]);
+  let [quiz, setQuiz] = useState([]);
 
-    const { Search } = Input;
-    const interviewerForm = JSON.parse(JSON.stringify(topicForm));
-    delete interviewerForm.id
+  let data = useSelector((state) => state.dataReducer);
+  const dispatch = useDispatch();
 
-
-    const handleFilter = (value) => {
-
-        let filtered = quiz.filter(fil => value.some(e => fil.title.includes(e)));
-        setInterviewer(filtered)
-
-        if (value.length === 0) {
-            setInterviewer(quiz)
-        }
+  useEffect(() => {
+    dataActionCreator.getAdminData(dispatch, getQuizList, dataActions.setQuiz);
+  }, [dispatch]);
+  useEffect(() => {
+    if (data.quiz) {
+      setQuiz(data.quiz.data);
+      setQuizList(data.quiz.data);
     }
-    
-    const onSearch = (value) => {
-        let filtered = quiz.filter(val => val.title.includes(value) );
-       
-        setInterviewer(filtered)
-    }; 
+  }, [data]);
 
-    const search = <><Filter filterOptions={topicsFilter} filterFunction={handleFilter} placeholder="Filter Quiz" /><section className="search"><Search placeholder="Search Quiz" onSearch={onSearch} style={{ width: 200 }} />
-       
-    </section></>
+  const onSearch = (value) => {
+    let filtered = quiz.filter(
+      (val) => val.title.includes(value) || val.category.includes(value)
+    );
+    setQuizList(filtered);
+  };
 
-    return (
-        <div>
-            <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <section className='topics-container'>
-                <DashboardHeader title="Quiz List" icon={trophyIcon} rightComponent={search} />
-                <section className="topics">
-                    {topicsList.map((topic,index) => (<QuizCard key={index} route={"/admin/quiz/"+topic.id} pic={topic.img} title={topic.title} count={topic.count} />))}
-                </section>
-            </section>
-        </div>
-    )
+  const handleDelete = (quizId) => {
+    quiz = quiz.filter((e) => e._id === quizId);
+    removeData(deleteQuizList + quizId);
+    setQuiz(quiz);
+    alertActionCreator.setError(dispatch, "Quiz Deleted");
+  };
+
+  const search = (
+    <>
+      {" "}
+      <section className="search">
+        <Search
+          placeholder="Search Quiz"
+          onSearch={onSearch}
+          style={{ width: 200 }}
+        />
+      </section>
+    </>
+  );
+
+  return (
+    <div>
+      <section className="resource-container">
+        <DashboardHeader
+          title="Quiz List"
+          icon={questionIcon}
+          rightComponent={search}
+        />
+        <section className="resource">
+          {quizList.length > 0 ? (
+            quizList.map((quiz, index) => (
+              <QuizCard key={index} quiz={quiz} handleDelete={handleDelete} />
+            ))
+          ) : (
+            <section>{fallback}</section>
+          )}
+        </section>
+      </section>
+    </div>
+  );
 }
-

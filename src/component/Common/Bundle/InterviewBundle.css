@@ -1,0 +1,47 @@
+.package{
+    width: 17vw;
+    padding: 1vw;
+    min-height: 40vh;
+    height: auto;
+    margin: 0 2vw;
+    border-radius: 20px;
+    text-align: left !important;
+    box-shadow: rgba(45, 45, 70, 0.2) 0px 12px 29px 0px;
+}
+
+#check{
+    padding-right: 1vw;
+}
+
+.heading{
+    color: rgb(23, 47, 119);
+    font-size: 1.2rem;
+}
+
+.btn{ margin-left: 4vw;}
+
+@media only screen and (max-width:1024px){
+    .package{
+        width: 25vw !important; 
+    }
+    .btn{margin-left: 6vw;}
+ }
+ 
+ @media only screen and (max-width:768px){
+    .package{
+        width: 31vw !important; 
+        margin: 0 1vw;
+    }
+    .btn{margin-left: 6vw;}
+ }
+ 
+ @media only screen and (max-width:450px){
+    .package{
+        width: 60vw !important; 
+        margin: 2vh auto;
+        padding: 2vw;
+       
+    }
+
+    .btn{margin-left: 13vw;}
+ }

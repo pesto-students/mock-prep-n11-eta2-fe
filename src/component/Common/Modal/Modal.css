@@ -1,5 +1,16 @@
-.modal{
-    width: 60vw !important;
-    margin: auto !important;
-    height: 60vh !important;   
-   }
+#modal{height: 40vh !important;}
+
+#body{
+    height: auto;
+    min-height: 40vh ;
+}
+
+#closeBtn{
+    font-size: 1.5rem;
+}
+
+#modalHeader{
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: space-between;
+}

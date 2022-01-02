@@ -1,28 +1,52 @@
-.header{
-    width: 100%;
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  vertical-align: middle;
+  border-bottom: 1px solid lightgray;
+  align-items: center;
+  margin: 0;
+}
+
+.tab-title {
+  font-size: 1.2rem;
+  display: flex;
+  color: grey;
+}
+
+#toggleBtn {
+  margin-left: 2vw;
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  #toggleBtn {
+    display: block;
+  }
+
+  .tab-options {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    vertical-align: middle;
-    border-bottom: 1px solid lightgray;
-    align-items: center;
-    margin: 0;
+    justify-content: right;
+  }
 }
 
-.tab-title{font-size:1.2rem;display: flex;color: grey;vertical-align: middle;}
+@media only screen and (max-width: 768px) {
+  .tab-title {
+    width: 50vw !important;
+  }
 
-.tab-options{width:50%;display: flex;justify-content: space-around; align-items: center;align-content: center;}
-
-.ant-select{display: flex;align-items: center;min-width: 15vw;} 
-.ant-select-selector{width: 15vw;}
-
-
-@media only screen and (max-width:430px) {
-    .tab-title{
-        width: 50vw !important;
-    }
+  .tab-options {
+    justify-content: right;
+  }
 }
 
-#toggleBtn{
+@media only screen and (max-width: 450px) {
+  .tab-title {
+    width: 80vw !important;
+  }
+
+  .tab-options > .ant-input-search {
     display: none;
+  }
 }

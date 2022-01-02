@@ -1,78 +1,41 @@
-.interviewerListContainer{
-    width: 82.5vw;
-    position: absolute;
-    right: 0;
+.interviewerListContainer>.header>.tab-options{justify-content: right !important;}
+
+.interviewerList{
+    width: 97%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
 }
 
-.interviewersList{
-    width:70vw;
-    margin: 2vh 5vw ;  
-}
-
-.interviewerListCard{
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.interviewerListCard>.person{
-    width: 15vw !important;
+.interviewerTabContainer{
+    width: 100%;
     height: auto;
-    min-height: 45vh !important;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    margin: 2vh 1vw;
-}
-
-.interviewerListCard>.person>.profile{
-    width: 70%;
+    margin: 5vh 1vw;
 }
 
 
-#hoverCard{
-    display: none;
-}
-
-.interviewerListCard>.person:hover{
-   padding: 0;
+.cardContainer{
+    width: auto;
+    height: 40vh !important;
 }
 
 
-.closeProfile{
-    position: absolute;
-    right: 0;
-    margin: 10px;
+.interviewerTabContainer>.search{display: none;}
+
+ @media only screen and (max-width:768px){
+   
+    .interviewerListContainer>.header>.tab-title>.icon{font-size: 0.9rem;width: 50vw;}
+    .interviewerListContainer>.header>.tab-options>.search{display: none;margin-right: 2vw;}
+    .interviewerTabContainer>.search{display: block !important;width: 100vw;}
+    .interviewerTabContainer>.search>.ant-input-search{width: 40vw !important;}
     
 }
 
+@media only screen and (max-width:450px){
+    .interviewerListContainer{height: auto;}
+    .interviewerTabContainer>.search>.ant-input-search{width: 60vw !important;}
+    
+    
 
-.interviewerListCard>.person:hover #hoverCard{
-    padding:0;
-    display: block;
-    background-color: rgb(41, 69, 121);
-    width: 15vw;
-    height: 61%;
-    z-index: 9;
-    position: absolute;
-    opacity: 0.9;
-}
-
-
-.viewProfileBtn{
-    background-color: orange;
-    color: white;
-    margin: 2vh auto;
-}
-
-.addProfileBtn{
-    background-color: green;
-    color: white;
-    margin: 2vh auto;
-}
-
-.removeProfileBtn{
-    background-color: red;
-    color: white;
-    margin: 2vh auto;
-}
+} 

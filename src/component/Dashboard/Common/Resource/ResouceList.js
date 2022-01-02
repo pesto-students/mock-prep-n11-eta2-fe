@@ -1,105 +1,197 @@
-import React, { lazy,useState,useEffect} from 'react'
-import "../Topics/List/TopicsList.css"
-import { Input} from "antd"
-import { resourceIcon } from "constant/antIcons"
-import { Button } from 'antd'
-import { resources } from 'constant/data'
-import { fallback, topicsFilter } from 'constant/navList'
-import { adminNavList } from 'constant/navList'
-import { resourceForm } from 'constant/formData'
-import Forms  from 'component/Common/Form/Forms';
-import { getData } from 'api/Fetch'
-import { getResources, insertResource } from 'constant/apiUrl'
-import { insertData } from 'api/Insert'
+import React, { lazy, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { resourceIcon } from "constant/antIcons";
+import {
+  getResources,
+  getTopics,
+  insertResource,
+  updateResource,
+  daleteResources,
+} from "constant/apiUrl";
+import { fallback } from "constant/navList";
+import ResourceCard from "component/Common/Cards/Resource/ResouceCard";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import dataActions from "Redux/Actions/dataAction";
+import { resourceForm } from "constant/formData";
+import TopicsForm from "component/Common/Form/TopicsForm";
+import "./ResourceList.css";
+import Modals from "component/Common/Modal/Modals";
+import { updateData } from "api/Api";
+import alertActionCreator from "Redux/Action Creators/alertActionCreator";
+import { insertData, removeData } from "api/Api";
 
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
-const ResourceCard = lazy(() => import('component/Common/Cards/Resource/ResouceCard'))
-const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
-const Modals = lazy(() => import("component/Common/Modal/Modals"))
+const DashboardHeader = lazy(() =>
+  import("component/Dashboard/Common/Header/DashboardHeader")
+);
 
 export default function ResourceList() {
-    
-    let [topics, setInterviewer] = useState([]);
 
-    let [topicsList, setInterviewerList] = useState([]);
-    
+  let { topicId } = useParams();
+  let [resourceList, setResourceList] = useState([]);
+  let [resource, setResource] = useState([]);
+  let [topic, setTopics] = useState([]);
+  let [showModal, setShowModal] = useState(false);
+  let [showModal2, setShowModal2] = useState(false);
+  let data = useSelector((state) => state.dataReducer);
+  const dispatch = useDispatch();
+  let [resourceId, setResourceId] = useState("");
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getResources);
-           
-            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
-        }
-        getInterviewer()
-    },[])
+  let auth = useSelector((state) => state.authReducer);
 
-    const { Search } = Input;
-    const [isModalVisible, setIsModalVisible] = useState(false);
+  useEffect(() => {
+    dataActionCreator.getAdminData(
+      dispatch,
+      getResources,
+      dataActions.setResource
+    );
+  }, [dispatch]);
 
-    const interviewerForm = JSON.parse(JSON.stringify(resourceForm));
-    delete interviewerForm.id
+  useEffect(() => {
+    dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic);
+  }, [dispatch]);
 
-
-    const handleFilter = (value) => {
-
-        let filtered = resources.filter(fil => value.some(e => fil.title.includes(e)));
-        setInterviewer(filtered)
-
-        if (value.length === 0) {
-            setInterviewer(resources)
-        }
-    }
-    
-    const onSearch = (value) => {
-        let filtered = resources.filter(val => val.title.includes(value) );
-       
-        setInterviewer(filtered)
-        if (value === "") { 
-            setInterviewer(topics)
-        }
-    }; 
-
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-    
-    const handleOk = (value) => {
-        setIsModalVisible(false);
-    };
-    
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
-
-    const submit = (value) => { 
-        console.log(value)
-        insertData(insertResource,value)
+  useEffect(() => {
+    if (data.resources !== undefined) {
+      setResource(data.resources.data);
+      setResourceList(data.resources.data);
     }
 
-    const data = <Forms populate={false} submitFunction={submit} formFields={interviewerForm} buttonValue="Add Topic" /> 
+    if (data.topics !== undefined) {
+      setTopics(data.topics.data);
+    }
+  }, [data, topicId]);
 
-    const search = <><Filter filterOptions={topicsFilter} filterFunction={handleFilter} placeholder="Filter Resource" /><section className="search"><Search placeholder="Search Resource" onSearch={onSearch} style={{ width: 200 }} />
-       
-    </section></>
+  const onSearch = (value) => {
+    let filtered = resource.filter(
+      (val) => val.title.includes(value) || val.description.includes(value)
+    );
+    setResourceList(filtered);
+  };
 
-    return (
-        <div>
-            <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <section className='topics-container'>
-                <DashboardHeader title="Resources List" icon={resourceIcon} rightComponent={search} />
-                <Button onClick={showModal} id="addTopicBtn" type="primary">Add Resource</Button>
-                {topicsList.length > 0 ?
-                    <section className="topics">
-                        {topicsList.map((res, index) => (
-                            <ResourceCard key={index} description={res.description} image={res.image} url={res.url} title={res.title} />
-                        ))}
-                    </section>
-                    :
-                    <section>{fallback}</section>
-                }
-            </section>
-            <Modals animation={false} data={data} title="Add Resource" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
-        </div>
-    )
+  const submit = (value) => {
+    let resourceIndex = resource.findIndex((f) => f._id === resourceId);
+    for (var key in value) {
+      if (value[key] !== undefined) {
+        resource[resourceIndex][key] = value[key];
+      }
+    }
+    try {
+      setResource(resource);
+
+      updateData(updateResource + resourceId, value);
+      setShowModal(false);
+      alertActionCreator.setMessage(dispatch, "Resource Update Succesfull");
+    } catch (e) {
+      alertActionCreator.setError(dispatch, "Resource Update Failed");
+    }
+  };
+
+  const submit2 = async (value) => {
+    resource.push(value);
+    try {
+      setTopics(resource);
+      let res = await insertData(insertResource, value);
+      console.log(res);
+      setShowModal2(false);
+      alertActionCreator.setMessage(dispatch, "Resource Added Succesfull");
+    } catch (e) {
+      alertActionCreator.setError(dispatch, "Error Adding Resource");
+    }
+  };
+
+  const handleEdit = (resourceId) => {
+    setResourceId(resourceId);
+
+    let res = resource.filter((f) => f._id === resourceId);
+    if (Object.keys(resourceForm).length > 0) {
+      Object.keys(resourceForm).forEach(
+        (key) => (resourceForm[key] = res[0][key])
+      );
+    }
+    setShowModal(true);
+  };
+
+  const handleDelete = async (resourceId) => {
+    let res = await removeData(daleteResources + resourceId);
+
+    if (res.status === 200) {
+      setResource(resource.filter((e) => e._id !== resourceId));
+      alertActionCreator.setError(dispatch, "Resource Deleted");
+    }
+  };
+
+  const handleAdd = () => {
+    resourceForm.title = "";
+    resourceForm.image = "";
+    resourceForm.description = "";
+    resourceForm.url = "";
+
+    setShowModal2(true);
+  };
+
+  const form = (
+    <TopicsForm
+      submitFunction={submit}
+      formFields={resourceForm}
+      buttonValue={"Update Resource"}
+    />
+  );
+  const form2 = (
+    <TopicsForm
+      submitFunction={submit2}
+      topic={topic}
+      formFields={resourceForm}
+      buttonValue={"Add Resource"}
+    />
+  );
+ 
+  return (
+    <div>
+      <section className="resource-container">
+        <DashboardHeader
+          title="Resources List"
+          icon={resourceIcon}
+          onSearch={onSearch}
+        />
+        {auth && auth.user.role === "admin" ? (
+          <button className="btn btn-primary m-4" onClick={handleAdd}>
+            Add Resources
+          </button>
+        ) : (
+          <></>
+        )}
+        <section className="resource">
+          {resourceList.length > 0 ? (
+            resourceList.map((resource, index) => (
+              <ResourceCard
+                key={index}
+                {...resource}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            ))
+          ) : (
+            <section>{fallback}</section>
+          )}
+        </section>
+        <Modals
+          title={"Update Resource"}
+          show={showModal}
+          onHide={() => {
+            setShowModal(false);
+          }}
+          data={form}
+        />
+        <Modals
+          title={"Add Resource"}
+          show={showModal2}
+          onHide={() => {
+            setShowModal2(false);
+          }}
+          data={form2}
+        />
+      </section>
+    </div>
+  );
 }

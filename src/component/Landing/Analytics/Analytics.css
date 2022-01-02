@@ -1,32 +1,91 @@
-.landing-cards>.card{
+.landing-dashboard {
+  width: 80%;
+  margin: 6vh auto;
+}
+
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 5vh auto;
+}
+
+.landing-charts {
+  display: flex;
+  justify-content: left;
+  margin: 6vh auto;
+}
+.landing-bar {
+  width: 35vw;
+  height: 35vh;
+}
+
+.landing-doughnut {
+  width: 17vw;
+  height: 17vh;
+  margin-left: 2vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  .landing-bar > section {
+    width: 50vw !important;
+    height: 60vh;
+  }
+
+  .landing-doughnut {
+    width: 25vw;
+    height: 20vh;
+    margin-left: 20vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing-charts {
+    display: block;
+    height: 75vh !important;
+  }
+  .landing-bar {
     height: auto;
-    border-left: 1px solid rgb(11, 32, 94);
-}
+    width: auto;
+    margin: 4vh auto;
+  }
 
-.landing-cards>.card>.bottom{
-    margin: 0 !important;
-}
-
-.landing-cards{
-    display: flex;
-    justify-content: space-between;
-}
-
-.landing-bar{
-    width: 60%;
+  .landing-bar > section {
+    width: 65vw !important;
     height: auto;
-    border: 1px solid lightgrey;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .landing-doughnut {
+    width: 35vw;
+    height: 20vh;
+    margin: 0;
+  }
 }
 
-.landing-charts{
-    margin: 15vh 0;
-    display: flex;
-    justify-content: space-between;
-}
+@media only screen and (max-width: 450px) {
+  .landing-cards {
+    display: block;
+    margin: 5vh auto;
+  }
 
-.landing-doughnut{
-    width: 30%;
-    border:1px solid lightgrey;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  .landing-cards > .card {
+    width: 80vw !important;
+    margin: 2vh auto;
+  }
+
+  .landing-bar {
+    height: auto;
+    width: 80vw;
+    margin: 4vh auto;
+  }
+
+  .landing-bar > section {
+    width: 80vw !important;
+    height: auto;
+  }
+
+  .landing-doughnut {
+    width: 75vw;
+    height: 30vh;
+    margin: 0 auto;
+  }
 }

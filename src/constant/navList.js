@@ -1,5 +1,6 @@
-import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon } from "constant/antIcons"
+import { DashboardIcon, idCardIcon, smileIcon, DBIcon, resourceIcon, upcomingInter, questionIcon } from "constant/antIcons"
 import { Spin } from "antd"
+
 
 export const adminNavList = [
     {
@@ -37,11 +38,107 @@ export const adminNavList = [
         url:"/admin/quizList",
         linkName: "Quiz List",
         icon: resourceIcon
+    },
+    {
+        id: 7,
+        url:"/admin/queryList",
+        linkName: "Queries",
+        icon: questionIcon
     }
     
 ]
 
-export const interviewerFilter = [
+export const interviewerNavList = [
+    {
+        id: 1,
+        url:"/interviewer/dashboard",
+        linkName: "Dashboard",
+        icon: DashboardIcon
+    },
+    {
+        id: 2,
+        url:"/interviewerProfile",
+        linkName: "My Profile",
+        icon: idCardIcon
+    },
+    {
+        id: 3,
+        url:"/interviewer/upcomingInterviews",
+        linkName: "Upcoming Interviews",
+        icon: upcomingInter
+    },
+    {
+        id: 4,
+        url:"/interviewer/studentList",
+        linkName: "Student List",
+        icon: smileIcon
+    },
+    {
+        id: 5,
+        url:"/interviewer/topicsList",
+        linkName: "Topics List",
+        icon: DBIcon
+    },
+    {
+        id: 6,
+        url:"/interviewer/resourceList",
+        linkName: "Resource List",
+        icon: resourceIcon
+    },
+    {
+        id: 7,
+        url:"/interviewer/queries",
+        linkName: "Student Queries",
+        icon: questionIcon
+    },
+]
+
+export const studentNavList = [
+    {
+        id: 1,
+        url:"/student/dashboard",
+        linkName: "Dashboard",
+        icon: DashboardIcon
+    },  
+    {
+        id: 2,
+        url:"/student/studentProfile/",
+        linkName: "My Profile",
+        icon: smileIcon
+    },
+    {
+        id: 7,
+        url:"/student/Interviews",
+        linkName: "Upcoming Interviews",
+        icon: resourceIcon
+    },
+    {
+        id: 3,
+        url:"/student/interviewerList",
+        linkName: "Book Interview",
+        icon: idCardIcon
+    },
+    {
+        id: 4,
+        url:"/student/topicsList",
+        linkName: "View Topics",
+        icon: DBIcon
+    },
+    {
+        id: 5,
+        url:"/student/resourceList",
+        linkName: "Study Resource",
+        icon: resourceIcon
+    },
+    {
+        id: 6,
+        url:"/student/quizList",
+        linkName: "Take Quiz",
+        icon: resourceIcon
+    }
+]
+
+export const studentFilter = [
     {id: 1, value: "Javascript" },
     {id:2,value:"HTML"},
     {id:3,value:"Bootstrap"},
@@ -49,7 +146,7 @@ export const interviewerFilter = [
     {id:5,value:"Mongo"},
 ]
 
-export const studentFilter = [
+export const interviewerFilter = [
     {id: 1, value: "Javascript" },
     {id:2,value:"HTML"},
     {id:3,value:"Bootstrap"},

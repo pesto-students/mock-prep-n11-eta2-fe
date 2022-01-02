@@ -8,12 +8,8 @@ const details = {
 
 export default function JoinUsButton ({signin,type}) {
 
-    function getUserDetails(){
-      alert("Login Clicked")
-    }
-
     return (
-        <div className="JoinUsButton" onClick ={() => getUserDetails()}>
+        <div className="JoinUsButton">
             <div className="JoinUsLogo">
                 {details[type]}
             </div>

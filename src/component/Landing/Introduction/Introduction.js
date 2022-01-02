@@ -1,15 +1,40 @@
-import React, { lazy } from 'react'
-import "./Introduction.css"
+import React, { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import "./Introduction.css";
 
-const CommonButton = lazy(() => import("component/Common/Button/CommonButton"))
+const Header = lazy(() => import("component/Common/Header/Header"));
 
-export default function Introduction  ()  {
-    return (
-        <div>
-            <h1 className="headline">Prepare for your upcoming interview <br /> with a "Google" Interviewer</h1>
-            <p className="light-pointers">Take mock interviews & 1-on-1 mentoring sessions with real-life interviewers from the world’s best companies</p>
-            <CommonButton buttonType='primary' buttonName="Explore Packages" onClick={() => alert("Test")} isDisabled = "false" size = "large" width = {"15%"} />
-            <p className="light-pointers">A package for every interview preparation problem that you’ll ever face</p>
-        </div>
-    )
+// Introduction
+export default function Introduction() {
+  return (
+    <>
+      <div id="introduction">
+        <Header />
+        <Suspense fallback={<div>Loading</div>}>
+          <section id="banner-text">
+            <h2>
+              Prepare your interview with a{" "}
+              <span id="highlight">"Google Interviewer"</span>
+            </h2>
+            <p>
+              Mockprep is a interview preparation platform,allowing users to
+              engage with experts to guide and mentor to prepare best way
+              possible.
+            </p>
+            <section id="join-button">
+              <Link to="/join">
+                <Button className="btn join-btn btn-warning">Join</Button>
+              </Link>
+              <Link to="/signIn">
+                <Button className="btn join-btn btn-primary mx-4">
+                  Sign In
+                </Button>
+              </Link>
+            </section>
+          </section>
+        </Suspense>
+      </div>
+    </>
+  );
 }

@@ -1,34 +1,54 @@
-import React, { lazy,useEffect,useState } from 'react'
-import "./Interviewers.css"
-import { getData} from 'api/Fetch'
-import { getInterviewers } from 'constant/apiUrl'
+import React, { Suspense, lazy, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getInterviewers } from "constant/apiUrl";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import dataActions from "Redux/Actions/dataAction";
+import "./Interviewers.css";
 
-const InterviewerCard = lazy(() => import("component/Common/Cards/Interviewer/InterviewerCard"))
+const InterviewerCard = lazy(() =>
+  import("component/Common/Cards/Interviewer/InterviewerCard")
+);
 
 export default function Interviewers() {
+  let [interviewers, setInterviewers] = useState([]);
+  let data = useSelector((state) => state.dataReducer);
+  const dispatch = useDispatch();
 
-    let [interviewers,setInterviewers] = useState([])
+  useEffect(() => {
+    dataActionCreator.getAdminData(
+      dispatch,
+      getInterviewers,
+      dataActions.setInterviewerList
+    );
+  }, [dispatch]);
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getInterviewers);
-            if(interviewer) setInterviewers(interviewer)
-        }
-        getInterviewer()
-    },[])
- 
-    return (
-        <div>
-            <h1 className="headline" style={{ marginTop: "10vh" }}>Meet Our Instructors</h1>
-            {interviewers ?
-                <section className="interviewer-list">
-                    {interviewers.map((person, index) => (
-                        <InterviewerCard key={index} id={person.id} name={person.name} pic={person.image} designation={person.designation} company={person.company} />
-                    ))}
-                </section>
-                :
+  useEffect(() => {
+    if (data.interviewerList !== undefined) {
+      setInterviewers(data.interviewerList.data.slice(0, 5));
+    }
+  }, [data]);
+
+  return (
+    <section id="interviewersDisplay">
+      <h2 className="title">Meet our Interviewers</h2>
+      <Suspense fallback={<div>Loading</div>}>
+        <section className="interviewer-list">
+          {interviewers.length > 0 ? (
+            interviewers.map((person, index) => (
+              <InterviewerCard
+                key={index}
+                id={person.id}
+                name={person.name}
+                pic={person.image}
+                designation={person.designation}
+                company={person.company}
+              />
+            ))
+          ) : (
             <p>Loading...</p>
-            }
-        </div>
-    )
+          )}
+        </section>
+      </Suspense>
+    </section>
+  );
 }

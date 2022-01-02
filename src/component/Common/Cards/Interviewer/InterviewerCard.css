@@ -1,20 +1,59 @@
-.person{
-    width: 20vw;
-    height: auto;
-    margin: 20px 10px;
-}
-.profile{
-    width: 55%;
+/* Interviewer Card */
 
-    border-radius: 100%;
-    border: 1px solid rgb(31, 58, 139);
-    justify-content: center;
+.interviewerCard {
+  width: auto;
+  height: 30vh;
+  margin: 3vw 2vw;
+  text-align: center;
 }
 
-#btns{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    vertical-align: middle;
-    margin-top: 15vh;
+#interviewerProfile {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
+}
+
+.bold-text {
+  font-size: 1.3rem;
+  margin: 2vh auto 1vh auto;
+  color: rgb(25, 50, 100);
+}
+
+.designation-text {
+  color: rgb(225, 175, 30);
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .interviewerCard {
+    width: 23vw !important;
+  }
+
+  #interviewerProfile {
+    width: 12vw;
+    height: 12vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .interviewerCard {
+    margin: auto;
+  }
+  #interviewerProfile {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .interviewerCard {
+    width: 90vw !important;
+    margin: auto;
+  }
+
+  #interviewerProfile {
+    width: 27vw;
+    height: 27vw;
+    margin: auto;
+  }
 }

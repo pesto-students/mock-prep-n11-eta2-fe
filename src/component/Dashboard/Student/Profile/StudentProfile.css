@@ -1,11 +1,10 @@
-.interviewer-profile{
-    width: 82.5vw;
-    position: absolute;
-    right: 0;   
+/* .interviewer-profile{
+    width: 100%;
 }
 
 .int-profile-container{
-    width: 96%;
+    width: 90% !important;
+    min-height: 55vh;
     height: auto;
     margin: 5vh auto;
     display: grid;
@@ -13,7 +12,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .left-profile{
-padding: 7vh 2vw;
+    padding: 7vh 2vw;
 }
 
 .left-profile>img{
@@ -29,42 +28,85 @@ padding: 7vh 2vw;
     font-size: 1.1rem;
 }
 
-.right-profile{
-text-align: left;
-padding: 7vh 0;
-width: 50vw;
-}
-
-.update{
-    background-color: royalblue;
-}
-
-h3>.fa-star{
-    color: goldenrod;
-    margin:1vw 5px;
-}
-
-.about{
-    color: grey;
-    height: auto !important;
-    margin: 4vh 0;
-}
-
-.skill-chips{
-    display: flex !important;
-    flex-wrap: wrap; }
-
-.left-profile>.skill-chips{
- justify-content: left;
-}    
-
-.heading{margin: 1vh 0;}
-
-
 .interviewer-profile>.header>.tab-options{
     justify-content: right;
 }
 
-.fa-star{
-    color: rgb(245, 187, 40) !important;
+.interviewerProfileHeading{
+    font-size: 1rem;
+    color: grey;
+    margin: 2vh 0;
+}
+
+.about{
+    height: auto;
+    width: 95%;
+
+    position: relative;
+    word-wrap:normal;
+    display:flex;
+}
+
+.about>p{
+    width: 95%;
+    word-wrap: break-word;
+}
+
+.rating{
+    display: flex;
+    align-content: center;
+}
+
+.skill-chips{
+    display: flex;
+}
+
+.interviewer-profile>.header>.tab-options{
+    padding: 0 2vw !important;
+}
+
+.rating>i{margin: 0 0.2vw;}
+
+@media only screen and (max-width:1024px){
+    .int-profile-container{
+        width: 98% !important;
+    }
+    .left-profile{
+        padding: 7vh 1vw;
+    }
+ 
+}
+
+@media only screen and (max-width:768px){
+    
+    .interviewer-profile>.header>.tab-options>#toggleBtn{margin-left: 2vw;}
+    
+}
+
+
+@media only screen and (max-width:450px){
+    
+    .int-profile-container{
+        width: auto !important;
+        padding: 4%;
+       grid-template-columns: 1fr !important;
+
+    }
+
+    .left-profile{width: 98vw !important;padding:0 !important;}
+    .right-profile{width: 98vw !important;padding:0 !important;}
+
+    .interviewerListContainer>.header>.tab-options>.btn{
+        font-size: 0.8rem;
+        width: 40vw !important;
+    }
+    
+}
+
+ */
+
+.btn-interviewer {
+  position: absolute;
+  right: 0;
+  margin: 1vh 3vw;
 }

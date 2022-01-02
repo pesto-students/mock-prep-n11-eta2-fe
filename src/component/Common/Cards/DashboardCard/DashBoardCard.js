@@ -1,12 +1,13 @@
-import './DashboardCard.css'
+import "./DashboardCard.css";
 
-export default function DashBoardCard ({id,description,value,icon}){
-    return(
-        <section className="card" key={id}>
-            <p>{description}</p>
-            <section className="bottom">
-                <p>{value}</p>{icon}
-            </section>
-        </section>
-    )   
+export default function DashBoardCard({ id, description, value, icon }) {
+  return (
+    <section className="card" key={id}>
+      <p className="lightText">{description}</p>
+      <section className="bottom">
+        <p id="value">{value}</p>
+        <i className={icon}></i>
+      </section>
+    </section>
+  );
 }

@@ -1,0 +1,55 @@
+#offerings {
+  width: 100vw;
+  height: auto;
+}
+
+#steps-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  padding: 5vh 10%;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.steps {
+  text-align: center;
+}
+
+.steps > i {
+  font-size: 1.8rem;
+  margin: 1vw;
+  color: rgb(235, 185, 30);
+}
+
+.steps > h5 {
+  font-size: 1.4rem;
+  color: rgb(25, 50, 100);
+}
+
+@media only screen and (max-width: 1024px) {
+  #steps-container {
+    padding: 5vh 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    margin: 2vh auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #steps-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .steps {
+    margin: 3vh auto;
+    padding: 0 20vw;
+  }
+}

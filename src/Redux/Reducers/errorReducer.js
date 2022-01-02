@@ -1,11 +1,11 @@
-import {errorActions} from "../Actions/errorAction";
-
-export default function errorReducer (state = {error : "Error Found"},action){
+export default function errorReducer (state = {error : null},action){
     switch(action.type){
-        case errorActions.setError:
-            return state.error = action.error
+        case 'SET_ERROR':
+            state.error = action.error;
+            return {
+                ...state
+            }
         default:
             return state;
     }
-
 }

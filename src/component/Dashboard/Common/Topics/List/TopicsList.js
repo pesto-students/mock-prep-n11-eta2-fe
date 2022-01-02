@@ -1,107 +1,190 @@
-import React, { lazy,useState,useEffect} from 'react'
-import "./TopicsList.css"
-import { Input} from "antd"
-import { DBIcon } from "constant/antIcons"
-import { Button } from 'antd'
-import { fallback, topicsFilter } from 'constant/navList'
-import { adminNavList } from 'constant/navList'
-import { topicForm } from 'constant/formData'
-import Forms from 'component/Common/Form/Forms';
-import { getData } from 'api/Fetch'
-import { getTopics, insertTopic } from 'constant/apiUrl'
-import { insertData } from 'api/Insert'
+import React, { useState, useEffect, lazy } from "react";
+import { DBIcon } from "constant/antIcons";
+import { useSelector } from "react-redux";
+import { deleteTopic, getTopics } from "constant/apiUrl";
+import { useDispatch } from "react-redux";
+import dataActions from "Redux/Actions/dataAction";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import TopicsCard from "component/Common/Cards/Topics/TopicsCard";
+import alertActionCreator from "Redux/Action Creators/alertActionCreator";
+import { insertData, removeData } from "api/Api";
+import Modals from "component/Common/Modal/Modals";
+import TopicsForm from "component/Common/Form/TopicsForm";
+import { topicForm } from "constant/formData";
+import { updateData } from "api/Api";
+import { updateTopic, insertTopic } from "constant/apiUrl";
+import "./TopicsList.css";
 
-const Filter = lazy(() => import('component/Common/Filter/Filter'))
-const TopicsCard = lazy(() => import('component/Common/Cards/Topics/TopicsCard'))
-const DashboardHeader = lazy(() => import('component/Dashboard/Common/Header/DashboardHeader'))
-const SideNav = lazy(() => import("component/Dashboard/Common/SideNav/SideNav"))
-const Modals = lazy(() => import("component/Common/Modal/Modals"))
+const DashboardHeader = lazy(() =>
+  import("component/Dashboard/Common/Header/DashboardHeader")
+);
 
 export default function TopicsList() {
+  const dispatch = useDispatch();
+  let data = useSelector((state) => state.dataReducer);
+  let [topics, setTopics] = useState([]);
+  let [topicsList, setTopicsList] = useState([]);
+  let [showModal, setShowModal] = useState(false);
+  let [showModal2, setShowModal2] = useState(false);
+  let [topicId, setTopicId] = useState("");
 
-    let [topics, setInterviewer] = useState([]);
-    
-    let [topicsList, setInterviewerList] = useState([]);
+  const auth = useSelector((state) => state.authReducer);
 
-    useEffect(() => { 
-        const getInterviewer = async () => { 
-            const interviewer = await getData(getTopics);
-           
-            if (interviewer) { setInterviewer(interviewer); setInterviewerList(interviewer) }
-        }
-        getInterviewer()
-    },[])
-    
-    const { Search } = Input;
-    const [isModalVisible, setIsModalVisible] = useState(false);
+  useEffect(() => {
+    dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic);
+  }, [dispatch]);
 
-    const interviewerForm = JSON.parse(JSON.stringify(topicForm));
-    delete interviewerForm.id
-
-
-    const handleFilter = (value) => {
-
-        let filtered = topics.filter(fil => value.some(e => fil.title.includes(e)));
-        setInterviewer(filtered)
-
-        if (value.length === 0) {
-            setInterviewer(topics)
-        }
+  useEffect(() => {
+    if (data && data.topics) {
+      setTopics(data.topics.data);
+      setTopicsList(data.topics.data);
     }
-    
-    const onSearch = (value) => {
+  }, [data]);
 
-        let filtered = topicsList.filter(val => val.title.includes(value) );
-        setInterviewerList(filtered)  
-        if (value === "") { 
-            setInterviewerList(topics)  
-        }
-    }; 
+  const handleEdit = (topicId) => {
+    setTopicId(topicId);
 
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-    
-    const handleOk = (value) => {
-        setIsModalVisible(false);
-    };
-    
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
-
-    const submit = (value) => { 
-        console.log(value)
-        insertData(insertTopic, value)
-        
+    let topic = topics.filter((f) => f._id === topicId);
+    if (Object.keys(topic).length > 0) {
+      Object.keys(topicForm).forEach((key) => (topicForm[key] = topic[0][key]));
     }
 
-    if (topicsList.length > 0) { 
-        console.log(topicsList)
+    setShowModal(true);
+  };
+
+  const handleAdd = () => {
+    topicForm.title = "";
+    topicForm.image = "";
+    topicForm.description = "";
+
+    setShowModal2(true);
+  };
+
+  const submit = (value) => {
+    let topicIndex = topics.findIndex((f) => f._id === topicId);
+    for (var key in value) {
+      if (value[key] !== undefined) {
+        topics[topicIndex][key] = value[key];
+      }
     }
 
-    const data = <Forms populate={false} submitFunction={submit} formFields={interviewerForm} buttonValue="Add Topic" /> 
+    try {
+      updateData(updateTopic + topicId, value);
+      setTopics(topics);
+      setShowModal(false);
+      alertActionCreator.setMessage(dispatch, "Topic Update Succesfull");
+    } catch (e) {
+      alertActionCreator.setError(dispatch, "Error updating topic");
+    }
+  };
 
-    const search = <><Filter filterOptions={topicsFilter} filterFunction={handleFilter} placeholder="Filter Topics" /><section className="search"><Search placeholder="Search Topics" onSearch={onSearch} style={{ width: 200 }} />
-       
-    </section></>
+  const submit2 = (value) => {
+    topics.push(value);
 
-    return (
-        <div>
-            <SideNav sideNavList={adminNavList} userName="Admin"></SideNav>
-            <section className='topics-container'>
-                <DashboardHeader title="Topics List" icon={DBIcon} rightComponent={search} />
-            
-                    <Button onClick={showModal} id="addTopicBtn" type="primary">Add Topics</Button>
-                {topicsList.length > 0 ?
-                    <section className="topics">
-                        {topicsList.map((topic, index) => (<TopicsCard className="topicsCard" key={index} route={"/admin/resourceList/" + topic.id} image={topic.image} title={topic.title} description={topic.description} />))}
-                    </section>
-                    :
-                    <section>{fallback}</section>
-                }
-            </section>
-            <Modals animation={false} data={data} title="Add Topic" isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel} />
-        </div>
-    )
+    try {
+      setTopics(topics);
+      insertData(insertTopic, value);
+      setShowModal2(false);
+      alertActionCreator.setMessage(dispatch, "Topic Added Succesfull");
+    } catch (e) {
+      alertActionCreator.setError(dispatch, "Error Adding topic");
+    }
+  };
+
+  const handleDelete = async (topicId) => {
+    try {
+      removeData(deleteTopic + topicId);
+      setTopics(topics.filter((e) => e._id !== topicId));
+      alertActionCreator.setMessage(dispatch, "Topic Deleted");
+    } catch (e) {
+      alertActionCreator.setError(dispatch, "Error Deleting topic");
+    }
+  };
+
+  const hide1 = () => {
+    setShowModal(false);
+  };
+
+  const hide2 = () => {
+    setShowModal2(false);
+  };
+
+  const onSearch = (value) => {
+    let filtered = topicsList.filter(
+      (val) => val.title.includes(value) || val.description.includes(value)
+    );
+    setTopics(filtered);
+  };
+
+  const form = (
+    <TopicsForm
+      submitFunction={submit}
+      formFields={topicForm}
+      buttonValue={"Update Topics"}
+    />
+  );
+  const form2 = (
+    <TopicsForm
+      submitFunction={submit2}
+      formFields={topicForm}
+      buttonValue={"Update Topics"}
+    />
+  );
+  const search = (
+    <>
+      {" "}
+      <section className="search"></section>
+    </>
+  );
+
+  return (
+    <div>
+      <section className="topics-container">
+        <DashboardHeader
+          title="Topics List"
+          icon={DBIcon}
+          onSearch={onSearch}
+        />
+
+        <section className="interviewerTabContainer">
+          {auth && auth.user.role === "admin" ? (
+            <button className="btn btn-primary m-4" onClick={handleAdd}>
+              Add Topics
+            </button>
+          ) : (
+            <></>
+          )}
+          <section className="responsiveSearch">{search}</section>
+          <section className="topicListContainer">
+            {topics.length > 0 ? (
+              <>
+                {topics.map((topic, index) => (
+                  <TopicsCard
+                    key={index}
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                    topic={topic}
+                  />
+                ))}
+              </>
+            ) : (
+              <></>
+            )}
+          </section>
+        </section>
+        <Modals
+          title={"Update Topic"}
+          show={showModal}
+          onHide={hide1}
+          data={form}
+        />
+        <Modals
+          title={"Add Topic"}
+          show={showModal2}
+          onHide={hide2}
+          data={form2}
+        />
+      </section>
+    </div>
+  );
 }
