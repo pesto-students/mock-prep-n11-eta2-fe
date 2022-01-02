@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from "react-redux"
-import TopicsCard from 'component/Common/Cards/Topics/TopicsCard'
-import { getTopics} from 'constant/apiUrl'
-import dataActionCreator from 'Redux/Action Creators/dataActionCreators'
-import dataActions from 'Redux/Actions/dataAction'
-import "./TopicsStudying.css"
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import TopicsCard from "component/Common/Cards/Topics/TopicsCard";
+import { getTopics } from "constant/apiUrl";
+import dataActionCreator from "Redux/Action Creators/dataActionCreators";
+import dataActions from "Redux/Actions/dataAction";
+import "./TopicsStudying.css";
 
 export default function Topics(student) {
-    
-    const dispatch = useDispatch()
-    let [topicsList, setTopicsList] = useState([]);
-    let data = useSelector(state => state.dataReducer)
-    let studentData = {
-        ongoingTopics: ["61c3a3b5719ad651ce51e29c","61c3a4f7719ad651ce51e2a1"]
+  const dispatch = useDispatch();
+  let [topicsList, setTopicsList] = useState([]);
+  let data = useSelector((state) => state.dataReducer);
+  
+
+  useEffect(() => {
+    dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic);
+  }, [dispatch]);
+  useEffect(() => {
+    if (data.topics !== undefined && data.topics.data.length > 0) {
+      setTopicsList(data.topics.data.splice(1, 3));
     }
+  }, [data]);
 
-
-    useEffect(() => { dataActionCreator.getAdminData(dispatch, getTopics, dataActions.setTopic) }, [dispatch])
-    useEffect(() => {
-        if (data.topics !== undefined && data.topics.data.length > 0) {
-            setTopicsList(data.topics.data);
-        }
-    }, [data]);
-       console.log(topicsList)
-    return (
-        <div className='topicsOngoing'>
-            <h2 className='title'>My Topics</h2>
-            <section id="studentTopics">
-                {topicsList.length > 0 ? 
-                    <>
-                        {topicsList.map((topic,index) => (
-                            <TopicsCard key={index} topic={topic} />
-                        ))}
-                    
-                    </>
-                : <></>}
-            </section>
-        </div>
-    )
+  return (
+    <div className="topicsOngoing">
+      <h2 className="title">My Topics</h2>
+      <section id="studentTopics">
+        {topicsList.length > 0 ? (
+          <>
+            {topicsList.map((topic, index) => (
+              <TopicsCard key={index} topic={topic} />
+            ))}
+          </>
+        ) : (
+          <></>
+        )}
+      </section>
+    </div>
+  );
 }

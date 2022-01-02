@@ -1,7 +1,8 @@
 import React from 'react'
 import "./Modal.css"
 import Modal from "react-bootstrap/Modal";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap"
 import { closeIcon } from 'constant/antIcons';
 
 export default function Modals({title, show, onHide, data}) {

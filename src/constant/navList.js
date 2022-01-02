@@ -107,6 +107,12 @@ export const studentNavList = [
         icon: smileIcon
     },
     {
+        id: 7,
+        url:"/student/Interviews",
+        linkName: "Upcoming Interviews",
+        icon: resourceIcon
+    },
+    {
         id: 3,
         url:"/student/interviewerList",
         linkName: "Book Interview",

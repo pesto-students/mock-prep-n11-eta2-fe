@@ -1,125 +1,59 @@
-.personCard{
-    width: 15vw !important;
-    height: 37vh;
-    border: 1px solid lightgrey;
-    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    text-align: center;
-    padding: 10px;
-    margin: 2vh 1vw;
-    position: relative;
+/* Interviewer Card */
+
+.interviewerCard {
+  width: auto;
+  height: 30vh;
+  margin: 3vw 2vw;
+  text-align: center;
 }
 
-.profile{
-    width: 7vw;
-    height: 7vw;
-    border-radius: 100% !important;
-    margin-bottom: 2vh;
+#interviewerProfile {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
 }
 
-#deleteIcon{
-    position: absolute;
-    right: 1vw;
+.bold-text {
+  font-size: 1.3rem;
+  margin: 2vh auto 1vh auto;
+  color: rgb(25, 50, 100);
 }
 
-.hoverCard{
-  
-    display: none;
-    border-radius: 5px;
-    position: absolute;
-    z-index: 1;
-    width: 15vw !important;
-    height: 37vh;
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(27, 54, 133);
-    opacity: 0.92;
-  
-    align-items: center !important;
-    justify-content: center !important;
-
-  
-  
+.designation-text {
+  color: rgb(225, 175, 30);
+  font-size: 1rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  .interviewerCard {
+    width: 23vw !important;
+  }
 
-#interviewerCardButtons{
-    margin-top: 10vh;
-    display:grid;
-    grid-template-rows: 1fr 1fr;
+  #interviewerProfile {
+    width: 12vw;
+    height: 12vw;
+  }
 }
 
-.personCard:hover > .hoverCard{
-   
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.personCard:hover{
-    
-    padding:0;
-}
-
-.interviewerCard{
+@media only screen and (max-width: 768px) {
+  .interviewerCard {
+    margin: auto;
+  }
+  #interviewerProfile {
     width: 15vw;
-    text-align: center;
-    margin: 3vh 1vw;
+    height: 15vw;
+  }
 }
 
-#interviewerProfile{
-    border-radius: 100%;
+@media only screen and (max-width: 450px) {
+  .interviewerCard {
+    width: 90vw !important;
+    margin: auto;
+  }
+
+  #interviewerProfile {
+    width: 27vw;
+    height: 27vw;
+    margin: auto;
+  }
 }
-
-@media only screen and (max-width:1024px){
-    .personCard,.hoverCard{
-        width: 23vw !important;
-        height: 40vh;
-    }
-}
-
-@media only screen and (max-width:768px){
-    .personCard,.hoverCard{
-        width: 30vw !important;
-        height: 40vh;
-    }
-    
-    .profile{
-        width: 17vw;
-        height: 17vw;
-       border-radius: 100%;
-    }
-    .interviewerListContainer>.header>.tab-options>#toggleBtn{margin: 0 2vw;}
-    .interviewerCard{
-        width: 20vw;
-        margin: auto;
-    }
-}
-
-@media only screen and (max-width:450px){
-
-    .interviewerListContainer>.header>.tab-options>#toggleBtn{margin: 0 2vw;}
-    .personCard,.hoverCard{
-        width: 45vw !important;
-        height: 37vh;
-    }
-    
-    .profile{
-        width: 22vw;
-        height: 22vw;
-       border-radius: 100%;
-    }
-
-    .hoverCard{
-        width: 45vw !important;
-        height: 37vh;
-      
-     
-    }
-    .interviewerCard{
-        width: 80vw;
-        margin: auto;
-        display: block;
-    }
-   
-}
-

@@ -2,17 +2,11 @@ import React from 'react'
 import "./LeaderBoard.css"
 import { Tag } from 'antd'
 import { trophyIcon } from 'constant/antIcons'
-import { getStudents } from 'constant/apiUrl'
-import { useState, useEffect } from "react"
-import { useDispatch,useSelector } from 'react-redux'
-import dataActionCreators from 'Redux/Action Creators/dataActionCreators'
-import dataActions from 'Redux/Actions/dataAction'
-
 
 export const LeaderBoard = (studentList) => {
 
-    let [interviews,setInterviews] = useState(studentList.interviews)
-   console.log(interviews)
+    let interviews = studentList;
+
     return (
         <div id="leaderboard">
             <section className="cust-review">   
@@ -45,9 +39,10 @@ export const LeaderBoard = (studentList) => {
                         {
                             interviews.map(int => (
                                 <section id="action">
+                                    {int.actionItems.length > 0 ? <>
                                     <span>
-                                    <p>{int.actionItems[0].title}</p>
-                                    <p>{int.actionItems[0].description}</p>
+                                        <p>{int.actionItems[0].title}</p>
+                                        <p>{int.actionItems[0].description}</p>
                                     </span>
                                   
                                     <span>
@@ -55,6 +50,8 @@ export const LeaderBoard = (studentList) => {
                                         <Tag color={"red"}>{int.actionItems[0].status}</Tag>
                                     </span>
                                   
+                                    </> : <></>}
+                                   
                                 </section>
                             ))
                         }

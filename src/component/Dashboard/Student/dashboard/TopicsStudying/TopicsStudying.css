@@ -1,57 +1,65 @@
-.topicsOngoing{
-    width: 100%;
-    padding: 1vh 3vw;
+.topicsOngoing {
+  width: 100%;
+  height: auto;
+  padding: 1vh 3vw;
 }
 
-.title{
- color: purple !important;   
+.title {
+  color: purple !important;
 }
 
-.topics-container{
-    width: 100%;
-    position: absolute;
-    right: 0;
+.topics-container {
+  width: 100%;
+  position: absolute;
+  right: 0;
 }
-.header>.tab-options{
-    justify-content: right;
-}
-
-#topics{
-    display: flex;
-    flex-wrap: wrap;
+.header > .tab-options {
+  justify-content: right;
 }
 
-#quiz{display: flex}
-
-#addItem{margin: 2vh 1vw ;}
-
-#studentTopics{
-    height: 30vh;
+#topics {
+  margin: 2vw;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-#studentTopics>.topicsCard{
-    width: 20% !important;
-    height: 35vh;
-    margin: 0 !important;
+#quiz {
+  display: flex;
 }
 
-@media only screen and (max-width:1024px) {
-    #studentTopics>.topicsCard{
-        width: 25% !important;
-        height: 37vh;
-    }
+#addItem {
+  margin: 2vh 1vw;
 }
 
-@media only screen and (max-width:768px) {
-    #studentTopics>.topicsCard{
-        width: 30% !important;
-        height: 37vh;
-    }
+#studentTopics {
+  height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@media only screen and (max-width:450px) {
-    #studentTopics>.topicsCard{
-        width: 48% !important;
-        height: 40vh;
-    }
+#studentTopics > .topicsCard {
+  width: 20% !important;
+  height: 35vh;
+  margin: 1vw !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  #studentTopics > .topicsCard {
+    width: 25% !important;
+    height: 37vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #studentTopics > .topicsCard {
+    width: 30% !important;
+    height: 37vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #studentTopics > .topicsCard {
+    width: 48% !important;
+    height: 40vh;
+  }
 }

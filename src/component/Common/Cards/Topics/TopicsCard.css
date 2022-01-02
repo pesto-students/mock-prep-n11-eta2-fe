@@ -1,74 +1,73 @@
-.topicsCard{
-    width: 20%;
+.topicsCard {
+  width: 18%;
+  height: 40vh;
+  margin: 1vw 2vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.topicProfile {
+  width: 90%;
+  height: 50%;
+  opacity: 0.9;
+  margin: 5%;
+  margin-bottom: 10%;
+}
+
+.topicsCard:hover > .topicProfile {
+  opacity: 1;
+}
+
+.topicsCard:hover > .editIcons {
+  display: block;
+}
+
+.topicCardDetails {
+  margin-top: 2vh;
+}
+
+.int-details {
+  font-size: 1.05rem;
+  color: gray;
+}
+
+.learnButton {
+  position: absolute;
+  bottom: 4%;
+  left: 30%;
+  margin: auto;
+}
+
+.editIcons {
+  position: absolute;
+  right: 10px;
+  display: none;
+}
+
+.edit-icon {
+  margin: 0 5px;
+  color: blue;
+}
+
+@media only screen and (max-width: 1024px) {
+  .topicsCard {
+    width: 22vw;
     height: 40vh;
-    margin: 1vw;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    text-align: center;
-    position: relative;
+  }
 }
 
-.topicProfile{
-    width: 90%;
-    height: 50%;
-    opacity: 0.5;
-    margin:5%;
-    margin-bottom: 10%;
+@media only screen and (max-width: 768px) {
+  .topicsCard {
+    width: 30vw !important;
+    height: 40vh;
+  }
 }
 
-.topicsCard:hover >.topicProfile{
-    opacity: 1;
+@media only screen and (max-width: 450px) {
+  .topicsCard {
+    width: 60vw !important;
+    height: 40vh;
+    margin: 2vh auto;
+  }
 }
-
-.topicsCard:hover >.editIcons{
-    display: block;
-}
-
-.topicCardDetails{
-    margin-top: 2vh;
-}
-
-.int-details{
-    font-size: 1.05rem;
-    color: gray;
-}
-
-.learnButton{
-    position: absolute;
-    bottom: 4%;
-    left: 30%;
-    margin: auto;
-}
-
-.editIcons{
-    position: absolute;
-    right: 10px;
-    display: none;
-}
-
-.edit-icon{
-    margin: 0 5px;
-    color: blue;
-}
-
-@media only screen and (max-width:1024px){
-    .topicsCard{
-        width: 22vw;
-        height: 40vh;
-    }
-}
-
-@media only screen and (max-width:768px){
-    .topicsCard{
-        width: 30vw !important;
-        height: 40vh;
-    }
-}
-
-@media only screen and (max-width:450px){
-    .topicsCard{
-        width: 60vw !important;
-        height: 40vh;
-        margin: 2vh auto;
-    }
-}
-

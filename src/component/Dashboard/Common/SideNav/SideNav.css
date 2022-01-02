@@ -1,125 +1,147 @@
-#sideNav{
+#sideNav {
+  height: 100vh;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.logo-img {
+  width: 100%;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+  padding-left: 3vw;
+}
+
+.sidebar-list-item {
+  margin: 5vh 0px;
+  padding: 1vh 1vw;
+  color: grey;
+  display: flex;
+  justify-content: left;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.sidebar-list-item:hover,
+.sidebar-list-item:active,
+.sidebar-list-item:focus {
+  background-color: rgb(9, 30, 92);
+  color: white;
+}
+
+.icon {
+  margin: 0px 10px;
+  font-size: 1.05rem;
+  align-items: flex-end;
+  display: flex;
+}
+
+#logoutBtn {
+  width: 80%;
+  background-color: rgb(9, 30, 92);
+  color: white;
+  padding: 10px;
+  margin: 0 1vw;
+}
+
+#admin {
+  justify-content: left;
+  width: 100%;
+  padding: 0 10%;
+  margin: 2vh auto;
+  color: rgb(9, 30, 92);
+  display: flex;
+}
+
+.btnlogo {
+  width: 10vw !important;
+}
+
+#logout-btn {
+  color: white !important;
+}
+
+#bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 3vh;
+}
+
+#userProfile {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .logo-img {
+    width: 70%;
+  }
+
+  #sideNav {
+    display: none;
     height: 100vh;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 25vw;
+    position: absolute;
+    top: 3vh;
+    z-index: 1;
+    background-color: white;
+  }
 }
 
-.logo-img{
-    width: 100%;
+@media only screen and (max-width: 768px) {
+  .logo-img {
+    width: 40vw;
+  }
+  #sideNav {
+    display: none;
+    height: 100vh;
+    width: 35vw;
+    position: absolute;
+    top: 3vh;
+    z-index: 1;
+    background-color: white;
+  }
 }
 
-.sidebar-list{
-    list-style-type: none;
-    padding: 0;
-    padding-left: 3vw;
-}
-
-.sidebar-list-item{
-    margin: 5vh 0px;
-    padding: 1vh 1vw;
-    color:grey;
-    display: flex;
-    justify-content: left;
-    text-decoration: none;
-    vertical-align: middle;
-}
-
-.sidebar-list-item:hover,.sidebar-list-item:active,.sidebar-list-item:focus{
-    background-color: rgb(9, 30, 92);
-    color: white;
-}
-
-.icon{
-    margin: 0px 10px;
-    font-size: 1.05rem;
-    align-items: flex-end;
-    display: flex;
-}
-
-#logoutBtn{
-    width: 80%;
-    background-color: rgb(9, 30, 92);
-    color: white;
-    padding: 10px;
-    margin: 0 1vw;
-}
-
-#admin{
-    justify-content: left;
-    width: 100%;
-    padding: 0 10%;
-    margin: 2vh auto;
-    color: rgb(9, 30, 92);
-    display: flex;
-}
-
-.btnlogo{
-    width: 10vw !important;
-}
-
-#logout-btn{
-    color:white !important;
-}
-
-#bottom{
-    width: 100%;
+@media only screen and (max-width: 450px) {
+  .logo-img {
+    width: 40vw;
+  }
+  #sideNav {
+    display: none;
+    height: 90vh;
+    width: 100vw;
+    position: absolute;
+    top: 10vh;
+    z-index: 1;
+    background-color: white;
+  }
+  .sidebar-list {
+    position: relative;
+    padding-left: 5vw;
+  }
+  .sidebar-list-item {
+    margin: 3vh 0;
+  }
+  .icon:hover #sideNav {
+    display: block !important;
+  }
+  #admin {
+    margin-top: 5vh;
+    position: fixed;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  #bottom {
     position: absolute;
     bottom: 5vh;
-}
-
-#userProfile{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-}
-
-@media only screen and (max-width:1024px) {
-    #sideNav{width: 20vw;}
-    .sidebar-list{padding: 0 1vw;}
-    .sidebar-list-item{margin: 4vh 0;}
-    #bottom{width: 100%;}
-    #admin{width: 120%;margin: 1vh 0;}
-    .mainContainer{width: 80vw;}
-}
-
-@media only screen and (max-width:768px) {
-   
-    .logo-img{width: 40vw;}
-    #sideNav{
-        display: none;
-        height: 100vh;
-        width: 35vw;
-        position: absolute;
-        top: 3vh;
-        z-index: 1;
-        background-color: white;
-    }
-    .mainContainer{width: 100vw;}
-    .logo-img{width: 70%;}
-
-}
-
-@media only screen and (max-width:450px) {
-    .logo-img{width: 40vw;}
-    #sideNav{
-        display: none;
-        height: 90vh;
-        width: 100vw;
-        position: absolute;
-        top: 10vh;
-        z-index: 1;
-        background-color: white;
-    }
-    .sidebar-list{position: relative;padding-left: 5vw;}
-  
-    .icon:hover #sideNav{display: block !important;}
-
-    #admin{margin-top: 5vh;position: fixed ;    margin-left: 0;
-        padding-left: 0;}
-    #bottom{
-        position: absolute;
-        bottom: 5vh;
-        padding-left: 5vw;
-    }
-    #admin{position:absolute;bottom:5vh;margin: 0 5vw;}
-
+    padding-left: 5vw;
+  }
+  #admin {
+    position: absolute;
+    bottom: 5vh;
+    margin: 0 5vw;
+  }
 }

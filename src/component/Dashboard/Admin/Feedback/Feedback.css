@@ -1,0 +1,107 @@
+.customer-feedback {
+  width: 95%;
+  margin: 5vh auto;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#total-earning > .top {
+  border-bottom: 1px solid lightgray;
+  color: rgb(92, 92, 92);
+  text-align: left;
+  padding: 10px;
+}
+
+#total-earning > .top > h4 {
+  font-size: 1.1rem;
+  color: rgb(21, 50, 136);
+}
+
+#total-earning > .bottom {
+  color: rgb(92, 92, 92);
+  display: block;
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+}
+
+#total-earning {
+  width: 20vw;
+  height: auto;
+  margin: 3vh 0;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.cust-review {
+  width: 52vw;
+  height: auto;
+  margin: 3vh 3vw;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+.review-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0vh 0px 0.5vh 0;
+  padding: 1vh;
+  border-bottom: 1px solid lightgrey;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.review-container > span > img {
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+#earningHeadline {
+  font-size: 1.1rem;
+  color: rgb(27, 56, 143);
+}
+
+@media only screen and (max-width: 1024px) {
+  #total-earning {
+    width: 33vw;
+  }
+  .cust-review {
+    width: 60vw;
+    margin: 3vh 0;
+    margin-left: 5px;
+  }
+  .customer-feedback {
+    justify-content: left;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .customer-feedback {
+    justify-content: left;
+  }
+  .cust-review {
+    width: 67vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .customer-feedback {
+    display: grid;
+  }
+
+  #total-earning {
+    width: 70vw;
+    margin: 0;
+  }
+  .cust-review {
+    width: 95vw;
+  }
+}

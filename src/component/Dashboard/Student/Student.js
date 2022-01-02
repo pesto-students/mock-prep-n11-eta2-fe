@@ -14,6 +14,8 @@ const InterviewerList = lazy(() => import("component/Dashboard/Interviewer/List/
 const TopicList = lazy(() => import("component/Dashboard/Common/Topics/List/TopicsList"))
 const ResourceList = lazy(() => import("component/Dashboard/Common/Resource/ResouceList"))
 const QuizList = lazy(() => import("component/Dashboard/Common/Quiz/Quiz"))
+const InterviewsList = lazy(()=> import("component/Dashboard/Student/Upcoming Interviews/Interviews"))
+const BookInterviewer = lazy(() => import("component/Dashboard/Student/Calendly/Calendly"))
 
 
 export default function Student() {
@@ -42,6 +44,8 @@ export default function Student() {
                             <Route path={`${path}/resourceList/:topicId?`} component={ResourceList} />
                             <Route path={`${path}/quizList/:topicId?`} component={QuizList} />
                             <Route path={`${path}/quizContent/:quizId?`} component={QuizContent} />
+                            <Route path={`${path}/interviews`} component={InterviewsList} />
+                            <Route  path={`${path}/bookInterviewer/:interviewerId?`} component={BookInterviewer} />
                     </section>
                 </Route>
             </div>
