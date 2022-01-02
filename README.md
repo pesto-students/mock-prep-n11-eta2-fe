@@ -52,6 +52,7 @@ Mockprep is a interview preparation platform,allowing users to engage with exper
 &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.figma.com/file/RNbodcyvgvbJf4LZCu7qmZ/Mock-Prep-Wireframes?node-id=0%3A1">Wireframes</a>
 &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://docs.google.com/document/d/18o7uE5sEUBhw427hjKjn5a6oVf8Viq_Hw9zzd43MTi8/edit?usp=sharing">Coding Practices</a>
 
 ### Backend Repo
 
