@@ -1,61 +1,15 @@
+
 <!-- PROJECT LOGO -->
-<br />
-<p align="center">
-    <img src="https://res.cloudinary.com/mock-prep/image/upload/v1638635421/Mockprep/mp_Logo_n7fhp6.png" alt="Logo" width="500" >
+
+<br  />
+
+<p  align="center">
+
+<img  src="https://res.cloudinary.com/mock-prep/image/upload/v1638635421/Mockprep/Uilities/mp_Logo_n7fhp6.png"  alt="Logo"  width="600"  height="200"  >
+
 </p>
 
-<h1 align="center">Mock Prep</h1>
-<h3 align="center">
-	<a href="https://mockprep.netlify.app">Live URL</a>
-</h3>
-  
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#artefacts">Artefacts</a></li>
-        <li><a href="#backend-repo">Backend Repo</a></li>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#test-credentials">Test Credentials</a></li>
-        <li><a href="#other-available-scripts">Other Available Scripts</a></li>
-        <li><a href="#tools-and-libraries">Tools And Libraries</a></li>
-      </ul>
-    </li>
-    <li><a href="#contributors">Contributors</a></li>
-  </ol>
-</details>
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-![Mock Prep Banner](https://res.cloudinary.com/mock-prep/image/upload/v1640396151/Mockprep/topics/banner_plgqpf.gif)
-
 Mockprep is a interview preparation platform,allowing users to engage with experts to guide and mentor to prepare best way possible.
-
-### Artefacts
-
-<a href="https://docs.google.com/document/d/13PP2jubRrUGr-iyKDsSAFyQuZj7SeGrclQT1MzZyCk0/edit?usp=sharing">PRD</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://drive.google.com/file/d/1EpXinZXhMikg9_xVgVGVUOQlWYgUnwdb/view?usp=sharing">One Pager</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.figma.com/file/RNbodcyvgvbJf4LZCu7qmZ/Mock-Prep-Wireframes?node-id=0%3A1">Wireframes</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://docs.google.com/document/d/18o7uE5sEUBhw427hjKjn5a6oVf8Viq_Hw9zzd43MTi8/edit?usp=sharing">Coding Practices</a>
-
-### Backend Repo
-
-[Backend Repo](https://github.com/pesto-students/mock-prep-n11-eta2-be)
 
 **Mission:**
 
@@ -67,119 +21,166 @@ To make the process of preparing for an interview simple and effective for every
 
 **Goals:**
 
-- Provide valuable resources.
-- Provide quality tests.
-- Provide goof mock interviews.
+-   Provide valuable resources.
+-   Provide quality tests.
+-   Provide goof mock interviews.
 
 **Features:**
 
-- Best in industry experts availability .
-- Simple and consistent UI.
-- Secure SSO Authentication.
-- Learn with our resources.
+-   Best in industry experts availability .
+-   Simple and consistent UI.
+-   Secure SSO Authentication.
+-   Learn with our resources.
 
-### Built With
+<!-- TABLE OF CONTENTS -->
 
-<p align="center">
-	<a href="https://reactjs.org/">
-		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867520/react-logo_aiqchy.png" title="React" height="100">
-	</a>
-	<a href="https://redux.js.org/">
-		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867520/redux-logo_g2vd7e.png" title="Redux" height="100">
-	</a>
-	<br />
-	<a href="https://razorpay.com/">
-		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631811211/Razorpay-logo_bzojzt.png" title="Razorpay Payment Gateway" height="100">
-	</a>
-	<a href="https://www.netlify.com/">
-		<img src="https://res.cloudinary.com/emarat/image/upload/h_150/v1631867519/netlify-logo_i6ye1g.png" title="Netlify" height="100">
-	</a>
-	<a href="https://www.heroku.com/">
-		<img src="https://camo.githubusercontent.com/065f065d12a6ba6b2cfcff767aaafd438a7ed5ae615e3ac39051c022cebaa698/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667" title="Heroku" height="100">
-	</a>
-</p>
 
-<!-- GETTING STARTED -->
+# Table of Contents
 
-## Getting Started
+  
 
-Following are the simple steps to run this project.
+1. [Demo](#demo)
 
-### Prerequisites
+2. [Installation](#installation)
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+3. [Technology Stack](#technology-stack)
 
-### Installation
+4. [Authors](#authors)
+
+5. [License](#license)
+
+  
+
+<br/>
+
+  
+
+# Demo
+
+  
+
+[Live Demo](https://mockprep.netlify.app/)
+
+  
+
+<br/>
+
+  
+
+Please Note:
+
+  
+
+1. We recommend using this app in Google Chrome
+
+
+  
+  
+
+<br/>
+
+Test Credentials:
+
+ Dummy logins are added in the login page for all the user flows that includes Student Interviewer and admin.
+  
+
+# Installation
+
+  
 
 1. Clone the repo
 
-   ```sh
-   git clone https://github.com/pesto-students/mock-prep-n11-eta2-fe
-   ```
+```sh
+
+git clone https://github.com/pesto-students/mock-prep-n11-eta2-fe.git
+
+```
+
+
 
 2. Install NPM packages
-   ```sh
-   cd mock-prep-n11-eta2-fe && npm install
-   ```
+
+```sh
+
+cd mock-prep-n11-eta2-fe && npm install
+
+```
+
 3. Run
-   ```sh
-   npm start
-   ```
+
+```sh
+
+npm start
+
+```
+
 4. Open http://localhost:3000 to view it in the browser
 
-5. Run Test cases
-   ```sh
-   npm test
-   ```
+  
 
-## Test Credentials
+6. Run Test cases
 
-You can find the dummy login buttons in http://localhost:3000/signIn Page
+```sh
 
-## Other Available Scripts
+npm test
 
-**End-To-End Test**  
-To do end to end testing, we are using cypress.  
-Whenever we do `npm run cypress` cypress window will open and we can run any test suite that is written.  
-We can also use `npm run cypress:headless` to run all the end to end test suits at once.
+```
 
-<!--Tools-->
+<br/>
+
+  
+
+# Technology Stack
+
+  
+
+We tried to use a completely modern tech stack while testing out some new technologies that we had never used before. This resulted in a fast, performant, and easily-extensible web app that should be fairly future-proof for the coming next several years. We used:
+
+  
+
+- [Ant design](https://ant.design/)
+
+- [Axios](https://axios-http.com/docs/intro)
+
+- [React](https://reactjs.org/)
 
 ## Tools and Libraries
 
-- [Redux-Tool-Kit] - State Management
-- [Sentry] - Error Tracking
-- [Cypress] - End to End testing
-- [Chart Js] - Charts
+-   [Redux-Tool-Kit] - State Management
+-   [Sentry] - Error Tracking
+-   [Cypress] - End to End testing
+-   [Chart Js] - Charts
 
-## API Integrations
+## [](https://github.com/pesto-students/mock-prep-n11-eta2-fe#api-integrations)API Integrations
 
-- RazorPay - Payments
-- Calendly - Slot Booking
+-   RazorPay - Payments
+-   Calendly - Slot Booking
 
-## Mobile Responsive
+## [](https://github.com/pesto-students/mock-prep-n11-eta2-fe#mobile-responsive)Mobile Responsive
 
-- Fits to Mobile Screen
-- Fits to Tab Screen - Ipad
-- Fits to Desktop
+-   Fits to Mobile Screen
+-   Fits to Tab Screen - Ipad
+-   Fits to Desktop
 
-## Out of Scope
+  
 
-```1. End to End Testing
-    2. Error Monitoring (Pending)
-    3. Student and Interviewer Feedbacks
-    4. Student Reports
-    5. Interviewer Performance reports
-    6. Admin to add and edit Quiz
-```
+<br/>
 
-<!-- Contributors -->
+  
 
-## Contributors
+# Authors
 
-Mohammed Saif - [GiHub](https://github.com/saifmohammed888) - [Email](mailto:saifmohammed888@gmail.com) - [LinkedIn](https://www.linkedin.com/in/saifmohammed888/)
+  
+[Balaji Kamalesan](https://github.com/balaji-kamalesan-au3)
+[Mohammed Saif ](https://github.com/saifmohammed888) 
 
-Balaji Kamalesan - [GiHub](https://github.com/balaji-kamalesan-au3) - [Email](mailto:balajikamalesan96@gmail.com) - [LinkedIn](https://in.linkedin.com/in/balaji-kamalesan)
+
+  
+
+  
+
+# License
+
+  
+
+[MIT](https://opensource.org/licenses/MIT)
