@@ -17,7 +17,7 @@
     "fetch": "1.1.0",
     "react": "17.0.2",
     "react-bootstrap": "^2.1.0",
-    "react-calendly": "2.2.2",
+    "react-calendly": "2.2.3",
     "react-chartjs-2": "4.0.0",
     "react-cookie": "^4.1.1",
     "react-dom": "17.0.2",
